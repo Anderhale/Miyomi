@@ -83,5 +83,20 @@
   "info": "Extension repository for Mihon and its variants.",
   "keywords": ["keiyoushi", "mihon repo", "manga extensions"],
   "lastUpdated": "2025-10-29"
+},
+{
+    "id": "kodjodevf",
+  "name": "Kodjodevf",
+  "types": ["Light Novel", "Manga"],
+  "region": "ALL",
+  "accentColor": "#be1622",
+  "autoUrl": "mangayomi://add-repo?repo_name=mangayomi-extensions&repo_url=https://github.com/kodjodevf/mangayomi-extensions&manga_url=https://kodjodevf.github.io/mangayomi-extensions/index.json&novel_url=https://kodjodevf.github.io/mangayomi-extensions/novel_index.json",
+  "manualUrl": "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/refs/heads/main/index.json",
+  "website": "https://kodjodevf.github.io/mangayomi-extensions/",
+  "github": "https://github.com/kodjodevf/mangayomi-extensions",
+  "supportedApps": ["dantotsu", "mangayomi", "dartotsu"],
+  "info": "Public source extensions (Manga & novels only) for the Mangayomi app.",
+  "keywords": ["mangayomi", "dartotsu"],
+  "lastUpdated": "2025-10-29"
 }
 ]
