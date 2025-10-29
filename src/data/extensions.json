@@ -69,5 +69,19 @@
     "info": "French extensions for anime and manga",
     "keywords": ["hollow", "french"],
     "lastUpdated": "2025-10-10"
-  }
+  },
+  {
+  "id": "keiyoushi",
+  "name": "Keiyoushi",
+  "types": ["Manga"],
+  "region": "ALL",
+  "accentColor": "#00C7B7",
+  "autoUrl": "tachiyomi://add-repo?url=https://raw.githubusercontent.com/keiyoushi/extensions/repo/index.min.json",
+  "manualUrl": "https://raw.githubusercontent.com/keiyoushi/extensions/repo/index.min.json",
+  "github": "https://github.com/keiyoushi/extensions",
+  "supportedApps": ["aniyomi", "mihon", "tachiyomi-sy", "yokai", "komikku"],
+  "info": "Extension repository for Mihon and its variants.",
+  "keywords": ["keiyoushi", "mihon repo", "manga extensions"],
+  "lastUpdated": "2025-10-29"
+}
 ]
