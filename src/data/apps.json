@@ -62,6 +62,22 @@
     "githubUrl": "https://github.com/itsmechinmoy/Dantotsu"
   },
   {
+  "id": "dartotsu",
+  "name": "Dartotsu",
+  "contentTypes": ["Manga", "Anime", "Light Novel"],
+  "description": "Successor to Dantotsu. Rebuilt in Flutter for speed, cross‑platform support, and modern elegance.",
+  "platforms": ["Android", "iOS", "Windows", "Mac", "Linux"],
+  "iconColor": "#00cc99",
+  "logoUrl": "https://avatars.githubusercontent.com/aayush2622",
+  "keywords": ["Dantotsu fork", "best app"],
+  "supportedExtensions": ["kodjodevf"],
+  "lastUpdated": "2025-08-15",
+  "githubUrl": "https://github.com/aayush2622/Dartotsu",
+  "officialSite": "https://github.com/aayush2622/Dartotsu",
+  "discordUrl": "https://discord.gg/eyQdCpdubF"
+
+},
+  {
     "id": "mangayomi",
     "name": "Mangayomi",
     "contentTypes": ["Manga", "Light Novel"],
