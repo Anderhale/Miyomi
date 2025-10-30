@@ -189,7 +189,9 @@
     "logoUrl": "https://raw.githubusercontent.com/null2264/yokai/master/.github/readme-images/app-icon.webp",
     "keywords": ["mihon fork", "fast"],
     "supportedExtensions": ["kohiden"],
-    "lastUpdated": "2025-10-12"
+    "lastUpdated": "2025-10-12",
+    "githubUrl": "https://github.com/null2264/yokai",
+    "discordUrl": "https://discord.com/invite/mihon"
   },
   {
     "id": "komikku",
@@ -201,7 +203,8 @@
     "logoUrl": "https://avatars.githubusercontent.com/komikku-app",
     "keywords": ["open source", "offline"],
     "supportedExtensions": [],
-    "lastUpdated": "2025-10-10"
+    "lastUpdated": "2025-10-10",
+    "githubUrl": "https://github.com/komikku-app/komikku"
   },
   {
     "id": "neko",
@@ -213,7 +216,8 @@
     "logoUrl": "https://avatars.githubusercontent.com/nekomangaorg",
     "keywords": ["mangadex"],
     "supportedExtensions": [],
-    "lastUpdated": "2025-10-09"
+    "lastUpdated": "2025-10-09",
+    "githubUrl": "https://github.com/nekomangaorg/Neko"
   },
   {
     "id": "perfect-viewer",
@@ -261,7 +265,8 @@
     "logoUrl": "https://avatars.githubusercontent.com/LNReader",
     "keywords": ["light novel", "extensions"],
     "supportedExtensions": [],
-    "lastUpdated": "2025-10-11"
+    "lastUpdated": "2025-10-11",
+    "githubUrl": "https://github.com/LNReader/lnreader"
   },
   {
     "id": "quicknovel",
@@ -345,7 +350,16 @@
     "logoUrl": "https://avatars.githubusercontent.com/tachimanga",
     "keywords": ["ios", "extensions"],
     "supportedExtensions": [],
-    "lastUpdated": "2025-10-06"
+    "lastUpdated": "2025-10-06",
+    "githubUrl": "https://tachimanga.app/",
+    "tutorials": [
+      {
+        "title": "Tachimanga Quick Start Guide",
+        "type": "guide",
+        "url": "https://tachimanga.app/help/guides/get-started.html#reading-from-local-source",
+        "description": "Official quick start that covers installation and first-time configuration."
+      }
+    ]
   },
   {
     "id": "suwatte",
