@@ -11,7 +11,7 @@
     "supportedApps": ["aniyomi", "mihon", "mangayomi", "dantotsu", "tachiyomi-sy", "tachiyomi-j2k", "yokai"],
     "info": "Community-maintained extension repository for anime and manga",
     "keywords": ["kohiden", "aniyomi repo", "mihon extensions"],
-    "lastUpdated": "2025-10-15"
+    "lastUpdated": "2025-10-29"
   },
   {
     "id": "yuzono",
@@ -26,7 +26,7 @@
     "supportedApps": ["aniyomi", "mihon", "mangayomi", "tachiyomi-sy"],
     "info": "Repository curated by the Yūzōnō community for anime and manga",
     "keywords": ["yuzono", "aniyomi anime", "mihon repo"],
-    "lastUpdated": "2025-10-13"
+    "lastUpdated": "2025-10-29"
   },
   {
     "id": "secozzi",
@@ -39,8 +39,8 @@
     "github": "https://github.com/Secozzi/aniyomi-extensions",
     "supportedApps": ["aniyomi", "mihon", "mangayomi"],
     "info": "Multi-region extensions for anime and manga",
-    "keywords": ["secozzi", "aniyomi extensions", "mihon extensions"],
-    "lastUpdated": "2025-10-12"
+    "keywords": ["secozzi", "aniyomi extensions", "mihon extensions", "Jellyfin", "Stremio"],
+    "lastUpdated": "2025-10-29"
   },
   {
     "id": "claudemirovsky",
