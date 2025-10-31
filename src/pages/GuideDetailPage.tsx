@@ -224,7 +224,7 @@ export function GuideDetailPage({ slug, onNavigate }: GuideDetailPageProps) {
           {guide.tags.map((tag) => (
             <span
               key={tag}
-              className="inline-flex items-center gap-1.5 rounded-lg bg-[var(--chip-bg)] px-2.5 py-1 font-['Inter',sans-serif] text-[var(--text-secondary)]"
+              className="inline-flex items-center gap-1.5 rounded-lg bg-[var(--chip-bg)] px-2.5 py-1 font-['Inter',sans-serif] text-[var(--text-secondary)] px-2"
               style={{ fontSize: '12px' }}
             >
               <Tag className="h-3 w-3" />
