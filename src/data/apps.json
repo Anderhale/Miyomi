@@ -3,7 +3,7 @@
     "id": "aniyomi",
     "name": "Aniyomi",
     "contentTypes": ["Manga", "Anime"],
-    "description": "Free and open-source manga reader and anime streaming app for Android.",
+    "description": "An app for manga and anime",
     "platforms": ["Android"],
     "iconColor": "#FF6B9D",
     "logoUrl": "https://avatars.githubusercontent.com/aniyomiorg",
@@ -16,14 +16,14 @@
       {
         "title": "Aniyomi Installation & Setup",
         "type": "video",
-        "url": "https://www.youtube.com/embed/Ef8GIfhn7sA",
-        "description": "Step-by-step walkthrough for installing Aniyomi and configuring sources."
+        "url": "https://www.youtube.com/watch?v=Mt6oyX4k_lc",
+        "description": "Step-by-step walkthrough for installing Aniyomi and configuring sources"
       },
       {
-        "title": "Managing Extensions in Aniyomi",
+        "title": "Getting started",
         "type": "guide",
-        "url": "https://aniyomi.org/docs/guides/extensions",
-        "description": "Official documentation covering how to add, update, and troubleshoot extensions."
+        "url": "https://aniyomi.org/docs/guides/getting-started",
+        "description": "Essential information to help you get set up with Aniyomi"
       }
     ]
   },
