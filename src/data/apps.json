@@ -452,7 +452,7 @@
     "description": "Desktop manga reader featuring a card-based UI, queue management, and extension support.",
     "platforms": ["Windows", "Mac", "Linux"],
     "iconColor": "#26A69A",
-    "logoUrl": "https://avatars.githubusercontent.com/houdoku",
+    "logoUrl": "https://houdoku.org/logo.svg",
     "keywords": ["desktop", "extensions"],
     "supportedExtensions": [],
     "lastUpdated": "2025-10-08"
