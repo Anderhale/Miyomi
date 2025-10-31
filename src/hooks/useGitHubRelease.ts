@@ -102,7 +102,27 @@ export function useGitHubRelease(githubUrl?: string, fallbackDate?: string): Use
           return;
         }
 
-        const response = await fetch(
+        // Helper function to process release data
+        const processReleaseData = (data: GitHubRelease): ReleaseData => {
+          const totalDownloads = data.assets.reduce(
+            (sum, asset) => sum + asset.download_count,
+            0
+          );
+
+          return {
+            version: data.tag_name,
+            date: data.published_at,
+            name: data.name || data.tag_name,
+            url: data.html_url,
+            notes: data.body || '',
+            downloads: totalDownloads,
+            assets: data.assets,
+            isPrerelease: data.prerelease,
+          };
+        };
+
+        // First, try to fetch the latest release
+        let response = await fetch(
           `https://api.github.com/repos/${githubRepo}/releases/latest`,
           {
             headers: {
@@ -111,31 +131,44 @@ export function useGitHubRelease(githubUrl?: string, fallbackDate?: string): Use
           }
         );
 
-        if (!response.ok) {
-          if (response.status === 404) {
+        let releaseData: ReleaseData;
+
+        if (response.ok) {
+          const data: GitHubRelease = await response.json();
+          releaseData = processReleaseData(data);
+        } else if (response.status === 404) {
+          // No latest release found (only pre-releases), fetch all releases instead
+          response = await fetch(
+            `https://api.github.com/repos/${githubRepo}/releases`,
+            {
+              headers: {
+                'Accept': 'application/vnd.github.v3+json',
+              },
+            }
+          );
+
+          if (!response.ok) {
+            throw new Error(`GitHub API error: ${response.status}`);
+          }
+
+          const releases: GitHubRelease[] = await response.json();
+
+          if (releases.length === 0) {
             throw new Error('No releases found');
           }
+
+          // Get the first release (most recent, includes pre-releases)
+          // Filter out drafts since they shouldn't be shown
+          const nonDraftReleases = releases.filter(release => !release.draft);
+          
+          if (nonDraftReleases.length === 0) {
+            throw new Error('No published releases found');
+          }
+
+          releaseData = processReleaseData(nonDraftReleases[0]);
+        } else {
           throw new Error(`GitHub API error: ${response.status}`);
         }
-
-        const data: GitHubRelease = await response.json();
-
-        // Calculate total downloads
-        const totalDownloads = data.assets.reduce(
-          (sum, asset) => sum + asset.download_count,
-          0
-        );
-
-        const releaseData: ReleaseData = {
-          version: data.tag_name,
-          date: data.published_at,
-          name: data.name || data.tag_name,
-          url: data.html_url,
-          notes: data.body || '',
-          downloads: totalDownloads,
-          assets: data.assets,
-          isPrerelease: data.prerelease,
-        };
 
         // Cache the result
         releaseCache.set(githubRepo, {

@@ -338,6 +338,11 @@ export function AppDetailPage({ appId, onNavigate }: AppDetailPageProps) {
                       <span className="text-xs sm:text-sm text-[var(--text-primary)] font-['Inter',sans-serif]" style={{ fontWeight: 600 }}>
                         {release.version}
                       </span>
+                      {release.isPrerelease && (
+                        <span className="ml-1 px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-['Inter',sans-serif] bg-yellow-500/10 text-yellow-600 dark:text-yellow-400 border border-yellow-500/30" style={{ fontWeight: 600 }}>
+                          Pre-release
+                        </span>
+                      )}
                     </div>
                   )}
                   
@@ -356,13 +361,6 @@ export function AppDetailPage({ appId, onNavigate }: AppDetailPageProps) {
                       <span className="text-xs sm:text-sm text-[var(--text-secondary)] font-['Inter',sans-serif]" style={{ fontWeight: 500 }}>
                         {release.downloads.toLocaleString()}
                       </span>
-                    </div>
-                  )}
-                  
-                  {/* Prerelease Badge */}
-                  {release.isPrerelease && (
-                    <div className="inline-flex items-center px-3 py-1.5 rounded-full text-xs sm:text-sm font-['Inter',sans-serif] bg-yellow-500/10 text-yellow-600 dark:text-yellow-400 border border-yellow-500/30" style={{ fontWeight: 600 }}>
-                      Pre-release
                     </div>
                   )}
                 </div>
@@ -437,7 +435,7 @@ export function AppDetailPage({ appId, onNavigate }: AppDetailPageProps) {
                 className="text-[var(--text-primary)] font-['Poppins',sans-serif]"
                 style={{ fontSize: '20px', fontWeight: 600 }}
               >
-                Latest Release
+                {release.isPrerelease ? 'Pre-Release' : 'Latest Release'}
               </h2>
               <a
                 href={release.url}
