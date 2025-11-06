@@ -62,7 +62,7 @@ export function Navbar({ onNavigate }: NavbarProps) {
     // { label: 'Websites', path: '/websites' },
     { label: 'Extensions', path: '/extensions' },
     { label: 'FAQ', path: '/faq' },
-    { label: 'Communities', path: '/communities' },
+    // { label: 'Communities', path: '/communities' },
     { label: 'About', path: '/about' },
   ];
 
