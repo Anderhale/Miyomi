@@ -152,7 +152,7 @@ export function GuidesPage({ onNavigate }: GuidesPageProps) {
         </div>
 
         <p className="text-[var(--text-secondary)] font-['Inter',sans-serif] mb-6" style={{ fontSize: '17px', lineHeight: '1.6' }}>
-          Step-by-step tutorials to help you master Miyomi apps and extensions.
+          Step-by-step tutorials to help you use and understand various apps and extensions.
         </p>
 
         {/* Stats & Controls Bar */}
