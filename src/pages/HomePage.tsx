@@ -31,7 +31,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
     {
       icon: <Star className="w-10 h-10" />,
       title: 'Extensions',
-      description: 'Mihon, Aniyomi & Dantotsu Extension Repos & Guides',
+      description: 'Cloudstream, Aniyomi & Dantotsu Extension Repos & Guides',
       path: '/extensions',
       gradient: 'from-[#E8D4FF] to-[#7C4DFF]',
     },
