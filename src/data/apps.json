@@ -339,6 +339,16 @@
     "keywords": ["ios", "sources"],
     "supportedExtensions": [],
     "lastUpdated": "2025-10-07"
+    "githubUrl": "https://github.com/Aidoku/Aidoku",
+    "discordUrl": "https://discord.com/invite/9U8cC5Zk3s",
+    "tutorials": [
+       {
+        "title": "Getting Started",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=Mt6oyX4k_lc",
+        "description": "Step-by-step walkthrough for installing"
+      }
+    ]
   },
   {
     "id": "tachimanga",
