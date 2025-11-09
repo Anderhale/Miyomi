@@ -8,7 +8,7 @@
     "autoUrl": "aniyomi://add-repo?url=https://kohiden.xyz/Kohi-den/extensions/raw/branch/main/index.min.json",
     "manualUrl": "https://kohiden.xyz/Kohi-den/extensions/raw/branch/main/index.min.json",
     "website": "https://github.com/Kohi-den/extensions-source",
-    "supportedApps": ["aniyomi", "mihon", "mangayomi", "dantotsu", "tachiyomi-sy", "tachiyomi-j2k", "yokai"],
+    "supportedApps": ["aniyomi", "mangayomi", "dantotsu", "animiru", "anikku"],
     "info": "Community-maintained extension repository for anime and manga",
     "keywords": ["kohiden", "aniyomi repo", "mihon extensions"],
     "lastUpdated": "2025-10-29"
@@ -19,11 +19,11 @@
     "types": ["Anime", "Manga"],
     "region": "ALL",
     "accentColor": "#4A90E2",
-    "autoUrl": "aniyomi://add-repo?url=https://raw.githubusercontent.com/yuzono/anime-repo/repo/index.min.json",
-    "manualUrl": "https://raw.githubusercontent.com/yuzono/anime-repo/repo/index.min.json",
+    "autoUrl": "",
+    "manualUrl": "",
     "website": "https://yuzono.github.io",
     "github": "https://github.com/yuzono/aniyomi-extensions",
-    "supportedApps": ["aniyomi", "mihon", "mangayomi", "tachiyomi-sy"],
+    "supportedApps": ["komikku","anikku"],
     "info": "Repository curated by the Yūzōnō community for anime and manga",
     "keywords": ["yuzono", "aniyomi anime", "mihon repo"],
     "lastUpdated": "2025-10-29"
@@ -79,7 +79,7 @@
   "autoUrl": "tachiyomi://add-repo?url=https://raw.githubusercontent.com/keiyoushi/extensions/repo/index.min.json",
   "manualUrl": "https://raw.githubusercontent.com/keiyoushi/extensions/repo/index.min.json",
   "github": "https://github.com/keiyoushi/extensions",
-  "supportedApps": ["aniyomi", "mihon", "tachiyomi-sy", "yokai", "komikku"],
+  "supportedApps": ["mihon", "tachiyomi-sy", "yokai", "komikku"],
   "info": "Extension repository for Mihon and its variants.",
   "keywords": ["keiyoushi", "mihon repo", "manga extensions"],
   "lastUpdated": "2025-10-29"
@@ -286,5 +286,15 @@
     "info": "Plugin repository for LNReader app.",
     "keywords": ["lnreader", "plugins"],
     "lastUpdated": "2025-09-28"
+  },
+  {
+    "id":"stremio-addon",
+    "name":"Stremio Addons",
+    "types":["Anime"],
+    "region":"ALL",
+    "accentColor":"#7C4DFF",
+    "website":"https://stremio-addons.net/",
+    "supportedApps":["stremio"],
+    "info":"Community curated list of Stremio addons."
   }
 ]
