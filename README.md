@@ -28,6 +28,7 @@ Navigate to `src/data/apps.json` and add or update app entries:
 {
   "id": "app-id",
   "name": "App Name",
+  "author": "Author or Team Name",
   "contentTypes": ["Manga", "Anime", "Light Novel"],
   "description": "Brief description of the app",
   "platforms": ["Android", "iOS", "Windows", "Mac", "Linux", "Web"],
@@ -51,9 +52,10 @@ Navigate to `src/data/apps.json` and add or update app entries:
 ```
 
 **Important:**
+- `author`: Optional; shown in the UI. Falls back to the GitHub repo owner if omitted.
 - `githubUrl`: If provided, the app will fetch live release data from GitHub
 - `lastUpdated`: Acts as fallback when GitHub API is unavailable
-- `contentTypes`: Must be one of: "Manga", "Anime", "Light Novel", "Multi"
+- `contentTypes`: Must be one of: "Manga", "Anime", "Light Novel"
 - `platforms`: Must be one of: "Android", "iOS", "Windows", "Mac", "Linux", "Web"
 
 ### Adding or Updating Extensions
