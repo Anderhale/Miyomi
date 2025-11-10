@@ -1,13 +1,17 @@
 import React from 'react';
-import { ArrowLeft, Download, Github, MessageSquare, Globe, Calendar, PlayCircle, BookOpen, Tag, TrendingUp } from 'lucide-react';
+import { ArrowLeft, Download, Github, MessageSquare, Globe, PlayCircle, BookOpen } from 'lucide-react';
 import { motion } from 'motion/react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { PlatformBadge } from '../components/PlatformBadge';
 import { TagBadge } from './../components/TagBadge';
 import { ParticleBackground } from '../components/ParticleBackground';
 import { ExtensionGridCard } from '../components/ExtensionGridCard';
+import { GitHubReleaseMeta } from '../components/GitHubReleaseMeta';
+import { GitHubDownloadAssets } from '../components/GitHubDownloadAssets';
+import { GitHubCommitSummary } from '../components/GitHubCommitSummary';
 import { getAppById, getAppExtensions } from '../data';
 import { useGitHubRelease } from '../hooks/useGitHubRelease';
+import { useGitHubLastCommit } from '../hooks/useGitHubLastCommit';
 
 interface AppDetailPageProps {
   appId: string;
@@ -27,6 +31,10 @@ export function AppDetailPage({ appId, onNavigate }: AppDetailPageProps) {
   
   // Fetch GitHub release data
   const { release, loading: releaseLoading } = useGitHubRelease(
+    app?.githubUrl,
+    app?.lastUpdated
+  );
+  const { commit, loading: commitLoading } = useGitHubLastCommit(
     app?.githubUrl,
     app?.lastUpdated
   );
@@ -327,56 +335,11 @@ export function AppDetailPage({ appId, onNavigate }: AppDetailPageProps) {
               ))}
             </div>
 
-            {/* Release Info Badges */}
-            {release && !releaseLoading && (
-              <div className="mb-4">
-                <div className="flex flex-wrap items-center justify-center gap-1">
-                  {/* Version Badge */}
-                  {release.version && release.version !== 'N/A' && (
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[var(--chip-bg)] border border-[var(--divider)] rounded-full">
-                      <Tag className="w-3.5 h-3.5 text-[var(--brand)]" />
-                      <span className="text-xs sm:text-sm text-[var(--text-primary)] font-['Inter',sans-serif]" style={{ fontWeight: 600 }}>
-                        {release.version}
-                      </span>
-                      {release.isPrerelease && (
-                        <span className="ml-1 px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-['Inter',sans-serif] bg-yellow-500/10 text-yellow-600 dark:text-yellow-400 border border-yellow-500/30" style={{ fontWeight: 600 }}>
-                          Pre-release
-                        </span>
-                      )}
-                    </div>
-                  )}
-                  
-                  {/* Last Updated Badge */}
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[var(--chip-bg)] border border-[var(--divider)] rounded-full">
-                    <Calendar className="w-3.5 h-3.5 text-[var(--brand)]" />
-                    <span className="text-xs sm:text-sm text-[var(--text-secondary)] font-['Inter',sans-serif]" style={{ fontWeight: 500 }}>
-                      {formatDate(release.date)}
-                    </span>
-                  </div>
-                  
-                  {/* Downloads Badge */}
-                  {release.downloads > 0 && (
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[var(--chip-bg)] border border-[var(--divider)] rounded-full">
-                      <TrendingUp className="w-3.5 h-3.5 text-[var(--brand)]" />
-                      <span className="text-xs sm:text-sm text-[var(--text-secondary)] font-['Inter',sans-serif]" style={{ fontWeight: 500 }}>
-                        {release.downloads.toLocaleString()}
-                      </span>
-                    </div>
-                  )}
-                </div>
-              </div>
-            )}
-            
-            {/* Loading State */}
-            {releaseLoading && (
-              <div className="mb-4">
-                <div className="flex flex-wrap items-center justify-center gap-2">
-                  {[1, 2, 3].map((i) => (
-                    <div key={i} className="h-8 w-24 bg-[var(--chip-bg)] border border-[var(--divider)] rounded-full animate-pulse"></div>
-                  ))}
-                </div>
-              </div>
-            )}
+            <GitHubReleaseMeta
+              release={release}
+              loading={releaseLoading}
+              formatDate={formatDate}
+            />
 
             {/* Download and Links */}
             {inlineActions && <div className="lg:hidden">{inlineActions}</div>}
@@ -475,45 +438,17 @@ export function AppDetailPage({ appId, onNavigate }: AppDetailPageProps) {
               </div>
             </div>
             
-            {/* Download Assets */}
-            {release.assets && release.assets.length > 0 && (
-              <div className="mt-4 pt-4 border-t border-[var(--divider)]">
-                <p className="text-[var(--text-secondary)] font-['Inter',sans-serif] text-sm mb-3" style={{ fontWeight: 600 }}>
-                  Download Assets:
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {release.assets.slice(0, 3).map((asset, index) => (
-                    <a
-                      key={index}
-                      href={asset.browser_download_url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-3 py-2 bg-[var(--chip-bg)] hover:bg-[var(--brand)] text-[var(--text-secondary)] hover:text-white rounded-lg transition-all text-xs font-['Inter',sans-serif] border border-[var(--divider)]"
-                      style={{ fontWeight: 500 }}
-                    >
-                      <Download className="w-3 h-3" />
-                      <span className="truncate max-w-[150px]">{asset.name}</span>
-                      <span className="text-[10px] opacity-70">
-                        ({(asset.size / 1024 / 1024).toFixed(1)}MB)
-                      </span>
-                    </a>
-                  ))}
-                  {release.assets.length > 3 && (
-                    <a
-                      href={release.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 px-3 py-2 text-[var(--brand)] hover:text-[var(--brand-strong)] transition-colors text-xs font-['Inter',sans-serif]"
-                      style={{ fontWeight: 500 }}
-                    >
-                      +{release.assets.length - 3} more
-                    </a>
-                  )}
-                </div>
-              </div>
-            )}
+            <GitHubDownloadAssets assets={release.assets} releaseUrl={release.url} />
           </div>
         </div>
+      )}
+
+      {app.githubUrl && (
+        <GitHubCommitSummary
+          commit={commit}
+          loading={commitLoading}
+          formatDate={formatDate}
+        />
       )}
 
       {hasTutorials && (

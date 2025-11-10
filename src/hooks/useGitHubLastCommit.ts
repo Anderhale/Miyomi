@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-interface CommitData {
+export interface CommitData {
   date: string;
   author: string;
   message: string;
@@ -147,4 +147,3 @@ export function useGitHubLastCommit(githubUrl?: string, fallbackDate?: string): 
 
   return { commit, loading, error };
 }
-

@@ -16,7 +16,7 @@ interface GitHubRelease {
   }>;
 }
 
-interface ReleaseData {
+export interface ReleaseData {
   version: string;
   date: string;
   name: string;
@@ -204,4 +204,3 @@ export function useGitHubRelease(githubUrl?: string, fallbackDate?: string): Use
 
   return { release, loading, error };
 }
-
