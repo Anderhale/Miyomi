@@ -10,12 +10,13 @@ export interface CommitData {
 
 interface UseGitHubLastCommitReturn {
   commit: CommitData | null;
+  commits: CommitData[];
   loading: boolean;
   error: string | null;
 }
 
 const CACHE_DURATION = 1000 * 60 * 10; // 10 minutes
-const commitCache: Map<string, { data: CommitData; timestamp: number }> = new Map();
+const commitCache: Map<string, { data: CommitData[]; timestamp: number }> = new Map();
 
 /**
  * Extracts owner/repo from a GitHub URL
@@ -50,6 +51,7 @@ function extractRepoFromUrl(url: string): string | null {
 
 export function useGitHubLastCommit(githubUrl?: string, fallbackDate?: string): UseGitHubLastCommitReturn {
   const [commit, setCommit] = useState<CommitData | null>(null);
+  const [commits, setCommits] = useState<CommitData[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -60,13 +62,15 @@ export function useGitHubLastCommit(githubUrl?: string, fallbackDate?: string): 
     if (!githubRepo) {
       // No valid GitHub URL - use fallback
       if (fallbackDate) {
-        setCommit({
+        const fallbackCommit: CommitData = {
           date: fallbackDate,
           author: 'Unknown',
           message: 'Last updated',
           url: '',
           sha: '',
-        });
+        };
+        setCommit(fallbackCommit);
+        setCommits([fallbackCommit]);
       }
       setLoading(false);
       return;
@@ -77,14 +81,15 @@ export function useGitHubLastCommit(githubUrl?: string, fallbackDate?: string): 
         // Check cache first
         const cached = commitCache.get(githubRepo);
         if (cached && Date.now() - cached.timestamp < CACHE_DURATION) {
-          setCommit(cached.data);
+          setCommits(cached.data);
+          setCommit(cached.data[0] ?? null);
           setLoading(false);
           return;
         }
 
         // Fetch from GitHub API - get commits for default branch
         const response = await fetch(
-          `https://api.github.com/repos/${githubRepo}/commits?per_page=1`,
+          `https://api.github.com/repos/${githubRepo}/commits?per_page=5`,
           {
             headers: {
               'Accept': 'application/vnd.github.v3+json',
@@ -105,22 +110,22 @@ export function useGitHubLastCommit(githubUrl?: string, fallbackDate?: string): 
           throw new Error('No commits found');
         }
 
-        const lastCommit = data[0];
-        const commitData: CommitData = {
-          date: lastCommit.commit.author.date,
-          author: lastCommit.commit.author.name,
-          message: lastCommit.commit.message.split('\n')[0], 
-          url: lastCommit.html_url,
-          sha: lastCommit.sha.substring(0, 7), 
-        };
+        const commitList: CommitData[] = data.slice(0, 5).map((item: any) => ({
+          date: item.commit.author.date,
+          author: item.commit.author.name,
+          message: item.commit.message.split('\n')[0],
+          url: item.html_url,
+          sha: item.sha.substring(0, 7),
+        }));
 
         // Cache the result
         commitCache.set(githubRepo, {
-          data: commitData,
+          data: commitList,
           timestamp: Date.now(),
         });
 
-        setCommit(commitData);
+        setCommits(commitList);
+        setCommit(commitList[0] ?? null);
         setError(null);
       } catch (err) {
         const errorMessage = err instanceof Error ? err.message : 'Failed to fetch commit data';
@@ -129,13 +134,15 @@ export function useGitHubLastCommit(githubUrl?: string, fallbackDate?: string): 
 
         // Use fallback date on error
         if (fallbackDate) {
-          setCommit({
+          const fallbackCommit: CommitData = {
             date: fallbackDate,
             author: 'Unknown',
             message: 'Last updated',
             url: '',
             sha: '',
-          });
+          };
+          setCommit(fallbackCommit);
+          setCommits([fallbackCommit]);
         }
       } finally {
         setLoading(false);
@@ -145,5 +152,5 @@ export function useGitHubLastCommit(githubUrl?: string, fallbackDate?: string): 
     fetchLastCommit();
   }, [githubUrl, fallbackDate]);
 
-  return { commit, loading, error };
+  return { commit, commits, loading, error };
 }

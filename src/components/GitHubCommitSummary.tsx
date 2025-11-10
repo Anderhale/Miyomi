@@ -4,6 +4,7 @@ import type { CommitData } from '../hooks/useGitHubLastCommit';
 
 interface GitHubCommitSummaryProps {
   commit: CommitData | null;
+  commits?: CommitData[];
   loading?: boolean;
   formatDate?: (date?: string) => string;
   className?: string;
@@ -21,11 +22,19 @@ const defaultFormatDate = (dateString?: string) => {
 
 export function GitHubCommitSummary({
   commit,
+  commits = [],
   loading = false,
   formatDate = defaultFormatDate,
   className = 'mb-6 sm:mb-8',
 }: GitHubCommitSummaryProps) {
-  if (!commit && !loading) {
+  const commitsToShow =
+    commits.length > 0
+      ? commits.slice(0, 5)
+      : commit
+      ? [commit]
+      : [];
+
+  if (!loading && commitsToShow.length === 0) {
     return null;
   }
 
@@ -56,33 +65,56 @@ export function GitHubCommitSummary({
 
       {loading && (
         <div className="space-y-3">
-          <div className="h-4 w-2/3 rounded bg-[var(--chip-bg)] animate-pulse"></div>
-          <div className="h-3 w-1/2 rounded bg-[var(--chip-bg)] animate-pulse"></div>
+          {[1, 2].map((i) => (
+            <div key={i} className="space-y-2">
+              <div className="h-4 w-2/3 rounded bg-[var(--chip-bg)] animate-pulse"></div>
+              <div className="h-3 w-1/2 rounded bg-[var(--chip-bg)] animate-pulse"></div>
+            </div>
+          ))}
         </div>
       )}
 
-      {!loading && commit && (
+      {!loading && commitsToShow.length > 0 && (
         <div className="space-y-3">
-          <p
-            className="text-[var(--text-primary)] font-['Inter',sans-serif]"
-            style={{ fontWeight: 600, fontSize: '15px' }}
-          >
-            {commit.message}
-          </p>
-          <div className="flex flex-wrap items-center gap-3 text-xs text-[var(--text-secondary)] font-['Inter',sans-serif]">
-            <span>
-              <span className="opacity-70">Author:</span> {commit.author}
-            </span>
-            <span className="flex items-center gap-1.5">
-              <Calendar className="w-3.5 h-3.5 text-[var(--brand)]" />
-              {formatDate(commit.date)}
-            </span>
-            {commit.sha && (
-              <span className="rounded-full bg-[var(--chip-bg)] px-2 py-0.5 font-mono text-[var(--text-secondary)] text-[11px]">
-                {commit.sha}
-              </span>
-            )}
-          </div>
+          {commitsToShow.map((item, index) => (
+            <div
+              key={`${item.sha}-${index}`}
+              className="rounded-xl border border-[var(--divider)] bg-[var(--bg-elev-1)] p-3"
+            >
+              <div className="flex items-center justify-between gap-3">
+                <p
+                  className="text-[var(--text-primary)] font-['Inter',sans-serif]"
+                  style={{ fontWeight: 600, fontSize: '15px' }}
+                >
+                  {item.message}
+                </p>
+                {item.url && (
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs text-[var(--brand)] hover:text-[var(--brand-strong)] transition-colors"
+                  >
+                    View →
+                  </a>
+                )}
+              </div>
+              <div className="mt-2 flex flex-wrap items-center gap-3 text-xs text-[var(--text-secondary)] font-['Inter',sans-serif]">
+                <span>
+                  <span className="opacity-70">Author:</span> {item.author}
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <Calendar className="w-3.5 h-3.5 text-[var(--brand)]" />
+                  {formatDate(item.date)}
+                </span>
+                {item.sha && (
+                  <span className="rounded-full bg-[var(--chip-bg)] px-2 py-0.5 font-mono text-[var(--text-secondary)] text-[11px]">
+                    {item.sha}
+                  </span>
+                )}
+              </div>
+            </div>
+          ))}
         </div>
       )}
 

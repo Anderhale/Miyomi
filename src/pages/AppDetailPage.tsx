@@ -6,7 +6,7 @@ import { PlatformBadge } from '../components/PlatformBadge';
 import { TagBadge } from './../components/TagBadge';
 import { ParticleBackground } from '../components/ParticleBackground';
 import { ExtensionGridCard } from '../components/ExtensionGridCard';
-import { GitHubReleaseMeta } from '../components/GitHubReleaseMeta';
+import { GitHubReleaseMeta, GitHubReleaseNotes } from '../components/GitHubReleaseMeta';
 import { GitHubDownloadAssets } from '../components/GitHubDownloadAssets';
 import { GitHubCommitSummary } from '../components/GitHubCommitSummary';
 import { getAppById, getAppExtensions } from '../data';
@@ -34,10 +34,44 @@ export function AppDetailPage({ appId, onNavigate }: AppDetailPageProps) {
     app?.githubUrl,
     app?.lastUpdated
   );
-  const { commit, loading: commitLoading } = useGitHubLastCommit(
+  const { commit, commits, loading: commitLoading } = useGitHubLastCommit(
     app?.githubUrl,
     app?.lastUpdated
   );
+
+  const getGithubOwner = (githubUrl?: string) => {
+    if (!githubUrl) return null;
+    try {
+      if (!githubUrl.startsWith('http')) {
+        const [owner] = githubUrl.split('/');
+        return owner || null;
+      }
+      const url = new URL(githubUrl);
+      const [owner] = url.pathname.split('/').filter(Boolean);
+      return owner || null;
+    } catch (error) {
+      console.warn('Failed to parse GitHub URL for owner:', error);
+      return null;
+    }
+  };
+
+  const authorInfo = React.useMemo(() => {
+    if (!app) return null;
+    const githubOwner = getGithubOwner(app.githubUrl);
+    if (app.author) {
+      return {
+        name: app.author,
+        url: githubOwner ? `https://github.com/${githubOwner}` : app.officialSite || null,
+      };
+    }
+    if (githubOwner) {
+      return {
+        name: githubOwner,
+        url: `https://github.com/${githubOwner}`,
+      };
+    }
+    return null;
+  }, [app]);
 
   const handleBackClick = () => {
     const scrollPos = location.state?.previousScrollPosition;
@@ -320,6 +354,27 @@ export function AppDetailPage({ appId, onNavigate }: AppDetailPageProps) {
             >
               {app.name}
             </h1>
+            {authorInfo && (
+              <p
+                className="text-[var(--text-secondary)] font-['Inter',sans-serif] mb-1"
+                style={{ fontSize: '14px' }}
+              >
+                by{' '}
+                {authorInfo.url ? (
+                  <a
+                    href={authorInfo.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[var(--text-primary)] hover:text-[var(--brand)] transition-colors"
+                    style={{ fontWeight: 600 }}
+                  >
+                    {authorInfo.name}
+                  </a>
+                ) : (
+                  <span style={{ fontWeight: 600 }}>{authorInfo.name}</span>
+                )}
+              </p>
+            )}
             <p className="text-[var(--text-secondary)] font-['Inter',sans-serif] mb-4" style={{ fontSize: '16px' }}>
               {app.description}
             </p>
@@ -412,31 +467,11 @@ export function AppDetailPage({ appId, onNavigate }: AppDetailPageProps) {
               </a>
             </div>
             
-            <div className="prose prose-sm max-w-none text-[var(--text-secondary)] font-['Inter',sans-serif]">
-              <div 
-                className="release-notes"
-                style={{ 
-                  fontSize: '14px',
-                  lineHeight: '1.6',
-                  whiteSpace: 'pre-wrap',
-                  wordBreak: 'break-word'
-                }}
-              >
-                {release.notes.split('\n').slice(0, 10).join('\n')}
-                {release.notes.split('\n').length > 10 && (
-                  <div className="mt-3">
-                    <a
-                      href={release.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[var(--brand)] hover:text-[var(--brand-strong)] transition-colors text-sm"
-                    >
-                      Read more →
-                    </a>
-                  </div>
-                )}
-              </div>
-            </div>
+            <GitHubReleaseNotes
+              notes={release.notes}
+              releaseUrl={release.url}
+              maxLines={10}
+            />
             
             <GitHubDownloadAssets assets={release.assets} releaseUrl={release.url} />
           </div>
@@ -446,6 +481,7 @@ export function AppDetailPage({ appId, onNavigate }: AppDetailPageProps) {
       {app.githubUrl && (
         <GitHubCommitSummary
           commit={commit}
+          commits={commits}
           loading={commitLoading}
           formatDate={formatDate}
         />

@@ -22,6 +22,7 @@ export interface AppData {
   platforms: readonly Platform[];
   iconColor: string;
   logoUrl?: string;
+  author?: string;
   keywords?: readonly string[];
   supportedExtensions: readonly string[]; // Extension IDs
   lastUpdated?: string; // ISO date string

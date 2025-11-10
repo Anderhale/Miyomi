@@ -1,6 +1,11 @@
 import React from 'react';
 import { Calendar, Tag, TrendingUp } from 'lucide-react';
 import type { ReleaseData } from '../hooks/useGitHubRelease';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import { unified } from 'unified';
+import remarkParse from 'remark-parse';
+import remarkStringify from 'remark-stringify';
 
 interface GitHubReleaseMetaProps {
   release: ReleaseData | null;
@@ -81,3 +86,99 @@ export function GitHubReleaseMeta({
   );
 }
 
+interface GitHubReleaseNotesProps {
+  notes?: string;
+  releaseUrl?: string;
+  maxLines?: number;
+  className?: string;
+}
+
+function normalizeNotes(input: string) {
+  try {
+    const processed = unified()
+      .use(remarkParse)
+      .use(remarkStringify, {
+        bullet: '-',
+        fences: true,
+        tightDefinitions: true,
+      })
+      .processSync(input);
+    return processed.toString().trim();
+  } catch (error) {
+    console.warn('Failed to normalize release notes', error);
+    return input.trim();
+  }
+}
+
+export function GitHubReleaseNotes({
+  notes,
+  releaseUrl,
+  maxLines = 10,
+  className = '',
+}: GitHubReleaseNotesProps) {
+  if (!notes) {
+    return null;
+  }
+
+  const normalized = normalizeNotes(notes);
+  const lines = normalized.split('\n');
+
+  const condensedLines: string[] = [];
+  for (const line of lines) {
+    const isEmpty = line.trim() === '';
+    if (isEmpty) {
+      if (condensedLines.length === 0) continue;
+      if (condensedLines[condensedLines.length - 1] === '') continue;
+      condensedLines.push('');
+    } else {
+      condensedLines.push(line);
+    }
+  }
+
+  const previewLines = condensedLines.slice(0, maxLines);
+  const preview = previewLines.join('\n').trimEnd();
+  const hasMore = condensedLines.length > maxLines;
+
+  const wrapperClasses = `prose prose-sm max-w-none text-[var(--text-secondary)] font-['Inter',sans-serif] ${className}`.trim();
+
+  return (
+    <div className={wrapperClasses}>
+      <div
+        className="release-notes"
+        style={{
+          fontSize: '14px',
+          lineHeight: '1.6',
+          wordBreak: 'break-word',
+        }}
+      >
+        <ReactMarkdown
+          remarkPlugins={[remarkGfm]}
+          components={{
+            a: (props) => (
+              <a
+                {...props}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[var(--brand)] hover:text-[var(--brand-strong)] transition-colors"
+              />
+            ),
+          }}
+        >
+          {preview}
+        </ReactMarkdown>
+      </div>
+      {hasMore && releaseUrl && (
+        <div className="mt-3">
+          <a
+            href={releaseUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[var(--brand)] hover:text-[var(--brand-strong)] transition-colors text-sm"
+          >
+            Read more →
+          </a>
+        </div>
+      )}
+    </div>
+  );
+}
