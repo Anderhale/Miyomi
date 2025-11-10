@@ -323,13 +323,6 @@ export function GuideDetailPage({ slug, onNavigate }: GuideDetailPageProps) {
           >
             View FAQ
           </button>
-          <button
-            onClick={() => onNavigate?.('/communities')}
-            className="px-4 py-2 bg-[var(--bg-surface)] border border-[var(--divider)] hover:border-[var(--brand)] text-[var(--text-primary)] rounded-xl transition-all font-['Inter',sans-serif]"
-            style={{ fontWeight: 500, fontSize: '14px' }}
-          >
-            Join Community
-          </button>
         </div>
       </div>
     </div>

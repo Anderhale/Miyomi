@@ -5,12 +5,10 @@ import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
 import { HomePage } from "./pages/HomePage";
 import { SoftwarePage } from "./pages/SoftwarePage";
-import { WebsitesPage } from "./pages/WebsitesPage";
 import { ExtensionsPage } from "./pages/ExtensionsPage";
 import { GuidesPage } from "./pages/GuidesPage";
 import { GuideDetailPage } from "./pages/GuideDetailPage";
 import { FAQPage } from "./pages/FAQPage";
-import { CommunitiesPage } from "./pages/CommunitiesPage";
 import { AboutPage } from "./pages/AboutPage";
 import { AppDetailPage } from "./pages/AppDetailPage";
 import { ExtensionDetailPage } from "./pages/ExtensionDetailPage";
@@ -109,7 +107,6 @@ function AppContent() {
               />
             }
           />
-          <Route path="/websites" element={<WebsitesPage />} />
           <Route
             path="/extensions"
             element={
@@ -137,10 +134,6 @@ function AppContent() {
             }
           />
           <Route path="/faq" element={<FAQPage />} />
-          <Route
-            path="/communities"
-            element={<CommunitiesPage />}
-          />
           <Route path="/about" element={<AboutPage />} />
           {/* Fallback for unknown routes */}
           <Route path="*" element={<NotFoundPage />} />

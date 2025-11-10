@@ -2,7 +2,7 @@ import { Plus, Package, Star, Github, MessageSquare, Facebook, Sparkles, Zap, Sh
 import { Button } from '../components/Button';
 import avatarImage from 'figma:asset/polic.png';
 import React from 'react';
-import { unifiedApps, unifiedExtensions, guideCategories, communities } from '../data';
+import { unifiedApps, unifiedExtensions, guideCategories } from '../data';
 import type { LucideIcon } from 'lucide-react';
 import { useFeedbackState } from '../hooks/useFeedbackState';
 import { AnimatePresence, motion } from 'motion/react';
@@ -53,12 +53,11 @@ export function HomePage({ onNavigate }: HomePageProps) {
     return `${value}+`;
   };
   const totalGuides = guideCategories.reduce((total, category) => total + category.guides.length, 0);
-  type StatKey = 'apps' | 'extensions' | 'guides' | 'communities';
+  type StatKey = 'apps' | 'extensions' | 'guides' ;
   const statCounts: Record<StatKey, number> = {
     apps: unifiedApps.length,
     extensions: unifiedExtensions.length,
     guides: totalGuides,
-    communities: communities.length,
   };
   const statMeta: Array<{
     key: StatKey;

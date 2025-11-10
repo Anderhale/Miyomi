@@ -108,8 +108,6 @@ Navigate to `src/data/guides.json` and add your guide to the appropriate categor
 ### Adding Other Resources
 
 - **FAQs:** Edit `src/data/faqs.json`
-- **Communities:** Edit `src/data/communities.json`
-- **Websites:** Edit `src/data/websites.json`
 
 ### How to Submit
 

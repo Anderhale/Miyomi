@@ -109,18 +109,14 @@ export interface WebsiteData {
 
 import appsJson from './apps.json';
 import extensionsJson from './extensions.json';
-import communitiesJson from './communities.json';
 import faqsJson from './faqs.json';
 import guidesJson from './guides.json';
-import websitesJson from './websites.json';
 
 // ----- Typed Data Exports -----
 export const unifiedApps: AppData[] = appsJson as AppData[];
 export const unifiedExtensions: ExtensionData[] = extensionsJson as ExtensionData[];
-export const communities: CommunityData[] = communitiesJson as CommunityData[];
 export const faqs: FAQData[] = faqsJson as FAQData[];
 export const guideCategories: GuideCategoryData[] = guidesJson as GuideCategoryData[];
-export const websites: WebsiteData[] = websitesJson as WebsiteData[];
 
 // ===========================================
 // HELPER FUNCTIONS
@@ -152,19 +148,6 @@ export function getExtensionApps(extensionId: string): AppData[] {
   const extension = unifiedExtensions.find(ext => ext.id === extensionId);
   if (!extension) return [];
   return unifiedApps.filter(app => extension.supportedApps.includes(app.id));
-}
-
-// ----- Communities -----
-export function getCommunityById(communityId: string): CommunityData | undefined {
-  return communities.find(c => c.id === communityId);
-}
-
-export function getCommunitiesByApp(appId: string): CommunityData[] {
-  return communities.filter(c => c.relatedAppIds?.includes(appId));
-}
-
-export function getCommunitiesByPlatform(platform: CommunityPlatform): CommunityData[] {
-  return communities.filter(c => c.platform === platform);
 }
 
 // ----- FAQs -----
@@ -203,15 +186,6 @@ export function getGuidesByExtension(extensionId: string): GuideTopicData[] {
   return allGuides;
 }
 
-// ----- Websites -----
-export function getWebsiteById(websiteId: string): WebsiteData | undefined {
-  return websites.find(w => w.id === websiteId);
-}
-
-export function getWebsitesByCategory(category: WebsiteCategory): WebsiteData[] {
-  return websites.filter(w => w.category === category);
-}
-
 // ===========================================
 // SEARCH HELPERS
 // ===========================================
@@ -219,10 +193,8 @@ export function getWebsitesByCategory(category: WebsiteCategory): WebsiteData[] 
 export function searchAll(query: string): {
   apps: AppData[];
   extensions: ExtensionData[];
-  communities: CommunityData[];
   faqs: FAQData[];
   guides: GuideTopicData[];
-  websites: WebsiteData[];
 } {
   const lowerQuery = query.toLowerCase();
   
@@ -237,11 +209,6 @@ export function searchAll(query: string): {
       ext.info?.toLowerCase().includes(lowerQuery) ||
       ext.keywords?.some(k => k.toLowerCase().includes(lowerQuery))
     ),
-    communities: communities.filter(c =>
-      c.name.toLowerCase().includes(lowerQuery) ||
-      c.description.toLowerCase().includes(lowerQuery) ||
-      c.keywords?.some(k => k.toLowerCase().includes(lowerQuery))
-    ),
     faqs: faqs.filter(f =>
       f.question.toLowerCase().includes(lowerQuery) ||
       f.answer.toLowerCase().includes(lowerQuery) ||
@@ -250,11 +217,6 @@ export function searchAll(query: string): {
     guides: guideCategories.flatMap(gc => gc.guides).filter(g =>
       g.title.toLowerCase().includes(lowerQuery) ||
       g.keywords?.some(k => k.toLowerCase().includes(lowerQuery))
-    ),
-    websites: websites.filter(w =>
-      w.name.toLowerCase().includes(lowerQuery) ||
-      w.description.toLowerCase().includes(lowerQuery) ||
-      w.keywords?.some(k => k.toLowerCase().includes(lowerQuery))
-    ),
+    )
   };
 }

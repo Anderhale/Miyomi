@@ -338,25 +338,6 @@ export function GuidesPage({ onNavigate }: GuidesPageProps) {
             </p>
           </div>
         </button>
-
-        <button
-          onClick={() => onNavigate?.('/communities')}
-          className="group relative p-6 bg-[var(--bg-surface)] border border-[var(--divider)] rounded-2xl hover:shadow-lg hover:border-[var(--brand)] transition-all text-left overflow-hidden"
-          style={{ boxShadow: '0 6px 20px 0 rgba(0,0,0,0.08)' }}
-        >
-          <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[#B3D9FF]/20 to-transparent rounded-bl-[100px] opacity-0 group-hover:opacity-100 transition-opacity"></div>
-          <div className="relative">
-            <div className="flex items-center gap-2 mb-2">
-              <Sparkles className="w-5 h-5 text-[var(--brand)]" />
-              <h3 className="font-['Poppins',sans-serif] text-[var(--text-primary)]" style={{ fontWeight: 600 }}>
-                Need help?
-              </h3>
-            </div>
-            <p className="text-[var(--text-secondary)] font-['Inter',sans-serif] text-sm">
-              Join our community for support, tips, and discussions
-            </p>
-          </div>
-        </button>
       </div>
     </div>
   );

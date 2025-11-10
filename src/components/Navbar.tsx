@@ -59,10 +59,8 @@ export function Navbar({ onNavigate }: NavbarProps) {
   const mainNavItems = [
     { label: 'Home', path: '/' },
     { label: 'Software', path: '/software' },
-    // { label: 'Websites', path: '/websites' },
     { label: 'Extensions', path: '/extensions' },
     { label: 'FAQ', path: '/faq' },
-    // { label: 'Communities', path: '/communities' },
     { label: 'About', path: '/about' },
   ];
 
