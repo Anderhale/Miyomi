@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, Tag, TrendingUp } from 'lucide-react';
+import { Calendar, Tag, Download as DownloadIcon } from 'lucide-react';
 import type { ReleaseData } from '../hooks/useGitHubRelease';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -20,6 +20,19 @@ export function GitHubReleaseMeta({
   formatDate,
   className = 'mb-4',
 }: GitHubReleaseMetaProps) {
+  const formatDownloadCount = (value: number) => {
+    if (value >= 1_000_000_000) {
+      return `${(value / 1_000_000_000).toFixed(value >= 10_000_000_000 ? 0 : 1).replace(/\.0$/, '')}B`;
+    }
+    if (value >= 1_000_000) {
+      return `${(value / 1_000_000).toFixed(value >= 10_000_000 ? 0 : 1).replace(/\.0$/, '')}M`;
+    }
+    if (value >= 1_000) {
+      return `${(value / 1_000).toFixed(value >= 10_000 ? 0 : 1).replace(/\.0$/, '')}K`;
+    }
+    return value.toLocaleString();
+  };
+
   if (!release && !loading) {
     return null;
   }
@@ -60,12 +73,12 @@ export function GitHubReleaseMeta({
 
           {release?.downloads && release.downloads > 0 && (
             <div className="inline-flex items-center gap-1.5 rounded-full border border-[var(--divider)] bg-[var(--chip-bg)] px-3 py-1.5">
-              <TrendingUp className="w-3.5 h-3.5 text-[var(--brand)]" />
+              <DownloadIcon className="w-3.5 h-3.5 text-[var(--brand)]" />
               <span
                 className="text-xs sm:text-sm text-[var(--text-secondary)] font-['Inter',sans-serif]"
                 style={{ fontWeight: 500 }}
               >
-                {release.downloads.toLocaleString()}
+                {formatDownloadCount(release.downloads)}
               </span>
             </div>
           )}

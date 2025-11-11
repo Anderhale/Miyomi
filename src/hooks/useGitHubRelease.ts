@@ -95,6 +95,65 @@ export function useGitHubRelease(githubUrl?: string, fallbackDate?: string): Use
 
     const fetchRelease = async () => {
       try {
+        const headers = {
+          Accept: 'application/vnd.github.v3+json',
+        };
+
+        const sumDownloads = (releases: GitHubRelease[]) =>
+          releases
+            .filter(release => !release.draft)
+            .reduce(
+              (total, release) =>
+                total +
+                release.assets.reduce(
+                  (assetSum, asset) => assetSum + asset.download_count,
+                  0
+                ),
+              0
+            );
+
+        const fetchLifetimeDownloads = async (
+          initialReleases?: GitHubRelease[]
+        ): Promise<number> => {
+          let total = 0;
+          let nextPage = 1;
+
+          if (initialReleases) {
+            total += sumDownloads(initialReleases);
+            if (initialReleases.length < 100) {
+              return total;
+            }
+            nextPage = 2;
+          }
+
+          while (true) {
+            const response = await fetch(
+              `https://api.github.com/repos/${githubRepo}/releases?per_page=100&page=${nextPage}`,
+              { headers }
+            );
+
+            if (!response.ok) {
+              throw new Error(`GitHub API error: ${response.status}`);
+            }
+
+            const releases: GitHubRelease[] = await response.json();
+
+            if (releases.length === 0) {
+              break;
+            }
+
+            total += sumDownloads(releases);
+
+            if (releases.length < 100) {
+              break;
+            }
+
+            nextPage += 1;
+          }
+
+          return total;
+        };
+
         const cached = releaseCache.get(githubRepo);
         if (cached && Date.now() - cached.timestamp < CACHE_DURATION) {
           setRelease(cached.data);
@@ -124,14 +183,11 @@ export function useGitHubRelease(githubUrl?: string, fallbackDate?: string): Use
         // First, try to fetch the latest release
         let response = await fetch(
           `https://api.github.com/repos/${githubRepo}/releases/latest`,
-          {
-            headers: {
-              'Accept': 'application/vnd.github.v3+json',
-            },
-          }
+          { headers }
         );
 
         let releaseData: ReleaseData;
+        let initialReleasePage: GitHubRelease[] | undefined;
 
         if (response.ok) {
           const data: GitHubRelease = await response.json();
@@ -139,12 +195,8 @@ export function useGitHubRelease(githubUrl?: string, fallbackDate?: string): Use
         } else if (response.status === 404) {
           // No latest release found (only pre-releases), fetch all releases instead
           response = await fetch(
-            `https://api.github.com/repos/${githubRepo}/releases`,
-            {
-              headers: {
-                'Accept': 'application/vnd.github.v3+json',
-              },
-            }
+            `https://api.github.com/repos/${githubRepo}/releases?per_page=100`,
+            { headers }
           );
 
           if (!response.ok) {
@@ -152,6 +204,7 @@ export function useGitHubRelease(githubUrl?: string, fallbackDate?: string): Use
           }
 
           const releases: GitHubRelease[] = await response.json();
+          initialReleasePage = releases;
 
           if (releases.length === 0) {
             throw new Error('No releases found');
@@ -168,6 +221,16 @@ export function useGitHubRelease(githubUrl?: string, fallbackDate?: string): Use
           releaseData = processReleaseData(nonDraftReleases[0]);
         } else {
           throw new Error(`GitHub API error: ${response.status}`);
+        }
+
+        try {
+          const lifetimeDownloads = await fetchLifetimeDownloads(initialReleasePage);
+          releaseData = {
+            ...releaseData,
+            downloads: lifetimeDownloads || releaseData.downloads,
+          };
+        } catch (downloadError) {
+          console.warn('Failed to fetch lifetime downloads:', downloadError);
         }
 
         // Cache the result
