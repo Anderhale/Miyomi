@@ -58,7 +58,7 @@ export function GitHubCommitSummary({
             className="text-sm text-[var(--brand)] hover:text-[var(--brand-strong)] transition-colors font-['Inter',sans-serif]"
             style={{ fontWeight: 500 }}
           >
-            View commit →
+            View all commit →
           </a>
         )}
       </div>

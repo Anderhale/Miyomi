@@ -9,6 +9,7 @@ import { ParticleBackground } from '../components/ParticleBackground';
 import { useFeedbackState } from '../hooks/useFeedbackState';
 import { FlagDisplay } from '../components/FlagDisplay';
 import { useGitHubLastCommit } from '../hooks/useGitHubLastCommit';
+import { GitHubCommitSummary } from '../components/GitHubCommitSummary';
 
 interface ExtensionDetailPageProps {
   extensionId: string;
@@ -28,7 +29,7 @@ export function ExtensionDetailPage({ extensionId, onNavigate }: ExtensionDetail
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
 
   // Fetch GitHub last commit data
-  const { commit, loading: commitLoading } = useGitHubLastCommit(
+  const { commit, commits, loading: commitLoading } = useGitHubLastCommit(
     extension?.github,
     extension?.lastUpdated
   );
@@ -435,6 +436,15 @@ export function ExtensionDetailPage({ extensionId, onNavigate }: ExtensionDetail
             </div>
           )}
         </div>
+      )}
+
+      {extension.github && (
+        <GitHubCommitSummary
+          commit={commit}
+          commits={commits}
+          loading={commitLoading}
+          formatDate={formatDate}
+        />
       )}
 
       {/* Support Information */}
