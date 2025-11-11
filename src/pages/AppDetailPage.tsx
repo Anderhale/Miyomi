@@ -9,7 +9,7 @@ import { ExtensionGridCard } from '../components/ExtensionGridCard';
 import { GitHubReleaseMeta, GitHubReleaseNotes } from '../components/GitHubReleaseMeta';
 import { GitHubDownloadAssets } from '../components/GitHubDownloadAssets';
 import { GitHubCommitSummary } from '../components/GitHubCommitSummary';
-import { getAppById, getAppExtensions } from '../data';
+import { getAppById, getAppExtensions, getExtensionById } from '../data';
 import { useGitHubRelease } from '../hooks/useGitHubRelease';
 import { useGitHubLastCommit } from '../hooks/useGitHubLastCommit';
 
@@ -20,7 +20,11 @@ interface AppDetailPageProps {
 
 export function AppDetailPage({ appId, onNavigate }: AppDetailPageProps) {
   const app = getAppById(appId);
-  const recommendedExtensions = getAppExtensions(appId);
+  const supportedExtensions = (app?.supportedExtensions ?? [])
+    .map((extensionId) => getExtensionById(extensionId))
+    .filter((ext): ext is NonNullable<typeof ext> => Boolean(ext));
+  const recommendedExtensions =
+    supportedExtensions.length > 0 ? supportedExtensions : getAppExtensions(appId);
   const displayedExtensions = recommendedExtensions.slice(0, 3);
   const hasMoreExtensions = recommendedExtensions.length > displayedExtensions.length;
   const location = useLocation();
