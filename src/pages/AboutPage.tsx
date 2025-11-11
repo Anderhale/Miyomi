@@ -210,7 +210,7 @@ export function AboutPage() {
                   {member.name}
                 </h3>
                 <p className="text-[var(--brand)] text-sm font-medium">{member.role}</p>
-                <p className="text-[var(--text-secondary)] text-sm mt-2">{member.description}</p>
+                <p className="text-[var(--text-secondary)] text-sm mt-2 px-3">{member.description}</p>
                 <div className="mt-3">
                   {member.links.map((link) => (
                     <a
@@ -230,6 +230,32 @@ export function AboutPage() {
             </Card>
           ))}
         </div>
+
+        <Card className="mt-6 bg-[var(--bg-surface)]/70">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-5">
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--chip-bg)] text-[var(--brand)]">
+              <Users className="w-6 h-6" />
+            </div>
+            <div>
+              <h3 className="font-['Poppins',sans-serif] text-[var(--text-primary)] text-lg font-semibold">
+                Community contributors
+              </h3>
+              <p className="text-[var(--text-secondary)] text-sm leading-6">
+                Shout-out to everyone leaving feedback, filing GitHub issues, testing updates, and suggesting copy tweaks. Your notes help us ship accurate listings faster.
+              </p>
+              <div className="mt-2 flex flex-wrap gap-4 text-sm font-medium">
+                <a
+                  href="https://github.com/tas33n/miyomi"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-[var(--brand)] hover:underline"
+                >
+                  GitHub crew <ArrowUpRight className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </Card>
 
         {/* Shout-out */}
         <Card className="mt-6 bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20">
