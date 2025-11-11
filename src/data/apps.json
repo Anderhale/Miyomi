@@ -2,8 +2,10 @@
   {
     "id": "aniyomi",
     "name": "Aniyomi",
+    "status": "active",
+    "author": "jmir1",
     "contentTypes": ["Manga", "Anime"],
-    "description": "Full-featured player and reader, based on Mihon.",
+    "description": "An app for manga and anime."],
     "platforms": ["Android"],
     "iconColor": "#FF6B9D",
     "logoUrl": "https://aniyomi.org/img/logo-128px.png",
@@ -16,9 +18,9 @@
     "tutorials": [
       {
         "title": "Aniyomi Installation & Setup",
-        "type": "video",
-        "url": "https://www.facebook.com/reel/591936990409393",
-        "description": ""
+        "type": "guide",
+        "url": "https://miyomi.pages.dev/guides#installation",
+        "description": "Step-by-step tutorials to help you use and understand various apps and extensions."
       },
       {
         "title": "Getting started",
@@ -31,6 +33,7 @@
   {
     "id": "mihon",
     "name": "Mihon",
+    "status": "active",
     "contentTypes": ["Manga"],
     "description": "Free and open-source manga reader for Android. Fork of Tachiyomi with enhanced features.",
     "platforms": ["Android"],
@@ -53,6 +56,7 @@
   {
     "id": "dantotsu",
     "name": "Dantotsu",
+    "status": "active",
     "contentTypes": ["Manga", "Anime"],
     "description": "Feature-rich app for manga and anime with MAL/AniList sync and extensive customization.",
     "platforms": ["Android"],
@@ -67,6 +71,7 @@
   {
   "id": "dartotsu",
   "name": "Dartotsu",
+  "status": "active",
   "contentTypes": ["Manga", "Anime", "Light Novel"],
   "description": "Successor to Dantotsu. Rebuilt in Flutter for speed, cross‑platform support, and modern elegance.",
   "platforms": ["Android", "iOS", "Windows", "Mac", "Linux"],
@@ -83,6 +88,7 @@
   {
     "id": "mangayomi",
     "name": "Mangayomi",
+    "status": "active",
     "contentTypes": ["Manga", "Light Novel","Anime"],
     "description": "A free and open‑source app for reading manga, novels, and watching anime — available on all major platforms.",
     "platforms": ["Windows", "Mac", "Android", "iOS", "Linux"],
@@ -96,7 +102,8 @@
   },
   {
     "id": "tachiyomi",
-    "name": "Tachiyomi (Discontinued)",
+    "name": "Tachiyomi",
+    "status": "dmca",
     "contentTypes": ["Manga"],
     "description": "Free and Open-source manga reader",
     "platforms": ["Android"],
@@ -110,7 +117,8 @@
   },
   {
     "id": "kotatsu",
-    "name": "Kotatsu (Discontinued)",
+    "name": "Kotatsu",
+    "status": "dmca",
     "contentTypes": ["Manga"],
     "description": "Lightweight manga reader with clean interface and local library management.",
     "platforms": ["Android"],
@@ -126,6 +134,7 @@
   {
     "id": "cloudstream",
     "name": "Cloudstream",
+    "status": "active",
     "contentTypes": ["Anime"],
     "description": "A free, open‑source Android app for streaming and downloading media, where you bring the content from your own sources.",
     "platforms": ["Android"],
@@ -139,7 +148,8 @@
   },
   {
     "id": "migu",
-    "name": "Migu (Discontinued)",
+    "name": "Migu",
+    "status": "discontinued",
     "contentTypes": ["Anime"],
     "description": "A free, open‑source media app for Android, Windows, macOS, and Linux.",
     "platforms": ["Android"],
@@ -154,6 +164,7 @@
   {
     "id": "tachiyomi-sy",
     "name": "TachiyomiSY",
+    "status": "active",
     "contentTypes": ["Manga"],
     "description": "Feature-packed Mihon fork for Android with extensive customization and reader tweaks.",
     "platforms": ["Android"],
@@ -169,6 +180,7 @@
   {
     "id": "tachiyomi-j2k",
     "name": "TachiyomiJ2K",
+    "status": "abandoned",
     "contentTypes": ["Manga"],
     "description": "Refined Mihon fork offering a Redesigned UI, Dynamic categories and more.",
     "platforms": ["Android"],
@@ -184,6 +196,7 @@
   {
     "id": "yokai",
     "name": "Yokai",
+    "status": "active",
     "contentTypes": ["Manga"],
     "description": "Takes the best from J2K and enhances it.",
     "platforms": ["Android"],
@@ -199,6 +212,7 @@
   {
     "id": "komikku",
     "name": "Komikku",
+    "status": "active",
     "contentTypes": ["Manga"],
     "description": "Forked from TachiyomiSY and Mihon, it's a free, open‑source manga reader for Android that adds unique features and frequent updates.",
     "platforms": ["Android"],
@@ -214,6 +228,7 @@
   {
     "id": "neko",
     "name": "Neko",
+    "status": "active",
     "contentTypes": ["Manga"],
     "description": "Dedicated MangaDex client for Android with login, tracking, and download support.",
     "platforms": ["Android"],
@@ -228,6 +243,7 @@
   {
     "id": "perfect-viewer",
     "name": "Perfect Viewer",
+    "status": "active",
     "contentTypes": ["Manga"],
     "description": "Long-running local reader for Android with extensive format support and bookshelf layouts.",
     "platforms": ["Android"],
@@ -241,6 +257,7 @@
   {
     "id": "kuro-reader",
     "name": "Kuro Reader +",
+    "status": "active",
     "contentTypes": ["Manga"],
     "description": "Freemium Android reader for local comics with cloud sync and more.",
     "platforms": ["Android"],
@@ -255,6 +272,7 @@
   {
     "id": "cdisplayex",
     "name": "CDisplayEx",
+    "status": "active",
     "contentTypes": ["Manga"],
     "description": "Popular Android comic reader supporting all comic book formats with smooth page rendering and bookshelf mode.",
     "platforms": ["Android"],
@@ -269,6 +287,7 @@
   {
     "id": "ln-reader",
     "name": "LN Reader",
+    "status": "active",
     "contentTypes": ["Light Novel"],
     "description": "Free and open source light novel reader for Android, inspired by Tachiyomi.",
     "platforms": ["Android"],
@@ -284,6 +303,7 @@
   {
     "id": "quicknovel",
     "name": "QuickNovel",
+    "status": "active",
     "contentTypes": ["Light Novel"],
     "description": "An ad‑free, open‑source Android app for downloading novels and reading EPUBs.",
     "platforms": ["Android"],
@@ -299,6 +319,7 @@
   {
     "id": "shosetsu",
     "name": "Shosetsu",
+    "status": "active",
     "contentTypes": ["Light Novel"],
     "description": "A Free and Open Source Novel Reader for Android.",
     "platforms": ["Android"],
@@ -314,6 +335,7 @@
   {
     "id": "moon-reader",
     "name": "Moon+ Reader",
+    "status": "active",
     "contentTypes": ["Light Novel"],
     "description": "Versatile eBook reader on Android supporting EPUB, PDF, and custom themes with TTS.",
     "platforms": ["Android"],
@@ -326,7 +348,8 @@
   },
   {
     "id": "nineanimator",
-    "name": "NineAnimator (Discontinued)",
+    "name": "NineAnimator",
+    "status": "Discontinued",
     "contentTypes": ["Anime"],
     "description": "9ani is a free and open source anime watching app for iOS and macOS.",
     "platforms": ["iOS"],
@@ -340,6 +363,7 @@
   {
     "id": "paperback",
     "name": "Paperback",
+    "status": "active",
     "contentTypes": ["Manga"],
     "description": "An Ad-Free Comic/Manga Reader for iOS.",
     "platforms": ["iOS"],
@@ -355,6 +379,7 @@
   {
     "id": "aidoku",
     "name": "Aidoku",
+    "status": "active",
     "contentTypes": ["Manga"],
     "description": "A free and open source manga reading application for iOS and iPadOS.",
     "platforms": ["iOS"],
@@ -370,6 +395,7 @@
   {
     "id": "tachimanga",
     "name": "Tachimanga",
+    "status": "active",
     "contentTypes": ["Manga"],
     "description": "Freemium manga reader for iOS.",
     "platforms": ["iOS"],
@@ -393,6 +419,7 @@
   {
     "id": "suwatte",
     "name": "Suwatte",
+    "status": "active",
     "contentTypes": ["Manga"],
     "description": "Suwatte is an ad-free, open source & feature-rich comic/manga reader for iOS.",
     "platforms": ["iOS"],
@@ -408,6 +435,7 @@
   {
     "id": "stremio",
     "name": "Stremio",
+    "status": "active",
     "contentTypes": ["Anime"],
     "description": "Stremio is a free, open‑source media player that supports almost every platform, letting you organize and enjoy movies, series, live TV, and online channels through community addons with features like cross‑device sync, casting, and much more.",
     "platforms": ["Windows", "Mac", "Linux"],
@@ -435,6 +463,7 @@
   {
     "id": "seanime",
     "name": "Seanime",
+    "status": "active",
     "contentTypes": ["Anime"],
     "description": "A media server with a web interface and desktop app for watching anime, managing your local library, and reading manga.",
     "platforms": ["Windows", "Mac", "Linux"],
@@ -450,6 +479,7 @@
   {
     "id": "toru",
     "name": "Toru",
+    "status": "active",
     "contentTypes": ["Anime"],
     "description": "Stream Torrents instantly, straight from the Command Line.",
     "platforms": ["Windows", "Mac", "Linux"],
@@ -463,6 +493,7 @@
   {
     "id": "suwayomi",
     "name": "Suwayomi",
+    "status": "active",
     "contentTypes": ["Manga"],
     "description": "Successor to Tachidesk providing a self-hosted server with multiple desktop clients.",
     "platforms": ["Windows", "Mac", "Linux"],
@@ -477,6 +508,7 @@
   {
     "id": "yacreader",
     "name": "YACReader",
+    "status": "active",
     "contentTypes": ["Manga"],
     "description": "Cross-platform comic and manga reader with library server, history, and customizable viewer.",
     "platforms": ["Windows", "Mac", "Linux", "iOS", "Android"],
@@ -506,6 +538,7 @@
   {
     "id": "thorium",
     "name": "Thorium Reader",
+    "status": "active",
     "contentTypes": ["Light Novel"],
     "description": "A free, open‑source EPUB reader for Windows, macOS, and Linux, with OPDS catalog support, and multilingual interface.",
     "platforms": ["Windows", "Mac", "Linux"],
@@ -520,6 +553,7 @@
   {
     "id": "anikku",
     "name": "Anikku",
+    "status": "active",
     "contentTypes": ["Anime"],
     "description": "Free and open source anime watcher for Android based on Aniyomi.",
     "platforms": ["Android"],
@@ -535,6 +569,7 @@
   {
     "id": "anymex",
     "name": "AnymeX",
+    "status": "active",
     "contentTypes": ["Anime", "Manga", "Light Novel"],
     "description": "Multi-service client for anime, manga, novels, and more.",
     "platforms": ["Android", "iOS", "Windows","Linux","Mac", "Web"],
@@ -550,6 +585,7 @@
   {
     "id": "animiru",
     "name": "Animiru",
+    "status": "active",
     "contentTypes": ["Anime"],
     "description": "Open-source Android anime client with clean UI baes on Aniyomi.",
     "platforms": ["Android"],
@@ -565,6 +601,7 @@
   {
     "id": "comicrack-ce",
     "name": "ComicRack CE",
+    "status": "active",
     "contentTypes": ["Manga"],
     "description": "Community edition of the classic ComicRack reader for Windows with plugin support.",
     "platforms": ["Windows"],
@@ -579,6 +616,7 @@
   {
     "id": "hayase",
     "name": "Hayase",
+    "status": "active",
     "contentTypes": ["Anime"],
     "description": "Android and Android TV streaming app with addon-driven architecture.",
     "platforms": ["Android","iOS","Windows","Linux","Mac"],
@@ -594,6 +632,7 @@
   {
     "id": "koreader",
     "name": "KOReader",
+    "status": "active",
     "contentTypes": ["Manga", "Light Novel"],
     "description": "KOReader is a document viewer primarily aimed at e-ink readers. Open-source multi-format reader supporting PDF, EPUB, FB2 and many more formats, running on Cervantes, Kindle, Kobo, PocketBook and Android devices.",
     "platforms": ["Android", "Linux"],
@@ -608,6 +647,7 @@
   {
     "id": "legado",
     "name": "Legado",
+    "status": "active",
     "contentTypes": ["Light Novel"],
     "description": "Android light novel reader with extension system and customizable sources.",
     "platforms": ["Android"],
@@ -623,6 +663,7 @@
    {
     "id": "opencomic",
     "name": "OpenComic",
+    "status": "active",
     "contentTypes": ["Manga"],
     "description": "Cross-platform manga/comic reader.",
     "platforms": ["Windows", "Mac", "Linux"],
@@ -638,6 +679,7 @@
   {
     "id": "panels",
     "name": "Panels",
+    "status": "active",
     "contentTypes": ["Manga"],
     "description": "Highly polished iOS comic reader with library management and cloud sync.",
     "platforms": ["iOS"],
@@ -652,6 +694,7 @@
   {
     "id": "shiru",
     "name": "Shiru",
+    "status": "active",
     "contentTypes": ["Anime"],
     "description": "Lightweight open-source anime client.",
     "platforms": ["Android","Windows","Linux","Mac"],
@@ -665,6 +708,7 @@
   {
     "id": "yomikiru",
     "name": "Yomikiru",
+    "status": "active",
     "contentTypes": ["Manga", "Light Novel"],
     "description": "Desktop application designed for reading locally stored manga, comics, webtoons, and EPUB novels",
     "platforms": ["Windows", "Linux"],
@@ -678,6 +722,7 @@
   {
     "id": "tachiyomi-az",
     "name": "Tachiyomi AZ",
+    "status": "active",
     "contentTypes": ["Manga"],
     "description": "A fork of Mihon focused on reading free doujinshi and email-based content.",
     "platforms": ["Android"],
@@ -693,6 +738,7 @@
   {
     "id": "tachiyomi-at",
     "name": "Tachiyomi AT",
+    "status": "active",
     "contentTypes": ["Manga"],
     "description": "A fork of Mihon/Tachiyomi with automatic manga translation features, supporting MLKit, Google Translate, Gemini, and OpenRouter APIs.",
     "platforms": ["Android"],
@@ -707,6 +753,7 @@
   {
     "id": "animetail",
     "name": "Animetail",
+    "status": "active",
     "contentTypes": ["Anime", "Manga"],
     "description": "Unofficial fork of Aniyomi, with features like Discord Rich Presence, torrent support, and tracker integration.",
     "platforms": ["Android"],
@@ -721,6 +768,7 @@
   {
     "id": "readest",
     "name": "Readest",
+    "status": "active",
     "contentTypes": ["Light Novel", "Manga"],
     "description": "Modern, feature-rich ebook reader supporting EPUB, MOBI, CBZ, PDF, and more. Offering cross-platform sync, annotations, TTS, and translation.",
     "platforms": ["Android", "iOS", "Windows", "Mac", "Linux", "Web"],
@@ -736,6 +784,7 @@
   {
     "id": "sora",
     "name": "Sora",
+    "status": "active",
     "contentTypes": ["Anime"],
     "description": "A modular media player for iOS and macOS, also known as Sulfur. Supports custom modules, external players, tracking services, and personal media servers.",
     "platforms": ["iOS", "Mac"],
@@ -750,6 +799,7 @@
   {
     "id": "unyo",
     "name": "Unyo",
+    "status": "active",
     "contentTypes": ["Anime", "Manga"],
     "description": "A Desktop app for anime streaming and manga reading, inspired by Dantotsu. Integrates AniList, supports remote and local extensions.",
     "platforms": ["Windows", "Mac", "Linux"],
@@ -763,6 +813,7 @@
   {
     "id": "totoro",
     "name": "Totoro",
+    "status": "active",
     "contentTypes": ["Anime"],
     "description": "Windows 10/11 application for watching and tracking anime.",
     "platforms": ["Windows"],
@@ -777,6 +828,7 @@
   {
     "id": "zenshin",
     "name": "Zenshin",
+    "status": "active",
     "contentTypes": ["Anime"],
     "description": "Web and Electron-based anime streaming app with media management and external player support",
     "platforms": ["Windows", "Mac", "Linux", "Web"],
@@ -791,6 +843,7 @@
   {
     "id": "houdoku",
     "name": "Houdoku",
+    "status": "active",
     "contentTypes": ["Manga"],
     "description": "Free and open-source desktop manga reader and library manager. Supports filesystem imports, plugins, offline reading, and customizable UI.",
     "platforms": ["Windows", "Mac", "Linux"],
@@ -805,6 +858,7 @@
   {
   "id": "anilab",
   "name": "Anilab",
+  "status": "active",
   "contentTypes": ["Anime"],
   "description": "A free anime player that lets you stream and organize titles with options for favorites, downloads, and daily updates.",
   "platforms": ["Android", "iOS"],
@@ -816,6 +870,7 @@
   {
   "id": "miru-app",
   "name": "Miru App",
+  "status": "active",
   "contentTypes": ["Anime"],
   "description": "Free and open source Multi-functional application that supports video, comics, novels extended source for Android, Windows, Web.",
   "platforms": ["Android", "Windows", "Web"],
@@ -827,7 +882,7 @@
   },
   {
   "id": "IReader",
-  "name": "IReader",
+  "name": "IReader",  
   "status": "active",
   "author": "IReader",
   "contentTypes": ["Light Novel"],
@@ -853,6 +908,7 @@
   {
   "id": "kotatsu-redo",
   "name": "Kotatsu Redo",
+  "status": "active",
   "contentTypes": ["Manga"],
   "description": "Fork of Kotatsu with a goal to maitain existing features and sources.",
   "platforms": ["Android"],
