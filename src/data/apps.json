@@ -881,6 +881,31 @@
   "githubUrl":"https://github.com/miru-project/miru-app"
   },
   {
+  "id": "Shiru",
+  "name": "Shiru ",
+  "status": "active",
+  "author": "RockinChaos",
+  "contentTypes": ["Anime"],
+  "description": "Manage your personal media library, organize your collection, and stream your content in real time, no waiting required",
+  "platforms": ["Android", "iOS", "Windows", "Mac", "Linux"],
+  "iconColor": "#FF6B9D",
+  "logoUrl": "https://avatars.githubusercontent.com/username",
+  "keywords": ["android", "anime"],
+  "supportedExtensions": ["extension-id-1", "extension-id-2"],
+  "lastUpdated": "2025-01-15",
+  "githubUrl": "https://github.com/RockinChaos/Shiru",
+  "officialSite": "https://example.com",
+  "discordUrl": "https://discord.gg/invite",
+  "tutorials": [
+    {
+      "title": "Tutorial Title",
+      "type": "video",
+      "url": "https://youtube.com/...",
+      "description": "Tutorial description"
+    }
+  ]
+},
+  {
   "id": "IReader",
   "name": "IReader",  
   "status": "active",
