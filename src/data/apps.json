@@ -826,6 +826,31 @@
   "githubUrl":"https://github.com/miru-project/miru-app"
   },
   {
+  "id": "IReader",
+  "name": "IReader",
+  "status": "active",
+  "author": "IReader",
+  "contentTypes": ["Light Novel"],
+  "description": "Free and open source novel reader for Android and Desktop.",
+  "platforms": ["Android", "Windows"],
+  "iconColor": "#FF6B9D",
+  "logoUrl": "https://ireaderorg.netlify.app/logo.png",
+  "keywords": ["Light Novel", "android"],
+  "supportedExtensions": ["extension-id-1", "extension-id-2"],
+  "lastUpdated": "2025-11-11",
+  "githubUrl": "https://github.com/IReaderorg/IReader",
+  "officialSite": "https://ireaderorg.netlify.app/",
+  "discordUrl": "https://discord.com/invite/HBU6zD8c5v",
+  "tutorials": [
+    {
+      "title": "Tutorial Title",
+      "type": "guide",
+      "url": "https://ireaderorg.netlify.app/help/",
+      "description": "Tutorial description"
+    }
+  ]
+},
+  {
   "id": "kotatsu-redo",
   "name": "Kotatsu Redo",
   "contentTypes": ["Manga"],
