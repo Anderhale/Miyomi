@@ -13,6 +13,47 @@ import { getAppById, getAppExtensions, getExtensionById } from '../data';
 import { useGitHubRelease } from '../hooks/useGitHubRelease';
 import { useGitHubLastCommit } from '../hooks/useGitHubLastCommit';
 
+type StatusStyle = {
+  bg: string;
+  text: string;
+  border: string;
+};
+
+const STATUS_STYLE_MAP: Record<string, StatusStyle> = {
+  discontinued: { bg: 'rgba(255, 99, 71, 0.15)', text: '#FF6347', border: 'rgba(255, 99, 71, 0.4)' },
+  abandoned: { bg: 'rgba(255, 193, 7, 0.15)', text: '#FFB300', border: 'rgba(255, 193, 7, 0.4)' },
+  suspended: { bg: 'rgba(156, 39, 176, 0.15)', text: '#9C27B0', border: 'rgba(156, 39, 176, 0.35)' },
+  dmca: { bg: 'rgba(233, 30, 99, 0.15)', text: '#E91E63', border: 'rgba(233, 30, 99, 0.35)' },
+  dead: { bg: 'rgba(158, 158, 158, 0.15)', text: '#9E9E9E', border: 'rgba(158, 158, 158, 0.35)' },
+};
+
+const STATUS_LABEL_MAP: Record<string, string> = {
+  discontinued: 'Discontinued',
+  abandoned: 'Abandoned',
+  suspended: 'Suspended',
+  dmca: 'DMCA',
+  dead: 'Dead',
+};
+
+const DEFAULT_STATUS_STYLE: StatusStyle = {
+  bg: 'rgba(255, 255, 255, 0.08)',
+  text: 'var(--text-secondary)',
+  border: 'rgba(255, 255, 255, 0.2)',
+};
+
+const getStatusLabel = (status: string): string => {
+  const normalized = status.trim().toLowerCase();
+  if (STATUS_LABEL_MAP[normalized]) {
+    return STATUS_LABEL_MAP[normalized];
+  }
+
+  return status
+    .replace(/[_-]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .replace(/\b\w/g, (char) => char.toUpperCase());
+};
+
 interface AppDetailPageProps {
   appId: string;
   onNavigate?: (path: string) => void;
@@ -76,6 +117,16 @@ export function AppDetailPage({ appId, onNavigate }: AppDetailPageProps) {
     }
     return null;
   }, [app]);
+
+  const statusBadge = React.useMemo(() => {
+    if (!app?.status) return null;
+    const normalized = app.status.trim().toLowerCase();
+    const style = STATUS_STYLE_MAP[normalized] ?? DEFAULT_STATUS_STYLE;
+    return {
+      label: getStatusLabel(app.status),
+      style,
+    };
+  }, [app?.status]);
 
   const handleBackClick = () => {
     const scrollPos = location.state?.previousScrollPosition;
@@ -352,12 +403,28 @@ export function AppDetailPage({ appId, onNavigate }: AppDetailPageProps) {
 
           {/* App Info */}
           <div className="w-full min-w-0 flex-1 text-center sm:text-left lg:pr-8">
-            <h1
-              className="text-[var(--text-primary)] font-['Poppins',sans-serif] mb-2"
-              style={{ fontSize: 'clamp(24px, 5vw, 32px)', lineHeight: '1.2', fontWeight: 700 }}
-            >
-              {app.name}
-            </h1>
+            <div className="mb-2 flex flex-wrap items-center justify-center gap-3 sm:justify-start">
+              <h1
+                className="text-[var(--text-primary)] font-['Poppins',sans-serif]"
+                style={{ fontSize: 'clamp(24px, 5vw, 32px)', lineHeight: '1.2', fontWeight: 700 }}
+              >
+                {app.name}
+              </h1>
+              {statusBadge && (
+                <span
+                  className="inline-flex items-center rounded-full border px-3 py-1 font-['Inter',sans-serif] text-xs uppercase tracking-wide"
+                  style={{
+                    fontWeight: 600,
+                    letterSpacing: '0.08em',
+                    backgroundColor: statusBadge.style.bg,
+                    color: statusBadge.style.text,
+                    borderColor: statusBadge.style.border,
+                  }}
+                >
+                  {statusBadge.label}
+                </span>
+              )}
+            </div>
             {authorInfo && (
               <p
                 className="text-[var(--text-secondary)] font-['Inter',sans-serif] mb-1"

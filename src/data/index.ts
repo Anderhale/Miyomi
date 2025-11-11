@@ -17,6 +17,7 @@ export interface AppTutorial {
 export interface AppData {
   id: string;
   name: string;
+  status?: string;
   description: string;
   contentTypes: readonly ContentType[];
   platforms: readonly Platform[];
