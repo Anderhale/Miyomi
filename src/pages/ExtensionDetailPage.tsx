@@ -535,7 +535,7 @@ export function ExtensionDetailPage({ extensionId, onNavigate }: ExtensionDetail
       </div>
 
       {/* Community Links */}
-      <div className="bg-[var(--bg-elev-1)] rounded-2xl p-6 text-center">
+      {/* <div className="bg-[var(--bg-elev-1)] rounded-2xl p-6 text-center">
         <h3 className="text-[var(--text-primary)] font-['Poppins',sans-serif] mb-2" style={{ fontSize: '18px', fontWeight: 600 }}>
           Need Help?
         </h3>
@@ -558,7 +558,7 @@ export function ExtensionDetailPage({ extensionId, onNavigate }: ExtensionDetail
             FAQ
           </button>
         </div>
-      </div>
+      </div> */}
     </motion.div>
   );
 }

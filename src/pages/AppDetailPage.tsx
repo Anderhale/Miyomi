@@ -754,6 +754,7 @@ export function AppDetailPage({ appId, onNavigate }: AppDetailPageProps) {
         </div>
       )}
       {/* Support Section */}
+      {/*
       <div className="bg-[var(--bg-elev-1)] rounded-2xl p-6 text-center">
         <h3 className="text-[var(--text-primary)] font-['Poppins',sans-serif] mb-2" style={{ fontSize: '18px', fontWeight: 600 }}>
           Need Help?
@@ -782,6 +783,7 @@ export function AppDetailPage({ appId, onNavigate }: AppDetailPageProps) {
           </button>
         </div>
       </div>
+      */}
     </motion.div>
   );
 }
