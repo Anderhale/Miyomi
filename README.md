@@ -154,6 +154,12 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ```
+### Important Disclaimers
+- Miyomi is an **independent, fan-run** information hub
+- We are **not affiliated** with any third-party developers or companies
+- All external links are for **educational purposes only**
+- We do **not** host, distribute, or modify copyrighted content
+
 
 ## 🙏 Acknowledgment
 
