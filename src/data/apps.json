@@ -934,7 +934,7 @@
   "id": "قارئ مانجا عربي",
   "name": "قارئ مانجا عربي",
   "status": "active",
-  "author": "",
+  "author": "midou221",
   "contentTypes": ["Manga"],
   "description": "قارئ مانجا هو افضل تطبيق عربي من حيث المميزات والمحتوى",
   "platforms": ["Android"],
@@ -944,8 +944,10 @@
   "supportedExtensions": ["extension-id-1", "extension-id-2"],
   "lastUpdated": "2025-11-12",
   "githubUrl": "https://play.google.com/store/apps/details?id=org.hamak.mangareader",
-  },
-  {
+  "officialSite": "",
+  "discordUrl": "",
+},
+{
   "id": "kotatsu-redo",
   "name": "Kotatsu Redo",
   "status": "active",
