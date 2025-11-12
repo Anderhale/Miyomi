@@ -282,6 +282,7 @@
   {
     "id": "aidoku-community-sources",
     "name": "Aidoku Community Sources",
+    "logoUrl": "https://github.com/Aidoku-Community.png",
     "types": [
       "Manga"
     ],
@@ -304,6 +305,7 @@
   {
     "id": "thenetsky-community-extensions",
     "name": "Netsky's Community Extensions (v0.8)",
+    "logoUrl": "https://github.com/TheNetsky.png",
     "types": [
       "Manga"
     ],
@@ -326,6 +328,7 @@
   {
     "id": "inkdex-extensions",
     "name": "Inkdex Extensions",
+    "logoUrl": "https://github.com/inkdex.png",
     "types": [
       "Manga",
       "Novel"
@@ -349,6 +352,7 @@
   {
     "id": "netskys-extensions",
     "name": "Netsky’s Extensions (v0.9)",
+    "logoUrl": "https://github.com/TheNetsky.png",
     "types": [
       "Manga"
     ],
@@ -371,6 +375,7 @@
   {
     "id": "Mantton-suwatte-sources",
     "name": "Mantton's Suwatte Sources",
+    "logoUrl": "https://suwatte.mantton.com/favicon.svg",
     "types": [
       "Manga"
     ],
@@ -391,6 +396,7 @@
   {
     "id": "Cloudstream-megarepo",
     "name": "Cloudstream MegaRepo",
+    "logoUrl": "https://github.com/self-similarity.png",
     "types": [
       "Anime",
       "Manga"
@@ -413,6 +419,7 @@
   {
     "id": "aniyomi-compat-extension",
     "name": "Aniyomi Compat Extension",
+    "logoUrl": "https://github.com/CranberrySoup.png",
     "types": [
       "Anime"
     ],
@@ -433,6 +440,7 @@
   {
     "id": "dantotsu-novel-extensions",
     "name": "Dantotsu Novel Extensions",
+    "logoUrl": "https://github.com/dannovels.png",
     "types": [
       "Novel"
     ],
@@ -454,6 +462,7 @@
   {
     "id": "lnreader-plugins",
     "name": "LNReader Plugins",
+    "logoUrl": "https://github.com/LNReader.png",
     "types": [
       "Novel"
     ],
@@ -476,6 +485,7 @@
   {
     "id": "stremio-addon",
     "name": "Stremio Addons",
+    "logoUrl": "https://stremio-addons.net/favicon.ico",
     "types": [
       "Anime"
     ],
