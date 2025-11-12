@@ -943,9 +943,9 @@
   "keywords": ["arabic app", "manga"],
   "supportedExtensions": ["extension-id-1", "extension-id-2"],
   "lastUpdated": "2025-11-12",
-  "githubUrl": "https://github.com/owner/repository",
+  "githubUrl": "https://play.google.com/store/apps/details?id=org.hamak.mangareader",
   "officialSite": "https://play.google.com/store/apps/details?id=org.hamak.mangareader",
-  "discordUrl": "https://discord.gg/invite",
+  "discordUrl": "",
   "tutorials": [
     {
       "title": "Tutorial Title",
