@@ -76,7 +76,7 @@
   "description": "Successor to Dantotsu. Rebuilt in Flutter for speed, cross‑platform support, and modern elegance.",
   "platforms": ["Android", "iOS", "Windows", "Mac", "Linux"],
   "iconColor": "#00cc99",
-  "logoUrl": "https://avatars.githubusercontent.com/aayush2622",
+  "logoUrl": "https://raw.githubusercontent.com/aayush2622/Dartotsu/refs/heads/main/assets/images/logo.png",
   "keywords": ["Dantotsu fork", "best app"],
   "supportedExtensions": ["kodjodevf"],
   "lastUpdated": "2025-08-15",
