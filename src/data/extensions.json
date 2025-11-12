@@ -463,7 +463,7 @@
   "id": "mangareader",
   "name": "Mangareader",
   "types": ["Manga"],
-  "region": "Ar",
+  "region": "AR",
   "accentColor": "#FF6B9D",
   "autoUrl": "",
   "manualUrl": "https://raw.githubusercontent.com/midou221/mangareader_extension/refs/heads/main/index.min.json",
