@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowLeft, Download, Github, MessageSquare, Globe, PlayCircle, BookOpen } from 'lucide-react';
-import { motion } from 'motion/react';
+import { motion } from "framer-motion";
 import { useLocation, useNavigate } from 'react-router-dom';
 import { PlatformBadge } from '../components/PlatformBadge';
 import { TagBadge } from './../components/TagBadge';
@@ -19,6 +19,18 @@ type StatusStyle = {
   border: string;
 };
 
+type Props = {
+  size?: number;          // overall badge size (px)
+  color?: string;         // core/hint color
+  duration?: number;      // seconds per pulse
+  scaleTo?: number;       // how large the halo grows
+  ring?: boolean;         // true = ring outline, false = filled halo
+  seamless?: boolean;     // add a second staggered halo to hide loop edge
+  className?: string;
+  title?: string;
+  "aria-label"?: string;
+};
+
 const STATUS_STYLE_MAP: Record<string, StatusStyle> = {
   active: { bg: 'rgba(76, 175, 80, 0.12)', text: '#4CAF50', border: 'rgba(76, 175, 80, 0.35)' },
   discontinued: { bg: 'rgba(255, 99, 71, 0.15)', text: '#FF6347', border: 'rgba(255, 99, 71, 0.4)' },
@@ -28,89 +40,100 @@ const STATUS_STYLE_MAP: Record<string, StatusStyle> = {
   dead: { bg: 'rgba(158, 158, 158, 0.15)', text: '#9E9E9E', border: 'rgba(158, 158, 158, 0.35)' },
 };
 
-const ActiveRippleDot: React.FC = () => {
-  const reduce =
-    typeof window !== 'undefined' &&
-    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const ActiveHaloPulseDot: React.FC<Props> = ({
+  size = 20,
+  color = "#4CAF50",
+  duration = 1.8,
+  scaleTo = 2.6,
+  ring = true,
+  seamless = false,
+  className = "",
+  title = "Active",
+  "aria-label": ariaLabel = "Active",
+}) => {
+  const core = Math.round(size * 0.8);
 
   return (
     <span
-      className="relative inline-flex items-center justify-center"
+      className={`relative inline-flex items-center justify-center ml-2 ${className}`}
       role="status"
-      aria-label="Active"
-      title="Active"
-      style={{ width: 20, height: 20 }}
+      aria-label={ariaLabel}
+      title={title}
+      style={
+        {
+          ["--size" as any]: `${size}px`,
+          ["--core" as any]: `${core}px`,
+          ["--color" as any]: color,
+          ["--dur" as any]: `${duration}s`,
+          ["--scaleTo" as any]: scaleTo,
+          // halo visuals
+          ["--haloOpacity" as any]: 0.55,   // start alpha
+          ["--haloThickness" as any]: ring ? "2px" : "0px",
+          ["--haloFill" as any]: ring ? "transparent" : "currentColor",
+          ["margin-left" as any]: "8px",
+        } as React.CSSProperties
+      }
     >
-      {/* Solid core dot */}
+      {/* solid center dot */}
       <span
         className="absolute rounded-full"
-        style={{
-          width: 16,
-          height: 16,
-          backgroundColor: '#4CAF50',
-          zIndex: 2,
-        }}
+        style={{ width: core, height: core, backgroundColor: color, zIndex: 2 }}
       />
 
-      {/* Continuous pulse animations - overlapping for seamless effect */}
-      {!reduce && (
-        <>
-          <motion.span
-            className="absolute rounded-full"
-            style={{
-              width: 16,
-              height: 16,
-              backgroundColor: '#4CAF50',
-            }}
-            animate={{
-              scale: [1, 2.5],
-              opacity: [0.7, 0],
-            }}
-            transition={{
-              duration: 1.5,
-              repeat: Infinity,
-              ease: 'easeOut',
-              repeatDelay: 0,
-            }}
-          />
-          <motion.span
-            className="absolute rounded-full"
-            style={{
-              width: 16,
-              height: 16,
-              backgroundColor: '#4CAF50',
-            }}
-            animate={{
-              scale: [1, 2.5],
-              opacity: [0.7, 0],
-            }}
-            transition={{
-              duration: 1.5,
-              repeat: Infinity,
-              ease: 'easeOut',
-              delay: 0.75,
-              repeatDelay: 0,
-            }}
-          />
-        </>
-      )}
+      {/* single outward pulse halo */}
+      <span className="halo absolute rounded-full" />
 
-      {/* Accessible hidden text */}
+      {/* optional staggered halo for seamless loop */}
+      {seamless && <span className="halo halo--stagger absolute rounded-full" />}
+
+      {/* SR-only label */}
       <span
         style={{
-          position: 'absolute',
+          position: "absolute",
           width: 1,
           height: 1,
           padding: 0,
           margin: -1,
-          overflow: 'hidden',
-          clip: 'rect(0,0,0,0)',
-          whiteSpace: 'nowrap',
+          overflow: "hidden",
+          clip: "rect(0,0,0,0)",
+          whiteSpace: "nowrap",
           border: 0,
         }}
       >
-        Active
+        {ariaLabel}
       </span>
+
+      <style jsx>{`
+        .halo {
+          width: var(--core);
+          height: var(--core);
+          color: var(--color);
+          background: var(--haloFill);
+          border: var(--haloThickness) solid currentColor;
+          border-radius: 9999px;
+          opacity: var(--haloOpacity);
+          transform: scale(1);
+          transform-origin: center;
+          will-change: transform, opacity;
+          pointer-events: none;
+
+          animation: halo var(--dur) linear infinite;
+          animation-fill-mode: both;
+        }
+        .halo--stagger {
+          animation-delay: calc(var(--dur) / 2); /* phase shift for seamlessness */
+        }
+
+        @keyframes halo {
+          0%   { transform: scale(1);             opacity: var(--haloOpacity); }
+          100% { transform: scale(var(--scaleTo)); opacity: 0; }
+        }
+
+        /* Respect reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+          .halo, .halo--stagger { animation: none; opacity: 0; }
+        }
+      `}</style>
     </span>
   );
 };
@@ -212,7 +235,7 @@ export function AppDetailPage({ appId, onNavigate }: AppDetailPageProps) {
     if (!s) return null;
 
     if (s === 'active') {
-      return <ActiveRippleDot />;
+      return <ActiveHaloPulseDot size={20} color="#22c55e" duration={2.0} />
     }
 
     const style = STATUS_STYLE_MAP[s] ?? DEFAULT_STATUS_STYLE;
