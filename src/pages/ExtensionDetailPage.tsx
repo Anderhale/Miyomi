@@ -103,6 +103,13 @@ export function ExtensionDetailPage({ extensionId, onNavigate }: ExtensionDetail
   };
 
   const renderActionButtons = (layout: 'inline' | 'stack') => {
+    const hasValidAutoUrl = extension.autoUrl && extension.autoUrl.trim() !== '';
+    const hasValidManualUrl = extension.manualUrl && extension.manualUrl.trim() !== '';
+
+    if (!hasValidAutoUrl && !hasValidManualUrl) {
+      return null;
+    }
+
     const baseButtonClass =
       "flex items-center justify-center gap-2 px-6 py-3 rounded-xl transition-all font-['Inter',sans-serif]";
     const buildButtonClass = (variant: 'primary' | 'secondary') => {
@@ -136,13 +143,22 @@ export function ExtensionDetailPage({ extensionId, onNavigate }: ExtensionDetail
     );
 
     if (layout === 'inline') {
-      // Mobile layout: Install/Copy buttons stacked, icons below
+      const hasOnlyOneButton = (hasValidAutoUrl && !hasValidManualUrl) || (!hasValidAutoUrl && hasValidManualUrl);
+      const buttonContainerClass = hasOnlyOneButton
+        ? 'flex gap-3 justify-center'
+        : 'flex gap-3';
+      const buttonWidthClass = hasOnlyOneButton
+        ? 'max-w-[280px] w-full'
+        : 'flex-1';
+
       return (
         <div className="flex flex-col gap-3">
-          <div className="flex gap-3">
-            {installButton('flex-1')}
-            {copyButton('flex-1')}
-          </div>
+          {(hasValidAutoUrl || hasValidManualUrl) && (
+            <div className={buttonContainerClass}>
+              {hasValidAutoUrl && installButton(buttonWidthClass)}
+              {hasValidManualUrl && copyButton(buttonWidthClass)}
+            </div>
+          )}
 
           <div className="flex items-center justify-center gap-3">
             {extension.github && (
@@ -175,8 +191,8 @@ export function ExtensionDetailPage({ extensionId, onNavigate }: ExtensionDetail
     // Stacked layout for desktop sidebar
     return (
       <div className="flex w-full flex-col gap-3">
-        {installButton('w-full')}
-        {copyButton('w-full')}
+        {hasValidAutoUrl && installButton('w-full')}
+        {hasValidManualUrl && copyButton('w-full')}
       </div>
     );
   };
@@ -266,9 +282,9 @@ export function ExtensionDetailPage({ extensionId, onNavigate }: ExtensionDetail
       {/* Header Section */}
       <motion.div
         layoutId={!isMobile ? `extension-card-${extensionId}` : undefined}
-        initial={isMobile ? { opacity: 0, x: 20 } : false}
-        animate={isMobile ? { opacity: 1, x: 0 } : false}
-        exit={isMobile ? { opacity: 0, x: -20 } : false}
+        initial={isMobile ? { opacity: 0, x: 20 } : undefined}
+        animate={isMobile ? { opacity: 1, x: 0 } : undefined}
+        exit={isMobile ? { opacity: 0, x: -20 } : undefined}
         transition={isMobile ? { duration: 0.2, ease: "easeOut" } : {
           type: "spring",
           stiffness: 260,
