@@ -5,7 +5,7 @@
     "status": "active",
     "author": "jmir1",
     "contentTypes": ["Manga", "Anime"],
-    "description": "An app for manga and anime."],
+    "description": "An app for manga and anime.",
     "platforms": ["Android"],
     "iconColor": "#FF6B9D",
     "logoUrl": "https://aniyomi.org/img/logo-128px.png",
