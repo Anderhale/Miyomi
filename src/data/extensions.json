@@ -465,7 +465,6 @@
   "types": ["Manga"],
   "region": "SA",
   "accentColor": "#FF6B9D",
-  "autoUrl": "",
   "manualUrl": "https://raw.githubusercontent.com/midou221/mangareader_extension/refs/heads/main/index.min.json",
   "website": "https://github.com/midou221/mangareader_extension",
   "github": "https://github.com/midou221/mangareader_extension",
