@@ -71,7 +71,7 @@ export function GitHubReleaseMeta({
             </span>
           </div>
 
-          {release?.downloads && release.downloads > 0 && (
+          {typeof release?.downloads === 'number' && release.downloads > 0 && (
             <div className="inline-flex items-center gap-1.5 rounded-full border border-[var(--divider)] bg-[var(--chip-bg)] px-3 py-1.5">
               <DownloadIcon className="w-3.5 h-3.5 text-[var(--brand)]" />
               <span
