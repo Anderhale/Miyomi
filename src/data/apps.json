@@ -952,7 +952,7 @@
   "name": "Kotatsu Redo",
   "status": "active",
   "contentTypes": ["Manga"],
-  "description": "Fork of Kotatsu with a goal to maitain existing features and sources.",
+  "description": "Fork of Kotatsu with a goal to Maintain existing features and sources.",
   "platforms": ["Android"],
   "iconColor": "#66BB6A",
   "logoUrl": "https://github.com/Kotatsu-Redo/Kotatsu-Redo/blob/devel/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp?raw=true",
