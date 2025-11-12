@@ -460,6 +460,21 @@
     "lastUpdated": "2025-07-22"
   },
   {
+  "id": "mangareader",
+  "name": "Mangareader",
+  "types": ["Manga"],
+  "region": "Ar",
+  "accentColor": "#FF6B9D",
+  "autoUrl": "",
+  "manualUrl": "https://raw.githubusercontent.com/midou221/mangareader_extension/refs/heads/main/index.min.json",
+  "website": "https://github.com/midou221/mangareader_extension",
+  "github": "https://github.com/midou221/mangareader_extension",
+  "supportedApps": ["قارئ مانجا عربي"],
+  "info": "مصادر خاص بالتطبيق",
+  "keywords": ["قارئ مانجا عربي", "arabic"],
+  "lastUpdated": "2025-11-11"
+}
+  {
     "id": "lnreader-plugins",
     "name": "LNReader Plugins",
     "logoUrl": "https://github.com/LNReader.png",
