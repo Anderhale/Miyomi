@@ -11,7 +11,7 @@ interface ExtensionListCardProps {
 
 export function ExtensionListCard({ extension, onSelect }: ExtensionListCardProps) {
   const handleSelect = () => onSelect(extension.id);
-  
+
   // Only use layoutId on desktop
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
 
@@ -28,12 +28,25 @@ export function ExtensionListCard({ extension, onSelect }: ExtensionListCardProp
       {/* Desktop layout */}
       <div className="hidden lg:flex items-center gap-6">
         <div className="flex items-center gap-3 flex-1 min-w-0">
-          <div
-            className="w-12 h-12 rounded-xl flex items-center justify-center text-white flex-shrink-0"
-            style={{ backgroundColor: extension.accentColor, fontWeight: 600, fontSize: '20px' }}
-            aria-hidden="true"
-          >
-            {extension.name.charAt(0)}
+          <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 overflow-hidden bg-[var(--chip-bg)]">
+            {extension.logoUrl && extension.logoUrl.trim() !== '' ? (
+              <img
+                src={extension.logoUrl}
+                alt={`${extension.name} logo`}
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  (e.currentTarget as HTMLImageElement).style.display = 'none';
+                  (e.currentTarget.parentElement!.innerHTML = `<div class='flex items-center justify-center w-full h-full text-white' style='background-color:${extension.accentColor};font-weight:600;font-size:20px;'>${extension.name.charAt(0)}</div>`);
+                }}
+              />
+            ) : (
+              <div
+                className="w-full h-full flex items-center justify-center text-white"
+                style={{ backgroundColor: extension.accentColor, fontWeight: 600, fontSize: '20px' }}
+              >
+                {extension.name.charAt(0)}
+              </div>
+            )}
           </div>
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 mb-1">
@@ -115,12 +128,25 @@ export function ExtensionListCard({ extension, onSelect }: ExtensionListCardProp
 
       {/* Mobile layout */}
       <div className="flex lg:hidden items-start gap-3">
-        <div
-          className="w-14 h-14 rounded-lg flex items-center justify-center text-white flex-shrink-0"
-          style={{ backgroundColor: extension.accentColor, fontWeight: 600, fontSize: '22px' }}
-          aria-hidden="true"
-        >
-          {extension.name.charAt(0)}
+        <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 overflow-hidden bg-[var(--chip-bg)]">
+          {extension.logoUrl && extension.logoUrl.trim() !== '' ? (
+            <img
+              src={extension.logoUrl}
+              alt={`${extension.name} logo`}
+              className="w-full h-full object-cover"
+              onError={(e) => {
+                (e.currentTarget as HTMLImageElement).style.display = 'none';
+                (e.currentTarget.parentElement!.innerHTML = `<div class='flex items-center justify-center w-full h-full text-white' style='background-color:${extension.accentColor};font-weight:600;font-size:20px;'>${extension.name.charAt(0)}</div>`);
+              }}
+            />
+          ) : (
+            <div
+              className="w-full h-full flex items-center justify-center text-white"
+              style={{ backgroundColor: extension.accentColor, fontWeight: 600, fontSize: '20px' }}
+            >
+              {extension.name.charAt(0)}
+            </div>
+          )}
         </div>
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2">
@@ -167,7 +193,7 @@ export function ExtensionListCard({ extension, onSelect }: ExtensionListCardProp
             )}
           </div>
         </div>
-        
+
         {/* View Button - Right Side */}
         <button
           onClick={(event) => {

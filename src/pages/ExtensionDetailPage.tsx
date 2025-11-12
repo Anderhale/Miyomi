@@ -24,7 +24,7 @@ export function ExtensionDetailPage({ extensionId, onNavigate }: ExtensionDetail
   const { isFeedbackOpen, handleToggle, handleClose } = useFeedbackState();
   const location = useLocation();
   const navigate = useNavigate();
-  
+
   // Mobile detection for different animation approach
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
 
@@ -36,15 +36,15 @@ export function ExtensionDetailPage({ extensionId, onNavigate }: ExtensionDetail
 
   const handleBackClick = () => {
     const scrollPos = location.state?.previousScrollPosition;
-    
+
     if (onNavigate) {
       onNavigate('/extensions');
     } else {
-      navigate('/extensions', { 
+      navigate('/extensions', {
         state: { restoreScrollPosition: scrollPos }
       });
     }
-    
+
     // Restore scroll position immediately
     if (scrollPos !== undefined) {
       // Use requestAnimationFrame to ensure DOM is ready
@@ -58,7 +58,7 @@ export function ExtensionDetailPage({ extensionId, onNavigate }: ExtensionDetail
 
   if (!extension) {
     return (
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
@@ -244,7 +244,7 @@ export function ExtensionDetailPage({ extensionId, onNavigate }: ExtensionDetail
     : 'lg:grid lg:grid-cols-[auto,minmax(0,1fr)]';
 
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -269,9 +269,9 @@ export function ExtensionDetailPage({ extensionId, onNavigate }: ExtensionDetail
         initial={isMobile ? { opacity: 0, x: 20 } : false}
         animate={isMobile ? { opacity: 1, x: 0 } : false}
         exit={isMobile ? { opacity: 0, x: -20 } : false}
-        transition={isMobile ? { duration: 0.2, ease: "easeOut" } : { 
-          type: "spring", 
-          stiffness: 260, 
+        transition={isMobile ? { duration: 0.2, ease: "easeOut" } : {
+          type: "spring",
+          stiffness: 260,
           damping: 35,
           mass: 0.8
         }}
@@ -282,12 +282,36 @@ export function ExtensionDetailPage({ extensionId, onNavigate }: ExtensionDetail
         <div
           className={`relative z-10 flex flex-col gap-6 sm:flex-row sm:items-center lg:gap-6 lg:items-start ${headerLayoutClasses}`}
         >
-          {/* Extension Icon */}
+          {/* Extension Logo / Fallback */}
           <div
-            className="mx-auto flex h-20 w-20 items-center justify-center rounded-2xl text-white flex-shrink-0 sm:mx-0 sm:h-24 sm:w-24 lg:h-28 lg:w-28"
-            style={{ backgroundColor: extension.accentColor, fontWeight: 600, fontSize: '32px' }}
+            className="mx-auto flex h-20 w-20 items-center justify-center rounded-2xl flex-shrink-0 sm:mx-0 sm:h-24 sm:w-24 lg:h-28 lg:w-28 overflow-hidden bg-[var(--chip-bg)]"
+            aria-label={`${extension.name} logo`}
           >
-            {extension.name.charAt(0)}
+            {extension.logoUrl && extension.logoUrl.trim() !== '' ? (
+              <img
+                src={extension.logoUrl}
+                alt={`${extension.name} logo`}
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  // Hide the broken img and render the default avatar
+                  (e.currentTarget as HTMLImageElement).style.display = 'none';
+                  const parent = e.currentTarget.parentElement!;
+                  parent.innerHTML = `
+          <div class='w-full h-full flex items-center justify-center text-white' 
+               style='background-color:${extension.accentColor};font-weight:600;font-size:32px;'>
+            ${extension.name.charAt(0)}
+          </div>
+        `;
+                }}
+              />
+            ) : (
+              <div
+                className="w-full h-full flex items-center justify-center text-white"
+                style={{ backgroundColor: extension.accentColor, fontWeight: 600, fontSize: '32px' }}
+              >
+                {extension.name.charAt(0)}
+              </div>
+            )}
           </div>
 
           {/* Extension Info */}

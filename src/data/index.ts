@@ -37,6 +37,8 @@ export interface AppData {
 export interface ExtensionData {
   id: string;
   name: string;
+  info?: string;
+  logoUrl?: string;
   types: readonly ContentType[];
   region: string;
   accentColor: string;
@@ -45,7 +47,6 @@ export interface ExtensionData {
   supportedApps: readonly string[]; // App IDs
   lastUpdated?: string;
   overview?: string;
-  info?: string;
   github?: string;
   website?: string;
   keywords?: readonly string[];
