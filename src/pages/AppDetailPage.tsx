@@ -20,6 +20,7 @@ type StatusStyle = {
 };
 
 const STATUS_STYLE_MAP: Record<string, StatusStyle> = {
+  active: { bg: 'rgba(76, 175, 80, 0.15)', text: '#4CAF50', border: 'rgba(76, 175, 80, 0.4)' },
   discontinued: { bg: 'rgba(255, 99, 71, 0.15)', text: '#FF6347', border: 'rgba(255, 99, 71, 0.4)' },
   abandoned: { bg: 'rgba(255, 193, 7, 0.15)', text: '#FFB300', border: 'rgba(255, 193, 7, 0.4)' },
   suspended: { bg: 'rgba(156, 39, 176, 0.15)', text: '#9C27B0', border: 'rgba(156, 39, 176, 0.35)' },
@@ -28,6 +29,7 @@ const STATUS_STYLE_MAP: Record<string, StatusStyle> = {
 };
 
 const STATUS_LABEL_MAP: Record<string, string> = {
+  active: 'Active',
   discontinued: 'Discontinued',
   abandoned: 'Abandoned',
   suspended: 'Suspended',
