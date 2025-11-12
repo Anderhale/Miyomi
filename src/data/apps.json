@@ -931,6 +931,31 @@
   ]
 },
   {
+  "id": "قارئ مانجا عربي",
+  "name": "قارئ مانجا عربي",
+  "status": "active",
+  "author": "midou221",
+  "contentTypes": ["Manga"],
+  "description": "قارئ مانجا هو افضل تطبيق عربي من حيث المميزات والمحتوى",
+  "platforms": ["Android"],
+  "iconColor": "#FF6B9D",
+  "logoUrl": "https://play-lh.googleusercontent.com/ft4fpr8NgdGIEDdDl326GvAlrL-OwPxLKkgRmcB4_Scdz8UAkZh0famQQKSBz0Eq9A=w240-h480-rw",
+  "keywords": ["arabic app", "manga"],
+  "supportedExtensions": ["extension-id-1", "extension-id-2"],
+  "lastUpdated": "2025-11-12",
+  "githubUrl": "https://github.com/owner/repository",
+  "officialSite": "https://play.google.com/store/apps/details?id=org.hamak.mangareader",
+  "discordUrl": "https://discord.gg/invite",
+  "tutorials": [
+    {
+      "title": "Tutorial Title",
+      "type": "video",
+      "url": "https://youtube.com/...",
+      "description": "Tutorial description"
+    }
+  ]
+},
+  {
   "id": "kotatsu-redo",
   "name": "Kotatsu Redo",
   "status": "active",
