@@ -1,4 +1,4 @@
-import { Heart, Compass, Users, Github, ArrowUpRight, Globe2, Sparkles, Accessibility, Mail, MessageCircle, Send, AlertCircle, Code2 } from 'lucide-react';
+import { Heart, Compass, Users, Github, ArrowUpRight, Globe2, Sparkles, ScanEye, Mail, MessageCircle, Send, AlertCircle, Code2 } from 'lucide-react';
 import { motion } from 'motion/react';
 import type { ReactNode } from 'react';
 
@@ -42,7 +42,7 @@ const pillars = [
   { icon: <Compass className="w-6 h-6" />, title: 'One place for tools', description: 'Find readers, extensions, and guides without 50 tabs.' },
   { icon: <Sparkles className="w-6 h-6" />, title: 'Always current', description: 'We prune broken stuff fast and note what still works.' },
   { icon: <Users className="w-6 h-6" />, title: 'Community-powered', description: 'Fans share what they actually use day to day.' },
-  { icon: <Accessibility className="w-6 h-6" />, title: 'Accessible', description: 'Good contrast, keyboard friendly, and screen-reader aware.' },
+  { icon: <ScanEye className="w-6 h-6" />, title: 'Accessible', description: 'Good contrast, keyboard friendly, and screen-reader aware.' },
 ];
 
 const openSourceCredits: CreditItem[] = [
