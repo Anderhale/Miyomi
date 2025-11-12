@@ -20,12 +20,85 @@ type StatusStyle = {
 };
 
 const STATUS_STYLE_MAP: Record<string, StatusStyle> = {
-  active: { bg: 'rgba(76, 175, 80, 0.15)', text: '#4CAF50', border: 'rgba(76, 175, 80, 0.4)' },
+  active: { bg: 'rgba(76, 175, 80, 0.12)', text: '#4CAF50', border: 'rgba(76, 175, 80, 0.35)' },
   discontinued: { bg: 'rgba(255, 99, 71, 0.15)', text: '#FF6347', border: 'rgba(255, 99, 71, 0.4)' },
   abandoned: { bg: 'rgba(255, 193, 7, 0.15)', text: '#FFB300', border: 'rgba(255, 193, 7, 0.4)' },
   suspended: { bg: 'rgba(156, 39, 176, 0.15)', text: '#9C27B0', border: 'rgba(156, 39, 176, 0.35)' },
   dmca: { bg: 'rgba(233, 30, 99, 0.15)', text: '#E91E63', border: 'rgba(233, 30, 99, 0.35)' },
   dead: { bg: 'rgba(158, 158, 158, 0.15)', text: '#9E9E9E', border: 'rgba(158, 158, 158, 0.35)' },
+};
+
+const ActiveRippleDot: React.FC = () => {
+  const reduce =
+    typeof window !== 'undefined' &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  return (
+    <span
+      className="relative inline-flex items-center justify-center"
+      role="status"
+      aria-label="Active"
+      title="Active"
+      style={{ width: 20, height: 20 }}
+    >
+      {/* Solid core dot */}
+      <span
+        className="absolute rounded-full"
+        style={{
+          width: 16,
+          height: 16,
+          backgroundColor: '#4CAF50',
+          boxShadow: '0 0 12px rgba(76,175,80,0.6)',
+          zIndex: 3,
+        }}
+      />
+
+      {/* Multiple wave rings */}
+      {!reduce && (
+        <>
+          {[0, 0.6, 1.2].map((delay, i) => (
+            <motion.span
+              key={i}
+              className="absolute rounded-full"
+              style={{
+                width: 16,
+                height: 16,
+                border: '2px solid #4CAF50',
+                boxSizing: 'border-box',
+              }}
+              animate={{
+                scale: [1, 4],
+                opacity: [0.7, 0],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: 'easeOut',
+                delay,
+              }}
+            />
+          ))}
+        </>
+      )}
+
+      {/* Accessible hidden text */}
+      <span
+        style={{
+          position: 'absolute',
+          width: 1,
+          height: 1,
+          padding: 0,
+          margin: -1,
+          overflow: 'hidden',
+          clip: 'rect(0,0,0,0)',
+          whiteSpace: 'nowrap',
+          border: 0,
+        }}
+      >
+        Active
+      </span>
+    </span>
+  );
 };
 
 const STATUS_LABEL_MAP: Record<string, string> = {
@@ -72,10 +145,10 @@ export function AppDetailPage({ appId, onNavigate }: AppDetailPageProps) {
   const hasMoreExtensions = recommendedExtensions.length > displayedExtensions.length;
   const location = useLocation();
   const navigate = useNavigate();
-  
+
   // Mobile detection for different animation approach
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
-  
+
   // Fetch GitHub release data
   const { release, loading: releaseLoading } = useGitHubRelease(
     app?.githubUrl,
@@ -120,27 +193,42 @@ export function AppDetailPage({ appId, onNavigate }: AppDetailPageProps) {
     return null;
   }, [app]);
 
-  const statusBadge = React.useMemo(() => {
-    if (!app?.status) return null;
-    const normalized = app.status.trim().toLowerCase();
-    const style = STATUS_STYLE_MAP[normalized] ?? DEFAULT_STATUS_STYLE;
-    return {
-      label: getStatusLabel(app.status),
-      style,
-    };
+  const statusBadge = React.useMemo<React.ReactNode>(() => {
+    const s = app?.status?.trim().toLowerCase();
+    if (!s) return null;
+
+    if (s === 'active') {
+      return <ActiveRippleDot />; // ✅ dot only
+    }
+
+    const style = STATUS_STYLE_MAP[s] ?? DEFAULT_STATUS_STYLE;
+    return (
+      <span
+        className="inline-flex items-center rounded-full border px-3 py-1 text-xs uppercase tracking-wide"
+        style={{
+          fontWeight: 600,
+          letterSpacing: '0.08em',
+          backgroundColor: style.bg,
+          color: style.text,
+          borderColor: style.border,
+        }}
+      >
+        {getStatusLabel(app.status)}
+      </span>
+    );
   }, [app?.status]);
 
   const handleBackClick = () => {
     const scrollPos = location.state?.previousScrollPosition;
-    
+
     if (onNavigate) {
       onNavigate('/software');
     } else {
-      navigate('/software', { 
+      navigate('/software', {
         state: { restoreScrollPosition: scrollPos }
       });
     }
-    
+
     // Restore scroll position immediately
     if (scrollPos !== undefined) {
       // Use requestAnimationFrame to ensure DOM is ready
@@ -154,7 +242,7 @@ export function AppDetailPage({ appId, onNavigate }: AppDetailPageProps) {
 
   if (!app) {
     return (
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
@@ -351,7 +439,7 @@ export function AppDetailPage({ appId, onNavigate }: AppDetailPageProps) {
     : 'lg:grid lg:grid-cols-[auto,minmax(0,1fr)]';
 
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -376,9 +464,9 @@ export function AppDetailPage({ appId, onNavigate }: AppDetailPageProps) {
         initial={isMobile ? { opacity: 0, x: 20 } : false}
         animate={isMobile ? { opacity: 1, x: 0 } : false}
         exit={isMobile ? { opacity: 0, x: -20 } : false}
-        transition={isMobile ? { duration: 0.2, ease: "easeOut" } : { 
-          type: "spring", 
-          stiffness: 260, 
+        transition={isMobile ? { duration: 0.2, ease: "easeOut" } : {
+          type: "spring",
+          stiffness: 260,
           damping: 35,
           mass: 0.8
         }}
@@ -412,20 +500,7 @@ export function AppDetailPage({ appId, onNavigate }: AppDetailPageProps) {
               >
                 {app.name}
               </h1>
-              {statusBadge && (
-                <span
-                  className="inline-flex items-center rounded-full border px-3 py-1 font-['Inter',sans-serif] text-xs uppercase tracking-wide"
-                  style={{
-                    fontWeight: 600,
-                    letterSpacing: '0.08em',
-                    backgroundColor: statusBadge.style.bg,
-                    color: statusBadge.style.text,
-                    borderColor: statusBadge.style.border,
-                  }}
-                >
-                  {statusBadge.label}
-                </span>
-              )}
+              {statusBadge}
             </div>
             {authorInfo && (
               <p
@@ -539,13 +614,13 @@ export function AppDetailPage({ appId, onNavigate }: AppDetailPageProps) {
                 <Github className="w-4 h-4" />
               </a>
             </div>
-            
+
             <GitHubReleaseNotes
               notes={release.notes}
               releaseUrl={release.url}
               maxLines={10}
             />
-            
+
             <GitHubDownloadAssets assets={release.assets} releaseUrl={release.url} />
           </div>
         </div>
