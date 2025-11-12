@@ -48,36 +48,50 @@ const ActiveRippleDot: React.FC = () => {
           width: 16,
           height: 16,
           backgroundColor: '#4CAF50',
-          boxShadow: '0 0 12px rgba(76,175,80,0.6)',
-          zIndex: 3,
+          zIndex: 2,
         }}
       />
 
-      {/* Multiple wave rings */}
+      {/* Continuous pulse animations - overlapping for seamless effect */}
       {!reduce && (
         <>
-          {[0, 0.6, 1.2].map((delay, i) => (
-            <motion.span
-              key={i}
-              className="absolute rounded-full"
-              style={{
-                width: 16,
-                height: 16,
-                border: '2px solid #4CAF50',
-                boxSizing: 'border-box',
-              }}
-              animate={{
-                scale: [1, 4],
-                opacity: [0.7, 0],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: 'easeOut',
-                delay,
-              }}
-            />
-          ))}
+          <motion.span
+            className="absolute rounded-full"
+            style={{
+              width: 16,
+              height: 16,
+              backgroundColor: '#4CAF50',
+            }}
+            animate={{
+              scale: [1, 2.5],
+              opacity: [0.7, 0],
+            }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              ease: 'easeOut',
+              repeatDelay: 0,
+            }}
+          />
+          <motion.span
+            className="absolute rounded-full"
+            style={{
+              width: 16,
+              height: 16,
+              backgroundColor: '#4CAF50',
+            }}
+            animate={{
+              scale: [1, 2.5],
+              opacity: [0.7, 0],
+            }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              ease: 'easeOut',
+              delay: 0.75,
+              repeatDelay: 0,
+            }}
+          />
         </>
       )}
 
@@ -198,7 +212,7 @@ export function AppDetailPage({ appId, onNavigate }: AppDetailPageProps) {
     if (!s) return null;
 
     if (s === 'active') {
-      return <ActiveRippleDot />; // ✅ dot only
+      return <ActiveRippleDot />;
     }
 
     const style = STATUS_STYLE_MAP[s] ?? DEFAULT_STATUS_STYLE;
