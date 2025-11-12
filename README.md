@@ -160,6 +160,14 @@ limitations under the License.
 - All external links are for **educational purposes only**
 - We do **not** host, distribute, or modify copyrighted content
 
+### Key Legal Points
+- **Non-Affiliation**: Not connected to any third-party projects we reference
+- **Educational Purpose**: All content provided for informational use only
+- **User Responsibility**: Users verify legality of third-party services
+- **Content Moderation**: We reserve right to remove inappropriate content
+- **Liability Limitation**: Not responsible for third-party services
+
+
 
 ## 🙏 Acknowledgment
 
@@ -171,3 +179,8 @@ limitations under the License.
 **Made with ❤️ for the otaku community**
 
 *Found a bug? Have a suggestion? [Open an issue](https://github.com/tas33n/miyomi/issues) or contribute directly!*
+
+
+[![Terms of Service](https://img.shields.io/badge/Terms_of_Service-Read_Here-blue?style=for-the-badge)](https://miyomi-tos.netlify.app/)
+[![Privacy Policy](https://img.shields.io/badge/Privacy_Policy-Read_Here-green?style=for-the-badge)](https://miyomi-tos.netlify.app/privacy.html)
+[![Contact](https://img.shields.io/badge/Contact-Email_Us-red?style=for-the-badge)](mailto:miyomi.hub@gmail.com)
