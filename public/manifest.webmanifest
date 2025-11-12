@@ -1,7 +1,7 @@
 {
   "name": "Miyomi",
   "short_name": "Miyomi",
-  "description": "Community-driven hub for Tachiyomi and Mihon apps, extensions, and guides.",
+  "description": "Community-driven hub for apps, extensions, and guides.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

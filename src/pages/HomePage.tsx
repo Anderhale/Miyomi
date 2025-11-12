@@ -53,7 +53,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
     return `${value}+`;
   };
   const totalGuides = guideCategories.reduce((total, category) => total + category.guides.length, 0);
-  type StatKey = 'apps' | 'extensions' | 'guides' ;
+  type StatKey = 'apps' | 'extensions' | 'guides';
   const statCounts: Record<StatKey, number> = {
     apps: unifiedApps.length,
     extensions: unifiedExtensions.length,
@@ -68,34 +68,34 @@ export function HomePage({ onNavigate }: HomePageProps) {
     glow: string;
     glowAlt: string;
   }> = [
-    {
-      key: 'apps',
-      label: 'Apps',
-      path: '/software',
-      icon: Package,
-      gradient: 'from-[#FFB3C1] to-[#FF6B9D]',
-      glow: 'bg-[#FFB3C1]/35',
-      glowAlt: 'bg-[#FF6B9D]/25',
-    },
-    {
-      key: 'extensions',
-      label: 'Extensions',
-      path: '/extensions',
-      icon: Zap,
-      gradient: 'from-[#B3D9FF] to-[#4A90E2]',
-      glow: 'bg-[#B3D9FF]/35',
-      glowAlt: 'bg-[#4A90E2]/25',
-    },
-    {
-      key: 'guides',
-      label: 'Guides',
-      path: '/guides',
-      icon: BookOpen,
-      gradient: 'from-[#E8D4FF] to-[#7C4DFF]',
-      glow: 'bg-[#E8D4FF]/35',
-      glowAlt: 'bg-[#7C4DFF]/25',
-    }
-  ];
+      {
+        key: 'apps',
+        label: 'Apps',
+        path: '/software',
+        icon: Package,
+        gradient: 'from-[#FFB3C1] to-[#FF6B9D]',
+        glow: 'bg-[#FFB3C1]/35',
+        glowAlt: 'bg-[#FF6B9D]/25',
+      },
+      {
+        key: 'extensions',
+        label: 'Extensions',
+        path: '/extensions',
+        icon: Zap,
+        gradient: 'from-[#B3D9FF] to-[#4A90E2]',
+        glow: 'bg-[#B3D9FF]/35',
+        glowAlt: 'bg-[#4A90E2]/25',
+      },
+      {
+        key: 'guides',
+        label: 'Guides',
+        path: '/guides',
+        icon: BookOpen,
+        gradient: 'from-[#E8D4FF] to-[#7C4DFF]',
+        glow: 'bg-[#E8D4FF]/35',
+        glowAlt: 'bg-[#7C4DFF]/25',
+      }
+    ];
   const stats = statMeta.map((meta) => ({
     ...meta,
     count: formatCount(statCounts[meta.key]),
@@ -177,16 +177,6 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
         {/* Left Content */}
         <div className="relative z-10 text-center lg:text-left">
-         
-          {/* <div className="mb-6 flex w-full justify-center lg:justify-start">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-[var(--chip-bg)] rounded-full text-[var(--text-secondary)] font-['Inter',sans-serif] w-fit" style={{ fontSize: '13px', fontWeight: 500 }}>
-              <Sparkles className="w-4 h-4 text-[var(--brand)]" />
-              Tachiyomi & Mihon community
-            </div>
-          </div> 
-          // MIKIKO SANS FAN CLUB
-          */}
-
           {/* H1 Title with Feedback Trigger */}
           <div className="flex items-center justify-center lg:justify-start gap-3 mb-4">
             <h1

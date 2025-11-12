@@ -22,7 +22,7 @@ export function FAQPage() {
         <FeedbackTrigger isOpen={isFeedbackOpen} onToggle={handleToggle} title="FAQ" />
       </div>
       <p className="text-[var(--text-secondary)] font-['Inter',sans-serif] mb-8" style={{ fontSize: '16px' }}>
-        Find answers to common questions about Miyomi apps and extensions.
+        Find answers to common questions about apps and extensions.
       </p>
 
       {/* Inline Feedback Panel */}
