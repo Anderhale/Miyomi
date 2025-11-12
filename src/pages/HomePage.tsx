@@ -193,7 +193,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
             className="text-[var(--text-primary)] font-['Inter',sans-serif] mb-8 leading-relaxed"
             style={{ fontSize: 'clamp(16px, 2vw, 18px)', lineHeight: '1.6' }}
           >
-            Your one-stop hub for <span className="text-[var(--brand)]" style={{ fontWeight: 600 }}>links, apps, extension repos</span> and more! &#9728;
+            Your one-stop hub for <span className="text-[var(--brand)]" style={{ fontWeight: 600 }}>links, apps, extension repos</span> and more!
           </p>
 
           {/* CTA Button */}
