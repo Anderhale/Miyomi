@@ -960,6 +960,62 @@
   "supportedExtensions": [],
   "githubUrl":"https://github.com/Kotatsu-Redo/Kotatsu-Redo",
   "discordUrl":"https://discord.gg/77PJztUXc"
-  }
+  },
+  {
+    "id": "doki",
+    "name": "Doki",
+    "contentTypes":["Manga"],
+    "description": "Successor to Kotatsu, a manga reader app for Android.",
+    "platforms": ["Android"],
+    "iconColor": "#1976D2",
+    "logoUrl": "https://raw.githubusercontent.com/DokiTeam/.github/main/profile/Doki.png",
+    "keywords":["kotatsu","manga"],
+    "supportedExtensions":[],
+    "githubUrl":"https://github.com/DokiTeam/Doki?tab=readme-ov-file#usage",
+    "discordUrl":"https://discord.gg/PTd2bYgz9m",
+    "tutorials":[
+      {
+        "title": "How to download?",
+        "type": "guide",
+        "url": "https://discord.com/channels/1435615296202477581/1435648866535084152/1438108128016207954",
+        "description": "Join the discord and follow the instructions to download the app."
+      },
+      {
+        "title": "New to Github?",
+        "type": "guide",
+        "url": "https://discord.com/channels/1435615296202477581/1435668476659367956/1438214554013401149",
+        "description": "Check their FAQs fo more helpful info."
+      },
+      {
+        "title": "Steps too confusing? USE THIS AT YOUR OWN RISK",
+        "type": "guide",
+        "url": "https://github.com/Anderhale/DokiApp/releases/latest",
+        "description": "If you're unable to build the app yourself, you can try downloading this prebuilt version or explore forks of the build-app repository. ⚠️ Only download from sources you trust. We do NOT guarantee safety and strongly recommend building the app from source, as advised by the official Doki team."
+      }
+    ]
+  },
+  {
+  "id": "com.hamak.novelwebtoon",
+  "name": "شاي الروايات: للمانجا",
+  "author": "Hmak.Inc",
+  "contentTypes": ["Manga", "Light Novel"],
+  "description": "قارئ مانجا وروايات بواجهة مريحة وخيارات تخصيص متعددة.",
+  "platforms": ["Android"],
+  "iconColor": "#FF6B9D",
+  "logoUrl": "https://play-lh.googleusercontent.com/WwiJ24bS7ytTSeBxKhaIjHa7eo5xtFto7HqVH7AJCKoFNBekD1QmDEVOg5ZKDHNR3A=w480-h960-rw",  
+  "keywords": ["manga reader", "epub viewer", "Arabic novels","voice narration"],
+  "supportedExtensions": [],
+  "lastUpdated": "2025-08-30",
+  "githubUrl": "",
+  "officialSite": "https://play.google.com/store/apps/details?id=com.hamak.novelwebtoon",
+  "tutorials":[
+    {
+      "title": "اضغط هنا",
+      "type": "guide",
+      "url": "https://github.com/tas33n/Miyomi/issues/17#issue-3613836582",
+      "description": "راجع هذه المشكلة على GitHub للحصول على شرح.."
+    }
+  ]
+}
 ]
 
