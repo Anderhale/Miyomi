@@ -973,7 +973,7 @@
     "keywords":["kotatsu","manga"],
     "supportedExtensions":[],
     "lastUpdated": "2025-11-13",
-    "githubUrl":"https://github.com/miyomi-test/build-apps/releases/tag/20251113",
+    "githubUrl":"https://github.com/DokiTeam/build-apps",
     "discordUrl":"https://discord.gg/PTd2bYgz9m",
     "tutorials":[
       {
@@ -989,10 +989,10 @@
         "description": "Check their FAQs fo more helpful info."
       },
       {
-        "title": "Steps too confusing? USE THIS AT YOUR OWN RISK",
+        "title": "Steps too confusing? GET Doki PreBuild App",
         "type": "guide",
-        "url": "https://github.com/Anderhale/DokiApp/releases/latest",
-        "description": "If you're unable to build the app yourself, you can try downloading this prebuilt version or explore forks of the build-app repository. ⚠️ Only download from sources you trust. We do NOT guarantee safety and strongly recommend building the app from source, as advised by the official Doki team."
+        "url": "https://github.com/miyomi-test/build-apps/releases",
+        "description": "If you're unable to build the app yourself, you can try downloading this prebuilt version. ⚠️ Only download from sources you trust. We do NOT guarantee safety and strongly recommend building the app from source, as advised by the official Doki team."
       }
     ]
   },
