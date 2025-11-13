@@ -48,7 +48,7 @@ const pillars = [
 const openSourceCredits: CreditItem[] = [
   {
     icon: <Code2 className="w-6 h-6" />,
-    title: 'Open-source Devselopers',
+    title: 'Open-source developers',
     description: 'They ship the apps, web tools, launchers, resource hubs, and utilities that make discovery effortless.',
   },
   {
