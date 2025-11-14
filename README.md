@@ -1,4 +1,4 @@
-# <img src="public/icons/icon-192.png" width="30px"> Miyomi 2.0
+# <img src="public/icons/icon-192.png" width="30px"> Miyomi 2.0 - BETA
 
 Your comprehensive index for anime, manga, and light novel apps, extensions, and resources!
 
