@@ -460,6 +460,21 @@
     "lastUpdated": "2025-07-22"
   },
   {
+  "id": "anymeX",
+  "name": "anymeX",
+  "types": ["Anime"],
+  "region": "ALL",
+  "accentColor": "#FF6B9D",
+  "autoUrl": "anymex://add-repo?anime_url=https://anymex.vercel.app/repo/anime_index.json",
+  "manualUrl": "https://anymex.vercel.app/repo/anime_index.json",
+  "website": "",
+  "github": "",
+  "supportedApps": ["mangayomi"],
+  "info": "Anime source extensions for the Mangayomi app.",
+  "keywords": ["Mangayomi", "Anime"],
+  "lastUpdated": "2025-11-15"
+},
+{
   "id": "mangareader",
   "name": "Mangareader",
   "types": ["Manga"],
