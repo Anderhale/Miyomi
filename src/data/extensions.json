@@ -25,10 +25,10 @@
       "aniyomi repo",
       "mihon extensions"
     ],
-    "lastUpdated": "2025-10-29"
+    "lastUpdated": "2025-11-15"
   },
   {
-    "id": "yuzono",
+    "id": "Yuzono",
     "name": "Yūzōnō",
     "logoUrl": "https://github.com/yuzono.png",
     "types": [
@@ -37,8 +37,8 @@
     ],
     "region": "ALL",
     "accentColor": "#4A90E2",
-    "autoUrl": "",
-    "manualUrl": "",
+    "autoUrl": "aniyomi://add-repo?url=https://raw.githubusercontent.com/yuzono/anime-repo/repo/index.min.json",
+    "manualUrl": "https://raw.githubusercontent.com/yuzono/anime-repo/repo/index.min.json",
     "website": "https://yuzono.github.io",
     "github": "https://github.com/yuzono/aniyomi-extensions",
     "supportedApps": [
@@ -51,7 +51,7 @@
       "aniyomi anime",
       "mihon repo"
     ],
-    "lastUpdated": "2025-10-29"
+    "lastUpdated": "2025-11-15"
   },
   {
     "id": "secozzi",
@@ -79,33 +79,33 @@
       "Jellyfin",
       "Stremio"
     ],
-    "lastUpdated": "2025-10-29"
+    "lastUpdated": "2025-11-15"
   },
   {
-    "id": "claudemirovsky",
-    "name": "Claudemirovsky",
-    "logoUrl": "https://avatars.githubusercontent.com/u/136799407?v=4",
+    "id": "Swakshan",
+    "name": "Swakshan",
+    "logoUrl": "",
     "types": [
       "Anime",
-      "Manga"
+      "Manga",
+      "Novel"
     ],
-    "region": "BR,TR",
+    "region": "ALL",
     "accentColor": "#FF8A65",
-    "autoUrl": "aniyomi://add-repo?url=https://raw.githubusercontent.com/Claudemirovsky/cursedyomi-extensions/repo/index.min.json",
-    "manualUrl": "https://raw.githubusercontent.com/Claudemirovsky/cursedyomi-extensions/repo/index.min.json",
-    "github": "https://github.com/Claudemirovsky/cursedyomi-extensions",
+    "autoUrl": "https://intradeus.github.io/http-protocol-redirector/?r=mangayomi://add-repo?repo_name=Mangayomi%20Swak%20Extensions%26repo_url=https://github.com/Swakshan/mangayomi-swak-extensions%26manga_url=https://raw.githubusercontent.com/Swakshan/mangayomi-swak-extensions/refs/heads/main/index.json%26anime_url=https://raw.githubusercontent.com/Swakshan/mangayomi-swak-extensions/refs/heads/main/anime_index.json",
+    "manualUrl": "",
+    "github": "https://github.com/Swakshan/mangayomi-swak-extensions",
     "supportedApps": [
-      "aniyomi",
-      "mihon",
       "mangayomi"
     ],
-    "info": "Brazilian and Turkish extensions for anime and manga",
+    "info": "Extensions for Mangayomi",
     "keywords": [
-      "claudemirovsky",
-      "cursedyomi",
-      "brazil"
+      "Mangayomi",
+      "manga",
+      "anime",
+      "light novel"
     ],
-    "lastUpdated": "2025-10-11"
+    "lastUpdated": "2025-11-15"
   },
   {
     "id": "hollow",
