@@ -181,6 +181,6 @@ limitations under the License.
 *Found a bug? Have a suggestion? [Open an issue](https://github.com/tas33n/miyomi/issues) or contribute directly!*
 
 
-[![Terms of Service](https://img.shields.io/badge/Terms_of_Service-Read_Here-blue?style=for-the-badge)](https://miyomi-tos.netlify.app/)
-[![Privacy Policy](https://img.shields.io/badge/Privacy_Policy-Read_Here-green?style=for-the-badge)](https://miyomi-tos.netlify.app/privacy.html)
+[![Terms of Service](https://img.shields.io/badge/Terms_of_Service-Read_Here-blue?style=for-the-badge)](https://miyomi-test.github.io/)
+[![Privacy Policy](https://img.shields.io/badge/Privacy_Policy-Read_Here-green?style=for-the-badge)](https://miyomi-test.github.io/)
 [![Contact](https://img.shields.io/badge/Contact-Email_Us-red?style=for-the-badge)](mailto:miyomi.hub@gmail.com)
