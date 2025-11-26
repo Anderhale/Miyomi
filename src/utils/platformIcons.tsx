@@ -67,6 +67,19 @@ const LinuxTuxIcon = ({ className }: { className: string }) => (
   </svg>
 );
 
+// Simple iOS device icon (phone)
+const iOSDeviceIcon = ({ className }: { className: string }) => (
+  <svg
+    className={className}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    aria-hidden="true"
+    focusable="false"
+  >
+    <path d="M17 2H7C5.9 2 5 2.9 5 4v16c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 18H7V4h10v16zm-5-1c.6 0 1-.4 1-1s-.4-1-1-1-1 .4-1 1 .4 1 1 1z" />
+  </svg>
+);
+
 export function getPlatformIcon(platform: string, size: IconSize = "md"): ReactNode {
   const className = sizeClassMap[size];
 
@@ -74,6 +87,7 @@ export function getPlatformIcon(platform: string, size: IconSize = "md"): ReactN
     case "Android":
       return <AndroidRobotIcon className={className} />;
     case "iOS":
+      return <iOSDeviceIcon className={className} />;
     case "Mac":
       return <AppleIcon className={className} />;
     case "Windows":

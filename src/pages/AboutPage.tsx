@@ -92,18 +92,18 @@ function Card({ children, className = '' }: { children: ReactNode; className?: s
 
 export function AboutPage() {
   return (
-    <div className="max-w-6xl mx-auto px-4 md:px-6 py-12">
+    <div className="max-w-6xl mx-auto px-4 md:px-6 py-6 md:py-12">
       {/* HERO */}
-      <section className="mb-12">
+      <section className="mb-8 md:mb-12">
         <Chip>About Miyomi</Chip>
         <motion.h1
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
-          className="text-[var(--text-primary)] font-['Poppins',sans-serif] mt-4 mb-3"
+          className="text-[var(--text-primary)] font-['Poppins',sans-serif] mt-3 md:mt-4 mb-2 md:mb-3"
           style={{ fontSize: 'clamp(32px, 5vw, 48px)', lineHeight: '1.1', fontWeight: 700 }}
         >
-          Your simple hub for anime & manga tools
+          Your simple hub for anime + manga tools
         </motion.h1>
         <p className="text-[var(--text-secondary)] font-['Inter',sans-serif] max-w-3xl text-[15.5px] leading-7">
           Miyomi is a clean, updated list of apps, extensions, and helpful links. No fluff. No dead ends. Just what works right now.
@@ -111,12 +111,12 @@ export function AboutPage() {
       </section>
 
       {/* DISCLAIMER */}
-      <section className="mb-12">
+      <section id="disclaimer" className="mb-12">
         <Card className="border-amber-300 dark:border-amber-700 bg-amber-50/60 dark:bg-amber-900/20">
           <div className="flex gap-4">
             <AlertCircle className="w-8 h-8 text-amber-600 dark:text-amber-400 flex-shrink-0" />
             <div>
-              <h3 className="font-semibold text-[var(--text-primary)] mb-1">Disclaimer: We only index — we don’t host</h3>
+              <h3 className="font-semibold text-[var(--text-primary)] mb-1">Disclaimer: We only index — we don't host</h3>
               <p className="text-[var(--text-secondary)] text-sm leading-relaxed">
                 Miyomi is simply a directory. We do not build, host, or distribute any of the apps listed here, and ownership remains with their original developers. Always download from the official sources we link and follow your local laws.
               </p>

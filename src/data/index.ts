@@ -28,12 +28,20 @@ export interface AppData {
   supportedExtensions: readonly string[]; // Extension IDs
   lastUpdated?: string; // ISO date string
   githubUrl?: string; // GitHub repository URL - owner/repo will be extracted when needed
+  getApp?: string; // Manual download link (fallback if no GitHub)
   officialSite?: string;
   discordUrl?: string;
   tutorials?: readonly AppTutorial[];
 }
 
 // ----- Extensions -----
+export interface ExtensionTutorial {
+  title: string;
+  type: 'video' | 'guide';
+  url: string;
+  description?: string;
+}
+
 export interface ExtensionData {
   id: string;
   name: string;
@@ -50,6 +58,7 @@ export interface ExtensionData {
   github?: string;
   website?: string;
   keywords?: readonly string[];
+  tutorials?: readonly ExtensionTutorial[];
 }
 
 // ----- Communities -----

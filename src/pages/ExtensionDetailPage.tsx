@@ -8,8 +8,6 @@ import { AppGridCard } from '../components/AppGridCard';
 import { ParticleBackground } from '../components/ParticleBackground';
 import { useFeedbackState } from '../hooks/useFeedbackState';
 import { FlagDisplay } from '../components/FlagDisplay';
-import { useGitHubLastCommit } from '../hooks/useGitHubLastCommit';
-import { GitHubCommitSummary } from '../components/GitHubCommitSummary';
 
 interface ExtensionDetailPageProps {
   extensionId: string;
@@ -28,11 +26,6 @@ export function ExtensionDetailPage({ extensionId, onNavigate }: ExtensionDetail
   // Mobile detection for different animation approach
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
 
-  // Fetch GitHub last commit data
-  const { commit, commits, loading: commitLoading } = useGitHubLastCommit(
-    extension?.github,
-    extension?.lastUpdated
-  );
 
   const handleBackClick = () => {
     const scrollPos = location.state?.previousScrollPosition;
@@ -367,20 +360,14 @@ export function ExtensionDetailPage({ extensionId, onNavigate }: ExtensionDetail
             )}
 
             {/* Last Updated */}
-            <div className="mb-4 flex flex-wrap items-center justify-center gap-3 text-sm text-[var(--text-secondary)] sm:justify-start">
-              {commit && !commitLoading && (
+            {extension.lastUpdated && (
+              <div className="mb-4 flex flex-wrap items-center justify-center gap-3 text-sm text-[var(--text-secondary)] sm:justify-start">
                 <span className="flex items-center gap-1.5">
                   <Calendar className="h-4 w-4" />
-                  Last Updated: {formatDate(commit.date)}
+                  Last Updated: {formatDate(extension.lastUpdated)}
                 </span>
-              )}
-              {commitLoading && (
-                <span className="flex items-center gap-1.5 opacity-50">
-                  <Calendar className="h-4 w-4" />
-                  Loading...
-                </span>
-              )}
-            </div>
+              </div>
+            )}
 
             {/* Action Buttons (Mobile) */}
             <div className="lg:hidden">{inlineActions}</div>
@@ -460,32 +447,22 @@ export function ExtensionDetailPage({ extensionId, onNavigate }: ExtensionDetail
               />
             ))}
           </div>
-          {hasMoreApps && (
-            <div className="flex justify-center mt-4">
-              <button
-                onClick={() =>
-                  onNavigate?.(
-                    `/software?content=${encodeURIComponent(viewMoreContentType)}`
-                  )
-                }
-                className="px-4 py-2 bg-[var(--chip-bg)] hover:bg-[var(--brand)] text-[var(--brand)] hover:text-white rounded-xl transition-all font-['Inter',sans-serif]"
-                style={{ fontWeight: 600 }}
-              >
-                See all supported apps
-              </button>
-            </div>
-          )}
+          <div className="flex justify-center mt-4">
+            <button
+              onClick={() =>
+                onNavigate?.(
+                  `/software?content=${encodeURIComponent(viewMoreContentType)}`
+                )
+              }
+              className="px-4 py-2 bg-[var(--chip-bg)] hover:bg-[var(--brand)] text-[var(--brand)] hover:text-white rounded-xl transition-all font-['Inter',sans-serif]"
+              style={{ fontWeight: 600 }}
+            >
+              {hasMoreApps ? 'See all supported apps' : 'Browse more apps'}
+            </button>
+          </div>
         </div>
       )}
 
-      {extension.github && (
-        <GitHubCommitSummary
-          commit={commit}
-          commits={commits}
-          loading={commitLoading}
-          formatDate={formatDate}
-        />
-      )}
 
       {/* Support Information */}
       <div className="mb-6 sm:mb-8">

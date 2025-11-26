@@ -49,61 +49,22 @@ export function ExtensionListCard({ extension, onSelect }: ExtensionListCardProp
             )}
           </div>
           <div className="flex-1 min-w-0">
-            <div className="flex items-center gap-2 mb-1">
-              <h3
-                className="font-['Inter',sans-serif] text-[var(--text-primary)]"
-                style={{ fontWeight: 600, fontSize: '16px' }}
-              >
-                {extension.name}
-              </h3>
-              {extension.github && (
-                <a
-                  href={extension.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={(event) => event.stopPropagation()}
-                  className="text-[var(--text-secondary)] hover:text-[var(--brand)] transition-colors"
-                  aria-label={`${extension.name} GitHub`}
-                >
-                  <Github className="w-4 h-4" />
-                </a>
-              )}
-              {extension.website && (
-                <a
-                  href={extension.website}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={(event) => event.stopPropagation()}
-                  className="text-[var(--text-secondary)] hover:text-[var(--brand)] transition-colors"
-                  aria-label={`${extension.name} website`}
-                >
-                  <Globe className="w-4 h-4" />
-                </a>
-              )}
-            </div>
+            <h3
+              className="font-['Inter',sans-serif] text-[var(--text-primary)] mb-2"
+              style={{ fontWeight: 600, fontSize: '16px' }}
+            >
+              {extension.name}
+            </h3>
             <div className="flex items-center gap-2 text-xs text-[var(--text-secondary)]">
               <FlagDisplay region={extension.region} size="small" />
-              <span>•</span>
+              <span>|</span>
               <span
-                className="font-['Inter',sans-serif] uppercase tracking-wide text-[11px]"
+                className="font-['Inter',sans-serif] tracking-wide text-[11px]"
                 style={{ fontWeight: 600 }}
               >
-                {extension.types.join(' & ')}
+                {extension.types.join(' + ')}
               </span>
             </div>
-            {extension.supportedApps.length > 0 && (
-              <div className="mt-2 flex flex-wrap gap-1.5">
-                {extension.supportedApps.map((appId) => (
-                  <span
-                    key={appId}
-                    className="px-2 py-0.5 rounded-md text-[10px] bg-[var(--chip-bg)] text-[var(--text-secondary)] font-['Inter',sans-serif] capitalize"
-                    style={{ fontWeight: 500 }}
-                  >
-                    {appId}
-                  </span>
-                ))}
-              </div>
-            )}
             {extension.info && (
               <p className="mt-3 text-sm text-[var(--text-secondary)] font-['Inter',sans-serif] line-clamp-2">
                 {extension.info}
@@ -149,48 +110,16 @@ export function ExtensionListCard({ extension, onSelect }: ExtensionListCardProp
           )}
         </div>
         <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-2">
-            <h3
-              className="font-['Inter',sans-serif] text-[var(--text-primary)] truncate"
-              style={{ fontWeight: 600, fontSize: '14px' }}
-            >
-              {extension.name}
-            </h3>
-            {extension.github && (
-              <a
-                href={extension.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(event) => event.stopPropagation()}
-                className="text-[var(--text-secondary)] hover:text-[var(--brand)] transition-colors"
-                aria-label={`${extension.name} GitHub`}
-              >
-                <Github className="w-4 h-4" />
-              </a>
-            )}
-            {extension.website && (
-              <a
-                href={extension.website}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(event) => event.stopPropagation()}
-                className="text-[var(--text-secondary)] hover:text-[var(--brand)] transition-colors"
-                aria-label={`${extension.name} website`}
-              >
-                <Globe className="w-4 h-4" />
-              </a>
-            )}
-          </div>
-          <div className="mt-1 flex flex-wrap items-center gap-1 text-[11px] text-[var(--text-secondary)]">
+          <h3
+            className="font-['Inter',sans-serif] text-[var(--text-primary)] truncate mb-1"
+            style={{ fontWeight: 600, fontSize: '14px' }}
+          >
+            {extension.name}
+          </h3>
+          <div className="flex items-center gap-1.5 text-[11px] text-[var(--text-secondary)]">
             <FlagDisplay region={extension.region} size="small" />
-            <span>•</span>
-            <span>{extension.types.join(' & ')}</span>
-            {extension.supportedApps.length > 0 && (
-              <>
-                <span>•</span>
-                <span className="truncate capitalize">{extension.supportedApps.join(', ')}</span>
-              </>
-            )}
+            <span>|</span>
+            <span>{extension.types.join(' + ')}</span>
           </div>
         </div>
 
