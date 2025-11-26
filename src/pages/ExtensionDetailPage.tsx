@@ -34,17 +34,7 @@ export function ExtensionDetailPage({ extensionId, onNavigate }: ExtensionDetail
       onNavigate('/extensions');
     } else {
       navigate('/extensions', {
-        state: { restoreScrollPosition: scrollPos }
-      });
-    }
-
-    // Restore scroll position immediately
-    if (scrollPos !== undefined) {
-      // Use requestAnimationFrame to ensure DOM is ready
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          window.scrollTo({ top: scrollPos, behavior: 'instant' });
-        });
+        state: { previousScrollPosition: scrollPos }
       });
     }
   };

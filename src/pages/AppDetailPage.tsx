@@ -263,17 +263,7 @@ export function AppDetailPage({ appId, onNavigate }: AppDetailPageProps) {
       onNavigate('/software');
     } else {
       navigate('/software', {
-        state: { restoreScrollPosition: scrollPos }
-      });
-    }
-
-    // Restore scroll position immediately
-    if (scrollPos !== undefined) {
-      // Use requestAnimationFrame to ensure DOM is ready
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          window.scrollTo({ top: scrollPos, behavior: 'instant' });
-        });
+        state: { previousScrollPosition: scrollPos }
       });
     }
   };
