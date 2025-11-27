@@ -4,7 +4,7 @@ import { useGitHubLastCommit } from '../hooks/useGitHubLastCommit';
 
 export function Footer() {
   const { commit, loading } = useGitHubLastCommit('tas33n/miyomi');
-  
+
   return (
     <footer className="border-t border-[var(--divider)] mt-16 py-8 px-4 sm:px-8 lg:px-[120px]">
       <div className="max-w-7xl mx-auto">
@@ -36,12 +36,12 @@ export function Footer() {
               Disclaimer
             </a>
           </div>
-          
+
           {/* Right side - Made with love */}
           <div className="flex items-center gap-2">
             <span>Made with </span>
             <Heart className="w-4 h-4 text-[var(--brand)] fill-[var(--brand)]" />
-            <span>the power of "just one more chapter"</span>
+            <span>& the power of "just one more chapter"</span>
           </div>
         </div>
       </div>
