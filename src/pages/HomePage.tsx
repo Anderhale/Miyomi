@@ -212,8 +212,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
           const featureCount = feature.path === '/guides'
             ? formatCount(totalGuides)
             : feature.path === '/software'
-            ? formatCount(unifiedApps.length)
-            : formatCount(unifiedExtensions.length);
+              ? formatCount(unifiedApps.length)
+              : formatCount(unifiedExtensions.length);
 
           return (
             <motion.button
@@ -228,14 +228,17 @@ export function HomePage({ onNavigate }: HomePageProps) {
               style={{ boxShadow: '0 6px 20px 0 rgba(0,0,0,0.08)' }}
             >
               {/* Counter watermark in background */}
-              <div className="absolute right-0 top-0 pointer-events-none">
+              <div className="absolute right-2 top-2 pointer-events-none">
                 <div
-                  className="font-['Poppins',sans-serif] transition-opacity select-none dark:opacity-[0.01] opacity-[0.02] dark:group-hover:opacity-[0.02] group-hover:opacity-[0.03]"
+                  className="font-['Poppins',sans-serif]"
                   style={{
-                    fontSize: 'clamp(30px, 4vw, 46px)',
+                    fontSize: 'clamp(50px, 6vw, 66px)',
                     fontWeight: 900,
                     lineHeight: '1',
-                    color: 'var(--text-secondary)'
+                    color: 'var(--text-secondary)',
+                    opacity: 0.03,
+                    transition: 'opacity 0.3s ease-in-out',
+                    // transform: 'translateX(-20px)',
                   }}
                 >
                   {featureCount}
