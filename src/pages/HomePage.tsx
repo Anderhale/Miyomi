@@ -1,6 +1,6 @@
 import { Plus, Package, Star, Twitter, MessageSquare, Facebook } from 'lucide-react';
 import { Button } from '../components/Button';
-import avatarImage from 'figma:asset/polic.png';
+import avatarImage from '../assets/polic.png';
 import React from 'react';
 import { unifiedApps, unifiedExtensions, guideCategories } from '../data';
 import { useFeedbackState } from '../hooks/useFeedbackState';

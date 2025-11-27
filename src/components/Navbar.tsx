@@ -3,7 +3,7 @@
 import { X, ChevronDown, Github, Instagram, Youtube, Facebook, Plus } from 'lucide-react';
 import React, { useState, useEffect, useRef } from 'react';
 import { ThemeToggle } from './ThemeToggle';
-import logoImage from 'figma:asset/hugme.png';
+import logoImage from '../assets/hugme.png';
 import { useLocation, useNavigate } from 'react-router-dom';
 import {
   DropdownMenu,
@@ -143,8 +143,8 @@ export function Navbar({ onNavigate }: NavbarProps) {
     <>
       <nav
         className={`h-16 fixed top-0 left-0 right-0 z-[999] transition-all duration-300 ${scrolled
-            ? 'bg-[var(--bg-page)]/80 backdrop-blur-xl border-b border-[var(--divider)]/50 shadow-sm'
-            : 'bg-transparent'
+          ? 'bg-[var(--bg-page)]/80 backdrop-blur-xl border-b border-[var(--divider)]/50 shadow-sm'
+          : 'bg-transparent'
           }`}
       >
         {/* Navbar Content */}
@@ -293,8 +293,8 @@ export function Navbar({ onNavigate }: NavbarProps) {
                     key={item.path}
                     onClick={() => handleClick(item.path)}
                     className={`w-full text-center py-2 px-4 rounded-lg transition-colors ${isActive(item.path)
-                        ? 'text-[var(--brand)] bg-[var(--chip-bg)]'
-                        : 'text-[var(--text-secondary)] hover:bg-[var(--bg-elev-1)]'
+                      ? 'text-[var(--brand)] bg-[var(--chip-bg)]'
+                      : 'text-[var(--text-secondary)] hover:bg-[var(--bg-elev-1)]'
                       }`}
                     style={{ fontWeight: isActive(item.path) ? 600 : 400 }}
                   >
@@ -329,8 +329,8 @@ export function Navbar({ onNavigate }: NavbarProps) {
                     key={item.path}
                     onClick={() => handleClick(item.path)}
                     className={`w-full text-center py-2 px-4 rounded-lg transition-colors ${isActive(item.path)
-                        ? 'text-[var(--brand)] bg-[var(--chip-bg)]'
-                        : 'text-[var(--text-secondary)] hover:bg-[var(--bg-elev-1)]'
+                      ? 'text-[var(--brand)] bg-[var(--chip-bg)]'
+                      : 'text-[var(--text-secondary)] hover:bg-[var(--bg-elev-1)]'
                       }`}
                     style={{ fontWeight: isActive(item.path) ? 600 : 400 }}
                   >

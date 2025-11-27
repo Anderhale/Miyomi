@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from '../components/Button';
 import { useNavigate } from 'react-router-dom';
-import policImage from 'figma:asset/404.png';
+import policImage from '../assets/404.png';
 
 export function NotFoundPage() {
   const navigate = useNavigate();
