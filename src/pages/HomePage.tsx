@@ -1,11 +1,10 @@
-import { Plus, Package, Star, Github, MessageSquare, Facebook, Sparkles, Zap, Shield, Twitter, BookOpen } from 'lucide-react';
+import { Plus, Package, Star, Twitter, MessageSquare, Facebook } from 'lucide-react';
 import { Button } from '../components/Button';
-import avatarImage from 'figma:asset/polic.png';
+import avatarImage from '../assets/polic.png';
 import React from 'react';
 import { unifiedApps, unifiedExtensions, guideCategories } from '../data';
-import type { LucideIcon } from 'lucide-react';
 import { useFeedbackState } from '../hooks/useFeedbackState';
-import { AnimatePresence, motion } from 'motion/react';
+import { motion } from 'motion/react';
 
 interface HomePageProps {
   onNavigate?: (path: string) => void;
@@ -53,53 +52,6 @@ export function HomePage({ onNavigate }: HomePageProps) {
     return `${value}+`;
   };
   const totalGuides = guideCategories.reduce((total, category) => total + category.guides.length, 0);
-  type StatKey = 'apps' | 'extensions' | 'guides';
-  const statCounts: Record<StatKey, number> = {
-    apps: unifiedApps.length,
-    extensions: unifiedExtensions.length,
-    guides: totalGuides,
-  };
-  const statMeta: Array<{
-    key: StatKey;
-    label: string;
-    path: string;
-    icon: LucideIcon;
-    gradient: string;
-    glow: string;
-    glowAlt: string;
-  }> = [
-      {
-        key: 'apps',
-        label: 'Apps',
-        path: '/software',
-        icon: Package,
-        gradient: 'from-[#FFB3C1] to-[#FF6B9D]',
-        glow: 'bg-[#FFB3C1]/35',
-        glowAlt: 'bg-[#FF6B9D]/25',
-      },
-      {
-        key: 'extensions',
-        label: 'Extensions',
-        path: '/extensions',
-        icon: Zap,
-        gradient: 'from-[#B3D9FF] to-[#4A90E2]',
-        glow: 'bg-[#B3D9FF]/35',
-        glowAlt: 'bg-[#4A90E2]/25',
-      },
-      {
-        key: 'guides',
-        label: 'Guides',
-        path: '/guides',
-        icon: BookOpen,
-        gradient: 'from-[#E8D4FF] to-[#7C4DFF]',
-        glow: 'bg-[#E8D4FF]/35',
-        glowAlt: 'bg-[#7C4DFF]/25',
-      }
-    ];
-  const stats = statMeta.map((meta) => ({
-    ...meta,
-    count: formatCount(statCounts[meta.key]),
-  }));
 
   const socialGridRef = React.useRef<HTMLDivElement>(null);
   const [useTwoColumns, setUseTwoColumns] = React.useState(false);
@@ -254,85 +206,73 @@ export function HomePage({ onNavigate }: HomePageProps) {
         </div>
       </div>
 
-      {/* Feature Cards */}
+      {/* Feature Cards with Counters */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 lg:gap-6 mb-16 relative z-10">
-        {features.map((feature, index) => (
-          <motion.button
-            key={index}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1, duration: 0.4 }}
-            whileHover={{ y: -4, scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            onClick={() => onNavigate?.(feature.path)}
-            className="group feature-card relative overflow-hidden p-4 sm:p-6 bg-[var(--bg-surface)] border border-[var(--divider)] rounded-2xl hover:shadow-lg transition-all text-left"
-            style={{ boxShadow: '0 6px 20px 0 rgba(0,0,0,0.08)' }}
-          >
-            {/* Gradient background on hover */}
-            <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
+        {features.map((feature, index) => {
+          const featureCount = feature.path === '/guides'
+            ? formatCount(totalGuides)
+            : feature.path === '/software'
+              ? formatCount(unifiedApps.length)
+              : formatCount(unifiedExtensions.length);
 
-            <div className="relative z-10 flex items-center gap-4">
-              <div className={`inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br ${feature.gradient} text-white flex-shrink-0 group-hover:scale-105 transition-transform duration-300`}>
-                {React.cloneElement(feature.icon, { className: 'w-5 h-5 sm:w-6 sm:h-6' })}
-              </div>
-              <div className="flex-1 min-w-0">
-                <h3
-                  className="text-[var(--text-primary)] font-['Poppins',sans-serif] mb-0.5 truncate"
-                  style={{ fontSize: '16px', fontWeight: 700 }}
-                >
-                  {feature.title}
-                </h3>
-                <p className="text-[var(--text-secondary)] font-['Inter',sans-serif] text-xs sm:text-sm leading-snug line-clamp-2 sm:line-clamp-3">
-                  {feature.description}
-                </p>
-              </div>
-              {/* Arrow indicator */}
-              <div className="text-[var(--brand)] group-hover:translate-x-1 transition-transform duration-300 flex-shrink-0">
-                &rarr;
-              </div>
-            </div>
-          </motion.button>
-        ))}
-      </div>
-
-      {/* Stats Section */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 relative z-10">
-        {stats.map((stat, index) => {
-          const Icon = stat.icon;
           return (
             <motion.button
               key={index}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.3 + index * 0.1, duration: 0.4 }}
-              whileHover={{ y: -6, scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => onNavigate?.(stat.path)}
-              className="group relative overflow-hidden p-6 sm:p-8 bg-[var(--bg-surface)] border border-[var(--divider)] rounded-2xl text-center hover:shadow-lg transition-all hover:border-[var(--brand)]"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1, duration: 0.4 }}
+              whileHover={{ y: -4, scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => onNavigate?.(feature.path)}
+              className="group feature-card relative overflow-hidden p-4 sm:p-6 bg-[var(--bg-surface)] border border-[var(--divider)] rounded-2xl hover:shadow-lg transition-all text-left"
               style={{ boxShadow: '0 6px 20px 0 rgba(0,0,0,0.08)' }}
             >
-              <div className="absolute inset-0 pointer-events-none">
-                <div className={`absolute -top-10 -right-8 w-28 h-28 rounded-full blur-3xl transition-opacity duration-500 ${stat.glow} group-hover:opacity-80`} />
-                <div className={`absolute -bottom-12 -left-10 w-32 h-32 rounded-full blur-3xl transition-opacity duration-500 ${stat.glowAlt} opacity-60 group-hover:opacity-90`} />
-              </div>
-              <div className="relative z-10 flex flex-col items-center gap-3">
-                <div className={`inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br ${stat.gradient} text-white shadow-lg shadow-black/10 group-hover:scale-105 transition-transform`}>
-                  <Icon className="w-6 h-6 sm:w-7 sm:h-7" />
-                </div>
+              {/* Counter watermark in background */}
+              <div className="absolute right-2 top-2 pointer-events-none">
                 <div
-                  className="text-[var(--text-primary)] font-['Poppins',sans-serif] group-hover:scale-110 transition-transform"
-                  style={{ fontSize: 'clamp(28px, 5vw, 40px)', fontWeight: 800 }}
+                  className="font-['Poppins',sans-serif]"
+                  style={{
+                    fontSize: 'clamp(50px, 6vw, 66px)',
+                    fontWeight: 900,
+                    lineHeight: '1',
+                    color: 'var(--text-secondary)',
+                    opacity: 0.03,
+                    transition: 'opacity 0.3s ease-in-out',
+                    // transform: 'translateX(-20px)',
+                  }}
                 >
-                  {stat.count}
+                  {featureCount}
                 </div>
-                <div className="text-[var(--text-secondary)] font-['Inter',sans-serif]" style={{ fontSize: '14px', fontWeight: 500 }}>
-                  {stat.label}
+              </div>
+
+              {/* Gradient background on hover */}
+              <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
+
+              <div className="relative z-10 flex items-center gap-4">
+                <div className={`inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br ${feature.gradient} text-white flex-shrink-0 group-hover:scale-105 transition-transform duration-300`}>
+                  {React.cloneElement(feature.icon, { className: 'w-5 h-5 sm:w-6 sm:h-6' })}
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h3
+                    className="text-[var(--text-primary)] font-['Poppins',sans-serif] mb-0.5 truncate"
+                    style={{ fontSize: '16px', fontWeight: 700 }}
+                  >
+                    {feature.title}
+                  </h3>
+                  <p className="text-[var(--text-secondary)] font-['Inter',sans-serif] text-xs sm:text-sm leading-snug line-clamp-2 sm:line-clamp-3">
+                    {feature.description}
+                  </p>
+                </div>
+                {/* Arrow indicator */}
+                <div className="text-[var(--brand)] group-hover:translate-x-1 transition-transform duration-300 flex-shrink-0">
+                  &rarr;
                 </div>
               </div>
             </motion.button>
           );
         })}
       </div>
+
     </div>
   );
 }

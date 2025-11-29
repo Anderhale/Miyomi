@@ -29,13 +29,24 @@ export function SoftwarePage({ onNavigate }: SoftwarePageProps) {
 
   // Restore scroll position when coming back from detail page
   useEffect(() => {
-    const scrollPos = location.state?.restoreScrollPosition;
+    const scrollPos = location.state?.restoreScrollPosition || location.state?.previousScrollPosition;
+    const savedScroll = sessionStorage.getItem('software-scroll-position');
+
     if (scrollPos !== undefined) {
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
           window.scrollTo({ top: scrollPos, behavior: 'instant' });
         });
       });
+      sessionStorage.removeItem('software-scroll-position');
+    } else if (savedScroll && location.state?.fromNavigation !== true) {
+      const position = parseInt(savedScroll, 10);
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          window.scrollTo({ top: position, behavior: 'instant' });
+        });
+      });
+      sessionStorage.removeItem('software-scroll-position');
     }
   }, [location.state]);
 
@@ -172,7 +183,10 @@ export function SoftwarePage({ onNavigate }: SoftwarePageProps) {
   }, [selectedContentType, selectedPlatform, searchQuery, sortBy]);
 
   const handleAppClick = (appId: string) => {
+    const currentScrollY = window.scrollY;
     onNavigate?.(`/software/${appId}`);
+
+    sessionStorage.setItem('software-scroll-position', currentScrollY.toString());
   };
 
   return (
@@ -250,7 +264,7 @@ export function SoftwarePage({ onNavigate }: SoftwarePageProps) {
       {
         filteredAndSortedApps.length > 0 ? (
           view === 'grid' ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
               {filteredAndSortedApps.map((app) => (
                 <AppGridCard
                   key={app.id}

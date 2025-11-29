@@ -29,13 +29,24 @@ export function ExtensionsPage({ onNavigate }: ExtensionsPageProps) {
 
   // Restore scroll position when coming back from detail page
   useEffect(() => {
-    const scrollPos = location.state?.restoreScrollPosition;
+    const scrollPos = location.state?.restoreScrollPosition || location.state?.previousScrollPosition;
+    const savedScroll = sessionStorage.getItem('extensions-scroll-position');
+
     if (scrollPos !== undefined) {
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
           window.scrollTo({ top: scrollPos, behavior: 'instant' });
         });
       });
+      sessionStorage.removeItem('extensions-scroll-position');
+    } else if (savedScroll && location.state?.fromNavigation !== true) {
+      const position = parseInt(savedScroll, 10);
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          window.scrollTo({ top: position, behavior: 'instant' });
+        });
+      });
+      sessionStorage.removeItem('extensions-scroll-position');
     }
   }, [location.state]);
 
@@ -171,7 +182,10 @@ export function ExtensionsPage({ onNavigate }: ExtensionsPageProps) {
   }, [selectedApp, selectedType, searchQuery, sortBy]);
 
   const handleExtensionClick = (extensionId: string) => {
+    const currentScrollY = window.scrollY;
     onNavigate?.(`/extensions/${extensionId}`);
+
+    sessionStorage.setItem('extensions-scroll-position', currentScrollY.toString());
   };
 
   return (
@@ -247,7 +261,7 @@ export function ExtensionsPage({ onNavigate }: ExtensionsPageProps) {
       {/* Extensions Display */}
       {filteredAndSortedExtensions.length > 0 ? (
         view === 'grid' ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 mb-8">
             {filteredAndSortedExtensions.map((ext) => (
               <ExtensionGridCard key={ext.id} extension={ext} onSelect={handleExtensionClick} />
             ))}

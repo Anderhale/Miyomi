@@ -40,8 +40,8 @@ export function AppListCard({
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
       transition={{ duration: 0.2 }}
-      className="flex items-center gap-3 p-3 bg-[var(--bg-surface)] border border-[var(--divider)] rounded-xl hover:shadow-lg hover:border-[var(--brand)] transition-all w-full text-left group"
-      style={{ boxShadow: '0 4px 12px 0 rgba(0,0,0,0.05)' }}
+      className="flex items-center gap-3 p-3 bg-[var(--bg-surface)] border border-[var(--divider)] border-l-4 rounded-xl hover:shadow-lg hover:border-[var(--brand)] transition-all w-full text-left group"
+      style={{ boxShadow: '0 4px 12px 0 rgba(0,0,0,0.05)', borderLeftColor: iconColor }}
     >
       {/* App Icon - Fixed size, full height */}
       <div className="flex-shrink-0 group-hover:scale-105 transition-transform">
@@ -62,7 +62,7 @@ export function AppListCard({
         </h3>
         <div className="flex flex-wrap items-center gap-1.5 mb-1">
           {displayedTags.map((tag, index) => (
-            <TagBadge key={index} tag={tag} />
+            <TagBadge key={index} tag={tag} mobile={isMobile} />
           ))}
           {showPlatformDivider && <span className="h-4 w-px bg-[var(--divider)]" aria-hidden="true"></span>}
           {platforms.length > 0 && (

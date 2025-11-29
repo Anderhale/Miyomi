@@ -40,51 +40,53 @@ export function AppGridCard({
       whileHover={{ y: -4 }}
       whileTap={{ scale: 0.98 }}
       transition={{ duration: 0.2 }}
-      className="p-4 sm:p-6 bg-[var(--bg-surface)] border border-[var(--divider)] rounded-2xl hover:shadow-lg hover:border-[var(--brand)] transition-all text-left w-full group"
+      className="p-3 sm:p-6 bg-[var(--bg-surface)] border border-[var(--divider)] rounded-2xl hover:shadow-lg hover:border-[var(--brand)] transition-all text-left w-full group flex flex-col"
       style={{ boxShadow: '0 6px 20px 0 rgba(0,0,0,0.08)' }}
     >
-      {/* App Icon */}
-      <div className="flex items-start gap-4 mb-4">
+      {/* App Icon and Title - Centered on mobile, left-aligned on desktop */}
+      <div className="flex flex-col sm:flex-row items-center sm:items-start gap-2 sm:gap-4 mb-2 sm:mb-4">
         <div className="flex-shrink-0 group-hover:scale-105 transition-transform">
           <AppLogo
             name={name}
             logoUrl={logoUrl}
             iconColor={iconColor}
-            className="w-16 h-16"
-            roundedClass="rounded-2xl"
-            textClassName="text-2xl"
+            className="w-12 h-12 sm:w-16 sm:h-16"
+            roundedClass="rounded-xl sm:rounded-2xl"
+            textClassName="text-lg sm:text-2xl"
           />
         </div>
-        <div className="flex-1 min-w-0">
-          <h3 className="font-['Inter',sans-serif] text-[var(--text-primary)] mb-1" style={{ fontWeight: 600, fontSize: '18px' }}>
+        <div className="flex-1 min-w-0 text-center sm:text-left w-full">
+          <h3 className="font-['Inter',sans-serif] text-[var(--text-primary)] mb-1 sm:mb-1" style={{ fontWeight: 600, fontSize: '14px', lineHeight: '1.3' }}>
             {name}
           </h3>
-          <div className="flex items-center gap-1.5 flex-wrap">
+          <div className="flex items-center justify-center sm:justify-start gap-1.5 flex-wrap">
             {displayedTags.map((tag, index) => (
-              <TagBadge key={index} tag={tag} />
+              <TagBadge key={index} tag={tag} mobile={isMobile} />
             ))}
-            {showPlatformDivider && <span className="h-4 w-px bg-[var(--divider)]" aria-hidden="true"></span>}
-            {displayedPlatforms.map((platform, index) => (
-              <PlatformBadge key={`${platform}-${index}`} platform={platform} small />
-            ))}
-            {extraPlatforms > 0 && (
-              <span className="text-[11px] text-[var(--text-secondary)] font-['Inter',sans-serif]" style={{ fontWeight: 500 }}>
-                +{extraPlatforms}
-              </span>
-            )}
+            {showPlatformDivider && <span className="hidden sm:inline h-4 w-px bg-[var(--divider)]" aria-hidden="true"></span>}
+            <div className="flex items-center gap-1.5 flex-wrap justify-center sm:justify-start">
+              {displayedPlatforms.map((platform, index) => (
+                <PlatformBadge key={`${platform}-${index}`} platform={platform} small />
+              ))}
+              {extraPlatforms > 0 && (
+                <span className="text-[11px] text-[var(--text-secondary)] font-['Inter',sans-serif]" style={{ fontWeight: 500 }}>
+                  +{extraPlatforms}
+                </span>
+              )}
+            </div>
           </div>
         </div>
       </div>
 
       {/* Description */}
-      <p className="text-[var(--text-secondary)] font-['Inter',sans-serif] mb-4 line-clamp-2" style={{ fontSize: '14px' }}>
+      <p className="text-[var(--text-secondary)] font-['Inter',sans-serif] mb-2 sm:mb-4 line-clamp-2 text-center sm:text-left flex-grow" style={{ fontSize: '12px', lineHeight: '1.4' }}>
         {description}
       </p>
 
       {/* Download Button */}
-      <div className="flex items-center justify-center gap-2 w-full px-4 py-2 rounded-xl bg-[var(--chip-bg)] group-hover:bg-[var(--brand)] text-[var(--brand)] group-hover:text-white transition-all">
-        <Download className="w-4 h-4" />
-        <span className="font-['Inter',sans-serif]" style={{ fontWeight: 600, fontSize: '14px' }}>
+      <div className="flex items-center justify-center gap-2 w-full px-3 py-2 sm:py-2 rounded-lg sm:rounded-xl bg-[var(--chip-bg)] group-hover:bg-[var(--brand)] text-[var(--brand)] group-hover:text-white transition-all mt-auto">
+        <Download className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+        <span className="font-['Inter',sans-serif]" style={{ fontWeight: 600, fontSize: '13px' }}>
           View Details
         </span>
       </div>
