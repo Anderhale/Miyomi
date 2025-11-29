@@ -52,6 +52,18 @@ const MacIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
+const GlobeIcon = ({ className }: { className?: string }) => (
+  <svg
+    className={className}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    aria-hidden="true"
+    focusable="false"
+  >
+    <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm6.32 6H15.9a14 14 0 0 0-.67-3.07A8.04 8.04 0 0 1 18.32 8ZM12 4.04c.52.76 1.11 2.04 1.52 3.96H10.5c.41-1.92 1-3.2 1.5-3.96ZM8.77 4.93A14 14 0 0 0 8.1 8H5.68a8.04 8.04 0 0 1 3.09-3.07ZM4.06 10H7.9a15 15 0 0 0-.12 2c0 .7.04 1.36.12 2H4.06a7.97 7.97 0 0 1 0-4Zm1.62 6H8.1c.17 1.17.44 2.24.78 3.07A8.04 8.04 0 0 1 5.68 16Zm4.82 3.96C10 19.2 9.41 17.92 9 16h3.02c-.41 1.92-1 3.2-1.52 3.96Zm.66-5.96h3.36c-.08-.64-.12-1.3-.12-2 0-.7.04-1.36.12-2H11.16c-.08.64-.12 1.3-.12 2 0 .7.04 1.36.12 2Zm.82 5.03c.45-.81.86-2.06 1.16-3.99h2.36a8.05 8.05 0 0 1-3.52 3.99ZM15.9 14h3.44a8.05 8.05 0 0 1-1.55 3.07H15.9c.17-1.17.28-2.24.34-3.07Zm.34-2a15 15 0 0 0-.12-2h3.82a7.97 7.97 0 0 1 0 4H16.24c.08-.64.12-1.3.12-2Z" />
+  </svg>
+);
+
 const MonitorIcon = ({ className }: { className?: string }) => (
   <svg
     className={className}
@@ -126,7 +138,7 @@ export function getPlatformIcon(platform: string, size: IconSize = "md"): ReactN
     case "Linux":
       return <LinuxTuxIcon className={className} />;
     case "Web":
-      return <MonitorIcon className={className} />;
+      return <GlobeIcon className={className} />;
     default:
       return <MonitorIcon className={className} />;
   }
