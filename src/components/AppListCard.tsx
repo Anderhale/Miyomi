@@ -3,6 +3,7 @@ import { ExternalLink } from 'lucide-react';
 import { AppLogo } from './AppLogo';
 import { PlatformBadge } from './PlatformBadge';
 import { motion } from 'motion/react';
+import { useAccentColor } from '../hooks/useAccentColor';
 
 interface AppListCardProps {
   appId: string;
@@ -10,7 +11,7 @@ interface AppListCardProps {
   description: string;
   tags: Array<'Manga' | 'Anime' | 'Light Novel' | 'Multi'>;
   platforms: Array<'Windows' | 'Mac' | 'Android' | 'iOS' | 'Linux' | 'Web'>;
-  iconColor: string;
+  iconColor?: string;
   logoUrl?: string;
   onClick?: () => void;
 }
@@ -29,6 +30,7 @@ export function AppListCard({
   const displayedPlatforms = platforms.slice(0, 3);
   const extraPlatforms = platforms.length - displayedPlatforms.length;
   const showPlatformDivider = displayedTags.length > 0 && platforms.length > 0;
+  const accentColor = useAccentColor({ logoUrl, preferredColor: iconColor });
   
   // Only use layoutId on desktop
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
@@ -41,14 +43,14 @@ export function AppListCard({
       whileTap={{ scale: 0.98 }}
       transition={{ duration: 0.2 }}
       className="flex items-center gap-3 p-3 bg-[var(--bg-surface)] border border-[var(--divider)] border-l-4 rounded-xl hover:shadow-lg hover:border-[var(--brand)] transition-all w-full text-left group"
-      style={{ boxShadow: '0 4px 12px 0 rgba(0,0,0,0.05)', borderLeftColor: iconColor }}
+      style={{ boxShadow: '0 4px 12px 0 rgba(0,0,0,0.05)', borderLeftColor: accentColor }}
     >
       {/* App Icon - Fixed size, full height */}
       <div className="flex-shrink-0 group-hover:scale-105 transition-transform">
         <AppLogo
           name={name}
           logoUrl={logoUrl}
-          iconColor={iconColor}
+          iconColor={accentColor}
           className="w-14 h-14"
           roundedClass="rounded-xl"
           textClassName="text-lg"

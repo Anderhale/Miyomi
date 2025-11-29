@@ -3,6 +3,7 @@ import { PlatformBadge } from './PlatformBadge';
 import { Download } from 'lucide-react';
 import { AppLogo } from './AppLogo';
 import { motion } from 'motion/react';
+import { useAccentColor } from '../hooks/useAccentColor';
 
 interface AppGridCardProps {
   appId: string;
@@ -10,7 +11,7 @@ interface AppGridCardProps {
   description: string;
   tags: Array<'Manga' | 'Anime' | 'Light Novel' | 'Multi'>;
   platforms: Array<'Windows' | 'Mac' | 'Android' | 'iOS' | 'Linux' | 'Web'>;
-  iconColor: string;
+  iconColor?: string;
   logoUrl?: string;
   onClick?: () => void;
 }
@@ -29,6 +30,7 @@ export function AppGridCard({
   const displayedPlatforms = platforms.slice(0, 3);
   const extraPlatforms = platforms.length - displayedPlatforms.length;
   const showPlatformDivider = displayedTags.length > 0 && platforms.length > 0;
+  const accentColor = useAccentColor({ logoUrl, preferredColor: iconColor });
   
   // Only use layoutId on desktop for morphing effect
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
@@ -49,7 +51,7 @@ export function AppGridCard({
           <AppLogo
             name={name}
             logoUrl={logoUrl}
-            iconColor={iconColor}
+            iconColor={accentColor}
             className="w-12 h-12 sm:w-16 sm:h-16"
             roundedClass="rounded-xl sm:rounded-2xl"
             textClassName="text-lg sm:text-2xl"

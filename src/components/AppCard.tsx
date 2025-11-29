@@ -3,13 +3,14 @@ import { Button } from './Button';
 import { PlatformBadge } from './PlatformBadge';
 import { Download, Package, Info } from 'lucide-react';
 import { AppLogo } from './AppLogo';
+import { useAccentColor } from '../hooks/useAccentColor';
 
 interface AppCardProps {
   name: string;
   description: string;
   tags: Array<'Manga' | 'Anime' | 'Light Novel' | 'Multi'>;
   platforms: Array<'Windows' | 'Mac' | 'Android' | 'iOS' | 'Linux' | 'Web'>;
-  iconColor: string;
+  iconColor?: string;
   logoUrl?: string;
   onDownload?: () => void;
   onExtensions?: () => void;
@@ -27,6 +28,8 @@ export function AppCard({
   onExtensions,
   onDetails,
 }: AppCardProps) {
+  const accentColor = useAccentColor({ logoUrl, preferredColor: iconColor });
+
   return (
     <div
       className="flex flex-col md:flex-row items-start md:items-center gap-4 p-4 bg-[var(--bg-surface)] border border-[var(--divider)] rounded-2xl transition-all hover:shadow-lg group"
@@ -37,7 +40,7 @@ export function AppCard({
         <AppLogo
           name={name}
           logoUrl={logoUrl}
-          iconColor={iconColor}
+          iconColor={accentColor}
           className="w-14 h-14"
           roundedClass="rounded-xl"
           textClassName="text-2xl"

@@ -9,6 +9,7 @@ import { ExtensionGridCard } from '../components/ExtensionGridCard';
 import { getAppById, getAppExtensions, getExtensionById } from '../data';
 import { useGitHubRelease } from '../hooks/useGitHubRelease';
 import { GitHubReleaseMeta } from '../components/GitHubReleaseMeta';
+import { useAccentColor } from '../hooks/useAccentColor';
 
 const DiscordIcon = ({ className }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -176,6 +177,11 @@ interface AppDetailPageProps {
 
 export function AppDetailPage({ appId, onNavigate }: AppDetailPageProps) {
   const app = getAppById(appId);
+  const accentColor = useAccentColor({
+    logoUrl: app?.logoUrl,
+    preferredColor: app?.iconColor,
+    defaultColor: 'var(--brand)',
+  });
   const supportedExtensions = (app?.supportedExtensions ?? [])
     .map((extensionId) => getExtensionById(extensionId))
     .filter((ext): ext is NonNullable<typeof ext> => Boolean(ext));
@@ -511,7 +517,7 @@ export function AppDetailPage({ appId, onNavigate }: AppDetailPageProps) {
             ) : (
               <div
                 className="flex h-full w-full items-center justify-center rounded-2xl"
-                style={{ backgroundColor: app.iconColor, fontWeight: 700 }}
+                style={{ backgroundColor: accentColor, fontWeight: 700 }}
               >
                 <span className="text-4xl lg:text-5xl">{app.name.charAt(0)}</span>
               </div>

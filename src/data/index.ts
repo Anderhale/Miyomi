@@ -21,7 +21,7 @@ export interface AppData {
   description: string;
   contentTypes: readonly ContentType[];
   platforms: readonly Platform[];
-  iconColor: string;
+  iconColor?: string;
   logoUrl?: string;
   author?: string;
   keywords?: readonly string[];
