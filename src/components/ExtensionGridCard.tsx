@@ -2,6 +2,8 @@ import { Download, Info } from 'lucide-react';
 import { motion } from 'motion/react';
 import type { ExtensionData } from '../data';
 import { FlagDisplay } from './FlagDisplay';
+import { useAccentColor } from '../hooks/useAccentColor';
+import { useState } from 'react';
 
 interface ExtensionGridCardProps {
   extension: ExtensionData;
@@ -10,9 +12,39 @@ interface ExtensionGridCardProps {
 
 export function ExtensionGridCard({ extension, onSelect }: ExtensionGridCardProps) {
   const handleSelect = () => onSelect(extension.id);
+  const accentColor = useAccentColor({
+    logoUrl: extension.logoUrl,
+    preferredColor: extension.accentColor,
+    defaultColor: 'var(--brand)',
+  });
+  const [imageError, setImageError] = useState(false);
 
   // Only use layoutId on desktop
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+
+  const renderLogo = () => {
+    const showFallback = imageError || !extension.logoUrl?.trim();
+
+    if (showFallback) {
+      return (
+        <div
+          className="w-full h-full flex items-center justify-center text-white"
+          style={{ backgroundColor: accentColor, fontWeight: 600, fontSize: '20px' }}
+        >
+          {extension.name.charAt(0)}
+        </div>
+      );
+    }
+
+    return (
+      <img
+        src={extension.logoUrl}
+        alt={`${extension.name} logo`}
+        className="w-full h-full object-cover"
+        onError={() => setImageError(true)}
+      />
+    );
+  };
 
   return (
     <motion.div
@@ -26,24 +58,7 @@ export function ExtensionGridCard({ extension, onSelect }: ExtensionGridCardProp
     >
       <div className="flex flex-col sm:flex-row items-center sm:items-start gap-2 sm:gap-3 mb-2 sm:mb-3">
         <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 overflow-hidden bg-[var(--chip-bg)] group-hover:scale-105 transition-transform">
-          {extension.logoUrl && extension.logoUrl.trim() !== '' ? (
-            <img
-              src={extension.logoUrl}
-              alt={`${extension.name} logo`}
-              className="w-full h-full object-cover"
-              onError={(e) => {
-                (e.currentTarget as HTMLImageElement).style.display = 'none';
-                (e.currentTarget.parentElement!.innerHTML = `<div class='flex items-center justify-center w-full h-full text-white' style='background-color:${extension.accentColor};font-weight:600;font-size:20px;'>${extension.name.charAt(0)}</div>`);
-              }}
-            />
-          ) : (
-            <div
-              className="w-full h-full flex items-center justify-center text-white"
-              style={{ backgroundColor: extension.accentColor, fontWeight: 600, fontSize: '20px' }}
-            >
-              {extension.name.charAt(0)}
-            </div>
-          )}
+          {renderLogo()}
         </div>
         <div className="flex-1 min-w-0 text-center sm:text-left">
           <h3

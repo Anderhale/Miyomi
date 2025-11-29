@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Download, Github, Globe, ExternalLink } from 'lucide-react';
 import { motion } from 'motion/react';
 import type { ExtensionData } from '../data';
 import { FlagDisplay } from './FlagDisplay';
+import { useAccentColor } from '../hooks/useAccentColor';
 
 interface ExtensionListCardProps {
   extension: ExtensionData;
@@ -11,9 +12,39 @@ interface ExtensionListCardProps {
 
 export function ExtensionListCard({ extension, onSelect }: ExtensionListCardProps) {
   const handleSelect = () => onSelect(extension.id);
+  const accentColor = useAccentColor({
+    logoUrl: extension.logoUrl,
+    preferredColor: extension.accentColor,
+    defaultColor: 'var(--brand)',
+  });
+  const [imageError, setImageError] = useState(false);
 
   // Only use layoutId on desktop
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+
+  const renderLogo = () => {
+    const showFallback = imageError || !extension.logoUrl?.trim();
+
+    if (showFallback) {
+      return (
+        <div
+          className="w-full h-full flex items-center justify-center text-white"
+          style={{ backgroundColor: accentColor, fontWeight: 600, fontSize: '20px' }}
+        >
+          {extension.name.charAt(0)}
+        </div>
+      );
+    }
+
+    return (
+      <img
+        src={extension.logoUrl}
+        alt={`${extension.name} logo`}
+        className="w-full h-full object-cover"
+        onError={() => setImageError(true)}
+      />
+    );
+  };
 
   return (
     <motion.div
@@ -22,31 +53,14 @@ export function ExtensionListCard({ extension, onSelect }: ExtensionListCardProp
       whileTap={{ scale: 0.99 }}
       transition={{ duration: 0.2 }}
       className="group bg-[var(--bg-surface)] border border-[var(--divider)] border-l-4 rounded-2xl p-3 sm:p-5 transition-all hover:shadow-lg hover:border-[var(--brand)] cursor-pointer"
-      style={{ boxShadow: '0 4px 16px 0 rgba(0,0,0,0.06)', borderLeftColor: extension.accentColor }}
+      style={{ boxShadow: '0 4px 16px 0 rgba(0,0,0,0.06)', borderLeftColor: accentColor }}
       onClick={handleSelect}
     >
       {/* Desktop layout */}
       <div className="hidden lg:flex items-center gap-6">
         <div className="flex items-center gap-3 flex-1 min-w-0">
           <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 overflow-hidden bg-[var(--chip-bg)]">
-            {extension.logoUrl && extension.logoUrl.trim() !== '' ? (
-              <img
-                src={extension.logoUrl}
-                alt={`${extension.name} logo`}
-                className="w-full h-full object-cover"
-                onError={(e) => {
-                  (e.currentTarget as HTMLImageElement).style.display = 'none';
-                  (e.currentTarget.parentElement!.innerHTML = `<div class='flex items-center justify-center w-full h-full text-white' style='background-color:${extension.accentColor};font-weight:600;font-size:20px;'>${extension.name.charAt(0)}</div>`);
-                }}
-              />
-            ) : (
-              <div
-                className="w-full h-full flex items-center justify-center text-white"
-                style={{ backgroundColor: extension.accentColor, fontWeight: 600, fontSize: '20px' }}
-              >
-                {extension.name.charAt(0)}
-              </div>
-            )}
+            {renderLogo()}
           </div>
           <div className="flex-1 min-w-0">
             <h3
@@ -90,24 +104,7 @@ export function ExtensionListCard({ extension, onSelect }: ExtensionListCardProp
       {/* Mobile layout */}
       <div className="flex lg:hidden items-start gap-3">
         <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 overflow-hidden bg-[var(--chip-bg)]">
-          {extension.logoUrl && extension.logoUrl.trim() !== '' ? (
-            <img
-              src={extension.logoUrl}
-              alt={`${extension.name} logo`}
-              className="w-full h-full object-cover"
-              onError={(e) => {
-                (e.currentTarget as HTMLImageElement).style.display = 'none';
-                (e.currentTarget.parentElement!.innerHTML = `<div class='flex items-center justify-center w-full h-full text-white' style='background-color:${extension.accentColor};font-weight:600;font-size:20px;'>${extension.name.charAt(0)}</div>`);
-              }}
-            />
-          ) : (
-            <div
-              className="w-full h-full flex items-center justify-center text-white"
-              style={{ backgroundColor: extension.accentColor, fontWeight: 600, fontSize: '20px' }}
-            >
-              {extension.name.charAt(0)}
-            </div>
-          )}
+          {renderLogo()}
         </div>
         <div className="flex-1 min-w-0">
           <h3

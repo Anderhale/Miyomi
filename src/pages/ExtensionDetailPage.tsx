@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ArrowLeft, Download, Copy, Github, Globe, Calendar } from 'lucide-react';
 import { toast } from 'sonner';
 import { motion, AnimatePresence } from 'motion/react';
@@ -8,6 +8,7 @@ import { AppGridCard } from '../components/AppGridCard';
 import { ParticleBackground } from '../components/ParticleBackground';
 import { useFeedbackState } from '../hooks/useFeedbackState';
 import { FlagDisplay } from '../components/FlagDisplay';
+import { useAccentColor } from '../hooks/useAccentColor';
 
 interface ExtensionDetailPageProps {
   extensionId: string;
@@ -16,6 +17,12 @@ interface ExtensionDetailPageProps {
 
 export function ExtensionDetailPage({ extensionId, onNavigate }: ExtensionDetailPageProps) {
   const extension = getExtensionById(extensionId);
+  const accentColor = useAccentColor({
+    logoUrl: extension?.logoUrl,
+    preferredColor: extension?.accentColor,
+    defaultColor: 'var(--brand)',
+  });
+  const [logoError, setLogoError] = useState(false);
   const supportedApps = getExtensionApps(extensionId);
   const displayedApps = supportedApps.slice(0, 3);
   const hasMoreApps = supportedApps.length > displayedApps.length;
@@ -286,30 +293,20 @@ export function ExtensionDetailPage({ extensionId, onNavigate }: ExtensionDetail
             className="mx-auto flex h-20 w-20 items-center justify-center rounded-2xl flex-shrink-0 sm:mx-0 sm:h-24 sm:w-24 lg:h-28 lg:w-28 overflow-hidden bg-[var(--chip-bg)]"
             aria-label={`${extension.name} logo`}
           >
-            {extension.logoUrl && extension.logoUrl.trim() !== '' ? (
+            {(!extension.logoUrl || logoError) ? (
+              <div
+                className="w-full h-full flex items-center justify-center text-white"
+                style={{ backgroundColor: accentColor, fontWeight: 600, fontSize: '32px' }}
+              >
+                {extension.name.charAt(0)}
+              </div>
+            ) : (
               <img
                 src={extension.logoUrl}
                 alt={`${extension.name} logo`}
                 className="w-full h-full object-cover"
-                onError={(e) => {
-                  // Hide the broken img and render the default avatar
-                  (e.currentTarget as HTMLImageElement).style.display = 'none';
-                  const parent = e.currentTarget.parentElement!;
-                  parent.innerHTML = `
-          <div class='w-full h-full flex items-center justify-center text-white' 
-               style='background-color:${extension.accentColor};font-weight:600;font-size:32px;'>
-            ${extension.name.charAt(0)}
-          </div>
-        `;
-                }}
+                onError={() => setLogoError(true)}
               />
-            ) : (
-              <div
-                className="w-full h-full flex items-center justify-center text-white"
-                style={{ backgroundColor: extension.accentColor, fontWeight: 600, fontSize: '32px' }}
-              >
-                {extension.name.charAt(0)}
-              </div>
             )}
           </div>
 

@@ -49,7 +49,7 @@ export interface ExtensionData {
   logoUrl?: string;
   types: readonly ContentType[];
   region: string;
-  accentColor: string;
+  accentColor?: string;
   autoUrl: string;
   manualUrl: string;
   supportedApps: readonly string[]; // App IDs
