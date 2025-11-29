@@ -54,6 +54,22 @@
     ]
   },
   {
+    "id": "kumo",
+    "name": "Kumo",
+    "status": "active",
+    "contentTypes": ["Manga"],
+    "description": "A Mihon fork inspired by Kahon but with a different approach.",
+    "platforms": ["Android"],
+    "iconColor": "#7d2181",
+    "logoUrl": "https://github.com/nubesurrealista/Kumo/raw/main/.github/assets/logo.png",
+    "keywords": ["mihonapp", "kahon"],
+    "supportedExtensions": ["kohiden", "yuzono", "secozzi", "claudemirovsky", "hollow"],
+    "lastUpdated": "2025-11-17",
+    "githubUrl": "https://github.com/nubesurrealista/Kumo",
+    "officialSite": "",
+    "tutorials": []
+  },
+  {
     "id": "dantotsu",
     "name": "Dantotsu",
     "status": "active",
@@ -66,30 +82,29 @@
     "supportedExtensions": ["kohiden"],
     "lastUpdated": "2025-10-12",
     "githubUrl": "https://github.com/itsmechinmoy/dantotsu-updater",
-    "discordUrl":"https://discord.gg/4HPZ5nAWwM"
+    "discordUrl": "https://discord.gg/4HPZ5nAWwM"
   },
   {
-  "id": "dartotsu",
-  "name": "Dartotsu",
-  "status": "active",
-  "contentTypes": ["Manga", "Anime", "Light Novel"],
-  "description": "Successor to Dantotsu. Rebuilt in Flutter for speed, cross‑platform support, and modern elegance.",
-  "platforms": ["Android", "iOS", "Windows", "Mac", "Linux"],
-  "iconColor": "#00cc99",
-  "logoUrl": "https://raw.githubusercontent.com/aayush2622/Dartotsu/refs/heads/main/assets/images/logo.png",
-  "keywords": ["Dantotsu fork", "best app"],
-  "supportedExtensions": ["kodjodevf"],
-  "lastUpdated": "2025-08-15",
-  "githubUrl": "https://github.com/aayush2622/Dartotsu",
-  "officialSite": "https://github.com/aayush2622/Dartotsu",
-  "discordUrl": "https://discord.gg/eyQdCpdubF"
-
-},
+    "id": "dartotsu",
+    "name": "Dartotsu",
+    "status": "active",
+    "contentTypes": ["Manga", "Anime", "Light Novel"],
+    "description": "Successor to Dantotsu. Rebuilt in Flutter for speed, cross‑platform support, and modern elegance.",
+    "platforms": ["Android", "iOS", "Windows", "Mac", "Linux"],
+    "iconColor": "#00cc99",
+    "logoUrl": "https://raw.githubusercontent.com/aayush2622/Dartotsu/refs/heads/main/assets/images/logo.png",
+    "keywords": ["Dantotsu fork", "best app"],
+    "supportedExtensions": ["kodjodevf"],
+    "lastUpdated": "2025-08-15",
+    "githubUrl": "https://github.com/aayush2622/Dartotsu",
+    "officialSite": "https://github.com/aayush2622/Dartotsu",
+    "discordUrl": "https://discord.gg/eyQdCpdubF"
+  },
   {
     "id": "mangayomi",
     "name": "Mangayomi",
     "status": "active",
-    "contentTypes": ["Manga", "Light Novel","Anime"],
+    "contentTypes": ["Manga", "Light Novel", "Anime"],
     "description": "A free and open‑source app for reading manga, novels, and watching anime — available on all major platforms.",
     "platforms": ["Windows", "Mac", "Android", "iOS", "Linux"],
     "iconColor": "#FF8A65",
@@ -113,7 +128,7 @@
     "supportedExtensions": [],
     "lastUpdated": "2024-01-13",
     "githubUrl": "https://github.com/tachiyomiorg",
-    "discordUrl":"https://discord.com/invite/tachiyomi"
+    "discordUrl": "https://discord.com/invite/tachiyomi"
   },
   {
     "id": "kotatsu",
@@ -128,8 +143,8 @@
     "supportedExtensions": [],
     "lastUpdated": "2025-10-16",
     "githubUrl": "https://github.com/KotatsuApp/Kotatsu",
-    "discordUrl":"https://discord.gg/NNJ5RgVBC5",
-    "officialSite":"https://kotatsu.app/"
+    "discordUrl": "https://discord.gg/NNJ5RgVBC5",
+    "officialSite": "https://kotatsu.app/"
   },
   {
     "id": "cloudstream",
@@ -144,7 +159,7 @@
     "supportedExtensions": [],
     "lastUpdated": "2025-10-13",
     "githubUrl": "https://github.com/recloudstream/cloudstream",
-    "discordUrl":"https://discord.gg/5Hus6fM"
+    "discordUrl": "https://discord.gg/5Hus6fM"
   },
   {
     "id": "migu",
@@ -159,7 +174,7 @@
     "supportedExtensions": [],
     "lastUpdated": "2025-10-11",
     "githubUrl": "https://github.com/NoCrypt/Migu",
-    "officialSite":"https://miguapp.pages.dev/"
+    "officialSite": "https://miguapp.pages.dev/"
   },
   {
     "id": "tachiyomi-sy",
@@ -174,8 +189,8 @@
     "supportedExtensions": ["kohiden", "yuzono"],
     "lastUpdated": "2025-10-14",
     "githubUrl": "https://github.com/jobobby04/TachiyomiSY",
-    "officialSite":"https://mihon.app/forks/TachiyomiSY",
-    "discordUrl":"https://discord.gg/mihon"
+    "officialSite": "https://mihon.app/forks/TachiyomiSY",
+    "discordUrl": "https://discord.gg/mihon"
   },
   {
     "id": "tachiyomi-j2k",
@@ -189,9 +204,9 @@
     "keywords": ["mihon fork", "j2k"],
     "supportedExtensions": ["kohiden"],
     "lastUpdated": "2025-10-13",
-    "githubUrl":"https://github.com/Jays2Kings/tachiyomiJ2K",
-    "officialSite":"https://mihon.app/forks/TachiyomiJ2K",
-    "discordUrl":"https://discord.gg/mihon"
+    "githubUrl": "https://github.com/Jays2Kings/tachiyomiJ2K",
+    "officialSite": "https://mihon.app/forks/TachiyomiJ2K",
+    "discordUrl": "https://discord.gg/mihon"
   },
   {
     "id": "yokai",
@@ -207,7 +222,7 @@
     "lastUpdated": "2025-10-12",
     "githubUrl": "https://github.com/null2264/yokai",
     "discordUrl": "https://discord.com/invite/mihon",
-    "officialSite":"https://mihon.app/forks/Yokai"
+    "officialSite": "https://mihon.app/forks/Yokai"
   },
   {
     "id": "komikku",
@@ -238,7 +253,7 @@
     "supportedExtensions": [],
     "lastUpdated": "2025-10-09",
     "githubUrl": "https://github.com/nekomangaorg/Neko",
-    "discordUrl":"https://discord.gg/4vmK42QuKG"
+    "discordUrl": "https://discord.gg/4vmK42QuKG"
   },
   {
     "id": "perfect-viewer",
@@ -252,7 +267,7 @@
     "keywords": ["local reader", "cbz"],
     "supportedExtensions": [],
     "lastUpdated": "2025-09-28",
-    "officialSite":"https://play.google.com/store/apps/details?id=com.rookiestudio.perfectviewer"
+    "officialSite": "https://play.google.com/store/apps/details?id=com.rookiestudio.perfectviewer"
   },
   {
     "id": "kuro-reader",
@@ -266,8 +281,8 @@
     "keywords": ["local", "cloud sync"],
     "supportedExtensions": [],
     "lastUpdated": "2025-09-25",
-    "officialSite":"https://kurotoshiro.dev/",
-    "githubUrl":"https://github.com/VandersonQk/KuroReaderReleases/"
+    "officialSite": "https://kurotoshiro.dev/",
+    "githubUrl": "https://github.com/VandersonQk/KuroReaderReleases/"
   },
   {
     "id": "cdisplayex",
@@ -281,8 +296,8 @@
     "keywords": ["comic reader"],
     "supportedExtensions": [],
     "lastUpdated": "2025-09-20",
-    "discordUrl":"https://discord.gg/GKbezMyGG2",
-    "officialSite":"https://www.cdisplayex.com/"
+    "discordUrl": "https://discord.gg/GKbezMyGG2",
+    "officialSite": "https://www.cdisplayex.com/"
   },
   {
     "id": "ln-reader",
@@ -297,8 +312,8 @@
     "supportedExtensions": [],
     "lastUpdated": "2025-10-11",
     "githubUrl": "https://github.com/LNReader/lnreader",
-    "officialSite":"https://www.lnreader.app/",
-    "discordUrl":"https://discord.gg/QdcWN4MD63"
+    "officialSite": "https://www.lnreader.app/",
+    "discordUrl": "https://discord.gg/QdcWN4MD63"
   },
   {
     "id": "quicknovel",
@@ -312,9 +327,8 @@
     "keywords": ["novels", "reader", "downloader"],
     "supportedExtensions": [],
     "lastUpdated": "2025-10-07",
-    "discordUrl":"https://discord.gg/5Hus6fM",
-    "githubUrl":"https://github.com/LagradOst/QuickNovel"
-
+    "discordUrl": "https://discord.gg/5Hus6fM",
+    "githubUrl": "https://github.com/LagradOst/QuickNovel"
   },
   {
     "id": "shosetsu",
@@ -328,9 +342,9 @@
     "keywords": ["novels", "light novel"],
     "supportedExtensions": [],
     "lastUpdated": "2025-10-05",
-    "discordUrl":"https://discord.gg/ttSX7gB",
-    "officialSite":"https://shosetsu.app/",
-    "githubUrl":"https://gitlab.com/shosetsuorg/shosetsu"
+    "discordUrl": "https://discord.gg/ttSX7gB",
+    "officialSite": "https://shosetsu.app/",
+    "githubUrl": "https://gitlab.com/shosetsuorg/shosetsu"
   },
   {
     "id": "moon-reader",
@@ -344,7 +358,7 @@
     "keywords": ["ebook", "tts"],
     "supportedExtensions": [],
     "lastUpdated": "2025-10-03",
-    "officialSite":"https://play.google.com/store/apps/details?id=com.flyersoft.moonreader"
+    "officialSite": "https://play.google.com/store/apps/details?id=com.flyersoft.moonreader"
   },
   {
     "id": "nineanimator",
@@ -358,7 +372,7 @@
     "keywords": ["ios", "streaming"],
     "supportedExtensions": [],
     "lastUpdated": "2025-10-09",
-    "githubUrl":"https://github.com/SuperMarcus/NineAnimator"
+    "githubUrl": "https://github.com/SuperMarcus/NineAnimator"
   },
   {
     "id": "paperback",
@@ -372,9 +386,9 @@
     "keywords": ["ios", "extensions"],
     "supportedExtensions": [],
     "lastUpdated": "2025-10-08",
-    "officialSite":"https://paperback.moe/",
-    "discordUrl":"https://discord.com/invite/jWCSt5zXFZ",
-    "githubUrl":"https://github.com/Paperback-iOS/app"
+    "officialSite": "https://paperback.moe/",
+    "discordUrl": "https://discord.com/invite/jWCSt5zXFZ",
+    "githubUrl": "https://github.com/Paperback-iOS/app"
   },
   {
     "id": "aidoku",
@@ -390,7 +404,7 @@
     "lastUpdated": "2025-10-07",
     "githubUrl": "https://github.com/Aidoku/Aidoku",
     "discordUrl": "https://discord.gg/kh2PYT8V8d",
-    "officialSite":"https://aidoku.app/"
+    "officialSite": "https://aidoku.app/"
   },
   {
     "id": "tachimanga",
@@ -405,8 +419,8 @@
     "supportedExtensions": [],
     "lastUpdated": "2025-10-06",
     "githubUrl": "https://github.com/tachimanga",
-    "officialSite":"https://tachimanga.app/",
-    "discordUrl":"https://discord.gg/8aMcdYdaBz",
+    "officialSite": "https://tachimanga.app/",
+    "discordUrl": "https://discord.gg/8aMcdYdaBz",
     "tutorials": [
       {
         "title": "Tachimanga Quick Start Guide",
@@ -428,9 +442,9 @@
     "keywords": ["ios", "reader"],
     "supportedExtensions": [],
     "lastUpdated": "2025-10-05",
-    "officialSite":"https://www.suwatte.app/",
-    "discordUrl":"https://discord.gg/8wmkXsT6h5",
-    "githubUrl":"https://github.com/suwatte"
+    "officialSite": "https://www.suwatte.app/",
+    "discordUrl": "https://discord.gg/8wmkXsT6h5",
+    "githubUrl": "https://github.com/suwatte"
   },
   {
     "id": "stremio",
@@ -443,9 +457,9 @@
     "logoUrl": "https://www.google.com/s2/favicons?sz=128&domain=stremio.com",
     "keywords": ["streaming", "tv", "cross platform"],
     "supportedExtensions": ["stremio-addon"],
-    "officialSite":"https://www.stremio.com/",
-    "discordUrl":"https://blog.stremio.com/",
-    "tutorials":[
+    "officialSite": "https://www.stremio.com/",
+    "discordUrl": "https://blog.stremio.com/",
+    "tutorials": [
       {
         "title": "A Quick Video Guide",
         "type": "guide",
@@ -473,8 +487,8 @@
     "supportedExtensions": [],
     "lastUpdated": "2025-10-11",
     "officialSite": "https://seanime.app/",
-    "githubUrl":"https://github.com/5rahim/seanime",
-    "discordUrl":"https://discord.gg/Sbr7Phzt6m"
+    "githubUrl": "https://github.com/5rahim/seanime",
+    "discordUrl": "https://discord.gg/Sbr7Phzt6m"
   },
   {
     "id": "toru",
@@ -488,7 +502,7 @@
     "keywords": ["torrent", "player"],
     "supportedExtensions": [],
     "lastUpdated": "2025-10-09",
-    "githubUrl":"https://github.com/sweetbbak/toru"
+    "githubUrl": "https://github.com/sweetbbak/toru"
   },
   {
     "id": "suwayomi",
@@ -502,8 +516,8 @@
     "keywords": ["server", "tachidesk"],
     "supportedExtensions": [],
     "lastUpdated": "2025-10-07",
-    "githubUrl":"https://github.com/Suwayomi/Suwayomi-Server",
-    "discordUrl":"https://discord.gg/DDZdqZWaHA"
+    "githubUrl": "https://github.com/Suwayomi/Suwayomi-Server",
+    "discordUrl": "https://discord.gg/DDZdqZWaHA"
   },
   {
     "id": "yacreader",
@@ -517,9 +531,9 @@
     "keywords": ["library", "cbz", "cbr"],
     "supportedExtensions": [],
     "lastUpdated": "2025-10-06",
-    "officialSite":"https://www.yacreader.com/",
-    "githubUrl":"https://github.com/YACReader/yacreader",
-    "discordUrl":"https://x.com/yacreader"
+    "officialSite": "https://www.yacreader.com/",
+    "githubUrl": "https://github.com/YACReader/yacreader",
+    "discordUrl": "https://x.com/yacreader"
   },
   {
     "id": "koodo-reader",
@@ -532,8 +546,8 @@
     "keywords": ["ebook", "desktop"],
     "supportedExtensions": [],
     "lastUpdated": "2025-10-05",
-    "officialSite":"https://koodoreader.com",
-    "githubUrl":"https://github.com/koodo-reader/koodo-reader"
+    "officialSite": "https://koodoreader.com",
+    "githubUrl": "https://github.com/koodo-reader/koodo-reader"
   },
   {
     "id": "thorium",
@@ -547,8 +561,8 @@
     "keywords": ["epub", "accessibility"],
     "supportedExtensions": [],
     "lastUpdated": "2025-10-04",
-    "officialSite":"https://www.edrlab.org/software/thorium-reader/",
-    "githubUrl":"https://github.com/edrlab/thorium-reader"
+    "officialSite": "https://www.edrlab.org/software/thorium-reader/",
+    "githubUrl": "https://github.com/edrlab/thorium-reader"
   },
   {
     "id": "anikku",
@@ -572,7 +586,7 @@
     "status": "active",
     "contentTypes": ["Anime", "Manga", "Light Novel"],
     "description": "Multi-service client for anime, manga, novels, and more.",
-    "platforms": ["Android", "iOS", "Windows","Linux","Mac", "Web"],
+    "platforms": ["Android", "iOS", "Windows", "Linux", "Mac", "Web"],
     "iconColor": "#FF6B9D",
     "logoUrl": "https://github.com/RyanYuuki/AnymeX/raw/main/assets/images/logo.png",
     "keywords": ["anime", "manga", "novels"],
@@ -619,7 +633,7 @@
     "status": "active",
     "contentTypes": ["Anime"],
     "description": "Android and Android TV streaming app with addon-driven architecture.",
-    "platforms": ["Android","iOS","Windows","Linux","Mac"],
+    "platforms": ["Android", "iOS", "Windows", "Linux", "Mac"],
     "iconColor": "#FF6B9D",
     "logoUrl": "https://avatars.githubusercontent.com/hayase-app",
     "keywords": ["anime", "streaming", "android"],
@@ -660,7 +674,7 @@
     "officialSite": "https://gedoor.github.io/",
     "discordUrl": "https://discord.gg/VtUfRyzRXn"
   },
-   {
+  {
     "id": "opencomic",
     "name": "OpenComic",
     "status": "active",
@@ -697,7 +711,7 @@
     "status": "active",
     "contentTypes": ["Anime"],
     "description": "Lightweight open-source anime client.",
-    "platforms": ["Android","Windows","Linux","Mac"],
+    "platforms": ["Android", "Windows", "Linux", "Mac"],
     "iconColor": "#FF6B9D",
     "logoUrl": "https://avatars.githubusercontent.com/RockinChaos",
     "keywords": ["anime", "android", "lightweight", "plugins"],
@@ -856,126 +870,126 @@
     "officialSite": "https://houdoku.org"
   },
   {
-  "id": "anilab",
-  "name": "Anilab",
-  "status": "active",
-  "contentTypes": ["Anime"],
-  "description": "A free anime player that lets you stream and organize titles with options for favorites, downloads, and daily updates.",
-  "platforms": ["Android", "iOS"],
-  "iconColor": "#ff0000",
-  "logoUrl": "https://anilab.to/images/logo@2x.svg",
-  "keywords": ["free", "anime"],
-  "officialSite": "https://anilab.to/"
+    "id": "anilab",
+    "name": "Anilab",
+    "status": "active",
+    "contentTypes": ["Anime"],
+    "description": "A free anime player that lets you stream and organize titles with options for favorites, downloads, and daily updates.",
+    "platforms": ["Android", "iOS"],
+    "iconColor": "#ff0000",
+    "logoUrl": "https://anilab.to/images/logo@2x.svg",
+    "keywords": ["free", "anime"],
+    "officialSite": "https://anilab.to/"
   },
   {
-  "id": "miru-app",
-  "name": "Miru App",
-  "status": "active",
-  "contentTypes": ["Anime"],
-  "description": "Free and open source Multi-functional application that supports video, comics, novels extended source for Android, Windows, Web.",
-  "platforms": ["Android", "Windows", "Web"],
-  "iconColor": "#FFBFB5",
-  "logoUrl": "https://github.com/miru-project/miru-app/raw/dev/assets/icon/logo.png",
-  "keywords": ["free", "anime"],
-  "officialSite":"https://miru.js.org/en/",
-  "githubUrl":"https://github.com/miru-project/miru-app"
+    "id": "miru-app",
+    "name": "Miru App",
+    "status": "active",
+    "contentTypes": ["Anime"],
+    "description": "Free and open source Multi-functional application that supports video, comics, novels extended source for Android, Windows, Web.",
+    "platforms": ["Android", "Windows", "Web"],
+    "iconColor": "#FFBFB5",
+    "logoUrl": "https://github.com/miru-project/miru-app/raw/dev/assets/icon/logo.png",
+    "keywords": ["free", "anime"],
+    "officialSite": "https://miru.js.org/en/",
+    "githubUrl": "https://github.com/miru-project/miru-app"
   },
   {
-  "id": "Shiru",
-  "name": "Shiru ",
-  "status": "active",
-  "author": "RockinChaos",
-  "contentTypes": ["Anime"],
-  "description": "Manage your personal media library, organize your collection, and stream your content in real time, no waiting required",
-  "platforms": ["Android", "iOS", "Windows", "Mac", "Linux"],
-  "iconColor": "#FF6B9D",
-  "logoUrl": "https://avatars.githubusercontent.com/username",
-  "keywords": ["android", "anime"],
-  "supportedExtensions": ["extension-id-1", "extension-id-2"],
-  "lastUpdated": "2025-01-15",
-  "githubUrl": "https://github.com/RockinChaos/Shiru",
-  "officialSite": "https://example.com",
-  "discordUrl": "https://discord.gg/invite",
-  "tutorials": [
-    {
-      "title": "Tutorial Title",
-      "type": "video",
-      "url": "https://youtube.com/...",
-      "description": "Tutorial description"
-    }
-  ]
-},
+    "id": "Shiru",
+    "name": "Shiru ",
+    "status": "active",
+    "author": "RockinChaos",
+    "contentTypes": ["Anime"],
+    "description": "Manage your personal media library, organize your collection, and stream your content in real time, no waiting required",
+    "platforms": ["Android", "iOS", "Windows", "Mac", "Linux"],
+    "iconColor": "#FF6B9D",
+    "logoUrl": "https://avatars.githubusercontent.com/username",
+    "keywords": ["android", "anime"],
+    "supportedExtensions": ["extension-id-1", "extension-id-2"],
+    "lastUpdated": "2025-01-15",
+    "githubUrl": "https://github.com/RockinChaos/Shiru",
+    "officialSite": "https://example.com",
+    "discordUrl": "https://discord.gg/invite",
+    "tutorials": [
+      {
+        "title": "Tutorial Title",
+        "type": "video",
+        "url": "https://youtube.com/...",
+        "description": "Tutorial description"
+      }
+    ]
+  },
   {
-  "id": "IReader",
-  "name": "IReader",  
-  "status": "active",
-  "author": "IReader",
-  "contentTypes": ["Light Novel"],
-  "description": "Free and open source novel reader for Android and Desktop.",
-  "platforms": ["Android", "Windows"],
-  "iconColor": "#FF6B9D",
-  "logoUrl": "https://ireaderorg.netlify.app/logo.png",
-  "keywords": ["Light Novel", "android"],
-  "supportedExtensions": ["extension-id-1", "extension-id-2"],
-  "lastUpdated": "2025-11-11",
-  "githubUrl": "https://github.com/IReaderorg/IReader",
-  "officialSite": "https://ireaderorg.netlify.app/",
-  "discordUrl": "https://discord.com/invite/HBU6zD8c5v",
-  "tutorials": [
-    {
-      "title": "Tutorial Title",
-      "type": "guide",
-      "url": "https://ireaderorg.netlify.app/help/",
-      "description": "Tutorial description"
-    }
-  ]
-},
+    "id": "IReader",
+    "name": "IReader",
+    "status": "active",
+    "author": "IReader",
+    "contentTypes": ["Light Novel"],
+    "description": "Free and open source novel reader for Android and Desktop.",
+    "platforms": ["Android", "Windows"],
+    "iconColor": "#FF6B9D",
+    "logoUrl": "https://ireaderorg.netlify.app/logo.png",
+    "keywords": ["Light Novel", "android"],
+    "supportedExtensions": ["extension-id-1", "extension-id-2"],
+    "lastUpdated": "2025-11-11",
+    "githubUrl": "https://github.com/IReaderorg/IReader",
+    "officialSite": "https://ireaderorg.netlify.app/",
+    "discordUrl": "https://discord.com/invite/HBU6zD8c5v",
+    "tutorials": [
+      {
+        "title": "Tutorial Title",
+        "type": "guide",
+        "url": "https://ireaderorg.netlify.app/help/",
+        "description": "Tutorial description"
+      }
+    ]
+  },
   {
-  "id": "قارئ مانجا عربي",
-  "name": "قارئ مانجا عربي",
-  "status": "active",
-  "author": "midou221",
-  "contentTypes": ["Manga"],
-  "description": "قارئ مانجا هو افضل تطبيق عربي من حيث المميزات والمحتوى",
-  "platforms": ["Android"],
-  "iconColor": "#FF6B9D",
-  "logoUrl": "https://play-lh.googleusercontent.com/ft4fpr8NgdGIEDdDl326GvAlrL-OwPxLKkgRmcB4_Scdz8UAkZh0famQQKSBz0Eq9A=w240-h480-rw",
-  "keywords": ["arabic app", "manga"],
-  "supportedExtensions": ["extension-id-1", "extension-id-2"],
-  "lastUpdated": "2025-11-12",
-  "githubUrl": "https://play.google.com/store/apps/details?id=org.hamak.mangareader",
-  "officialSite": "",
-  "discordUrl": ""
-},
-{
-  "id": "kotatsu-redo",
-  "name": "Kotatsu Redo",
-  "status": "active",
-  "contentTypes": ["Manga"],
-  "description": "Fork of Kotatsu with a goal to Maintain existing features and sources.",
-  "platforms": ["Android"],
-  "iconColor": "#66BB6A",
-  "logoUrl": "https://github.com/Kotatsu-Redo/Kotatsu-Redo/blob/devel/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp?raw=true",
-  "keywords": ["local library", "kotatsu"],
-  "supportedExtensions": [],
-  "githubUrl":"https://github.com/Kotatsu-Redo/Kotatsu-Redo",
-  "discordUrl":"https://discord.gg/77PJztUXc"
+    "id": "قارئ مانجا عربي",
+    "name": "قارئ مانجا عربي",
+    "status": "active",
+    "author": "midou221",
+    "contentTypes": ["Manga"],
+    "description": "قارئ مانجا هو افضل تطبيق عربي من حيث المميزات والمحتوى",
+    "platforms": ["Android"],
+    "iconColor": "#FF6B9D",
+    "logoUrl": "https://play-lh.googleusercontent.com/ft4fpr8NgdGIEDdDl326GvAlrL-OwPxLKkgRmcB4_Scdz8UAkZh0famQQKSBz0Eq9A=w240-h480-rw",
+    "keywords": ["arabic app", "manga"],
+    "supportedExtensions": ["extension-id-1", "extension-id-2"],
+    "lastUpdated": "2025-11-12",
+    "githubUrl": "https://play.google.com/store/apps/details?id=org.hamak.mangareader",
+    "officialSite": "",
+    "discordUrl": ""
+  },
+  {
+    "id": "kotatsu-redo",
+    "name": "Kotatsu Redo",
+    "status": "active",
+    "contentTypes": ["Manga"],
+    "description": "Fork of Kotatsu with a goal to Maintain existing features and sources.",
+    "platforms": ["Android"],
+    "iconColor": "#66BB6A",
+    "logoUrl": "https://github.com/Kotatsu-Redo/Kotatsu-Redo/blob/devel/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp?raw=true",
+    "keywords": ["local library", "kotatsu"],
+    "supportedExtensions": [],
+    "githubUrl": "https://github.com/Kotatsu-Redo/Kotatsu-Redo",
+    "discordUrl": "https://discord.gg/77PJztUXc"
   },
   {
     "id": "doki",
     "name": "Doki",
     "status": "active",
-    "contentTypes":["Manga"],
+    "contentTypes": ["Manga"],
     "description": "Successor to Kotatsu, a manga reader app for Android.",
     "platforms": ["Android"],
     "iconColor": "#1976D2",
     "logoUrl": "https://raw.githubusercontent.com/DokiTeam/.github/main/profile/Doki.png",
-    "keywords":["kotatsu","manga"],
-    "supportedExtensions":[],
+    "keywords": ["kotatsu", "manga"],
+    "supportedExtensions": [],
     "lastUpdated": "2025-11-13",
-    "githubUrl":"https://github.com/DokiTeam/build-apps",
-    "discordUrl":"https://discord.gg/PTd2bYgz9m",
-    "tutorials":[
+    "githubUrl": "https://github.com/DokiTeam/build-apps",
+    "discordUrl": "https://discord.gg/PTd2bYgz9m",
+    "tutorials": [
       {
         "title": "How to download?",
         "type": "guide",
@@ -997,27 +1011,26 @@
     ]
   },
   {
-  "id": "com.hamak.novelwebtoon",
-  "name": "شاي الروايات: للمانجا",
-  "author": "Hmak.Inc",
-  "contentTypes": ["Manga", "Light Novel"],
-  "description": "قارئ مانجا وروايات بواجهة مريحة وخيارات تخصيص متعددة.",
-  "platforms": ["Android"],
-  "iconColor": "#FF6B9D",
-  "logoUrl": "https://play-lh.googleusercontent.com/WwiJ24bS7ytTSeBxKhaIjHa7eo5xtFto7HqVH7AJCKoFNBekD1QmDEVOg5ZKDHNR3A=w480-h960-rw",  
-  "keywords": ["manga reader", "epub viewer", "Arabic novels","voice narration"],
-  "supportedExtensions": [],
-  "lastUpdated": "2025-08-30",
-  "githubUrl": "",
-  "officialSite": "https://play.google.com/store/apps/details?id=com.hamak.novelwebtoon",
-  "tutorials":[
-    {
-      "title": "اضغط هنا",
-      "type": "guide",
-      "url": "https://github.com/tas33n/Miyomi/issues/17#issue-3613836582",
-      "description": "راجع هذه المشكلة على GitHub للحصول على شرح.."
-    }
-  ]
-}
+    "id": "com.hamak.novelwebtoon",
+    "name": "شاي الروايات: للمانجا",
+    "author": "Hmak.Inc",
+    "contentTypes": ["Manga", "Light Novel"],
+    "description": "قارئ مانجا وروايات بواجهة مريحة وخيارات تخصيص متعددة.",
+    "platforms": ["Android"],
+    "iconColor": "#FF6B9D",
+    "logoUrl": "https://play-lh.googleusercontent.com/WwiJ24bS7ytTSeBxKhaIjHa7eo5xtFto7HqVH7AJCKoFNBekD1QmDEVOg5ZKDHNR3A=w480-h960-rw",
+    "keywords": ["manga reader", "epub viewer", "Arabic novels", "voice narration"],
+    "supportedExtensions": [],
+    "lastUpdated": "2025-08-30",
+    "githubUrl": "",
+    "officialSite": "https://play.google.com/store/apps/details?id=com.hamak.novelwebtoon",
+    "tutorials": [
+      {
+        "title": "اضغط هنا",
+        "type": "guide",
+        "url": "https://github.com/tas33n/Miyomi/issues/17#issue-3613836582",
+        "description": "راجع هذه المشكلة على GitHub للحصول على شرح.."
+      }
+    ]
+  }
 ]
-
