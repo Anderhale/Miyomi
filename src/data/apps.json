@@ -70,6 +70,38 @@
     "tutorials": []
   },
   {
+    "id": "taison",
+    "name": "Taison",
+    "status": "active",
+    "contentTypes": ["Manga"],
+    "description": "Taison is fork of Mihon, the open source manga reader for Android. It keeps pace with upstream while adding polished quality-of-life upgrades, each chosen to give you more control and oversight without weighing down the interface.",
+    "platforms": ["Android"],
+    "iconColor": "#ecb618",
+    "logoUrl": "https://github.com/nubesurrealista/Kumo/raw/main/.github/assets/logo.png",
+    "keywords": ["mihonapp", "kahon", "quality of life"],
+    "supportedExtensions": ["kohiden", "yuzono", "secozzi", "claudemirovsky", "hollow"],
+    "lastUpdated": "2025-11-28",
+    "githubUrl": "https://github.com/Gent8/Taison",
+    "officialSite": "https://f-droid.org/en/packages/com.gent8.taison/",
+    "tutorials": []
+  },
+  {
+    "id": "kahon",
+    "name": "Kahon",
+    "status": "active",
+    "contentTypes": ["Manga"],
+    "description": "A fork of Mihon with some annoying restrictions removed.",
+    "platforms": ["Android"],
+    "iconColor": "#0d0d0d",
+    "logoUrl": "https://f-droid.org/repo/com.amanoteam.kahon/en-US/icon_lqrMZAYVYFwzUtd4Scoauphks7rbdc5piSnyczrVXAs=.png",
+    "keywords": ["mihonapp", "kumo"],
+    "supportedExtensions": ["kohiden", "yuzono", "secozzi", "claudemirovsky", "hollow"],
+    "lastUpdated": "2025-11-14",
+    "githubUrl": "https://github.com/AmanoTeam/Kahon",
+    "officialSite": "https://f-droid.org/en/packages/com.amanoteam.kahon/",
+    "tutorials": []
+  },
+  {
     "id": "dantotsu",
     "name": "Dantotsu",
     "status": "active",
