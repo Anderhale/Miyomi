@@ -948,7 +948,7 @@
   {
     "id": "doki",
     "name": "Doki",
-    "status": "active",
+    "status": "discontinued",
     "contentTypes": ["Manga"],
     "description": "Successor to Kotatsu, a manga reader app for Android.",
     "platforms": ["Android"],
