@@ -38,7 +38,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
   const socialLinks = [
     { icon: <Twitter className="w-5 h-5" />, label: 'Twitter', link: 'https://x.com/iitachiyomi', color: '#333' },
-    { icon: <MessageSquare className="w-5 h-5" />, label: 'Discord', link: 'https://discord.com/invite/kpfgBACTcs', color: '#5865F2' },
+    { icon: <MessageSquare className="w-5 h-5" />, label: 'Discord', link: 'https://discord.gg/hfYtH9hrRm', color: '#5865F2' },
     { icon: <Facebook className="w-5 h-5" />, label: 'Facebook', link: 'https://facebook.com/iitachiyomi', color: '#1877F2' },
   ];
   const formatCount = (value: number) => {
