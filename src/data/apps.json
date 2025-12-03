@@ -154,6 +154,21 @@
     "discordUrl": "https://discord.com/invite/tachiyomi"
   },
   {
+   "id": "Yumemi",
+    "name": "Yumemi",
+    "status": "active",
+    "contentTypes": ["Manga"],
+    "description": "Successor to Kotatsu, a manga reader app for Android.",
+    "platforms": ["Android"],
+    "logoUrl": "https://avatars.githubusercontent.com/u/247026701?s=200&v=4",
+    "keywords": ["kotatsu", "doki", "manga", "yukimi"],
+    "supportedExtensions": [],
+    "lastUpdated": "2025-12-03",
+    "githubUrl": "https://github.com/YakaTeam/artifacts",
+    "officialSite": "https://kotatsu.app/",
+    "discordUrl": "https://discord.com/invite/PTd2bYgz9m"
+  },
+  {
     "id": "kotatsu",
     "name": "Kotatsu",
     "status": "dmca",
