@@ -8,108 +8,156 @@ html {
 :root {
   --font-size: 16px;
 
-  /* Miyomi Avatar Theme - Light */
-  --bg-page: #FFFAF5;
-  --bg-page-rgb: 255, 250, 245;
-  --bg-surface: #ffffff;
-  --bg-elev-1: #FFF5EB;
-  --text-primary: #2a2a2a;
-  --text-secondary: #656565;
-  --brand: #3B5A94;
-  --brand-strong: #2C4A7C;
-  --chip-bg: #E8F4F8;
-  --divider: #E0E8F0;
-  --focus-ring: #5BA3E8;
+  /* --- MIYOMI LIGHT THEME (Character Inspired) --- */
 
-  --background: #FFFAF5;
-  --foreground: #2a2a2a;
-  --card: #ffffff;
-  --card-foreground: #2a2a2a;
-  --popover: #ffffff;
-  --popover-foreground: #2a2a2a;
-  --primary: #3B5A94;
-  --primary-foreground: #ffffff;
-  --secondary: #E8F4F8;
-  --secondary-foreground: #2a2a2a;
-  --muted: #FFF5EB;
-  --muted-foreground: #656565;
-  --accent: #5BA3E8;
-  --accent-foreground: #ffffff;
-  --destructive: #E74C3C;
-  --destructive-foreground: #ffffff;
-  --border: #E0E8F0;
+  /* Background: Subtle Warm Porcelain (Skin tone hint) */
+  --bg-page: #FFFDFA;
+  --bg-page-rgb: 255, 253, 250;
+  --bg-surface: #FFFFFF;
+  --bg-elev-1: #F0F9FF; /* Very light blue tint for cards */
+
+  /* Text: Deep Navy (Uniform) instead of black for softer contrast */
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+
+  /* Brand: Royal Blue (Hair Shadows) - High Contrast for Text */
+  --brand: #2563EB;
+  --brand-strong: #1E40AF; /* Darker interaction state */
+
+  /* Accents */
+  --chip-bg: #EFF6FF; /* Very light blue background for tags */
+  --divider: #E2E8F0;
+  --focus-ring: #38BDF8; /* Cyan focus ring */
+
+  /* Shadcn/UI Mapping */
+  --background: #FFFDFA;
+  --foreground: #0F172A;
+
+  --card: #FFFFFF;
+  --card-foreground: #0F172A;
+
+  --popover: #FFFFFF;
+  --popover-foreground: #0F172A;
+
+  --primary: #2563EB; /* Readable Blue */
+  --primary-foreground: #FFFFFF;
+
+  --secondary: #EFF6FF;
+  --secondary-foreground: #1E3A8A;
+
+  --muted: #F1F5F9;
+  --muted-foreground: #64748B;
+
+  --accent: #F0F9FF;
+  --accent-foreground: #0F172A;
+
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
+
+  --border: #E2E8F0;
   --input: transparent;
-  --input-background: #ffffff;
-  --switch-background: #cbced4;
+  --input-background: #FFFFFF;
+  --switch-background: #CBD5E1;
+
+  --ring: #2563EB;
+
+  --radius: 0.75rem; /* Slightly rounder for anime aesthetic */
+
+  /* Sidebar */
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #0F172A;
+  --sidebar-primary: #2563EB;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #F0F9FF;
+  --sidebar-accent-foreground: #0F172A;
+  --sidebar-border: #E2E8F0;
+  --sidebar-ring: #2563EB;
+
+  /* Chart Colors (Updated to match palette) */
+  --chart-1: #2563EB; /* Blue */
+  --chart-2: #38BDF8; /* Cyan */
+  --chart-3: #F472B6; /* Pink (Blush) */
+  --chart-4: #FBBF24; /* Gold (Badge) */
+  --chart-5: #64748B; /* Slate */
+
+  /* Font Weights */
   --font-weight-medium: 600;
   --font-weight-normal: 400;
-  --ring: #5BA3E8;
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --radius: 0.625rem;
-  --sidebar: #ffffff;
-  --sidebar-foreground: #2a2a2a;
-  --sidebar-primary: #3B5A94;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #E8F4F8;
-  --sidebar-accent-foreground: #2a2a2a;
-  --sidebar-border: #E0E8F0;
-  --sidebar-ring: #5BA3E8;
 }
 
 .dark {
-  /* Miyomi Avatar Theme - Dark */
-  --bg-page: #1a1a1a;
-  --bg-page-rgb: 26, 26, 26;
-  --bg-surface: #252525;
-  --bg-elev-1: #2f2f2f;
-  --text-primary: #e8e8e8;
-  --text-secondary: #a0a0a0;
-  --brand: #6DB4E8;
-  --brand-strong: #87CEEB;
-  --chip-bg: #2a3a4a;
-  --divider: #3a3a3a;
-  --focus-ring: #5BA3E8;
+  /* --- MIYOMI DARK THEME (Uniform Inspired) --- */
 
-  --background: #1a1a1a;
-  --foreground: #e8e8e8;
-  --card: #252525;
-  --card-foreground: #e8e8e8;
-  --popover: #252525;
-  --popover-foreground: #e8e8e8;
-  --primary: #6DB4E8;
-  --primary-foreground: #1a1a1a;
-  --secondary: #2a3a4a;
-  --secondary-foreground: #e8e8e8;
-  --muted: #2f2f2f;
-  --muted-foreground: #a0a0a0;
-  --accent: #5BA3E8;
-  --accent-foreground: #1a1a1a;
-  --destructive: #E74C3C;
-  --destructive-foreground: #ffffff;
-  --border: #3a3a3a;
+  /* Background: Deep Navy (Uniform) */
+  --bg-page: #020617;
+  --bg-page-rgb: 2, 6, 23;
+  --bg-surface: #0F172A; /* Lighter Navy */
+  --bg-elev-1: #1E293B;
+
+  /* Text: Ice White */
+  --text-primary: #F8FAFC;
+  --text-secondary: #94A3B8;
+
+  /* Brand: Electric Cyan (Hair Highlights) - Glowing effect */
+  --brand: #38BDF8;
+  --brand-strong: #7DD3FC;
+
+  --chip-bg: #1E293B;
+  --divider: #1E293B;
+  --focus-ring: #38BDF8;
+
+  /* Shadcn/UI Mapping */
+  --background: #020617;
+  --foreground: #F8FAFC;
+
+  --card: #0F172A;
+  --card-foreground: #F8FAFC;
+
+  --popover: #0F172A;
+  --popover-foreground: #F8FAFC;
+
+  --primary: #38BDF8; /* Cyan pops against Navy */
+  --primary-foreground: #020617; /* Dark text on Cyan button */
+
+  --secondary: #1E293B;
+  --secondary-foreground: #F8FAFC;
+
+  --muted: #1E293B;
+  --muted-foreground: #94A3B8;
+
+  --accent: #1E293B;
+  --accent-foreground: #F8FAFC;
+
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
+
+  --border: #1E293B;
   --input: transparent;
-  --input-background: #2f2f2f;
-  --switch-background: #4a4a4a;
+  --input-background: #1E293B;
+  --switch-background: #334155;
+
+  --ring: #38BDF8;
+
+  /* Sidebar */
+  --sidebar: #0F172A;
+  --sidebar-foreground: #F8FAFC;
+  --sidebar-primary: #38BDF8;
+  --sidebar-primary-foreground: #020617;
+  --sidebar-accent: #1E293B;
+  --sidebar-accent-foreground: #F8FAFC;
+  --sidebar-border: #1E293B;
+  --sidebar-ring: #38BDF8;
+
+  /* Chart Colors */
+  --chart-1: #38BDF8;
+  --chart-2: #2563EB;
+  --chart-3: #F472B6;
+  --chart-4: #FBBF24;
+  --chart-5: #94A3B8;
+
+  /* Font Weights */
   --font-weight-medium: 600;
   --font-weight-normal: 400;
-  --ring: #5BA3E8;
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: #252525;
-  --sidebar-foreground: #e8e8e8;
-  --sidebar-primary: #6DB4E8;
-  --sidebar-primary-foreground: #1a1a1a;
-  --sidebar-accent: #2a3a4a;
-  --sidebar-accent-foreground: #e8e8e8;
-  --sidebar-border: #3a3a3a;
-  --sidebar-ring: #5BA3E8;
 }
 
 @theme inline {
@@ -146,13 +194,9 @@ html {
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(
-    --sidebar-primary-foreground
-  );
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
   --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(
-    --sidebar-accent-foreground
-  );
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 }
