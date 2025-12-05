@@ -1,7 +1,8 @@
 import { TagBadge } from './TagBadge';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Download } from 'lucide-react';
 import { AppLogo } from './AppLogo';
 import { PlatformBadge } from './PlatformBadge';
+import { StarRating } from './StarRating';
 import { motion } from 'motion/react';
 import { useAccentColor } from '../hooks/useAccentColor';
 
@@ -13,6 +14,8 @@ interface AppListCardProps {
   platforms: Array<'Windows' | 'Mac' | 'Android' | 'iOS' | 'Linux' | 'Web'>;
   iconColor?: string;
   logoUrl?: string;
+  rating?: number;
+  downloadCount?: number;
   onClick?: () => void;
 }
 
@@ -24,6 +27,8 @@ export function AppListCard({
   platforms,
   iconColor,
   logoUrl,
+  rating,
+  downloadCount,
   onClick,
 }: AppListCardProps) {
   const displayedTags = tags.slice(0, 2);
@@ -83,6 +88,17 @@ export function AppListCard({
         <p className="text-[var(--text-secondary)] font-['Inter',sans-serif] text-xs line-clamp-1">
           {description}
         </p>
+        {(rating || downloadCount) && (
+          <div className="flex items-center gap-3 mt-2">
+            {rating && <StarRating rating={rating} size="sm" />}
+            {downloadCount && (
+              <div className="flex items-center gap-1 text-xs text-[var(--text-secondary)]">
+                <Download className="w-3 h-3" />
+                <span>{downloadCount >= 1000 ? `${(downloadCount / 1000).toFixed(1)}k` : downloadCount}</span>
+              </div>
+            )}
+          </div>
+        )}
       </div>
 
       {/* Action - Compact */}

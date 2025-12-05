@@ -8,36 +8,36 @@ html {
 :root {
   --font-size: 16px;
 
-  /* Miyomi Sakura Theme - Light */
-  --bg-page: #fff7f2;
-  --bg-page-rgb: 255, 247, 242;
+  /* Miyomi Blue Theme - Light */
+  --bg-page: #f5f9ff;
+  --bg-page-rgb: 245, 249, 255;
   --bg-surface: #ffffff;
-  --bg-elev-1: #fff3ee;
+  --bg-elev-1: #eef4ff;
   --text-primary: #2a2a2a;
   --text-secondary: #656565;
-  --brand: #b85c45;
-  --brand-strong: #a34e39;
-  --chip-bg: #f6e6e0;
-  --divider: #ede1db;
+  --brand: #4A90E2;
+  --brand-strong: #357ABD;
+  --chip-bg: #e0ecf8;
+  --divider: #d4e3f3;
   --focus-ring: #7c9eff;
 
-  --background: #fff7f2;
+  --background: #f5f9ff;
   --foreground: #2a2a2a;
   --card: #ffffff;
   --card-foreground: #2a2a2a;
   --popover: #ffffff;
   --popover-foreground: #2a2a2a;
-  --primary: #b85c45;
+  --primary: #4A90E2;
   --primary-foreground: #ffffff;
-  --secondary: #f6e6e0;
+  --secondary: #e0ecf8;
   --secondary-foreground: #2a2a2a;
-  --muted: #fff3ee;
+  --muted: #eef4ff;
   --muted-foreground: #656565;
-  --accent: #f6e6e0;
+  --accent: #e0ecf8;
   --accent-foreground: #2a2a2a;
   --destructive: #d4183d;
   --destructive-foreground: #ffffff;
-  --border: #ede1db;
+  --border: #d4e3f3;
   --input: transparent;
   --input-background: #ffffff;
   --switch-background: #cbced4;
@@ -61,16 +61,16 @@ html {
 }
 
 .dark {
-  /* Miyomi Sakura Theme - Dark */
+  /* Miyomi Blue Theme - Dark */
   --bg-page: #1a1a1a;
   --bg-page-rgb: 26, 26, 26;
   --bg-surface: #252525;
   --bg-elev-1: #2f2f2f;
   --text-primary: #e8e8e8;
   --text-secondary: #a0a0a0;
-  --brand: #e07b5f;
-  --brand-strong: #f09070;
-  --chip-bg: #3a3a3a;
+  --brand: #5BA3FF;
+  --brand-strong: #7BB8FF;
+  --chip-bg: #2a3a4a;
   --divider: #3a3a3a;
   --focus-ring: #7c9eff;
 
@@ -80,7 +80,7 @@ html {
   --card-foreground: #e8e8e8;
   --popover: #252525;
   --popover-foreground: #e8e8e8;
-  --primary: #e07b5f;
+  --primary: #5BA3FF;
   --primary-foreground: #1a1a1a;
   --secondary: #3a3a3a;
   --secondary-foreground: #e8e8e8;
@@ -104,7 +104,7 @@ html {
   --chart-5: oklch(0.645 0.246 16.439);
   --sidebar: #252525;
   --sidebar-foreground: #e8e8e8;
-  --sidebar-primary: #e07b5f;
+  --sidebar-primary: #5BA3FF;
   --sidebar-primary-foreground: #1a1a1a;
   --sidebar-accent: #3a3a3a;
   --sidebar-accent-foreground: #e8e8e8;

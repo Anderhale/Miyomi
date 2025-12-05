@@ -1,5 +1,6 @@
 import { Search } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 
 interface SearchBarProps {
   placeholder?: string;
@@ -7,12 +8,27 @@ interface SearchBarProps {
 }
 
 export function SearchBar({ placeholder = 'Search apps or extensions', onSearch }: SearchBarProps) {
+  const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
   const [value, setValue] = useState('');
   const [isFocused, setIsFocused] = useState(false);
+
+  useEffect(() => {
+    const queryParam = searchParams.get('q');
+    if (queryParam) {
+      setValue(queryParam);
+    }
+  }, [searchParams]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
     onSearch?.(e.target.value);
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter' && value.trim()) {
+      navigate(`/search?q=${encodeURIComponent(value.trim())}`);
+    }
   };
 
   return (
@@ -30,6 +46,7 @@ export function SearchBar({ placeholder = 'Search apps or extensions', onSearch 
         placeholder={placeholder}
         value={value}
         onChange={handleChange}
+        onKeyDown={handleKeyDown}
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
         className="flex-1 bg-transparent outline-none text-[var(--text-primary)] placeholder:text-[var(--text-secondary)]"

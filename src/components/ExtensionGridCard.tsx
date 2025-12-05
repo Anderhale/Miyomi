@@ -2,6 +2,7 @@ import { Download, Info } from 'lucide-react';
 import { motion } from 'motion/react';
 import type { ExtensionData } from '../data';
 import { FlagDisplay } from './FlagDisplay';
+import { StarRating } from './StarRating';
 import { useAccentColor } from '../hooks/useAccentColor';
 import { useState } from 'react';
 

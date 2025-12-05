@@ -2,6 +2,7 @@ import { TagBadge } from './TagBadge';
 import { PlatformBadge } from './PlatformBadge';
 import { Download } from 'lucide-react';
 import { AppLogo } from './AppLogo';
+import { StarRating } from './StarRating';
 import { motion } from 'motion/react';
 import { useAccentColor } from '../hooks/useAccentColor';
 
@@ -13,6 +14,8 @@ interface AppGridCardProps {
   platforms: Array<'Windows' | 'Mac' | 'Android' | 'iOS' | 'Linux' | 'Web'>;
   iconColor?: string;
   logoUrl?: string;
+  rating?: number;
+  downloadCount?: number;
   onClick?: () => void;
 }
 
@@ -24,6 +27,8 @@ export function AppGridCard({
   platforms,
   iconColor,
   logoUrl,
+  rating,
+  downloadCount,
   onClick,
 }: AppGridCardProps) {
   const displayedTags = tags;
@@ -84,6 +89,19 @@ export function AppGridCard({
       <p className="text-[var(--text-secondary)] font-['Inter',sans-serif] mb-2 sm:mb-4 line-clamp-2 text-center sm:text-left flex-grow" style={{ fontSize: '12px', lineHeight: '1.4' }}>
         {description}
       </p>
+
+      {/* Rating and Downloads */}
+      {(rating || downloadCount) && (
+        <div className="flex items-center justify-center sm:justify-start gap-3 mb-3">
+          {rating && <StarRating rating={rating} size="sm" />}
+          {downloadCount && (
+            <div className="flex items-center gap-1 text-xs text-[var(--text-secondary)]">
+              <Download className="w-3 h-3" />
+              <span>{downloadCount >= 1000 ? `${(downloadCount / 1000).toFixed(1)}k` : downloadCount}</span>
+            </div>
+          )}
+        </div>
+      )}
 
       {/* Download Button */}
       <div className="flex items-center justify-center gap-2 w-full px-3 py-2 sm:py-2 rounded-lg sm:rounded-xl bg-[var(--chip-bg)] group-hover:bg-[var(--brand)] text-[var(--brand)] group-hover:text-white transition-all mt-auto">
