@@ -20,9 +20,9 @@ html {
   --text-primary: #0F172A;
   --text-secondary: #475569;
 
-  /* Brand: Royal Blue (Hair Shadows) - High Contrast for Text */
-  --brand: #2563EB;
-  --brand-strong: #1E40AF; /* Darker interaction state */
+  /* Brand: Royal Blue (Hair Shadows) - High Contrast for Text Clarity */
+  --brand: #1d4ed8;
+  --brand-strong: #1e40af; /* Darker interaction state */
 
   /* Accents */
   --chip-bg: #EFF6FF; /* Very light blue background for tags */
@@ -39,7 +39,7 @@ html {
   --popover: #FFFFFF;
   --popover-foreground: #0F172A;
 
-  --primary: #2563EB; /* Readable Blue */
+  --primary: #1d4ed8; /* Readable Blue */
   --primary-foreground: #FFFFFF;
 
   --secondary: #EFF6FF;
@@ -59,22 +59,22 @@ html {
   --input-background: #FFFFFF;
   --switch-background: #CBD5E1;
 
-  --ring: #2563EB;
+  --ring: #1d4ed8;
 
   --radius: 0.75rem; /* Slightly rounder for anime aesthetic */
 
   /* Sidebar */
   --sidebar: #FFFFFF;
   --sidebar-foreground: #0F172A;
-  --sidebar-primary: #2563EB;
+  --sidebar-primary: #1d4ed8;
   --sidebar-primary-foreground: #FFFFFF;
   --sidebar-accent: #F0F9FF;
   --sidebar-accent-foreground: #0F172A;
   --sidebar-border: #E2E8F0;
-  --sidebar-ring: #2563EB;
+  --sidebar-ring: #1d4ed8;
 
   /* Chart Colors (Updated to match palette) */
-  --chart-1: #2563EB; /* Blue */
+  --chart-1: #1d4ed8; /* Blue */
   --chart-2: #38BDF8; /* Cyan */
   --chart-3: #F472B6; /* Pink (Blush) */
   --chart-4: #FBBF24; /* Gold (Badge) */
@@ -150,7 +150,7 @@ html {
 
   /* Chart Colors */
   --chart-1: #38BDF8;
-  --chart-2: #2563EB;
+  --chart-2: #1d4ed8;
   --chart-3: #F472B6;
   --chart-4: #FBBF24;
   --chart-5: #94A3B8;
@@ -213,133 +213,25 @@ html {
     @apply bg-background text-foreground;
   }
 
-  /* Prevent flash of unstyled content */
   html:not(.dark):not(.light) {
     visibility: hidden;
   }
 }
 
-@layer utilities {
-  .fixed {
-    position: fixed;
-  }
-
-  .z-\[999\] {
-    z-index: 999;
-  }
-
-  .z-\[1\] {
-    z-index: 1;
-  }
-
-  .backdrop-blur-sm {
-    backdrop-filter: blur(8px);
-  }
-
-  .backdrop-blur-xl {
-    backdrop-filter: blur(24px);
-  }
-
-  .shadow-\[0_0_0_1px_rgba\(0\,0\,0\,0\.08\)_inset\] {
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08) inset;
-  }
-
-  .shadow-\[0_1px_0_rgba\(255\,255\,255\,0\.04\)_inset\] {
-    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04) inset;
-  }
-}
-
-/**
- * Base typography. This is not applied to elements which have an ancestor with a Tailwind text class.
- */
-@layer base {
-  :where(
-    :not(:has([class*=" text-"]), :not(:has([class^="text-"])))
-  ) {
-    h1 {
-      font-size: var(--text-2xl);
-      font-weight: var(--font-weight-medium);
-      line-height: 1.5;
-    }
-
-    h2 {
-      font-size: var(--text-xl);
-      font-weight: var(--font-weight-medium);
-      line-height: 1.5;
-    }
-
-    h3 {
-      font-size: var(--text-lg);
-      font-weight: var(--font-weight-medium);
-      line-height: 1.5;
-    }
-
-    h4 {
-      font-size: var(--text-base);
-      font-weight: var(--font-weight-medium);
-      line-height: 1.5;
-    }
-
-    p {
-      font-size: var(--text-base);
-      font-weight: var(--font-weight-normal);
-      line-height: 1.5;
-    }
-
-    label {
-      font-size: var(--text-base);
-      font-weight: var(--font-weight-medium);
-      line-height: 1.5;
-    }
-
-    button {
-      font-size: var(--text-base);
-      font-weight: var(--font-weight-medium);
-      line-height: 1.5;
-    }
-
-    input {
-      font-size: var(--text-base);
-      font-weight: var(--font-weight-normal);
-      line-height: 1.5;
-    }
-  }
-}
-
-html {
-  font-size: var(--font-size);
-}
-
 /* Custom animations */
 @keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
 }
 
 @keyframes bounce-slow {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
 @keyframes fade-in {
-  0% {
-    opacity: 0;
-    transform: translateY(-5px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  0% { opacity: 0; transform: translateY(-5px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 .animate-float {
@@ -358,7 +250,6 @@ html {
   animation-delay: 300ms;
 }
 
-/* Hide scrollbar but keep functionality */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
@@ -368,7 +259,6 @@ html {
   scrollbar-width: none;
 }
 
-/* Line clamp utilities */
 .line-clamp-2 {
   display: -webkit-box;
   -webkit-line-clamp: 2;

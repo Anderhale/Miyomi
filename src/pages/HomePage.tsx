@@ -18,21 +18,24 @@ export function HomePage({ onNavigate }: HomePageProps) {
       title: 'Quickstart',
       description: 'Get started quickly with our comprehensive guides',
       path: '/guides',
-      gradient: 'from-[#FFB3C1] to-[#FF6B9D]',
+      // Using avatar accent colors: Blush Pink to Badge Gold
+      gradient: 'from-[#F472B6] to-[#FBBF24]',
     },
     {
       icon: <Package className="w-10 h-10" />,
       title: 'Software',
       description: 'Software for every Operating System',
       path: '/software',
-      gradient: 'from-[#B3D9FF] to-[#4A90E2]',
+      // Using avatar primary colors: Cyan (Hair) to Royal Blue (Uniform)
+      gradient: 'from-[#38BDF8] to-[#2563EB]',
     },
     {
       icon: <Star className="w-10 h-10" />,
       title: 'Extensions',
       description: 'Cloudstream, Aniyomi & Dantotsu Extension Repos & Guides',
       path: '/extensions',
-      gradient: 'from-[#E8D4FF] to-[#7C4DFF]',
+      // Using avatar deep accents: Indigo to Deep Violet
+      gradient: 'from-[#818CF8] to-[#7C3AED]',
     },
   ];
 
@@ -41,16 +44,15 @@ export function HomePage({ onNavigate }: HomePageProps) {
     { icon: <MessageSquare className="w-5 h-5" />, label: 'Discord', link: 'https://discord.gg/hfYtH9hrRm', color: '#5865F2' },
     { icon: <Facebook className="w-5 h-5" />, label: 'Facebook', link: 'https://facebook.com/iitachiyomi', color: '#1877F2' },
   ];
+
   const formatCount = (value: number) => {
     if (value >= 1000) {
       const formatted = value % 1000 === 0 ? (value / 1000).toString() : (value / 1000).toFixed(1).replace(/\.0$/, '');
       return `${formatted}k+`;
     }
-    if (value >= 100) {
-      return `${value}+`;
-    }
     return `${value}+`;
   };
+
   const totalGuides = guideCategories.reduce((total, category) => total + category.guides.length, 0);
 
   const socialGridRef = React.useRef<HTMLDivElement>(null);
@@ -59,22 +61,17 @@ export function HomePage({ onNavigate }: HomePageProps) {
   React.useEffect(() => {
     const evaluateColumns = () => {
       const container = socialGridRef.current;
-      if (!container) {
-        return;
-      }
+      if (!container) return;
 
       const previousTemplate = container.style.gridTemplateColumns;
       container.style.gridTemplateColumns = 'repeat(3, minmax(0, 1fr))';
 
       const hasOverflow = Array.from(container.children).some((child) => {
-        if (!(child instanceof HTMLElement)) {
-          return false;
-        }
+        if (!(child instanceof HTMLElement)) return false;
         return child.scrollWidth > child.clientWidth + 1;
       });
 
       container.style.gridTemplateColumns = previousTemplate;
-
       setUseTwoColumns((prev) => (prev !== hasOverflow ? hasOverflow : prev));
     };
 
@@ -97,11 +94,14 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
   return (
     <div className="max-w-7xl mx-auto pt-10">
-      {/* Decorative Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30 -z-10">
-        <div className="absolute top-20 right-10 w-64 h-64 bg-gradient-to-br from-[#FFB3C1] to-transparent rounded-full blur-3xl"></div>
-        <div className="absolute bottom-40 left-10 w-72 h-72 bg-gradient-to-br from-[#B3D9FF] to-transparent rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-[#E8D4FF] to-transparent rounded-full blur-3xl"></div>
+      {/* Decorative Background Elements - Matches Character Palette */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20 -z-10">
+        {/* Top Right: Gold Glow (Badge) */}
+        <div className="absolute top-20 right-10 w-64 h-64 bg-gradient-to-br from-[#FBBF24] to-transparent rounded-full blur-3xl"></div>
+        {/* Bottom Left: Cyan Glow (Hair) */}
+        <div className="absolute bottom-40 left-10 w-72 h-72 bg-gradient-to-br from-[#38BDF8] to-transparent rounded-full blur-3xl"></div>
+        {/* Center: Pink Glow (Blush) */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-[#F472B6] to-transparent rounded-full blur-3xl"></div>
       </div>
 
       {/* Hero Section */}
@@ -111,8 +111,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
           <div className="relative w-48 h-48">
             <div className="animate-float">
               <div className="relative">
-                {/* Glowing background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#FFB3C1] via-[#B3D9FF] to-[#E8D4FF] rounded-full blur-2xl opacity-60 scale-110"></div>
+                {/* Glowing background - using brand colors */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[var(--chart-3)] via-[var(--chart-2)] to-[var(--chart-1)] rounded-full blur-2xl opacity-60 scale-110"></div>
 
                 {/* Avatar */}
                 <img
@@ -129,17 +129,17 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
         {/* Left Content */}
         <div className="relative z-10 text-center lg:text-left">
-          {/* H1 Title with Feedback Trigger */}
+          {/* H1 Title */}
           <div className="flex items-center justify-center lg:justify-start gap-3 mb-4">
             <h1
               className="text-[var(--brand)] font-['Poppins',sans-serif] relative inline-block"
               style={{ fontSize: 'clamp(32px, 8vw, 56px)', lineHeight: '1.1', fontWeight: 800, letterSpacing: '-0.02em' }}
             >
               Miyomi
-              <div className="absolute -top-4 -right-8 w-16 h-16 bg-gradient-to-br from-[#FFB3C1] to-[#FF6B9D] rounded-2xl rotate-12 blur-xl opacity-50"></div>
+              {/* Badge-color decorative element */}
+              <div className="absolute -top-4 -right-8 w-16 h-16 bg-gradient-to-br from-[var(--chart-4)] to-[var(--chart-3)] rounded-2xl rotate-12 blur-xl opacity-40"></div>
             </h1>
           </div>
-          {/* End H1 Title with Feedback Trigger */}
 
           <p
             className="text-[var(--text-primary)] font-['Inter',sans-serif] mb-8 leading-relaxed"
@@ -185,8 +185,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
           <div className="relative w-full max-w-lg">
             <div className="animate-float">
               <div className="relative">
-                {/* Glowing background shadow */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#FFB3C1] via-[#B3D9FF] to-[#E8D4FF] rounded-full blur-3xl opacity-70 scale-110"></div>
+                {/* Glowing background shadow - Character Palette */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[var(--chart-3)] via-[var(--chart-2)] to-[var(--chart-1)] rounded-full blur-3xl opacity-50 scale-110"></div>
 
                 {/* Avatar Image */}
                 <img
@@ -200,8 +200,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
             </div>
 
             {/* Decorative elements around avatar */}
-            <div className="absolute -top-6 -left-6 w-24 h-24 bg-gradient-to-br from-[#FFB3C1] to-transparent rounded-full blur-2xl animate-pulse"></div>
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-gradient-to-br from-[#B3D9FF] to-transparent rounded-full blur-2xl animate-pulse delay-300"></div>
+            <div className="absolute -top-6 -left-6 w-24 h-24 bg-gradient-to-br from-[var(--chart-4)] to-transparent rounded-full blur-2xl animate-pulse"></div>
+            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-gradient-to-br from-[var(--chart-2)] to-transparent rounded-full blur-2xl animate-pulse delay-300"></div>
           </div>
         </div>
       </div>
@@ -238,7 +238,6 @@ export function HomePage({ onNavigate }: HomePageProps) {
                     color: 'var(--text-secondary)',
                     opacity: 0.03,
                     transition: 'opacity 0.3s ease-in-out',
-                    // transform: 'translateX(-20px)',
                   }}
                 >
                   {featureCount}
@@ -272,7 +271,6 @@ export function HomePage({ onNavigate }: HomePageProps) {
           );
         })}
       </div>
-
     </div>
   );
 }
