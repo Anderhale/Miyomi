@@ -1,6 +1,6 @@
 import { TagBadge } from './TagBadge';
 import { PlatformBadge } from './PlatformBadge';
-import { Download } from 'lucide-react';
+import { Download, GitFork } from 'lucide-react';
 import { AppLogo } from './AppLogo';
 import { StarRating } from './StarRating';
 import { motion } from 'motion/react';
@@ -16,6 +16,8 @@ interface AppGridCardProps {
   logoUrl?: string;
   rating?: number;
   downloadCount?: number;
+  forkOf?: string;
+  upstreamUrl?: string;
   onClick?: () => void;
 }
 
@@ -29,6 +31,8 @@ export function AppGridCard({
   logoUrl,
   rating,
   downloadCount,
+  forkOf,
+  upstreamUrl,
   onClick,
 }: AppGridCardProps) {
   const displayedTags = tags;
@@ -82,6 +86,25 @@ export function AppGridCard({
               )}
             </div>
           </div>
+          {forkOf && (
+            <div className="flex items-center justify-center sm:justify-start gap-1.5 mt-2 text-xs text-[var(--text-secondary)]">
+              <GitFork className="w-3 h-3 opacity-70" />
+              <span>Fork of</span>
+              {upstreamUrl ? (
+                <a
+                  href={upstreamUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-[var(--brand)] hover:underline hover:text-[var(--brand-strong)] transition-colors"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {forkOf}
+                </a>
+              ) : (
+                <span className="font-medium opacity-80">{forkOf}</span>
+              )}
+            </div>
+          )}
         </div>
       </div>
 

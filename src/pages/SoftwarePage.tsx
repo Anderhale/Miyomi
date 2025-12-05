@@ -281,6 +281,10 @@ export function SoftwarePage({ onNavigate }: SoftwarePageProps) {
                   platforms={app.platforms as any}
                   iconColor={app.iconColor}
                   logoUrl={app.logoUrl}
+                  rating={app.rating}
+                  downloadCount={app.downloadCount}
+                  forkOf={app.forkOf}
+                  upstreamUrl={app.upstreamUrl}
                   onClick={() => handleAppClick(app.id)}
                 />
               ))}
@@ -297,6 +301,10 @@ export function SoftwarePage({ onNavigate }: SoftwarePageProps) {
                   platforms={app.platforms as any}
                   iconColor={app.iconColor}
                   logoUrl={app.logoUrl}
+                  rating={app.rating}
+                  downloadCount={app.downloadCount}
+                  forkOf={app.forkOf}
+                  upstreamUrl={app.upstreamUrl}
                   onClick={() => handleAppClick(app.id)}
                 />
               ))}

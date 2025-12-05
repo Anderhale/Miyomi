@@ -137,6 +137,10 @@ export function SearchPage({ onNavigate }: SearchPageProps) {
                   tags={result.contentTypes || []}
                   platforms={result.platforms || []}
                   logoUrl={result.logoUrl}
+                  rating={result.rating}
+                  downloadCount={result.downloadCount}
+                  forkOf={result.forkOf}
+                  upstreamUrl={result.upstreamUrl}
                   onClick={() => handleResultClick(result)}
                 />
               )}

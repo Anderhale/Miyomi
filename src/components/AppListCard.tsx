@@ -1,5 +1,5 @@
 import { TagBadge } from './TagBadge';
-import { ExternalLink, Download } from 'lucide-react';
+import { ExternalLink, Download, GitFork } from 'lucide-react';
 import { AppLogo } from './AppLogo';
 import { PlatformBadge } from './PlatformBadge';
 import { StarRating } from './StarRating';
@@ -16,6 +16,8 @@ interface AppListCardProps {
   logoUrl?: string;
   rating?: number;
   downloadCount?: number;
+  forkOf?: string;
+  upstreamUrl?: string;
   onClick?: () => void;
 }
 
@@ -29,6 +31,8 @@ export function AppListCard({
   logoUrl,
   rating,
   downloadCount,
+  forkOf,
+  upstreamUrl,
   onClick,
 }: AppListCardProps) {
   const displayedTags = tags.slice(0, 2);
@@ -85,6 +89,25 @@ export function AppListCard({
             </>
           )}
         </div>
+        {forkOf && (
+          <div className="flex items-center gap-1.5 mb-1 text-xs text-[var(--text-secondary)]">
+            <GitFork className="w-3 h-3 opacity-70" />
+            <span>Fork of</span>
+            {upstreamUrl ? (
+              <a
+                href={upstreamUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-[var(--brand)] hover:underline hover:text-[var(--brand-strong)] transition-colors"
+                onClick={(e) => e.stopPropagation()}
+              >
+                {forkOf}
+              </a>
+            ) : (
+              <span className="font-medium opacity-80">{forkOf}</span>
+            )}
+          </div>
+        )}
         <p className="text-[var(--text-secondary)] font-['Inter',sans-serif] text-xs line-clamp-1">
           {description}
         </p>
