@@ -78,7 +78,7 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
               {/* Header */}
               <div className="flex items-center justify-between p-4 border-b border-[var(--divider)]">
                 <h2 className="text-lg font-semibold text-[var(--text-primary)]">
-                  Search Everything
+                  Global Search
                 </h2>
                 <button
                   onClick={onClose}
