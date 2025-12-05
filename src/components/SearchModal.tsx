@@ -62,12 +62,12 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[1000]"
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[9998]"
             onClick={handleBackdropClick}
           />
 
           {/* Modal */}
-          <div className="fixed inset-0 z-[1001] flex items-start justify-center pt-[20vh] px-4">
+          <div className="fixed inset-0 z-[9999] flex items-start justify-center pt-[20vh] px-4">
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: -20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
