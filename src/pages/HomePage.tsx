@@ -248,8 +248,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
               <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
 
               <div className="relative z-10 flex items-center gap-4">
-                <div className={`inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br ${feature.gradient} text-white flex-shrink-0 group-hover:scale-105 transition-transform duration-300`}>
-                  {React.cloneElement(feature.icon, { className: 'w-5 h-5 sm:w-6 sm:h-6' })}
+                <div className={`inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br ${feature.gradient} text-white flex-shrink-0 group-hover:scale-105 transition-transform duration-300`} style={{ filter: 'drop-shadow(0 1px 2px rgba(0,0,0,0.1))' }}>
+                  {React.cloneElement(feature.icon, { className: 'w-5 h-5 sm:w-6 sm:h-6', style: { filter: 'drop-shadow(0 1px 1px rgba(0,0,0,0.3))' } })}
                 </div>
                 <div className="flex-1 min-w-0">
                   <h3
