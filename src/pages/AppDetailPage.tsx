@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowLeft, Download, Github, Globe, PlayCircle, BookOpen } from 'lucide-react';
+import { ArrowLeft, Download, Github, Globe, PlayCircle, BookOpen, GitFork } from 'lucide-react';
 import { motion } from "framer-motion";
 import { useLocation, useNavigate } from 'react-router-dom';
 import { PlatformBadge } from '../components/PlatformBadge';
@@ -555,6 +555,25 @@ export function AppDetailPage({ appId, onNavigate }: AppDetailPageProps) {
                   <span style={{ fontWeight: 600 }}>{authorInfo.name}</span>
                 )}
               </p>
+            )}
+            {app.forkOf && (
+              <div className="flex items-center justify-center sm:justify-start gap-2 mb-3 text-sm text-[var(--text-secondary)]">
+                <GitFork className="w-4 h-4 opacity-70" />
+                <span>Fork of</span>
+                {app.upstreamUrl ? (
+                  <a
+                    href={app.upstreamUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-[var(--brand)] hover:underline hover:text-[var(--brand-strong)] transition-colors"
+                    style={{ fontWeight: 600 }}
+                  >
+                    {app.forkOf}
+                  </a>
+                ) : (
+                  <span className="font-medium opacity-80" style={{ fontWeight: 600 }}>{app.forkOf}</span>
+                )}
+              </div>
             )}
             <p className="text-[var(--text-secondary)] font-['Inter',sans-serif] mb-4" style={{ fontSize: '16px' }}>
               {app.description}
