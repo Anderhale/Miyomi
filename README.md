@@ -37,6 +37,8 @@ Navigate to `src/data/apps.json` and add or update app entries:
   "logoUrl": "https://avatars.githubusercontent.com/username",
   "keywords": ["keyword1", "keyword2"],
   "supportedExtensions": ["extension-id-1", "extension-id-2"],
+  "forkOf": "Parent App Name",
+  "upstreamUrl": "https://github.com/parent/repository",
   "lastUpdated": "2025-01-15",
   "githubUrl": "https://github.com/owner/repository",
   "officialSite": "https://example.com",
@@ -55,6 +57,8 @@ Navigate to `src/data/apps.json` and add or update app entries:
 **Important:**
 - `status`: Optional; accepted values like `"active", "discontinued"`, `"abandoned"`, `"suspended"`, `"dmca"`, `"dead"` render a badge beside the app name so users know its current lifecycle state. Use lowercase strings; custom labels will be title-cased automatically. Leave this field out for actively maintained apps.
 - `author`: Optional; shown in the UI. Falls back to the GitHub repo owner if omitted.
+- `forkOf`: Optional; name of the parent app this is forked from. Displays a "Fork of" indicator with the parent app name
+- `upstreamUrl`: Optional; URL to the parent app's repository or site. When provided with `forkOf`, the parent name becomes a clickable link
 - `githubUrl`: If provided, the app will fetch live release data from GitHub
 - `lastUpdated`: Acts as fallback when GitHub API is unavailable
 - `contentTypes`: Must be one of: "Manga", "Anime", "Light Novel"
