@@ -9,10 +9,11 @@ import { LoveButton } from './LoveButton';
 
 interface ExtensionGridCardProps {
   extension: ExtensionData;
+  voteData?: { count: number; loved: boolean };
   onSelect: (extensionId: string) => void;
 }
 
-export function ExtensionGridCard({ extension, onSelect }: ExtensionGridCardProps) {
+export function ExtensionGridCard({ extension, voteData, onSelect }: ExtensionGridCardProps) {
   const handleSelect = () => onSelect(extension.id);
   const accentColor = useAccentColor({
     logoUrl: extension.logoUrl,
@@ -87,7 +88,7 @@ export function ExtensionGridCard({ extension, onSelect }: ExtensionGridCardProp
 
       {/* Footer: Love Button and View Details */}
       <div className="mt-auto pt-3 border-t border-[var(--divider)] w-full flex items-center justify-between">
-        <LoveButton itemId={extension.id} />
+        <LoveButton itemId={extension.id} preloadedState={voteData} />
 
         <button
           onClick={(event) => {

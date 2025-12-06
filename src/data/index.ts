@@ -61,6 +61,8 @@ export interface ExtensionData {
   website?: string;
   keywords?: readonly string[];
   tutorials?: readonly ExtensionTutorial[];
+  rating?: number;
+  downloadCount?: number;
 }
 
 // ----- Communities -----

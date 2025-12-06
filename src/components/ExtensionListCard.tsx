@@ -9,10 +9,11 @@ import { LoveButton } from './LoveButton';
 
 interface ExtensionListCardProps {
   extension: ExtensionData;
+  voteData?: { count: number; loved: boolean };
   onSelect: (extensionId: string) => void;
 }
 
-export function ExtensionListCard({ extension, onSelect }: ExtensionListCardProps) {
+export function ExtensionListCard({ extension, voteData, onSelect }: ExtensionListCardProps) {
   const handleSelect = () => onSelect(extension.id);
   const accentColor = useAccentColor({
     logoUrl: extension.logoUrl,
@@ -89,7 +90,7 @@ export function ExtensionListCard({ extension, onSelect }: ExtensionListCardProp
           </div>
         </div>
         <div className="flex-shrink-0 flex items-center gap-3">
-          <LoveButton itemId={extension.id} />
+          <LoveButton itemId={extension.id} preloadedState={voteData} />
 
           <button
             onClick={(event) => {
@@ -137,7 +138,7 @@ export function ExtensionListCard({ extension, onSelect }: ExtensionListCardProp
             <ExternalLink className="w-4 h-4 text-[var(--text-primary)] group-hover:text-white transition-colors" />
           </button>
           <div className="w-8 h-8 flex items-center justify-center">
-            <LoveButton itemId={extension.id} />
+            <LoveButton itemId={extension.id} preloadedState={voteData} />
           </div>
         </div>
       </div>

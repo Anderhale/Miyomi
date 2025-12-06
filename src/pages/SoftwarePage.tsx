@@ -10,6 +10,7 @@ import { FeedbackPanel } from '../components/FeedbackPanel';
 import { FeedbackTrigger } from '../components/FeedbackTrigger';
 import { useFeedbackState } from '../hooks/useFeedbackState';
 import { AnimatePresence } from 'motion/react';
+import { useVoteRegistry } from '../hooks/useVoteRegistry';
 
 interface SoftwarePageProps {
   onNavigate?: (path: string) => void;
@@ -26,6 +27,7 @@ export function SoftwarePage({ onNavigate }: SoftwarePageProps) {
   const [sortBy, setSortBy] = useState<SortOption>('name-asc');
   const [initialized, setInitialized] = useState(false);
   const { isFeedbackOpen, handleToggle, handleClose } = useFeedbackState();
+  const { votes: voteRegistry } = useVoteRegistry();
 
   // Restore scroll position when coming back from detail page
   useEffect(() => {
@@ -283,6 +285,7 @@ export function SoftwarePage({ onNavigate }: SoftwarePageProps) {
                   logoUrl={app.logoUrl}
                   rating={app.rating}
                   downloads={app.downloads}
+                  voteData={voteRegistry[app.id]}
                   forkOf={app.forkOf}
                   upstreamUrl={app.upstreamUrl}
                   onClick={() => handleAppClick(app.id)}
@@ -303,6 +306,7 @@ export function SoftwarePage({ onNavigate }: SoftwarePageProps) {
                   logoUrl={app.logoUrl}
                   rating={app.rating}
                   downloads={app.downloads}
+                  voteData={voteRegistry[app.id]}
                   forkOf={app.forkOf}
                   upstreamUrl={app.upstreamUrl}
                   onClick={() => handleAppClick(app.id)}

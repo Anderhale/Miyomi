@@ -12,18 +12,29 @@ interface LoveButtonProps {
     itemId: string;
     initialCount?: number;
     className?: string;
+    preloadedState?: { count: number; loved: boolean };
 }
 
-export function LoveButton({ itemId, initialCount = 0, className = '' }: LoveButtonProps) {
+export function LoveButton({ itemId, initialCount = 0, className = '', preloadedState }: LoveButtonProps) {
     const userId = useAnonymousId();
-    const [count, setCount] = useState(initialCount);
-    const [loved, setLoved] = useState(false);
+    // Use preloaded data if available, otherwise defaults
+    const [count, setCount] = useState(preloadedState?.count ?? initialCount);
+    const [loved, setLoved] = useState(preloadedState?.loved ?? false);
     const [loading, setLoading] = useState(false);
-    const [hasFetched, setHasFetched] = useState(false);
+    const [hasFetched, setHasFetched] = useState(!!preloadedState);
 
-    // Fetch real data on mount
+    // Sync state if preloadedState changes (e.g. late load)
     useEffect(() => {
-        if (!userId) return;
+        if (preloadedState) {
+            setCount(preloadedState.count);
+            setLoved(preloadedState.loved);
+            setHasFetched(true);
+        }
+    }, [preloadedState]);
+
+    // Fetch real data on mount ONLY if no preloaded state
+    useEffect(() => {
+        if (!userId || preloadedState) return;
 
         fetch(`/api/vote?itemId=${itemId}&userId=${userId}`)
             .then(res => res.json())
@@ -33,7 +44,7 @@ export function LoveButton({ itemId, initialCount = 0, className = '' }: LoveBut
                 setHasFetched(true);
             })
             .catch(console.error);
-    }, [itemId, userId]);
+    }, [itemId, userId, preloadedState]); // Add preloadedState to deps
 
     const handleToggle = async (e: React.MouseEvent) => {
         e.stopPropagation(); // Prevent triggering parent card clicks
@@ -69,8 +80,8 @@ export function LoveButton({ itemId, initialCount = 0, className = '' }: LoveBut
             <button
                 onClick={handleToggle}
                 className={`group flex items-center gap-1.5 rounded-full px-2 py-1 transition-all ${loved
-                        ? 'bg-rose-50 text-rose-500 dark:bg-rose-950/30'
-                        : 'hover:bg-[var(--chip-bg)] text-[var(--text-secondary)] hover:text-rose-500'
+                    ? 'bg-rose-50 text-rose-500 dark:bg-rose-950/30'
+                    : 'hover:bg-[var(--chip-bg)] text-[var(--text-secondary)] hover:text-rose-500'
                     }`}
                 title={loved ? "Unlove this" : "Love this"}
                 aria-pressed={loved}
