@@ -10,6 +10,7 @@ import { getAppById, getAppExtensions, getExtensionById } from '../data';
 import { useGitHubRelease } from '../hooks/useGitHubRelease';
 import { GitHubReleaseMeta } from '../components/GitHubReleaseMeta';
 import { useAccentColor } from '../hooks/useAccentColor';
+import { LoveButton } from '../components/LoveButton';
 
 const DiscordIcon = ({ className }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -534,6 +535,9 @@ export function AppDetailPage({ appId, onNavigate }: AppDetailPageProps) {
                 {app.name}
               </h1>
               {statusBadge}
+              <div className="ml-1">
+                <LoveButton itemId={app.id} />
+              </div>
             </div>
             {authorInfo && (
               <p
