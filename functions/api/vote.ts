@@ -58,7 +58,11 @@ export async function onRequest(context: { request: Request; env: Env }) {
         }
 
         return new Response('Method not allowed', { status: 405 });
-    } catch (error) {
-        return new Response(JSON.stringify({ error: 'Database error' }), { status: 500 });
+    } catch (error: any) {
+        console.error('Vote API Error:', error);
+        return new Response(JSON.stringify({
+            error: 'Database error',
+            details: error instanceof Error ? error.message : String(error)
+        }), { status: 500 });
     }
 }
