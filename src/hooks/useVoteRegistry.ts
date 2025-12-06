@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useAnonymousId } from './useAnonymousId';
+import { voteStorage, VoteRegistry } from '../utils/voteStorage';
 
 export interface VoteData {
     count: number;
@@ -8,7 +9,8 @@ export interface VoteData {
 
 export function useVoteRegistry() {
     const userId = useAnonymousId();
-    const [votes, setVotes] = useState<Record<string, VoteData>>({});
+    // 1. Initialize from Cache immediately
+    const [votes, setVotes] = useState<VoteRegistry>(() => voteStorage.get());
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -19,7 +21,9 @@ export function useVoteRegistry() {
                 const res = await fetch(`/api/vote?userId=${userId}`);
                 if (res.ok) {
                     const data = await res.json();
+                    // 2. Update State AND Cache
                     setVotes(data);
+                    voteStorage.set(data);
                 }
             } catch (error) {
                 console.error('Failed to fetch vote registry', error);

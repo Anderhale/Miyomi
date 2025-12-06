@@ -1,11 +1,15 @@
 import { useState, useEffect } from 'react';
 import { Heart, Info } from 'lucide-react';
 import { useAnonymousId } from '../hooks/useAnonymousId';
+import { voteStorage } from '../utils/voteStorage';
 import {
     Tooltip,
     TooltipContent,
     TooltipProvider,
     TooltipTrigger,
+} from "./ui/tooltip";
+
+interface LoveButtonProps {
 } from "./ui/tooltip";
 
 interface LoveButtonProps {
@@ -18,11 +22,13 @@ interface LoveButtonProps {
 
 export function LoveButton({ itemId, initialCount = 0, className = '', preloadedState, allowFetch = true }: LoveButtonProps) {
     const userId = useAnonymousId();
-    // Use preloaded data if available, otherwise defaults
-    const [count, setCount] = useState(preloadedState?.count ?? initialCount);
-    const [loved, setLoved] = useState(preloadedState?.loved ?? false);
+    // Use preloaded data if available, otherwise try cache, otherwise defaults
+    const cached = preloadedState ? undefined : voteStorage.getItem(itemId);
+
+    const [count, setCount] = useState(preloadedState?.count ?? cached?.count ?? initialCount);
+    const [loved, setLoved] = useState(preloadedState?.loved ?? cached?.loved ?? false);
     const [loading, setLoading] = useState(false);
-    const [hasFetched, setHasFetched] = useState(!!preloadedState);
+    const [hasFetched, setHasFetched] = useState(!!preloadedState || !!cached);
 
     // Sync state if preloadedState changes (e.g. late load)
     useEffect(() => {
@@ -43,6 +49,8 @@ export function LoveButton({ itemId, initialCount = 0, className = '', preloaded
                 setCount(data.count);
                 setLoved(data.loved);
                 setHasFetched(true);
+                // Update cache with fresh data
+                voteStorage.updateItem(itemId, { count: data.count, loved: data.loved });
             })
             .catch(console.error);
     }, [itemId, userId, preloadedState, allowFetch]); // Add preloadedState and allowFetch to deps
@@ -55,6 +63,10 @@ export function LoveButton({ itemId, initialCount = 0, className = '', preloaded
         const newLovedState = !loved;
         setLoved(newLovedState);
         setCount(prev => newLovedState ? prev + 1 : prev - 1);
+
+        // Optimistic cache update
+        voteStorage.updateItem(itemId, { count: count + (newLovedState ? 1 : -1), loved: newLovedState });
+
         setLoading(true);
 
         try {
