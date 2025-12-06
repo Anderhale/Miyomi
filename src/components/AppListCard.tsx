@@ -18,6 +18,7 @@ interface AppListCardProps {
   rating?: number;
   downloads?: number;
   voteData?: { count: number; loved: boolean };
+  allowFetch?: boolean;
   forkOf?: string;
   upstreamUrl?: string;
   onClick?: () => void;
@@ -34,6 +35,7 @@ export function AppListCard({
   rating,
   downloads,
   voteData,
+  allowFetch = true,
   forkOf,
   upstreamUrl,
   onClick,
@@ -129,7 +131,7 @@ export function AppListCard({
 
       {/* Action - Love Button & View */}
       <div className="flex items-center gap-2 flex-shrink-0">
-        <LoveButton itemId={appId} preloadedState={voteData} />
+        <LoveButton itemId={appId} preloadedState={voteData} allowFetch={allowFetch} />
 
         <div className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 bg-[var(--chip-bg)] group-hover:bg-[var(--brand)] text-[var(--text-primary)] group-hover:text-white rounded-lg transition-all">
           <ExternalLink className="w-3.5 h-3.5" />

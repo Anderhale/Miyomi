@@ -13,9 +13,10 @@ interface LoveButtonProps {
     initialCount?: number;
     className?: string;
     preloadedState?: { count: number; loved: boolean };
+    allowFetch?: boolean;
 }
 
-export function LoveButton({ itemId, initialCount = 0, className = '', preloadedState }: LoveButtonProps) {
+export function LoveButton({ itemId, initialCount = 0, className = '', preloadedState, allowFetch = true }: LoveButtonProps) {
     const userId = useAnonymousId();
     // Use preloaded data if available, otherwise defaults
     const [count, setCount] = useState(preloadedState?.count ?? initialCount);
@@ -32,9 +33,9 @@ export function LoveButton({ itemId, initialCount = 0, className = '', preloaded
         }
     }, [preloadedState]);
 
-    // Fetch real data on mount ONLY if no preloaded state
+    // Fetch real data on mount ONLY if no preloaded state AND fetch is allowed
     useEffect(() => {
-        if (!userId || preloadedState) return;
+        if (!userId || preloadedState || !allowFetch) return;
 
         fetch(`/api/vote?itemId=${itemId}&userId=${userId}`)
             .then(res => res.json())
@@ -44,7 +45,7 @@ export function LoveButton({ itemId, initialCount = 0, className = '', preloaded
                 setHasFetched(true);
             })
             .catch(console.error);
-    }, [itemId, userId, preloadedState]); // Add preloadedState to deps
+    }, [itemId, userId, preloadedState, allowFetch]); // Add preloadedState and allowFetch to deps
 
     const handleToggle = async (e: React.MouseEvent) => {
         e.stopPropagation(); // Prevent triggering parent card clicks

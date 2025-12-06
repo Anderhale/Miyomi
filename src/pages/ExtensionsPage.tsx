@@ -275,6 +275,7 @@ export function ExtensionsPage({ onNavigate }: ExtensionsPageProps) {
                 key={ext.id}
                 extension={ext}
                 voteData={voteRegistry[ext.id]}
+                allowFetch={false}
                 onSelect={handleExtensionClick}
               />
             ))}
@@ -286,6 +287,7 @@ export function ExtensionsPage({ onNavigate }: ExtensionsPageProps) {
                 key={ext.id}
                 extension={ext}
                 voteData={voteRegistry[ext.id]}
+                allowFetch={false}
                 onSelect={handleExtensionClick}
               />
             ))}

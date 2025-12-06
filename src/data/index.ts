@@ -34,6 +34,8 @@ export interface AppData {
   tutorials?: readonly AppTutorial[];
   rating?: number;
   downloads?: number;
+  forkOf?: string;
+  upstreamUrl?: string;
 }
 
 // ----- Extensions -----

@@ -18,6 +18,7 @@ interface AppGridCardProps {
   rating?: number;
   downloads?: number;
   voteData?: { count: number; loved: boolean };
+  allowFetch?: boolean;
   forkOf?: string;
   upstreamUrl?: string;
   onClick?: () => void;
@@ -34,6 +35,7 @@ export function AppGridCard({
   rating,
   downloads,
   voteData,
+  allowFetch = true,
   forkOf,
   upstreamUrl,
   onClick,
@@ -125,7 +127,7 @@ export function AppGridCard({
 
       {/* Footer Section: Love Button & Downloads */}
       <div className="mt-auto pt-3 border-t border-[var(--divider)] w-full flex items-center justify-between">
-        <LoveButton itemId={appId} preloadedState={voteData} />
+        <LoveButton itemId={appId} preloadedState={voteData} allowFetch={allowFetch} />
 
         {downloads && downloads > 0 && (
           <div className="flex items-center gap-1.5 text-xs text-[var(--text-secondary)]" title="Estimated Downloads">

@@ -286,6 +286,7 @@ export function SoftwarePage({ onNavigate }: SoftwarePageProps) {
                   rating={app.rating}
                   downloads={app.downloads}
                   voteData={voteRegistry[app.id]}
+                  allowFetch={false}
                   forkOf={app.forkOf}
                   upstreamUrl={app.upstreamUrl}
                   onClick={() => handleAppClick(app.id)}
@@ -307,6 +308,7 @@ export function SoftwarePage({ onNavigate }: SoftwarePageProps) {
                   rating={app.rating}
                   downloads={app.downloads}
                   voteData={voteRegistry[app.id]}
+                  allowFetch={false}
                   forkOf={app.forkOf}
                   upstreamUrl={app.upstreamUrl}
                   onClick={() => handleAppClick(app.id)}
