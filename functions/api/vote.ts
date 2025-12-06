@@ -7,6 +7,13 @@ export async function onRequest(context: { request: Request; env: Env }) {
     const itemId = url.searchParams.get('itemId');
     const userId = url.searchParams.get('userId');
 
+    if (!context.env.DB) {
+        return new Response(JSON.stringify({
+            error: 'Server Misconfiguration',
+            details: 'Database binding "DB" is missing. Check Cloudflare Dashboard > Settings > Functions.'
+        }), { status: 500, headers: { 'Content-Type': 'application/json' } });
+    }
+
     if (!itemId) {
         return new Response(JSON.stringify({ error: 'Missing itemId' }), { status: 400 });
     }
