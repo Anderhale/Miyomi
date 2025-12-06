@@ -16,7 +16,7 @@ interface SoftwarePageProps {
   onNavigate?: (path: string) => void;
 }
 
-type SortOption = 'name-asc' | 'name-desc' | 'updated-desc' | 'updated-asc' | 'rating' | 'downloads';
+type SortOption = 'name-asc' | 'name-desc' | 'updated-desc' | 'updated-asc' | 'rating' | 'downloads' | 'loved';
 
 export function SoftwarePage({ onNavigate }: SoftwarePageProps) {
   const location = useLocation();
@@ -61,6 +61,7 @@ export function SoftwarePage({ onNavigate }: SoftwarePageProps) {
     { value: 'updated-asc', label: 'Least Recently Updated' },
     { value: 'rating', label: 'Top Rated' },
     { value: 'downloads', label: 'Most Popular' },
+    { value: 'loved', label: 'Most Loved' },
   ];
 
   useEffect(() => {
@@ -182,6 +183,8 @@ export function SoftwarePage({ onNavigate }: SoftwarePageProps) {
           return (b.rating || 0) - (a.rating || 0);
         case 'downloads':
           return (b.downloads || 0) - (a.downloads || 0);
+        case 'loved':
+          return (voteRegistry[b.id]?.count || 0) - (voteRegistry[a.id]?.count || 0);
         default:
           return 0;
       }

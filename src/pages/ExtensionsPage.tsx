@@ -16,7 +16,7 @@ interface ExtensionsPageProps {
   onNavigate?: (path: string) => void;
 }
 
-type SortOption = 'name-asc' | 'name-desc' | 'updated-desc' | 'updated-asc' | 'rating' | 'downloads';
+type SortOption = 'name-asc' | 'name-desc' | 'updated-desc' | 'updated-asc' | 'rating' | 'loved';
 
 export function ExtensionsPage({ onNavigate }: ExtensionsPageProps) {
   const location = useLocation();
@@ -60,7 +60,7 @@ export function ExtensionsPage({ onNavigate }: ExtensionsPageProps) {
     { value: 'updated-desc', label: 'Recently Updated' },
     { value: 'updated-asc', label: 'Least Recently Updated' },
     { value: 'rating', label: 'Top Rated' },
-    { value: 'downloads', label: 'Most Popular' },
+    { value: 'loved', label: 'Top Loved' },
   ];
 
   useEffect(() => {
@@ -179,8 +179,8 @@ export function ExtensionsPage({ onNavigate }: ExtensionsPageProps) {
           return (a.lastUpdated || '').localeCompare(b.lastUpdated || '');
         case 'rating':
           return (b.rating || 0) - (a.rating || 0);
-        case 'downloads':
-          return (b.downloadCount || 0) - (a.downloadCount || 0);
+        case 'loved':
+          return (voteRegistry[b.id]?.count || 0) - (voteRegistry[a.id]?.count || 0);
         default:
           return 0;
       }
