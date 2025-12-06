@@ -10,7 +10,11 @@ export interface VoteData {
 export function useVoteRegistry() {
     const userId = useAnonymousId();
     // 1. Initialize from Cache immediately
-    const [votes, setVotes] = useState<VoteRegistry>(() => voteStorage.get());
+    const [votes, setVotes] = useState<VoteRegistry>(() => {
+        const cached = voteStorage.get();
+        // console.log('[useVoteRegistry] Initializing from cache. Items:', Object.keys(cached).length);
+        return cached;
+    });
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {

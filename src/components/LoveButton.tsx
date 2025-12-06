@@ -10,9 +10,6 @@ import {
 } from "./ui/tooltip";
 
 interface LoveButtonProps {
-} from "./ui/tooltip";
-
-interface LoveButtonProps {
     itemId: string;
     initialCount?: number;
     className?: string;
@@ -24,6 +21,8 @@ export function LoveButton({ itemId, initialCount = 0, className = '', preloaded
     const userId = useAnonymousId();
     // Use preloaded data if available, otherwise try cache, otherwise defaults
     const cached = preloadedState ? undefined : voteStorage.getItem(itemId);
+
+    // if (!preloadedState && !cached) console.log('[LoveButton] Cache Miss for', itemId);
 
     const [count, setCount] = useState(preloadedState?.count ?? cached?.count ?? initialCount);
     const [loved, setLoved] = useState(preloadedState?.loved ?? cached?.loved ?? false);

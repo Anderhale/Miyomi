@@ -14,7 +14,9 @@ export const voteStorage = {
         if (typeof window === 'undefined') return {};
         try {
             const data = localStorage.getItem(STORAGE_KEY);
-            return data ? JSON.parse(data) : {};
+            const parsed = data ? JSON.parse(data) : {};
+            // console.log('[VoteStorage] GET', { size: Object.keys(parsed).length });
+            return parsed;
         } catch (e) {
             console.warn('Failed to parse vote cache', e);
             return {};
@@ -24,6 +26,7 @@ export const voteStorage = {
     set: (data: VoteRegistry) => {
         if (typeof window === 'undefined') return;
         try {
+            // console.log('[VoteStorage] SET', { size: Object.keys(data).length });
             localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
         } catch (e) {
             console.warn('Failed to save vote cache', e);
