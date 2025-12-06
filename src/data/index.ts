@@ -32,6 +32,8 @@ export interface AppData {
   officialSite?: string;
   discordUrl?: string;
   tutorials?: readonly AppTutorial[];
+  rating?: number;
+  downloads?: number;
 }
 
 // ----- Extensions -----
@@ -209,9 +211,9 @@ export function searchAll(query: string): {
   guides: GuideTopicData[];
 } {
   const lowerQuery = query.toLowerCase();
-  
+
   return {
-    apps: unifiedApps.filter(app => 
+    apps: unifiedApps.filter(app =>
       app.name.toLowerCase().includes(lowerQuery) ||
       app.description.toLowerCase().includes(lowerQuery) ||
       app.keywords?.some(k => k.toLowerCase().includes(lowerQuery))

@@ -5,6 +5,7 @@ import { PlatformBadge } from './PlatformBadge';
 import { StarRating } from './StarRating';
 import { motion } from 'motion/react';
 import { useAccentColor } from '../hooks/useAccentColor';
+import { LoveButton } from './LoveButton';
 
 interface AppListCardProps {
   appId: string;
@@ -15,7 +16,7 @@ interface AppListCardProps {
   iconColor?: string;
   logoUrl?: string;
   rating?: number;
-  downloadCount?: number;
+  downloads?: number;
   forkOf?: string;
   upstreamUrl?: string;
   onClick?: () => void;
@@ -30,7 +31,7 @@ export function AppListCard({
   iconColor,
   logoUrl,
   rating,
-  downloadCount,
+  downloads,
   forkOf,
   upstreamUrl,
   onClick,
@@ -40,7 +41,7 @@ export function AppListCard({
   const extraPlatforms = platforms.length - displayedPlatforms.length;
   const showPlatformDivider = displayedTags.length > 0 && platforms.length > 0;
   const accentColor = useAccentColor({ logoUrl, preferredColor: iconColor });
-  
+
   // Only use layoutId on desktop
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
 
@@ -111,21 +112,23 @@ export function AppListCard({
         <p className="text-[var(--text-secondary)] font-['Inter',sans-serif] text-xs line-clamp-1">
           {description}
         </p>
-        {(rating || downloadCount) && (
+        {(rating || downloads) && (
           <div className="flex items-center gap-3 mt-2">
             {rating && <StarRating rating={rating} size="sm" />}
-            {downloadCount && (
+            {downloads && (
               <div className="flex items-center gap-1 text-xs text-[var(--text-secondary)]">
                 <Download className="w-3 h-3" />
-                <span>{downloadCount >= 1000 ? `${(downloadCount / 1000).toFixed(1)}k` : downloadCount}</span>
+                <span>{downloads >= 1000 ? `${(downloads / 1000).toFixed(1)}k` : downloads}</span>
               </div>
             )}
           </div>
         )}
       </div>
 
-      {/* Action - Compact */}
+      {/* Action - Love Button & View */}
       <div className="flex items-center gap-2 flex-shrink-0">
+        <LoveButton itemId={appId} />
+
         <div className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 bg-[var(--chip-bg)] group-hover:bg-[var(--brand)] text-[var(--text-primary)] group-hover:text-white rounded-lg transition-all">
           <ExternalLink className="w-3.5 h-3.5" />
           <span className="text-xs font-['Inter',sans-serif]" style={{ fontWeight: 600 }}>

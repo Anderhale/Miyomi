@@ -5,6 +5,7 @@ import type { ExtensionData } from '../data';
 import { FlagDisplay } from './FlagDisplay';
 import { StarRating } from './StarRating';
 import { useAccentColor } from '../hooks/useAccentColor';
+import { LoveButton } from './LoveButton';
 
 interface ExtensionListCardProps {
   extension: ExtensionData;
@@ -87,17 +88,19 @@ export function ExtensionListCard({ extension, onSelect }: ExtensionListCardProp
             )}
           </div>
         </div>
-        <div className="flex-shrink-0 w-48">
+        <div className="flex-shrink-0 flex items-center gap-3">
+          <LoveButton itemId={extension.id} />
+
           <button
             onClick={(event) => {
               event.stopPropagation();
               handleSelect();
             }}
-            className="w-full px-4 py-2 flex items-center justify-center gap-2 rounded-xl bg-[var(--chip-bg)] text-[var(--brand)] group-hover:bg-[var(--brand)] group-hover:text-white transition-all font-['Inter',sans-serif]"
+            className="px-4 py-2 flex items-center justify-center gap-2 rounded-xl bg-[var(--chip-bg)] text-[var(--brand)] group-hover:bg-[var(--brand)] group-hover:text-white transition-all font-['Inter',sans-serif]"
             style={{ fontWeight: 600, fontSize: '14px' }}
           >
             <Download className="w-4 h-4" />
-            View Details
+            View
           </button>
         </div>
       </div>
@@ -121,17 +124,22 @@ export function ExtensionListCard({ extension, onSelect }: ExtensionListCardProp
           </div>
         </div>
 
-        {/* View Button - Right Side */}
-        <button
-          onClick={(event) => {
-            event.stopPropagation();
-            handleSelect();
-          }}
-          className="flex-shrink-0 w-8 h-8 rounded-lg bg-[var(--chip-bg)] group-hover:bg-[var(--brand)] flex items-center justify-center transition-all"
-          aria-label="View extension details"
-        >
-          <ExternalLink className="w-4 h-4 text-[var(--text-primary)] group-hover:text-white transition-colors" />
-        </button>
+        {/* View Button & Love Button - Right Side */}
+        <div className="flex flex-col gap-2 flex-shrink-0">
+          <button
+            onClick={(event) => {
+              event.stopPropagation();
+              handleSelect();
+            }}
+            className="w-8 h-8 rounded-lg bg-[var(--chip-bg)] group-hover:bg-[var(--brand)] flex items-center justify-center transition-all"
+            aria-label="View extension details"
+          >
+            <ExternalLink className="w-4 h-4 text-[var(--text-primary)] group-hover:text-white transition-colors" />
+          </button>
+          <div className="w-8 h-8 flex items-center justify-center">
+            <LoveButton itemId={extension.id} />
+          </div>
+        </div>
       </div>
     </motion.div>
   );

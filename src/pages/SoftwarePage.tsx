@@ -179,7 +179,7 @@ export function SoftwarePage({ onNavigate }: SoftwarePageProps) {
         case 'rating':
           return (b.rating || 0) - (a.rating || 0);
         case 'downloads':
-          return (b.downloadCount || 0) - (a.downloadCount || 0);
+          return (b.downloads || 0) - (a.downloads || 0);
         default:
           return 0;
       }
@@ -282,7 +282,7 @@ export function SoftwarePage({ onNavigate }: SoftwarePageProps) {
                   iconColor={app.iconColor}
                   logoUrl={app.logoUrl}
                   rating={app.rating}
-                  downloadCount={app.downloadCount}
+                  downloads={app.downloads}
                   forkOf={app.forkOf}
                   upstreamUrl={app.upstreamUrl}
                   onClick={() => handleAppClick(app.id)}
@@ -302,7 +302,7 @@ export function SoftwarePage({ onNavigate }: SoftwarePageProps) {
                   iconColor={app.iconColor}
                   logoUrl={app.logoUrl}
                   rating={app.rating}
-                  downloadCount={app.downloadCount}
+                  downloads={app.downloads}
                   forkOf={app.forkOf}
                   upstreamUrl={app.upstreamUrl}
                   onClick={() => handleAppClick(app.id)}
