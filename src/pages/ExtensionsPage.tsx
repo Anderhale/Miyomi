@@ -59,8 +59,7 @@ export function ExtensionsPage({ onNavigate }: ExtensionsPageProps) {
     { value: 'name-desc', label: 'Name (Z-A)' },
     { value: 'updated-desc', label: 'Recently Updated' },
     { value: 'updated-asc', label: 'Least Recently Updated' },
-    { value: 'rating', label: 'Top Rated' },
-    { value: 'loved', label: 'Top Loved' },
+    { value: 'loved', label: 'Most Loved' },
   ];
 
   useEffect(() => {

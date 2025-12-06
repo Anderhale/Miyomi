@@ -59,7 +59,6 @@ export function SoftwarePage({ onNavigate }: SoftwarePageProps) {
     { value: 'name-desc', label: 'Name (Z-A)' },
     { value: 'updated-desc', label: 'Recently Updated' },
     { value: 'updated-asc', label: 'Least Recently Updated' },
-    { value: 'rating', label: 'Top Rated' },
     { value: 'downloads', label: 'Most Popular' },
     { value: 'loved', label: 'Most Loved' },
   ];
