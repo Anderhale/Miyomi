@@ -283,7 +283,7 @@ export function SoftwarePage({ onNavigate }: SoftwarePageProps) {
                   description={app.description}
                   tags={app.contentTypes as any}
                   platforms={app.platforms as any}
-                  iconColor={app.iconColor}
+                  iconColor={app.accentColor || app.iconColor}
                   logoUrl={app.logoUrl}
                   rating={app.rating}
                   downloads={app.downloads}
@@ -305,7 +305,7 @@ export function SoftwarePage({ onNavigate }: SoftwarePageProps) {
                   description={app.description}
                   tags={app.contentTypes as any}
                   platforms={app.platforms as any}
-                  iconColor={app.iconColor}
+                  iconColor={app.accentColor || app.iconColor}
                   logoUrl={app.logoUrl}
                   rating={app.rating}
                   downloads={app.downloads}

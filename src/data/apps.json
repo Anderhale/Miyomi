@@ -1,6 +1,7 @@
 [
   {
     "id": "aniyomi",
+    "accentColor": "#3399FF",
     "name": "Aniyomi",
     "status": "active",
     "author": "jmir1",
@@ -48,6 +49,7 @@
   },
   {
     "id": "mihon",
+    "accentColor": "#66BB6A",
     "downloads": 12421874,
     "name": "Mihon",
     "status": "active",
@@ -86,6 +88,7 @@
   },
   {
     "id": "kumo",
+    "accentColor": "#9C27B0",
     "downloads": 312,
     "name": "Kumo",
     "status": "active",
@@ -117,6 +120,7 @@
   },
   {
     "id": "taison",
+    "accentColor": "#FF5722",
     "downloads": 938,
     "name": "Taison",
     "status": "active",
@@ -147,6 +151,7 @@
   },
   {
     "id": "kahon",
+    "accentColor": "#E91E63",
     "downloads": 3793,
     "name": "Kahon",
     "status": "active",
@@ -176,6 +181,7 @@
   },
   {
     "id": "dantotsu",
+    "accentColor": "#F44336",
     "downloads": 5241,
     "name": "Dantotsu",
     "status": "active",
@@ -201,6 +207,7 @@
   },
   {
     "id": "dartotsu",
+    "accentColor": "#2196F3",
     "downloads": 11649,
     "name": "Dartotsu",
     "status": "active",
@@ -232,6 +239,7 @@
   },
   {
     "id": "mangayomi",
+    "accentColor": "#FFC107",
     "downloads": 177507,
     "name": "Mangayomi",
     "status": "active",
@@ -264,6 +272,7 @@
   },
   {
     "id": "tachiyomi",
+    "accentColor": "#455A64",
     "downloads": 154000,
     "name": "Tachiyomi",
     "status": "dmca",
@@ -286,6 +295,7 @@
   },
   {
     "id": "Yumemi",
+    "accentColor": "#673AB7",
     "downloads": 3038,
     "name": "Yumemi",
     "status": "active",
@@ -311,6 +321,7 @@
   },
   {
     "id": "kotatsu",
+    "accentColor": "#795548",
     "downloads": 45000,
     "name": "Kotatsu",
     "status": "dmca",
@@ -334,6 +345,7 @@
   },
   {
     "id": "cloudstream",
+    "accentColor": "#9C27B0",
     "downloads": 4906546,
     "name": "Cloudstream",
     "status": "active",
@@ -356,6 +368,7 @@
   },
   {
     "id": "migu",
+    "accentColor": "#00BCD4",
     "downloads": 499801,
     "name": "Migu",
     "status": "discontinued",
@@ -379,6 +392,7 @@
   },
   {
     "id": "tachiyomi-sy",
+    "accentColor": "#E91E63",
     "downloads": 1331325,
     "name": "TachiyomiSY",
     "status": "active",
@@ -406,6 +420,7 @@
   },
   {
     "id": "tachiyomi-j2k",
+    "accentColor": "#3F51B5",
     "downloads": 4071219,
     "name": "TachiyomiJ2K",
     "status": "abandoned",
@@ -431,6 +446,7 @@
   },
   {
     "id": "yokai",
+    "accentColor": "#FF9800",
     "downloads": 401155,
     "name": "Yokai",
     "status": "active",
@@ -456,6 +472,7 @@
   },
   {
     "id": "komikku",
+    "accentColor": "#009688",
     "downloads": 439866,
     "name": "Komikku",
     "status": "active",
@@ -479,6 +496,7 @@
   },
   {
     "id": "neko",
+    "accentColor": "#607D8B",
     "downloads": 1648960,
     "name": "Neko",
     "status": "active",
@@ -500,6 +518,7 @@
   },
   {
     "id": "perfect-viewer",
+    "accentColor": "#2196F3",
     "downloads": 54000,
     "name": "Perfect Viewer",
     "status": "active",
@@ -521,6 +540,7 @@
   },
   {
     "id": "kuro-reader",
+    "accentColor": "#424242",
     "downloads": 14555,
     "name": "Kuro Reader +",
     "status": "active",
@@ -543,6 +563,7 @@
   },
   {
     "id": "cdisplayex",
+    "accentColor": "#F44336",
     "downloads": 67000,
     "name": "CDisplayEx",
     "status": "active",
@@ -564,6 +585,7 @@
   },
   {
     "id": "ln-reader",
+    "accentColor": "#FBC02D",
     "downloads": 734491,
     "name": "LN Reader",
     "status": "active",
@@ -587,6 +609,7 @@
   },
   {
     "id": "quicknovel",
+    "accentColor": "#8BC34A",
     "downloads": 266437,
     "name": "QuickNovel",
     "status": "active",
@@ -610,6 +633,7 @@
   },
   {
     "id": "shosetsu",
+    "accentColor": "#03A9F4",
     "downloads": 2238,
     "name": "Shosetsu",
     "status": "active",
@@ -633,6 +657,7 @@
   },
   {
     "id": "moon-reader",
+    "accentColor": "#3F51B5",
     "downloads": 88000,
     "name": "Moon+ Reader",
     "status": "active",
@@ -654,6 +679,7 @@
   },
   {
     "id": "nineanimator",
+    "accentColor": "#9C27B0",
     "downloads": 70026,
     "name": "NineAnimator",
     "status": "Discontinued",
@@ -675,6 +701,7 @@
   },
   {
     "id": "paperback",
+    "accentColor": "#FF5722",
     "downloads": 140095,
     "name": "Paperback",
     "status": "active",
@@ -698,6 +725,7 @@
   },
   {
     "id": "aidoku",
+    "accentColor": "#FFC107",
     "downloads": 150696,
     "name": "Aidoku",
     "status": "active",
@@ -721,6 +749,7 @@
   },
   {
     "id": "tachimanga",
+    "accentColor": "#4CAF50",
     "downloads": 15400,
     "name": "Tachimanga",
     "status": "active",
@@ -751,6 +780,7 @@
   },
   {
     "id": "suwatte",
+    "accentColor": "#E91E63",
     "downloads": 5600,
     "name": "Suwatte",
     "status": "active",
@@ -774,6 +804,7 @@
   },
   {
     "id": "stremio",
+    "accentColor": "#7C4DFF",
     "downloads": 150000,
     "name": "Stremio",
     "status": "active",

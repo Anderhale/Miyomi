@@ -432,10 +432,10 @@ export function ExtensionDetailPage({ extensionId, onNavigate }: ExtensionDetail
                 description={app.description}
                 tags={app.contentTypes as any}
                 platforms={app.platforms as any}
-                iconColor={app.iconColor}
+                iconColor={app.accentColor || app.iconColor}
                 logoUrl={app.logoUrl}
                 rating={app.rating}
-                downloadCount={app.downloadCount}
+                downloads={app.downloads}
                 forkOf={app.forkOf}
                 upstreamUrl={app.upstreamUrl}
                 onClick={() => onNavigate?.(`/software/${app.id}`)}

@@ -14,6 +14,7 @@ import { AppDetailPage } from "./pages/AppDetailPage";
 import { ExtensionDetailPage } from "./pages/ExtensionDetailPage";
 import { NotFoundPage } from "./pages/NotFoundPage";
 import { SearchPage } from "./pages/SearchPage";
+import { ChristmasSnow } from './components/ChristmasSnow';
 import {
   BrowserRouter,
   Routes,
@@ -71,8 +72,8 @@ function AppContent() {
 
   const handleNavigate = (path: string) => {
     const currentScrollY = window.scrollY;
-    navigate(path, { 
-      state: { 
+    navigate(path, {
+      state: {
         previousScrollPosition: currentScrollY,
         fromNavigation: true
       }
@@ -83,6 +84,7 @@ function AppContent() {
 
   return (
     <div className="min-h-screen bg-[var(--bg-page)] font-['Inter',sans-serif] flex flex-col">
+      {/* <ChristmasSnow /> */}
       <Toaster position="top-center" />
 
       <Navbar onNavigate={handleNavigate} />

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Button } from '../components/Button';
 import { useNavigate } from 'react-router-dom';
-import policImage from '../assets/404.png';
 
 export function NotFoundPage() {
   const navigate = useNavigate();
@@ -15,7 +14,7 @@ export function NotFoundPage() {
     <div className="flex flex-col items-center justify-center min-h-[calc(100vh-160px)] text-center px-4 py-12">
       <div className="relative w-64 h-64 mb-8">
         <img
-          src={policImage}
+          src="/404.png"
           alt="Page Not Found Mascot"
           className="relative z-10 w-full h-full object-contain drop-shadow-2xl animate-bounce-slow"
         />

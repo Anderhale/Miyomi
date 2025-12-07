@@ -55,5 +55,6 @@ export default defineConfig({
   server: {
     port: 3000,
     open: true,
+    allowedHosts: ['dev.bevore.me', 'localhost', '127.0.0.1', '0.0.0.0'],
   },
 });

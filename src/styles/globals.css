@@ -14,7 +14,8 @@ html {
   --bg-page: #FFFDFA;
   --bg-page-rgb: 255, 253, 250;
   --bg-surface: #FFFFFF;
-  --bg-elev-1: #F0F9FF; /* Very light blue tint for cards */
+  --bg-elev-1: #F0F9FF;
+  /* Very light blue tint for cards */
 
   /* Text: Deep Navy (Uniform) instead of black for softer contrast */
   --text-primary: #0F172A;
@@ -22,12 +23,15 @@ html {
 
   /* Brand: Royal Blue (Hair Shadows) - High Contrast for Text Clarity */
   --brand: #1d4ed8;
-  --brand-strong: #1e40af; /* Darker interaction state */
+  --brand-strong: #1e40af;
+  /* Darker interaction state */
 
   /* Accents */
-  --chip-bg: #EFF6FF; /* Very light blue background for tags */
+  --chip-bg: #EFF6FF;
+  /* Very light blue background for tags */
   --divider: #E2E8F0;
-  --focus-ring: #38BDF8; /* Cyan focus ring */
+  --focus-ring: #38BDF8;
+  /* Cyan focus ring */
 
   /* Shadcn/UI Mapping */
   --background: #FFFDFA;
@@ -39,7 +43,8 @@ html {
   --popover: #FFFFFF;
   --popover-foreground: #0F172A;
 
-  --primary: #1d4ed8; /* Readable Blue */
+  --primary: #1d4ed8;
+  /* Readable Blue */
   --primary-foreground: #FFFFFF;
 
   --secondary: #EFF6FF;
@@ -61,7 +66,8 @@ html {
 
   --ring: #1d4ed8;
 
-  --radius: 0.75rem; /* Slightly rounder for anime aesthetic */
+  --radius: 0.75rem;
+  /* Slightly rounder for anime aesthetic */
 
   /* Sidebar */
   --sidebar: #FFFFFF;
@@ -74,11 +80,16 @@ html {
   --sidebar-ring: #1d4ed8;
 
   /* Chart Colors (Updated to match palette) */
-  --chart-1: #1d4ed8; /* Blue */
-  --chart-2: #38BDF8; /* Cyan */
-  --chart-3: #F472B6; /* Pink (Blush) */
-  --chart-4: #FBBF24; /* Gold (Badge) */
-  --chart-5: #64748B; /* Slate */
+  --chart-1: #1d4ed8;
+  /* Blue */
+  --chart-2: #38BDF8;
+  /* Cyan */
+  --chart-3: #F472B6;
+  /* Pink (Blush) */
+  --chart-4: #FBBF24;
+  /* Gold (Badge) */
+  --chart-5: #64748B;
+  /* Slate */
 
   /* Font Weights */
   --font-weight-medium: 600;
@@ -91,7 +102,8 @@ html {
   /* Background: Deep Navy (Uniform) */
   --bg-page: #020617;
   --bg-page-rgb: 2, 6, 23;
-  --bg-surface: #0F172A; /* Lighter Navy */
+  --bg-surface: #0F172A;
+  /* Lighter Navy */
   --bg-elev-1: #1E293B;
 
   /* Text: Ice White */
@@ -116,8 +128,10 @@ html {
   --popover: #0F172A;
   --popover-foreground: #F8FAFC;
 
-  --primary: #38BDF8; /* Cyan pops against Navy */
-  --primary-foreground: #020617; /* Dark text on Cyan button */
+  --primary: #38BDF8;
+  /* Cyan pops against Navy */
+  --primary-foreground: #020617;
+  /* Dark text on Cyan button */
 
   --secondary: #1E293B;
   --secondary-foreground: #F8FAFC;
@@ -220,18 +234,39 @@ html {
 
 /* Custom animations */
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
 @keyframes bounce-slow {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 @keyframes fade-in {
-  0% { opacity: 0; transform: translateY(-5px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate-float {
@@ -264,4 +299,90 @@ html {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+
+/* --- SEASONAL THEME: THE FROZEN UPDATE --- */
+
+/* 1. Base Variables (Light Mode Default) */
+.christmas {
+  /* Icy Backgrounds */
+  --bg-page: #f0f9ff;
+  --bg-surface: rgba(255, 255, 255, 0.8);
+  /* Semi-transparent ice */
+  --bg-elev-1: #e0f2fe;
+
+  /* Deep Blue Text for contrast against ice */
+  --text-primary: #0c4a6e;
+  --text-secondary: #334155;
+
+  /* Vivid Cyan/Blue Branding */
+  --brand: #0ea5e9;
+  --brand-strong: #0284c7;
+
+  --chip-bg: #bae6fd;
+  --divider: #bfdbfe;
+
+  /* Frosty Borders */
+  --border: #bae6fd;
+}
+
+/* 2. Dark Mode Overrides (Critical Fixes) */
+.dark.christmas {
+  /* Deep Winter Night Background */
+  --bg-page: #020617;
+  --bg-surface: rgba(15, 23, 42, 0.7);
+  /* Frosted dark glass */
+  --bg-elev-1: rgba(30, 41, 59, 0.6);
+
+  /* FIXED: Text Visibility */
+  --text-primary: #e0f2fe;
+  /* Bright Ice White - Readable against dark */
+  --text-secondary: #94a3b8;
+  /* Soft Blue-Grey */
+
+  /* Neon Cyan Branding */
+  --brand: #38bdf8;
+  --brand-strong: #7dd3fc;
+
+  --chip-bg: rgba(56, 189, 248, 0.1);
+  --divider: rgba(56, 189, 248, 0.2);
+  --border: rgba(56, 189, 248, 0.3);
+}
+
+/* 3. Interactive "Ice" Effects */
+
+/* Card Hover: Lift + Icy Glow */
+.christmas .group:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 10px 40px -10px rgba(14, 165, 233, 0.3);
+  border-color: var(--brand);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Button Shine Effect ("Frozen Polish") */
+.christmas button.bg-\[var\(--brand\)\] {
+  position: relative;
+  overflow: hidden;
+  background-image: linear-gradient(135deg, var(--brand), var(--brand-strong));
+}
+
+.christmas button.bg-\[var\(--brand\)\]::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent);
+  transform: skewX(-20deg);
+  transition: 0.5s;
+}
+
+.christmas button.bg-\[var\(--brand\)\]:hover::after {
+  left: 200%;
+  transition: 0.7s ease-in-out;
 }
