@@ -32,6 +32,10 @@ export interface AppData {
   officialSite?: string;
   discordUrl?: string;
   tutorials?: readonly AppTutorial[];
+  rating?: number;
+  downloads?: number;
+  forkOf?: string;
+  upstreamUrl?: string;
 }
 
 // ----- Extensions -----
@@ -59,6 +63,8 @@ export interface ExtensionData {
   website?: string;
   keywords?: readonly string[];
   tutorials?: readonly ExtensionTutorial[];
+  rating?: number;
+  downloadCount?: number;
 }
 
 // ----- Communities -----
@@ -209,9 +215,9 @@ export function searchAll(query: string): {
   guides: GuideTopicData[];
 } {
   const lowerQuery = query.toLowerCase();
-  
+
   return {
-    apps: unifiedApps.filter(app => 
+    apps: unifiedApps.filter(app =>
       app.name.toLowerCase().includes(lowerQuery) ||
       app.description.toLowerCase().includes(lowerQuery) ||
       app.keywords?.some(k => k.toLowerCase().includes(lowerQuery))

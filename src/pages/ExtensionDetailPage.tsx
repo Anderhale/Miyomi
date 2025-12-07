@@ -9,6 +9,7 @@ import { ParticleBackground } from '../components/ParticleBackground';
 import { useFeedbackState } from '../hooks/useFeedbackState';
 import { FlagDisplay } from '../components/FlagDisplay';
 import { useAccentColor } from '../hooks/useAccentColor';
+import { LoveButton } from '../components/LoveButton';
 
 interface ExtensionDetailPageProps {
   extensionId: string;
@@ -325,6 +326,9 @@ export function ExtensionDetailPage({ extensionId, onNavigate }: ExtensionDetail
                   <FlagDisplay region={extension.region} size="medium" />
                 </span>
               )}
+              <div className="ml-1">
+                <LoveButton itemId={extension.id} />
+              </div>
             </div>
 
             {extension.types.length > 0 && (
@@ -430,6 +434,10 @@ export function ExtensionDetailPage({ extensionId, onNavigate }: ExtensionDetail
                 platforms={app.platforms as any}
                 iconColor={app.iconColor}
                 logoUrl={app.logoUrl}
+                rating={app.rating}
+                downloadCount={app.downloadCount}
+                forkOf={app.forkOf}
+                upstreamUrl={app.upstreamUrl}
                 onClick={() => onNavigate?.(`/software/${app.id}`)}
               />
             ))}

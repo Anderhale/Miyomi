@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowLeft, Download, Github, Globe, PlayCircle, BookOpen } from 'lucide-react';
+import { ArrowLeft, Download, Github, Globe, PlayCircle, BookOpen, GitFork } from 'lucide-react';
 import { motion } from "framer-motion";
 import { useLocation, useNavigate } from 'react-router-dom';
 import { PlatformBadge } from '../components/PlatformBadge';
@@ -10,6 +10,7 @@ import { getAppById, getAppExtensions, getExtensionById } from '../data';
 import { useGitHubRelease } from '../hooks/useGitHubRelease';
 import { GitHubReleaseMeta } from '../components/GitHubReleaseMeta';
 import { useAccentColor } from '../hooks/useAccentColor';
+import { LoveButton } from '../components/LoveButton';
 
 const DiscordIcon = ({ className }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -534,6 +535,9 @@ export function AppDetailPage({ appId, onNavigate }: AppDetailPageProps) {
                 {app.name}
               </h1>
               {statusBadge}
+              <div className="ml-1">
+                <LoveButton itemId={app.id} />
+              </div>
             </div>
             {authorInfo && (
               <p
@@ -555,6 +559,25 @@ export function AppDetailPage({ appId, onNavigate }: AppDetailPageProps) {
                   <span style={{ fontWeight: 600 }}>{authorInfo.name}</span>
                 )}
               </p>
+            )}
+            {app.forkOf && (
+              <div className="flex items-center justify-center sm:justify-start gap-2 mb-3 text-sm text-[var(--text-secondary)]">
+                <GitFork className="w-4 h-4 opacity-70" />
+                <span>Fork of</span>
+                {app.upstreamUrl ? (
+                  <a
+                    href={app.upstreamUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-[var(--brand)] hover:underline hover:text-[var(--brand-strong)] transition-colors"
+                    style={{ fontWeight: 600 }}
+                  >
+                    {app.forkOf}
+                  </a>
+                ) : (
+                  <span className="font-medium opacity-80" style={{ fontWeight: 600 }}>{app.forkOf}</span>
+                )}
+              </div>
             )}
             <p className="text-[var(--text-secondary)] font-['Inter',sans-serif] mb-4" style={{ fontSize: '16px' }}>
               {app.description}

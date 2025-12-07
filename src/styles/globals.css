@@ -8,108 +8,156 @@ html {
 :root {
   --font-size: 16px;
 
-  /* Miyomi Sakura Theme - Light */
-  --bg-page: #fff7f2;
-  --bg-page-rgb: 255, 247, 242;
-  --bg-surface: #ffffff;
-  --bg-elev-1: #fff3ee;
-  --text-primary: #2a2a2a;
-  --text-secondary: #656565;
-  --brand: #b85c45;
-  --brand-strong: #a34e39;
-  --chip-bg: #f6e6e0;
-  --divider: #ede1db;
-  --focus-ring: #7c9eff;
+  /* --- MIYOMI LIGHT THEME (Character Inspired) --- */
 
-  --background: #fff7f2;
-  --foreground: #2a2a2a;
-  --card: #ffffff;
-  --card-foreground: #2a2a2a;
-  --popover: #ffffff;
-  --popover-foreground: #2a2a2a;
-  --primary: #b85c45;
-  --primary-foreground: #ffffff;
-  --secondary: #f6e6e0;
-  --secondary-foreground: #2a2a2a;
-  --muted: #fff3ee;
-  --muted-foreground: #656565;
-  --accent: #f6e6e0;
-  --accent-foreground: #2a2a2a;
-  --destructive: #d4183d;
-  --destructive-foreground: #ffffff;
-  --border: #ede1db;
+  /* Background: Subtle Warm Porcelain (Skin tone hint) */
+  --bg-page: #FFFDFA;
+  --bg-page-rgb: 255, 253, 250;
+  --bg-surface: #FFFFFF;
+  --bg-elev-1: #F0F9FF; /* Very light blue tint for cards */
+
+  /* Text: Deep Navy (Uniform) instead of black for softer contrast */
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+
+  /* Brand: Royal Blue (Hair Shadows) - High Contrast for Text Clarity */
+  --brand: #1d4ed8;
+  --brand-strong: #1e40af; /* Darker interaction state */
+
+  /* Accents */
+  --chip-bg: #EFF6FF; /* Very light blue background for tags */
+  --divider: #E2E8F0;
+  --focus-ring: #38BDF8; /* Cyan focus ring */
+
+  /* Shadcn/UI Mapping */
+  --background: #FFFDFA;
+  --foreground: #0F172A;
+
+  --card: #FFFFFF;
+  --card-foreground: #0F172A;
+
+  --popover: #FFFFFF;
+  --popover-foreground: #0F172A;
+
+  --primary: #1d4ed8; /* Readable Blue */
+  --primary-foreground: #FFFFFF;
+
+  --secondary: #EFF6FF;
+  --secondary-foreground: #1E3A8A;
+
+  --muted: #F1F5F9;
+  --muted-foreground: #64748B;
+
+  --accent: #F0F9FF;
+  --accent-foreground: #0F172A;
+
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
+
+  --border: #E2E8F0;
   --input: transparent;
-  --input-background: #ffffff;
-  --switch-background: #cbced4;
+  --input-background: #FFFFFF;
+  --switch-background: #CBD5E1;
+
+  --ring: #1d4ed8;
+
+  --radius: 0.75rem; /* Slightly rounder for anime aesthetic */
+
+  /* Sidebar */
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #0F172A;
+  --sidebar-primary: #1d4ed8;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #F0F9FF;
+  --sidebar-accent-foreground: #0F172A;
+  --sidebar-border: #E2E8F0;
+  --sidebar-ring: #1d4ed8;
+
+  /* Chart Colors (Updated to match palette) */
+  --chart-1: #1d4ed8; /* Blue */
+  --chart-2: #38BDF8; /* Cyan */
+  --chart-3: #F472B6; /* Pink (Blush) */
+  --chart-4: #FBBF24; /* Gold (Badge) */
+  --chart-5: #64748B; /* Slate */
+
+  /* Font Weights */
   --font-weight-medium: 600;
   --font-weight-normal: 400;
-  --ring: #7c9eff;
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: #030213;
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
 }
 
 .dark {
-  /* Miyomi Sakura Theme - Dark */
-  --bg-page: #1a1a1a;
-  --bg-page-rgb: 26, 26, 26;
-  --bg-surface: #252525;
-  --bg-elev-1: #2f2f2f;
-  --text-primary: #e8e8e8;
-  --text-secondary: #a0a0a0;
-  --brand: #e07b5f;
-  --brand-strong: #f09070;
-  --chip-bg: #3a3a3a;
-  --divider: #3a3a3a;
-  --focus-ring: #7c9eff;
+  /* --- MIYOMI DARK THEME (Uniform Inspired) --- */
 
-  --background: #1a1a1a;
-  --foreground: #e8e8e8;
-  --card: #252525;
-  --card-foreground: #e8e8e8;
-  --popover: #252525;
-  --popover-foreground: #e8e8e8;
-  --primary: #e07b5f;
-  --primary-foreground: #1a1a1a;
-  --secondary: #3a3a3a;
-  --secondary-foreground: #e8e8e8;
-  --muted: #2f2f2f;
-  --muted-foreground: #a0a0a0;
-  --accent: #3a3a3a;
-  --accent-foreground: #e8e8e8;
-  --destructive: #ef4444;
-  --destructive-foreground: #fecaca;
-  --border: #3a3a3a;
+  /* Background: Deep Navy (Uniform) */
+  --bg-page: #020617;
+  --bg-page-rgb: 2, 6, 23;
+  --bg-surface: #0F172A; /* Lighter Navy */
+  --bg-elev-1: #1E293B;
+
+  /* Text: Ice White */
+  --text-primary: #F8FAFC;
+  --text-secondary: #94A3B8;
+
+  /* Brand: Electric Cyan (Hair Highlights) - Glowing effect */
+  --brand: #38BDF8;
+  --brand-strong: #7DD3FC;
+
+  --chip-bg: #1E293B;
+  --divider: #1E293B;
+  --focus-ring: #38BDF8;
+
+  /* Shadcn/UI Mapping */
+  --background: #020617;
+  --foreground: #F8FAFC;
+
+  --card: #0F172A;
+  --card-foreground: #F8FAFC;
+
+  --popover: #0F172A;
+  --popover-foreground: #F8FAFC;
+
+  --primary: #38BDF8; /* Cyan pops against Navy */
+  --primary-foreground: #020617; /* Dark text on Cyan button */
+
+  --secondary: #1E293B;
+  --secondary-foreground: #F8FAFC;
+
+  --muted: #1E293B;
+  --muted-foreground: #94A3B8;
+
+  --accent: #1E293B;
+  --accent-foreground: #F8FAFC;
+
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
+
+  --border: #1E293B;
   --input: transparent;
-  --input-background: #2f2f2f;
-  --switch-background: #4a4a4a;
+  --input-background: #1E293B;
+  --switch-background: #334155;
+
+  --ring: #38BDF8;
+
+  /* Sidebar */
+  --sidebar: #0F172A;
+  --sidebar-foreground: #F8FAFC;
+  --sidebar-primary: #38BDF8;
+  --sidebar-primary-foreground: #020617;
+  --sidebar-accent: #1E293B;
+  --sidebar-accent-foreground: #F8FAFC;
+  --sidebar-border: #1E293B;
+  --sidebar-ring: #38BDF8;
+
+  /* Chart Colors */
+  --chart-1: #38BDF8;
+  --chart-2: #1d4ed8;
+  --chart-3: #F472B6;
+  --chart-4: #FBBF24;
+  --chart-5: #94A3B8;
+
+  /* Font Weights */
   --font-weight-medium: 600;
   --font-weight-normal: 400;
-  --ring: #7c9eff;
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: #252525;
-  --sidebar-foreground: #e8e8e8;
-  --sidebar-primary: #e07b5f;
-  --sidebar-primary-foreground: #1a1a1a;
-  --sidebar-accent: #3a3a3a;
-  --sidebar-accent-foreground: #e8e8e8;
-  --sidebar-border: #3a3a3a;
-  --sidebar-ring: #7c9eff;
 }
 
 @theme inline {
@@ -146,13 +194,9 @@ html {
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(
-    --sidebar-primary-foreground
-  );
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
   --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(
-    --sidebar-accent-foreground
-  );
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 }
@@ -169,133 +213,25 @@ html {
     @apply bg-background text-foreground;
   }
 
-  /* Prevent flash of unstyled content */
   html:not(.dark):not(.light) {
     visibility: hidden;
   }
 }
 
-@layer utilities {
-  .fixed {
-    position: fixed;
-  }
-
-  .z-\[999\] {
-    z-index: 999;
-  }
-
-  .z-\[1\] {
-    z-index: 1;
-  }
-
-  .backdrop-blur-sm {
-    backdrop-filter: blur(8px);
-  }
-
-  .backdrop-blur-xl {
-    backdrop-filter: blur(24px);
-  }
-
-  .shadow-\[0_0_0_1px_rgba\(0\,0\,0\,0\.08\)_inset\] {
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08) inset;
-  }
-
-  .shadow-\[0_1px_0_rgba\(255\,255\,255\,0\.04\)_inset\] {
-    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04) inset;
-  }
-}
-
-/**
- * Base typography. This is not applied to elements which have an ancestor with a Tailwind text class.
- */
-@layer base {
-  :where(
-    :not(:has([class*=" text-"]), :not(:has([class^="text-"])))
-  ) {
-    h1 {
-      font-size: var(--text-2xl);
-      font-weight: var(--font-weight-medium);
-      line-height: 1.5;
-    }
-
-    h2 {
-      font-size: var(--text-xl);
-      font-weight: var(--font-weight-medium);
-      line-height: 1.5;
-    }
-
-    h3 {
-      font-size: var(--text-lg);
-      font-weight: var(--font-weight-medium);
-      line-height: 1.5;
-    }
-
-    h4 {
-      font-size: var(--text-base);
-      font-weight: var(--font-weight-medium);
-      line-height: 1.5;
-    }
-
-    p {
-      font-size: var(--text-base);
-      font-weight: var(--font-weight-normal);
-      line-height: 1.5;
-    }
-
-    label {
-      font-size: var(--text-base);
-      font-weight: var(--font-weight-medium);
-      line-height: 1.5;
-    }
-
-    button {
-      font-size: var(--text-base);
-      font-weight: var(--font-weight-medium);
-      line-height: 1.5;
-    }
-
-    input {
-      font-size: var(--text-base);
-      font-weight: var(--font-weight-normal);
-      line-height: 1.5;
-    }
-  }
-}
-
-html {
-  font-size: var(--font-size);
-}
-
 /* Custom animations */
 @keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
 }
 
 @keyframes bounce-slow {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
 @keyframes fade-in {
-  0% {
-    opacity: 0;
-    transform: translateY(-5px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  0% { opacity: 0; transform: translateY(-5px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 .animate-float {
@@ -314,7 +250,6 @@ html {
   animation-delay: 300ms;
 }
 
-/* Hide scrollbar but keep functionality */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
@@ -324,7 +259,6 @@ html {
   scrollbar-width: none;
 }
 
-/* Line clamp utilities */
 .line-clamp-2 {
   display: -webkit-box;
   -webkit-line-clamp: 2;

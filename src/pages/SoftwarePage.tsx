@@ -10,12 +10,13 @@ import { FeedbackPanel } from '../components/FeedbackPanel';
 import { FeedbackTrigger } from '../components/FeedbackTrigger';
 import { useFeedbackState } from '../hooks/useFeedbackState';
 import { AnimatePresence } from 'motion/react';
+import { useVoteRegistry } from '../hooks/useVoteRegistry';
 
 interface SoftwarePageProps {
   onNavigate?: (path: string) => void;
 }
 
-type SortOption = 'name-asc' | 'name-desc' | 'updated-desc' | 'updated-asc';
+type SortOption = 'name-asc' | 'name-desc' | 'updated-desc' | 'updated-asc' | 'rating' | 'downloads' | 'loved';
 
 export function SoftwarePage({ onNavigate }: SoftwarePageProps) {
   const location = useLocation();
@@ -26,6 +27,7 @@ export function SoftwarePage({ onNavigate }: SoftwarePageProps) {
   const [sortBy, setSortBy] = useState<SortOption>('name-asc');
   const [initialized, setInitialized] = useState(false);
   const { isFeedbackOpen, handleToggle, handleClose } = useFeedbackState();
+  const { votes: voteRegistry } = useVoteRegistry();
 
   // Restore scroll position when coming back from detail page
   useEffect(() => {
@@ -57,6 +59,8 @@ export function SoftwarePage({ onNavigate }: SoftwarePageProps) {
     { value: 'name-desc', label: 'Name (Z-A)' },
     { value: 'updated-desc', label: 'Recently Updated' },
     { value: 'updated-asc', label: 'Least Recently Updated' },
+    { value: 'downloads', label: 'Most Popular' },
+    { value: 'loved', label: 'Most Loved' },
   ];
 
   useEffect(() => {
@@ -174,6 +178,12 @@ export function SoftwarePage({ onNavigate }: SoftwarePageProps) {
           return (b.lastUpdated || '').localeCompare(a.lastUpdated || '');
         case 'updated-asc':
           return (a.lastUpdated || '').localeCompare(b.lastUpdated || '');
+        case 'rating':
+          return (b.rating || 0) - (a.rating || 0);
+        case 'downloads':
+          return (b.downloads || 0) - (a.downloads || 0);
+        case 'loved':
+          return (voteRegistry[b.id]?.count || 0) - (voteRegistry[a.id]?.count || 0);
         default:
           return 0;
       }
@@ -275,6 +285,12 @@ export function SoftwarePage({ onNavigate }: SoftwarePageProps) {
                   platforms={app.platforms as any}
                   iconColor={app.iconColor}
                   logoUrl={app.logoUrl}
+                  rating={app.rating}
+                  downloads={app.downloads}
+                  voteData={voteRegistry[app.id]}
+                  allowFetch={false}
+                  forkOf={app.forkOf}
+                  upstreamUrl={app.upstreamUrl}
                   onClick={() => handleAppClick(app.id)}
                 />
               ))}
@@ -291,6 +307,12 @@ export function SoftwarePage({ onNavigate }: SoftwarePageProps) {
                   platforms={app.platforms as any}
                   iconColor={app.iconColor}
                   logoUrl={app.logoUrl}
+                  rating={app.rating}
+                  downloads={app.downloads}
+                  voteData={voteRegistry[app.id]}
+                  allowFetch={false}
+                  forkOf={app.forkOf}
+                  upstreamUrl={app.upstreamUrl}
                   onClick={() => handleAppClick(app.id)}
                 />
               ))}

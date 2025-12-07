@@ -10,12 +10,13 @@ import { FeedbackPanel } from '../components/FeedbackPanel';
 import { FeedbackTrigger } from '../components/FeedbackTrigger';
 import { useFeedbackState } from '../hooks/useFeedbackState';
 import { AnimatePresence } from 'motion/react';
+import { useVoteRegistry } from '../hooks/useVoteRegistry';
 
 interface ExtensionsPageProps {
   onNavigate?: (path: string) => void;
 }
 
-type SortOption = 'name-asc' | 'name-desc' | 'updated-desc' | 'updated-asc';
+type SortOption = 'name-asc' | 'name-desc' | 'updated-desc' | 'updated-asc' | 'rating' | 'loved';
 
 export function ExtensionsPage({ onNavigate }: ExtensionsPageProps) {
   const location = useLocation();
@@ -26,6 +27,7 @@ export function ExtensionsPage({ onNavigate }: ExtensionsPageProps) {
   const [sortBy, setSortBy] = useState<SortOption>('name-asc');
   const [initialized, setInitialized] = useState(false);
   const { isFeedbackOpen, handleToggle, handleClose } = useFeedbackState();
+  const { votes: voteRegistry } = useVoteRegistry();
 
   // Restore scroll position when coming back from detail page
   useEffect(() => {
@@ -57,6 +59,7 @@ export function ExtensionsPage({ onNavigate }: ExtensionsPageProps) {
     { value: 'name-desc', label: 'Name (Z-A)' },
     { value: 'updated-desc', label: 'Recently Updated' },
     { value: 'updated-asc', label: 'Least Recently Updated' },
+    { value: 'loved', label: 'Most Loved' },
   ];
 
   useEffect(() => {
@@ -173,6 +176,10 @@ export function ExtensionsPage({ onNavigate }: ExtensionsPageProps) {
           return (b.lastUpdated || '').localeCompare(a.lastUpdated || '');
         case 'updated-asc':
           return (a.lastUpdated || '').localeCompare(b.lastUpdated || '');
+        case 'rating':
+          return (b.rating || 0) - (a.rating || 0);
+        case 'loved':
+          return (voteRegistry[b.id]?.count || 0) - (voteRegistry[a.id]?.count || 0);
         default:
           return 0;
       }
@@ -263,13 +270,25 @@ export function ExtensionsPage({ onNavigate }: ExtensionsPageProps) {
         view === 'grid' ? (
           <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 mb-8">
             {filteredAndSortedExtensions.map((ext) => (
-              <ExtensionGridCard key={ext.id} extension={ext} onSelect={handleExtensionClick} />
+              <ExtensionGridCard
+                key={ext.id}
+                extension={ext}
+                voteData={voteRegistry[ext.id]}
+                allowFetch={false}
+                onSelect={handleExtensionClick}
+              />
             ))}
           </div>
         ) : (
           <div className="space-y-4 mb-8">
             {filteredAndSortedExtensions.map((ext) => (
-              <ExtensionListCard key={ext.id} extension={ext} onSelect={handleExtensionClick} />
+              <ExtensionListCard
+                key={ext.id}
+                extension={ext}
+                voteData={voteRegistry[ext.id]}
+                allowFetch={false}
+                onSelect={handleExtensionClick}
+              />
             ))}
           </div>
         )

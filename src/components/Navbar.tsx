@@ -1,8 +1,9 @@
 "use client";
 
-import { X, ChevronDown, Github, Instagram, Youtube, Facebook, Plus } from 'lucide-react';
+import { X, ChevronDown, Github, Instagram, Youtube, Facebook, Plus, Search } from 'lucide-react';
 import React, { useState, useEffect, useRef } from 'react';
 import { ThemeToggle } from './ThemeToggle';
+import { SearchModal } from './SearchModal';
 import logoImage from '../assets/hugme.png';
 import { useLocation, useNavigate } from 'react-router-dom';
 import {
@@ -22,6 +23,7 @@ export function Navbar({ onNavigate }: NavbarProps) {
   const [expandedSection, setExpandedSection] = useState<string | null>(null);
   const [pagesDropdownOpen, setPagesDropdownOpen] = useState(false);
   const [guidesDropdownOpen, setGuidesDropdownOpen] = useState(false);
+  const [searchModalOpen, setSearchModalOpen] = useState(false);
   const hoverTimeouts = useRef<{ pages: ReturnType<typeof setTimeout> | null; guides: ReturnType<typeof setTimeout> | null }>({
     pages: null,
     guides: null,
@@ -141,6 +143,8 @@ export function Navbar({ onNavigate }: NavbarProps) {
 
   return (
     <>
+      <SearchModal isOpen={searchModalOpen} onClose={() => setSearchModalOpen(false)} />
+
       <nav
         className={`h-16 fixed top-0 left-0 right-0 z-[999] transition-all duration-300 ${scrolled
           ? 'bg-[var(--bg-page)]/80 backdrop-blur-xl border-b border-[var(--divider)]/50 shadow-sm'
@@ -213,6 +217,18 @@ export function Navbar({ onNavigate }: NavbarProps) {
             {/* Divider */}
             <div className="w-px h-6 bg-[var(--divider)]"></div>
 
+            {/* Search Button */}
+            <button
+              onClick={() => setSearchModalOpen(true)}
+              className="p-2 text-[var(--text-secondary)] hover:text-[var(--brand)] transition-colors relative group"
+              aria-label="Search"
+            >
+              <Search className="w-5 h-5" />
+              <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 px-2 py-1 bg-[var(--bg-surface)] border border-[var(--divider)] rounded text-xs text-[var(--text-secondary)] opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
+                Search
+              </span>
+            </button>
+
             {/* Theme Toggle */}
             <ThemeToggle />
 
@@ -233,20 +249,32 @@ export function Navbar({ onNavigate }: NavbarProps) {
             </div>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-[var(--text-primary)] transition-colors"
-            aria-label="Toggle menu"
-          >
-            {mobileMenuOpen ? (
-              <X className="w-6 h-6" />
-            ) : (
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M3 12H21M3 6H21M3 18H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            )}
-          </button>
+          {/* Mobile Actions */}
+          <div className="md:hidden flex items-center gap-2">
+            {/* Search Button */}
+            <button
+              onClick={() => setSearchModalOpen(true)}
+              className="p-2 text-[var(--text-secondary)] hover:text-[var(--brand)] transition-colors"
+              aria-label="Search"
+            >
+              <Search className="w-5 h-5" />
+            </button>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="p-2 text-[var(--text-primary)] transition-colors"
+              aria-label="Toggle menu"
+            >
+              {mobileMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3 12H21M3 6H21M3 18H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              )}
+            </button>
+          </div>
         </div>
       </nav>
 

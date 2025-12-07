@@ -1,9 +1,11 @@
 import { TagBadge } from './TagBadge';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Download, GitFork } from 'lucide-react';
 import { AppLogo } from './AppLogo';
 import { PlatformBadge } from './PlatformBadge';
+import { StarRating } from './StarRating';
 import { motion } from 'motion/react';
 import { useAccentColor } from '../hooks/useAccentColor';
+import { LoveButton } from './LoveButton';
 
 interface AppListCardProps {
   appId: string;
@@ -13,6 +15,12 @@ interface AppListCardProps {
   platforms: Array<'Windows' | 'Mac' | 'Android' | 'iOS' | 'Linux' | 'Web'>;
   iconColor?: string;
   logoUrl?: string;
+  rating?: number;
+  downloads?: number;
+  voteData?: { count: number; loved: boolean };
+  allowFetch?: boolean;
+  forkOf?: string;
+  upstreamUrl?: string;
   onClick?: () => void;
 }
 
@@ -24,6 +32,12 @@ export function AppListCard({
   platforms,
   iconColor,
   logoUrl,
+  rating,
+  downloads,
+  voteData,
+  allowFetch = true,
+  forkOf,
+  upstreamUrl,
   onClick,
 }: AppListCardProps) {
   const displayedTags = tags.slice(0, 2);
@@ -31,7 +45,7 @@ export function AppListCard({
   const extraPlatforms = platforms.length - displayedPlatforms.length;
   const showPlatformDivider = displayedTags.length > 0 && platforms.length > 0;
   const accentColor = useAccentColor({ logoUrl, preferredColor: iconColor });
-  
+
   // Only use layoutId on desktop
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
 
@@ -80,13 +94,45 @@ export function AppListCard({
             </>
           )}
         </div>
+        {forkOf && (
+          <div className="flex items-center gap-1.5 mb-1 text-xs text-[var(--text-secondary)]">
+            <GitFork className="w-3 h-3 opacity-70" />
+            <span>Fork of</span>
+            {upstreamUrl ? (
+              <a
+                href={upstreamUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-[var(--brand)] hover:underline hover:text-[var(--brand-strong)] transition-colors"
+                onClick={(e) => e.stopPropagation()}
+              >
+                {forkOf}
+              </a>
+            ) : (
+              <span className="font-medium opacity-80">{forkOf}</span>
+            )}
+          </div>
+        )}
         <p className="text-[var(--text-secondary)] font-['Inter',sans-serif] text-xs line-clamp-1">
           {description}
         </p>
+        {(rating || downloads) && (
+          <div className="flex items-center gap-3 mt-2">
+            {rating && <StarRating rating={rating} size="sm" />}
+            {downloads && (
+              <div className="flex items-center gap-1 text-xs text-[var(--text-secondary)]">
+                <Download className="w-3 h-3" />
+                <span>{downloads >= 1000 ? `${(downloads / 1000).toFixed(1)}k` : downloads}</span>
+              </div>
+            )}
+          </div>
+        )}
       </div>
 
-      {/* Action - Compact */}
+      {/* Action - Love Button & View */}
       <div className="flex items-center gap-2 flex-shrink-0">
+        <LoveButton itemId={appId} preloadedState={voteData} allowFetch={allowFetch} />
+
         <div className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 bg-[var(--chip-bg)] group-hover:bg-[var(--brand)] text-[var(--text-primary)] group-hover:text-white rounded-lg transition-all">
           <ExternalLink className="w-3.5 h-3.5" />
           <span className="text-xs font-['Inter',sans-serif]" style={{ fontWeight: 600 }}>

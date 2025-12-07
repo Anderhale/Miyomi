@@ -1,5 +1,5 @@
 interface TagBadgeProps {
-  tag: 'Manga' | 'Anime' | 'Light Novel';
+  tag: 'Manga' | 'Anime' | 'Light Novel' | 'Multi';
   mobile?: boolean;
 }
 
@@ -7,10 +7,11 @@ const tagColors = {
   Manga: { bg: '#FFE8E8', text: '#C44545' },
   Anime: { bg: '#E8F4FF', text: '#4573C4' },
   'Light Novel': { bg: '#F4E8FF', text: '#8845C4' },
+  Multi: { bg: '#F3F4F6', text: '#4B5563' }, // Gray for Multi
 };
 
 export function TagBadge({ tag, mobile = false }: TagBadgeProps) {
-  const colors = tagColors[tag];
+  const colors = tagColors[tag] || tagColors['Multi']; // Fallback
 
   const getShortText = () => {
     if (!mobile) return tag;
@@ -21,6 +22,8 @@ export function TagBadge({ tag, mobile = false }: TagBadgeProps) {
         return 'M';
       case 'Light Novel':
         return 'LN';
+      case 'Multi':
+        return 'All';
       default:
         return tag;
     }

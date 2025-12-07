@@ -13,6 +13,7 @@ import { AboutPage } from "./pages/AboutPage";
 import { AppDetailPage } from "./pages/AppDetailPage";
 import { ExtensionDetailPage } from "./pages/ExtensionDetailPage";
 import { NotFoundPage } from "./pages/NotFoundPage";
+import { SearchPage } from "./pages/SearchPage";
 import {
   BrowserRouter,
   Routes,
@@ -132,6 +133,10 @@ function AppContent() {
                 onNavigate={handleNavigate}
               />
             }
+          />
+          <Route
+            path="/search"
+            element={<SearchPage onNavigate={handleNavigate} />}
           />
           <Route path="/faq" element={<FAQPage />} />
           <Route path="/about" element={<AboutPage />} />

@@ -1,16 +1,20 @@
-import { Download, Info } from 'lucide-react';
+import { Download, Info, ExternalLink } from 'lucide-react';
 import { motion } from 'motion/react';
 import type { ExtensionData } from '../data';
 import { FlagDisplay } from './FlagDisplay';
+import { StarRating } from './StarRating';
 import { useAccentColor } from '../hooks/useAccentColor';
 import { useState } from 'react';
+import { LoveButton } from './LoveButton';
 
 interface ExtensionGridCardProps {
   extension: ExtensionData;
+  voteData?: { count: number; loved: boolean };
+  allowFetch?: boolean;
   onSelect: (extensionId: string) => void;
 }
 
-export function ExtensionGridCard({ extension, onSelect }: ExtensionGridCardProps) {
+export function ExtensionGridCard({ extension, voteData, allowFetch = true, onSelect }: ExtensionGridCardProps) {
   const handleSelect = () => onSelect(extension.id);
   const accentColor = useAccentColor({
     logoUrl: extension.logoUrl,
@@ -83,17 +87,21 @@ export function ExtensionGridCard({ extension, onSelect }: ExtensionGridCardProp
         </p>
       )}
 
-      <button
-        onClick={(event) => {
-          event.stopPropagation();
-          handleSelect();
-        }}
-        className="flex items-center justify-center gap-2 w-full px-3 py-2 rounded-lg sm:rounded-xl bg-[var(--chip-bg)] text-[var(--brand)] group-hover:bg-[var(--brand)] group-hover:text-white transition-all font-['Inter',sans-serif] mt-auto"
-        style={{ fontWeight: 600, fontSize: '13px' }}
-      >
-        <Download className="w-4 h-4" />
-        View Details
-      </button>
+      {/* Footer: Love Button and View Details */}
+      <div className="mt-auto pt-3 border-t border-[var(--divider)] w-full flex items-center justify-between">
+        <LoveButton itemId={extension.id} preloadedState={voteData} allowFetch={allowFetch} />
+
+        <button
+          onClick={(event) => {
+            event.stopPropagation();
+            handleSelect();
+          }}
+          className="flex items-center gap-1.5 text-xs font-semibold text-[var(--text-secondary)] hover:text-[var(--brand)] transition-colors px-2 py-1"
+        >
+          <span>View Details</span>
+          <ExternalLink className="w-3 h-3" />
+        </button>
+      </div>
     </motion.div>
   );
 }
