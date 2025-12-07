@@ -21,9 +21,39 @@ export function ChristmasSnow() {
 
     if (!isActive) return null;
 
-    // 2. Dynamic Colors for Snow based on Light/Dark mode
     // White snow shows up best in dark mode; Icy Blue in light mode
     const snowColor = theme === 'dark' ? '#f1f5f9' : '#38bdf8';
+
+    // 3. Interactive Wind Control
+    const [wind, setWind] = useState<[number, number]>(SEASONAL_CONFIG.effects.wind);
+
+    useEffect(() => {
+        const handleMove = (clientX: number) => {
+            // Normalize position from -1 (left) to 1 (right)
+            const normalizedPos = (clientX / window.innerWidth) * 2 - 1;
+
+            // Map to wind range: e.g., -1.0 to 1.5
+            // Default wind was [-0.2, 1.0]. We want more variance.
+            // Let's amplify it: Left -> -1.5, Right -> +2.0
+            const windForce = normalizedPos * 1.5;
+
+            // Add some randomness/variance to the tuple [min, max]
+            setWind([windForce - 0.5, windForce + 0.5]);
+        };
+
+        const onMouseMove = (e: MouseEvent) => handleMove(e.clientX);
+        const onTouchMove = (e: TouchEvent) => {
+            if (e.touches[0]) handleMove(e.touches[0].clientX);
+        };
+
+        window.addEventListener('mousemove', onMouseMove);
+        window.addEventListener('touchmove', onTouchMove);
+
+        return () => {
+            window.removeEventListener('mousemove', onMouseMove);
+            window.removeEventListener('touchmove', onTouchMove);
+        };
+    }, []);
 
     // Load vector snowflakes
     const [snowflakeImages, setSnowflakeImages] = useState<HTMLImageElement[]>([]);
@@ -68,7 +98,7 @@ export function ChristmasSnow() {
                 snowflakeCount={350} // Increased significantly for more "snowy" feel
                 radius={[0.5, 2.5]} // Slightly varied
                 speed={[0.5, 3.0]} // Dynamic speed
-                wind={[-0.5, 1.5]}
+                wind={wind} // Interactive wind
                 style={{
                     position: 'absolute',
                     width: '100vw',
@@ -82,7 +112,7 @@ export function ChristmasSnow() {
                 snowflakeCount={SEASONAL_CONFIG.effects.snowCount}
                 radius={[12.0, 28.0]} // Larger radius for detailed vector flakes
                 speed={[0.2, 1.0]} // Slower, more natural fall
-                wind={SEASONAL_CONFIG.effects.wind}
+                wind={wind} // Interactive wind
                 images={snowflakeImages.length > 0 ? snowflakeImages : undefined}
                 style={{
                     position: 'absolute',
