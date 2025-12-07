@@ -328,7 +328,7 @@ html {
 }
 
 /* 2. Dark Mode Overrides (Critical Fixes) */
-.dark .christmas {
+.dark.christmas {
   /* Deep Winter Night Background */
   --bg-page: #020617;
   --bg-surface: rgba(15, 23, 42, 0.7);

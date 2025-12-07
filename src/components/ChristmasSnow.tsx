@@ -5,55 +5,25 @@ import { useTheme } from './ThemeProvider';
 import { SNOWFLAKE_DATA } from './snowflakePaths';
 
 export function ChristmasSnow() {
-    const isActive = isSeasonalActive();
     const { theme } = useTheme();
+    const isActive = isSeasonalActive();
+    const [snowflakeImages, setSnowflakeImages] = useState<HTMLImageElement[]>([]);
+    const [isMobile, setIsMobile] = useState(false);
 
+    const snowColor = theme === 'dark' ? '#ffffff' : '#0ea5e9';
+    // Mobile check for performance optimization
     useEffect(() => {
-        if (isActive) {
-            document.body.classList.add(SEASONAL_CONFIG.themeName);
-        } else {
-            document.body.classList.remove(SEASONAL_CONFIG.themeName);
-        }
-        return () => document.body.classList.remove(SEASONAL_CONFIG.themeName);
-    }, [isActive]);
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
 
-    if (!isActive) return null;
+        checkMobile();
 
-    // White snow shows up best in dark mode; Icy Blue in light mode
-    const snowColor = theme === 'dark' ? '#f1f5f9' : '#38bdf8';
-
-    const [wind, setWind] = useState<[number, number]>(SEASONAL_CONFIG.effects.wind);
-
-    useEffect(() => {
-        const handleMove = (clientX: number) => {
-            const normalizedPos = (clientX / window.innerWidth) * 2 - 1;
-
-            // Map to wind range: e.g., -1.0 to 1.5
-            // Default wind was [-0.2, 1.0]. We want more variance.
-            // Let's amplify it: Left -> -1.5, Right -> +2.0
-            const windForce = normalizedPos * 1.5;
-
-            setWind([windForce - 0.5, windForce + 0.5]);
-        };
-
-        const onMouseMove = (e: MouseEvent) => handleMove(e.clientX);
-        const onTouchMove = (e: TouchEvent) => {
-            if (e.touches[0]) handleMove(e.touches[0].clientX);
-        };
-
-        window.addEventListener('mousemove', onMouseMove);
-        window.addEventListener('touchmove', onTouchMove);
-
-        return () => {
-            window.removeEventListener('mousemove', onMouseMove);
-            window.removeEventListener('touchmove', onTouchMove);
-        };
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
     }, []);
 
-    // Load vector snowflakes
-    const [snowflakeImages, setSnowflakeImages] = useState<HTMLImageElement[]>([]);
-
     useEffect(() => {
+        if (!isActive) return;
+
         const loadImages = async () => {
             const generateImage = (data: { path: string; viewBox: string }) => {
                 return new Promise<HTMLImageElement>((resolve) => {
@@ -79,20 +49,20 @@ export function ChristmasSnow() {
             setSnowflakeImages(loadedImages);
         };
 
-        if (isActive) {
-            loadImages();
-        }
-    }, [snowColor, isActive]);
+        loadImages();
+    }, [isActive, snowColor]);
+
+    if (!isActive) return null;
 
     return (
         <div className="fixed inset-0 pointer-events-none z-[9999] overflow-hidden font-sans">
-
+            {/* Standard Snow - Reduced count on mobile */}
             <Snowfall
                 color={snowColor}
-                snowflakeCount={350} // Increased significantly for more "snowy" feel
-                radius={[0.5, 2.5]} // Slightly varied
-                speed={[0.5, 3.0]} // Dynamic speed
-                wind={wind} // Interactive wind
+                snowflakeCount={isMobile ? 50 : 350}
+                radius={[0.5, 2.5]}
+                speed={[0.5, 3.0]}
+                wind={SEASONAL_CONFIG.effects.wind}
                 style={{
                     position: 'absolute',
                     width: '100vw',
@@ -102,10 +72,10 @@ export function ChristmasSnow() {
 
             <Snowfall
                 color={snowColor}
-                snowflakeCount={SEASONAL_CONFIG.effects.snowCount}
-                radius={[12.0, 28.0]} // Larger radius for detailed vector flakes
-                speed={[0.2, 1.0]} // Slower, more natural fall
-                wind={wind} // Interactive wind
+                snowflakeCount={isMobile ? 10 : SEASONAL_CONFIG.effects.snowCount}
+                radius={[12.0, 28.0]}
+                speed={[0.2, 1.0]}
+                wind={SEASONAL_CONFIG.effects.wind}
                 images={snowflakeImages.length > 0 ? snowflakeImages : undefined}
                 style={{
                     position: 'absolute',
@@ -114,14 +84,16 @@ export function ChristmasSnow() {
                 }}
             />
 
-            <div
-                className="absolute inset-0 w-full h-full mix-blend-overlay opacity-60"
-                style={{
-                    background: theme === 'dark'
-                        ? 'radial-gradient(circle, transparent 50%, rgba(56, 189, 248, 0.2) 100%)' // Glowing Cyan edges in dark
-                        : 'radial-gradient(circle, transparent 60%, rgba(255, 255, 255, 0.9) 100%)' // Frosted White edges in light
-                }}
-            />
+            {!isMobile && (
+                <div
+                    className="absolute inset-0 w-full h-full mix-blend-overlay opacity-60 pointer-events-none"
+                    style={{
+                        background: theme === 'dark'
+                            ? 'radial-gradient(circle, transparent 50%, rgba(56, 189, 248, 0.2) 100%)' // Glowing Cyan edges in dark
+                            : 'radial-gradient(circle, transparent 60%, rgba(255, 255, 255, 0.9) 100%)' // Frosted White edges in light
+                    }}
+                />
+            )}
         </div>
     );
 }
