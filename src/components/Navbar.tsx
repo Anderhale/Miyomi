@@ -4,7 +4,8 @@ import { X, ChevronDown, Github, Instagram, Youtube, Facebook, Plus, Search } fr
 import React, { useState, useEffect, useRef } from 'react';
 import { ThemeToggle } from './ThemeToggle';
 import { SearchModal } from './SearchModal';
-import logoImage from '../assets/hugme.png';
+import defaultLogo from '../assets/hugme.png';
+import { useSeasonalAsset } from '../hooks/useSeasonalAsset';
 import { useLocation, useNavigate } from 'react-router-dom';
 import {
   DropdownMenu,
@@ -57,6 +58,8 @@ export function Navbar({ onNavigate }: NavbarProps) {
       });
     };
   }, []);
+
+  const logoImage = useSeasonalAsset('logo', defaultLogo);
 
   const mainNavItems = [
     { label: 'Home', path: '/' },

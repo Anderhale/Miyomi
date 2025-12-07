@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState, type PropsWithChildren } from 'react';
+import { isSeasonalActive, SEASONAL_CONFIG } from '../config/seasonal';
 
 type Theme = 'light' | 'dark';
 
@@ -17,6 +18,13 @@ export function ThemeProvider({ children }: PropsWithChildren<Record<string, nev
     const root = document.documentElement;
     root.classList.remove('light', 'dark');
     root.classList.add(nextTheme);
+
+    // Add plugin logic
+    if (isSeasonalActive()) {
+      root.classList.add(SEASONAL_CONFIG.themeName);
+    } else {
+      root.classList.remove(SEASONAL_CONFIG.themeName);
+    }
   };
 
   useEffect(() => {
@@ -24,7 +32,7 @@ export function ThemeProvider({ children }: PropsWithChildren<Record<string, nev
     const storedTheme = localStorage.getItem('theme') as Theme;
     const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     const initialTheme = storedTheme || systemTheme;
-    
+
     setTheme(initialTheme);
     applyTheme(initialTheme);
     setMounted(true);
