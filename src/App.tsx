@@ -84,7 +84,7 @@ function AppContent() {
 
   return (
     <div className="min-h-screen bg-[var(--bg-page)] font-['Inter',sans-serif] flex flex-col">
-      <ChristmasSnow />
+      {/* <ChristmasSnow /> */}
       <Toaster position="top-center" />
 
       <Navbar onNavigate={handleNavigate} />

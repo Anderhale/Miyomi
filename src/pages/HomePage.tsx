@@ -95,7 +95,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
   }, [socialLinks.length]);
 
   return (
-    <div className="max-w-7xl mx-auto pt-10">
+    <div className="max-w-7xl mx-auto pt-10 relative">
       {/* Decorative Background Elements - Matches Character Palette */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20 -z-10">
         {/* Top Right: Gold Glow (Badge) */}

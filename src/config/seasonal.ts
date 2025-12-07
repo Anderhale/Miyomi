@@ -1,5 +1,4 @@
 
-
 export const SEASONAL_CONFIG = {
     // Master Switch
     enabled: true,
@@ -17,6 +16,11 @@ export const SEASONAL_CONFIG = {
     effects: {
         snowCount: 20, // Reduced for cleaner look with images
         wind: [-0.2, 1.0] as [number, number], // Gentle breeze
+        lowPower: {
+            snowCount: 10,
+            imageCount: 5, // Limit unique snowflake images
+            standardSnowCount: 20 // Reduced standard snow for low power
+        }
     }
 };
 

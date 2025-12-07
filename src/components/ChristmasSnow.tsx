@@ -1,99 +1,151 @@
-import React, { useEffect, useState } from 'react';
-import Snowfall from 'react-snowfall';
+import React, { useEffect, useRef, useState } from 'react';
 import { SEASONAL_CONFIG, isSeasonalActive } from '../config/seasonal';
 import { useTheme } from './ThemeProvider';
-import { SNOWFLAKE_DATA } from './snowflakePaths';
 
-export function ChristmasSnow() {
+interface ChristmasSnowProps {
+    className?: string;
+    style?: React.CSSProperties;
+    snowflakeCount?: number;
+}
+
+interface Particle {
+    x: number;
+    y: number;
+    radius: number;
+    speed: number;
+    wind: number;
+    opacity: number;
+}
+
+export function ChristmasSnow({ className, style, snowflakeCount }: ChristmasSnowProps) {
     const { theme } = useTheme();
     const isActive = isSeasonalActive();
-    const [snowflakeImages, setSnowflakeImages] = useState<HTMLImageElement[]>([]);
-    const [isMobile, setIsMobile] = useState(false);
+    const canvasRef = useRef<HTMLCanvasElement>(null);
+    const requestRef = useRef<number>();
+    const particlesRef = useRef<Particle[]>([]);
 
-    const snowColor = theme === 'dark' ? '#ffffff' : '#0ea5e9';
-    // Mobile check for performance optimization
+    // Performance tier state
+    const [performanceTier, setPerformanceTier] = useState<'high' | 'low'>('high');
+
+    const snowColor = theme === 'dark' ? '255, 255, 255' : '14, 165, 233'; // RGB values for rgba
+
+    // Performance check
     useEffect(() => {
-        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        const checkPerformance = () => {
+            const isMobile = window.innerWidth < 768;
+            const isLowConcurrency = navigator.hardwareConcurrency <= 4;
+            // @ts-ignore
+            const isDataSaver = (navigator.connection as any)?.saveData === true;
 
-        checkMobile();
+            if (isMobile || isLowConcurrency || isDataSaver) {
+                setPerformanceTier('low');
+            } else {
+                setPerformanceTier('high');
+            }
+        };
 
-        window.addEventListener('resize', checkMobile);
-        return () => window.removeEventListener('resize', checkMobile);
+        checkPerformance();
+        window.addEventListener('resize', checkPerformance);
+        return () => window.removeEventListener('resize', checkPerformance);
     }, []);
 
     useEffect(() => {
-        if (!isActive) return;
+        if (!isActive || !canvasRef.current) return;
 
-        const loadImages = async () => {
-            const generateImage = (data: { path: string; viewBox: string }) => {
-                return new Promise<HTMLImageElement>((resolve) => {
-                    // Create an SVG blob for each path with the current theme color
-                    const svgString = `
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="${data.viewBox}">
-                            <path d="${data.path}" fill="${snowColor}" />
-                        </svg>
-                    `;
-                    const blob = new Blob([svgString], { type: 'image/svg+xml' });
-                    const url = URL.createObjectURL(blob);
-                    const img = new Image();
-                    img.onload = () => {
-                        URL.revokeObjectURL(url);
-                        resolve(img);
-                    };
-                    img.src = url;
-                });
-            };
+        const canvas = canvasRef.current;
+        const ctx = canvas.getContext('2d');
+        if (!ctx) return;
 
-            const imagePromises = SNOWFLAKE_DATA.map(data => generateImage(data));
-            const loadedImages = await Promise.all(imagePromises);
-            setSnowflakeImages(loadedImages);
+        // Set canvas size
+        const handleResize = () => {
+            if (canvas.parentElement) {
+                canvas.width = canvas.parentElement.clientWidth;
+                canvas.height = canvas.parentElement.clientHeight;
+            } else {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            initParticles();
         };
 
-        loadImages();
-    }, [isActive, snowColor]);
+        // Initialize particles
+        const initParticles = () => {
+            const isLowPower = performanceTier === 'low';
+            const defaultCount = isLowPower ? 20 : 50;
+            const count = snowflakeCount ?? defaultCount;
+
+            particlesRef.current = [];
+            for (let i = 0; i < count; i++) {
+                particlesRef.current.push(createParticle(canvas.width, canvas.height));
+            }
+        };
+
+        const createParticle = (width: number, height: number): Particle => {
+            return {
+                x: Math.random() * width,
+                y: Math.random() * height,
+                radius: Math.random() * 2 + 0.5,
+                speed: Math.random() * 1 + 0.5,
+                wind: (Math.random() - 0.5) * 0.5,
+                opacity: Math.random() * 0.5 + 0.3
+            };
+        };
+
+        // Animation loop
+        const animate = () => {
+            if (!ctx || !canvas) return;
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            particlesRef.current.forEach((p, index) => {
+                // Update position
+                p.y += p.speed;
+                p.x += p.wind;
+
+                // Wrap around
+                if (p.y > canvas.height) {
+                    p.y = -5;
+                    p.x = Math.random() * canvas.width;
+                }
+                if (p.x > canvas.width) {
+                    p.x = 0;
+                } else if (p.x < 0) {
+                    p.x = canvas.width;
+                }
+
+                // Draw
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(${snowColor}, ${p.opacity})`;
+                ctx.fill();
+            });
+
+            requestRef.current = requestAnimationFrame(animate);
+        };
+
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        requestRef.current = requestAnimationFrame(animate);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+            if (requestRef.current) {
+                cancelAnimationFrame(requestRef.current);
+            }
+        };
+    }, [isActive, snowColor, snowflakeCount, performanceTier]);
 
     if (!isActive) return null;
 
     return (
-        <div className="fixed inset-0 pointer-events-none z-[9999] overflow-hidden font-sans">
-            {/* Standard Snow - Reduced count on mobile */}
-            <Snowfall
-                color={snowColor}
-                snowflakeCount={isMobile ? 50 : 350}
-                radius={[0.5, 2.5]}
-                speed={[0.5, 3.0]}
-                wind={SEASONAL_CONFIG.effects.wind}
-                style={{
-                    position: 'absolute',
-                    width: '100vw',
-                    height: '100vh',
-                }}
-            />
-
-            <Snowfall
-                color={snowColor}
-                snowflakeCount={isMobile ? 10 : SEASONAL_CONFIG.effects.snowCount}
-                radius={[12.0, 28.0]}
-                speed={[0.2, 1.0]}
-                wind={SEASONAL_CONFIG.effects.wind}
-                images={snowflakeImages.length > 0 ? snowflakeImages : undefined}
-                style={{
-                    position: 'absolute',
-                    width: '100vw',
-                    height: '100vh',
-                }}
-            />
-
-            {!isMobile && (
-                <div
-                    className="absolute inset-0 w-full h-full mix-blend-overlay opacity-60 pointer-events-none"
-                    style={{
-                        background: theme === 'dark'
-                            ? 'radial-gradient(circle, transparent 50%, rgba(56, 189, 248, 0.2) 100%)' // Glowing Cyan edges in dark
-                            : 'radial-gradient(circle, transparent 60%, rgba(255, 255, 255, 0.9) 100%)' // Frosted White edges in light
-                    }}
-                />
-            )}
-        </div>
+        <canvas
+            ref={canvasRef}
+            className={`pointer-events-none z-[50] ${className || 'fixed inset-0'}`}
+            style={{
+                width: '100%',
+                height: '100%',
+                ...style
+            }}
+        />
     );
 }

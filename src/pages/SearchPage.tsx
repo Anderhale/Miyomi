@@ -78,22 +78,22 @@ export function SearchPage({ onNavigate }: SearchPageProps) {
             <span className="text-sm text-[var(--text-secondary)]">Filter by:</span>
             <FilterChip
               label={`All (${resultCounts.all})`}
-              active={activeFilter === 'all'}
+              selected={activeFilter === 'all'}
               onClick={() => setActiveFilter('all')}
             />
             <FilterChip
               label={`Apps (${resultCounts.app})`}
-              active={activeFilter === 'app'}
+              selected={activeFilter === 'app'}
               onClick={() => setActiveFilter('app')}
             />
             <FilterChip
               label={`Extensions (${resultCounts.extension})`}
-              active={activeFilter === 'extension'}
+              selected={activeFilter === 'extension'}
               onClick={() => setActiveFilter('extension')}
             />
             <FilterChip
               label={`Guides (${resultCounts.guide})`}
-              active={activeFilter === 'guide'}
+              selected={activeFilter === 'guide'}
               onClick={() => setActiveFilter('guide')}
             />
           </div>
@@ -136,9 +136,9 @@ export function SearchPage({ onNavigate }: SearchPageProps) {
                   description={result.description}
                   tags={result.contentTypes || []}
                   platforms={result.platforms || []}
-                  logoUrl={result.logoUrl}
+                  iconColor={result.accentColor || result.iconColor}
                   rating={result.rating}
-                  downloadCount={result.downloadCount}
+                  downloads={result.downloadCount}
                   forkOf={result.forkOf}
                   upstreamUrl={result.upstreamUrl}
                   onClick={() => handleResultClick(result)}
@@ -146,7 +146,7 @@ export function SearchPage({ onNavigate }: SearchPageProps) {
               )}
               {result.type === 'extension' && (
                 <ExtensionListCard
-                  extension={result}
+                  extension={result as any}
                   onSelect={() => handleResultClick(result)}
                 />
               )}

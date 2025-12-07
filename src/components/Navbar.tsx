@@ -6,6 +6,7 @@ import { ThemeToggle } from './ThemeToggle';
 import { SearchModal } from './SearchModal';
 import { useSeasonalAsset } from '../hooks/useSeasonalAsset';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { ChristmasSnow } from './ChristmasSnow';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -24,7 +25,7 @@ export function Navbar({ onNavigate }: NavbarProps) {
   const [pagesDropdownOpen, setPagesDropdownOpen] = useState(false);
   const [guidesDropdownOpen, setGuidesDropdownOpen] = useState(false);
   const [searchModalOpen, setSearchModalOpen] = useState(false);
-  const hoverTimeouts = useRef<{ pages: ReturnType<typeof setTimeout> | null; guides: ReturnType<typeof setTimeout> | null }>({
+  const hoverTimeouts = useRef<{ pages: number | null; guides: number | null }>({
     pages: null,
     guides: null,
   });
@@ -154,7 +155,8 @@ export function Navbar({ onNavigate }: NavbarProps) {
           }`}
       >
         {/* Navbar Content */}
-        <div className="relative z-10 h-full px-4 sm:px-8 lg:px-[120px] flex items-center justify-between w-full gap-4">
+        <div className="relative z-10 h-full px-4 sm:px-8 lg:px-[120px] flex items-center justify-between w-full gap-4 overflow-hidden">
+          <ChristmasSnow className="absolute inset-0 z-0" snowflakeCount={15} />
           {/* Left Section: Logo */}
           <div className="flex items-center gap-4">
             <button

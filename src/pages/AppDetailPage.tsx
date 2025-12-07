@@ -180,7 +180,7 @@ export function AppDetailPage({ appId, onNavigate }: AppDetailPageProps) {
   const app = getAppById(appId);
   const accentColor = useAccentColor({
     logoUrl: app?.logoUrl,
-    preferredColor: app?.iconColor,
+    preferredColor: app?.accentColor || app?.iconColor,
     defaultColor: 'var(--brand)',
   });
   const supportedExtensions = (app?.supportedExtensions ?? [])
