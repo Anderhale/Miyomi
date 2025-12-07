@@ -302,45 +302,87 @@ html {
 }
 
 
-/* Christmas / Winter Theme Plugin */
+/* --- SEASONAL THEME: THE FROZEN UPDATE --- */
+
+/* 1. Base Variables (Light Mode Default) */
 .christmas {
-  /* Snow / Ice Backgrounds */
+  /* Icy Backgrounds */
   --bg-page: #f0f9ff;
-  /* Icy Blue */
-  --bg-page-rgb: 240, 249, 255;
-  --bg-surface: #ffffff;
+  --bg-surface: rgba(255, 255, 255, 0.8);
+  /* Semi-transparent ice */
   --bg-elev-1: #e0f2fe;
 
-  /* Festive Text Colors */
-  --text-primary: #0f172a;
+  /* Deep Blue Text for contrast against ice */
+  --text-primary: #0c4a6e;
   --text-secondary: #334155;
 
-  /* Holiday Brand Colors */
-  --brand: #dc2626;
-  /* Christmas Red */
-  --brand-strong: #b91c1c;
-  /* Darker Red */
-  --focus-ring: #22c55e;
-  /* Holiday Green */
+  /* Vivid Cyan/Blue Branding */
+  --brand: #0ea5e9;
+  --brand-strong: #0284c7;
 
-  /* Accents */
-  --chip-bg: #dbeafe;
-  /* Ice Blue Chips */
+  --chip-bg: #bae6fd;
   --divider: #bfdbfe;
 
-  /* Override Shadcn specific */
-  --primary: #dc2626;
-  --primary-foreground: #ffffff;
-  --ring: #22c55e;
+  /* Frosty Borders */
+  --border: #bae6fd;
 }
 
-/* Dark Mode Christmas (Cozy Night) */
-.dark.christmas {
-  --bg-page: #0b1120;
-  /* Deep Winter Night */
-  --bg-surface: #1e293b;
-  --brand: #ef4444;
-  /* Bright Red */
-  --brand-strong: #f87171;
-  --chip-bg: #1e293b;
+/* 2. Dark Mode Overrides (Critical Fixes) */
+.dark .christmas {
+  /* Deep Winter Night Background */
+  --bg-page: #020617;
+  --bg-surface: rgba(15, 23, 42, 0.7);
+  /* Frosted dark glass */
+  --bg-elev-1: rgba(30, 41, 59, 0.6);
+
+  /* FIXED: Text Visibility */
+  --text-primary: #e0f2fe;
+  /* Bright Ice White - Readable against dark */
+  --text-secondary: #94a3b8;
+  /* Soft Blue-Grey */
+
+  /* Neon Cyan Branding */
+  --brand: #38bdf8;
+  --brand-strong: #7dd3fc;
+
+  --chip-bg: rgba(56, 189, 248, 0.1);
+  --divider: rgba(56, 189, 248, 0.2);
+  --border: rgba(56, 189, 248, 0.3);
+}
+
+/* 3. Interactive "Ice" Effects */
+
+/* Card Hover: Lift + Icy Glow */
+.christmas .group:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 10px 40px -10px rgba(14, 165, 233, 0.3);
+  border-color: var(--brand);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Button Shine Effect ("Frozen Polish") */
+.christmas button.bg-\[var\(--brand\)\] {
+  position: relative;
+  overflow: hidden;
+  background-image: linear-gradient(135deg, var(--brand), var(--brand-strong));
+}
+
+.christmas button.bg-\[var\(--brand\)\]::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent);
+  transform: skewX(-20deg);
+  transition: 0.5s;
+}
+
+.christmas button.bg-\[var\(--brand\)\]:hover::after {
+  left: 200%;
+  transition: 0.7s ease-in-out;
 }

@@ -1,40 +1,23 @@
-import christmasLogo from '../assets/hugme-christmas.png';
-import christmasAvatar from '../assets/polic-christmas.png';
+
 
 export const SEASONAL_CONFIG = {
-    // Master switch - set to false to disable everything instantly
+    // Master Switch
     enabled: true,
 
-    // Theme identifier
+    // This class name will be added to <body>
     themeName: 'christmas',
 
     assets: {
-        logo: christmasLogo,
-        homeAvatar: christmasAvatar,
-        // Add others here as needed
+        // Fallback logic handled in hooks, these are the overrides
+        logo: '/hugme-christmas.png',
+        homeAvatar: '/polic-christmas.png',
     },
 
-    // Optional: Auto-enable based on date
-    autoSchedule: {
-        startMonth: 11, // December (0-indexed)
-        startDay: 1,
-        endMonth: 0,    // January
-        endDay: 7
+    // Animation settings for the component
+    effects: {
+        snowCount: 20, // Reduced for cleaner look with images
+        wind: [-0.2, 1.0] as [number, number], // Gentle breeze
     }
 };
 
-// Helper to check if active
-export const isSeasonalActive = () => {
-    if (!SEASONAL_CONFIG.enabled) return false;
-
-    // If you want date checking:
-    const now = new Date();
-    const currentMonth = now.getMonth();
-    const currentDay = now.getDate();
-
-    // Simple logic for Dec-Jan window
-    const isDec = currentMonth === 11;
-    const isJan = currentMonth === 0 && currentDay <= 7;
-
-    return isDec || isJan;
-};
+export const isSeasonalActive = () => SEASONAL_CONFIG.enabled;

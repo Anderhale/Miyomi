@@ -1,97 +1,105 @@
-import { useEffect, useRef } from 'react';
-import { isSeasonalActive } from '../config/seasonal';
+import React, { useEffect, useState } from 'react';
+import Snowfall from 'react-snowfall';
+import { SEASONAL_CONFIG, isSeasonalActive } from '../config/seasonal';
+import { useTheme } from './ThemeProvider';
+import { SNOWFLAKE_DATA } from './snowflakePaths';
 
 export function ChristmasSnow() {
-    if (!isSeasonalActive()) return null;
+    const isActive = isSeasonalActive();
+    const { theme } = useTheme();
 
-    const canvasRef = useRef<HTMLCanvasElement>(null);
+    // 1. Inject the specific Theme Class into body
+    useEffect(() => {
+        if (isActive) {
+            document.body.classList.add(SEASONAL_CONFIG.themeName);
+        } else {
+            document.body.classList.remove(SEASONAL_CONFIG.themeName);
+        }
+        // Cleanup on unmount
+        return () => document.body.classList.remove(SEASONAL_CONFIG.themeName);
+    }, [isActive]);
+
+    if (!isActive) return null;
+
+    // 2. Dynamic Colors for Snow based on Light/Dark mode
+    // White snow shows up best in dark mode; Icy Blue in light mode
+    const snowColor = theme === 'dark' ? '#f1f5f9' : '#38bdf8';
+
+    // Load vector snowflakes
+    const [snowflakeImages, setSnowflakeImages] = useState<HTMLImageElement[]>([]);
 
     useEffect(() => {
-        const canvas = canvasRef.current;
-        if (!canvas) return;
-        const ctx = canvas.getContext('2d');
-        if (!ctx) return;
+        const loadImages = async () => {
+            const generateImage = (data: { path: string; viewBox: string }) => {
+                return new Promise<HTMLImageElement>((resolve) => {
+                    // Create an SVG blob for each path with the current theme color
+                    const svgString = `
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="${data.viewBox}">
+                            <path d="${data.path}" fill="${snowColor}" />
+                        </svg>
+                    `;
+                    const blob = new Blob([svgString], { type: 'image/svg+xml' });
+                    const url = URL.createObjectURL(blob);
+                    const img = new Image();
+                    img.onload = () => {
+                        URL.revokeObjectURL(url);
+                        resolve(img);
+                    };
+                    img.src = url;
+                });
+            };
 
-        let width = window.innerWidth;
-        let height = window.innerHeight;
-        canvas.width = width;
-        canvas.height = height;
-
-        const snowflakes: { x: number; y: number; r: number; d: number }[] = [];
-        const maxFlakes = 100;
-
-        for (let i = 0; i < maxFlakes; i++) {
-            snowflakes.push({
-                x: Math.random() * width,
-                y: Math.random() * height,
-                r: Math.random() * 3 + 1, // radius
-                d: Math.random() * maxFlakes, // density
-            });
-        }
-
-        let animationFrameId: number;
-
-        function draw() {
-            if (!ctx || !canvas) return;
-            ctx.clearRect(0, 0, width, height);
-            ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
-            ctx.beginPath();
-
-            for (let i = 0; i < maxFlakes; i++) {
-                const p = snowflakes[i];
-                ctx.moveTo(p.x, p.y);
-                ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2, true);
-            }
-            ctx.fill();
-            update();
-            animationFrameId = requestAnimationFrame(draw);
-        }
-
-        function update() {
-            for (let i = 0; i < maxFlakes; i++) {
-                const p = snowflakes[i];
-                p.y += Math.cos(p.d) + 1 + p.r / 2;
-                p.x += Math.sin(0); // Wind factor
-
-                if (p.x > width + 5 || p.x < -5 || p.y > height) {
-                    if (i % 3 > 0) {
-                        snowflakes[i] = { x: Math.random() * width, y: -10, r: p.r, d: p.d };
-                    } else {
-                        // If the flake is exiting from the right
-                        if (Math.sin(0) > 0) {
-                            snowflakes[i] = { x: -5, y: Math.random() * height, r: p.r, d: p.d };
-                        } else {
-                            snowflakes[i] = { x: width + 5, y: Math.random() * height, r: p.r, d: p.d };
-                        }
-                    }
-                }
-            }
-        }
-
-        draw();
-
-        const handleResize = () => {
-            if (canvas) {
-                width = window.innerWidth;
-                height = window.innerHeight;
-                canvas.width = width;
-                canvas.height = height;
-            }
-        }
-
-        window.addEventListener('resize', handleResize);
-
-        return () => {
-            cancelAnimationFrame(animationFrameId);
-            window.removeEventListener('resize', handleResize);
+            const imagePromises = SNOWFLAKE_DATA.map(data => generateImage(data));
+            const loadedImages = await Promise.all(imagePromises);
+            setSnowflakeImages(loadedImages);
         };
-    }, []);
+
+        if (isActive) {
+            loadImages();
+        }
+    }, [snowColor, isActive]);
 
     return (
-        <canvas
-            ref={canvasRef}
-            className="fixed inset-0 pointer-events-none z-[9999]"
-            style={{ opacity: 0.6 }}
-        />
+        <div className="fixed inset-0 pointer-events-none z-[9999] overflow-hidden font-sans">
+
+            {/* Layer 0: Background "Dot" Snow - The "real-like" depth */}
+            <Snowfall
+                color={snowColor}
+                snowflakeCount={350} // Increased significantly for more "snowy" feel
+                radius={[0.5, 2.5]} // Slightly varied
+                speed={[0.5, 3.0]} // Dynamic speed
+                wind={[-0.5, 1.5]}
+                style={{
+                    position: 'absolute',
+                    width: '100vw',
+                    height: '100vh',
+                }}
+            />
+
+            {/* Layer 1: High Performance Snowfall - Foreground Images */}
+            <Snowfall
+                color={snowColor}
+                snowflakeCount={SEASONAL_CONFIG.effects.snowCount}
+                radius={[12.0, 28.0]} // Larger radius for detailed vector flakes
+                speed={[0.2, 1.0]} // Slower, more natural fall
+                wind={SEASONAL_CONFIG.effects.wind}
+                images={snowflakeImages.length > 0 ? snowflakeImages : undefined}
+                style={{
+                    position: 'absolute',
+                    width: '100vw',
+                    height: '100vh',
+                }}
+            />
+
+            {/* Layer 2: The "Frost Vignette" - Creates the freezing screen edge effect */}
+            <div
+                className="absolute inset-0 w-full h-full mix-blend-overlay opacity-60"
+                style={{
+                    background: theme === 'dark'
+                        ? 'radial-gradient(circle, transparent 50%, rgba(56, 189, 248, 0.2) 100%)' // Glowing Cyan edges in dark
+                        : 'radial-gradient(circle, transparent 60%, rgba(255, 255, 255, 0.9) 100%)' // Frosted White edges in light
+                }}
+            />
+        </div>
     );
 }
