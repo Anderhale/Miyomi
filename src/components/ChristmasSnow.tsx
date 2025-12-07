@@ -8,14 +8,12 @@ export function ChristmasSnow() {
     const isActive = isSeasonalActive();
     const { theme } = useTheme();
 
-    // 1. Inject the specific Theme Class into body
     useEffect(() => {
         if (isActive) {
             document.body.classList.add(SEASONAL_CONFIG.themeName);
         } else {
             document.body.classList.remove(SEASONAL_CONFIG.themeName);
         }
-        // Cleanup on unmount
         return () => document.body.classList.remove(SEASONAL_CONFIG.themeName);
     }, [isActive]);
 
@@ -24,12 +22,10 @@ export function ChristmasSnow() {
     // White snow shows up best in dark mode; Icy Blue in light mode
     const snowColor = theme === 'dark' ? '#f1f5f9' : '#38bdf8';
 
-    // 3. Interactive Wind Control
     const [wind, setWind] = useState<[number, number]>(SEASONAL_CONFIG.effects.wind);
 
     useEffect(() => {
         const handleMove = (clientX: number) => {
-            // Normalize position from -1 (left) to 1 (right)
             const normalizedPos = (clientX / window.innerWidth) * 2 - 1;
 
             // Map to wind range: e.g., -1.0 to 1.5
@@ -37,7 +33,6 @@ export function ChristmasSnow() {
             // Let's amplify it: Left -> -1.5, Right -> +2.0
             const windForce = normalizedPos * 1.5;
 
-            // Add some randomness/variance to the tuple [min, max]
             setWind([windForce - 0.5, windForce + 0.5]);
         };
 
@@ -92,7 +87,6 @@ export function ChristmasSnow() {
     return (
         <div className="fixed inset-0 pointer-events-none z-[9999] overflow-hidden font-sans">
 
-            {/* Layer 0: Background "Dot" Snow - The "real-like" depth */}
             <Snowfall
                 color={snowColor}
                 snowflakeCount={350} // Increased significantly for more "snowy" feel
@@ -106,7 +100,6 @@ export function ChristmasSnow() {
                 }}
             />
 
-            {/* Layer 1: High Performance Snowfall - Foreground Images */}
             <Snowfall
                 color={snowColor}
                 snowflakeCount={SEASONAL_CONFIG.effects.snowCount}
@@ -121,7 +114,6 @@ export function ChristmasSnow() {
                 }}
             />
 
-            {/* Layer 2: The "Frost Vignette" - Creates the freezing screen edge effect */}
             <div
                 className="absolute inset-0 w-full h-full mix-blend-overlay opacity-60"
                 style={{
