@@ -1,6 +1,5 @@
 import { Plus, Package, Star, Twitter, MessageSquare, Facebook } from 'lucide-react';
 import { Button } from '../components/Button';
-import defaultAvatar from '../assets/polic.png';
 import React from 'react';
 import { unifiedApps, unifiedExtensions, guideCategories } from '../data';
 import { useFeedbackState } from '../hooks/useFeedbackState';
@@ -40,7 +39,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
     },
   ];
 
-  const avatarImage = useSeasonalAsset('homeAvatar', defaultAvatar);
+  const avatarImage = useSeasonalAsset('homeAvatar', '/polic.png');
 
   const socialLinks = [
     { icon: <Twitter className="w-5 h-5" />, label: 'Twitter', link: 'https://x.com/iitachiyomi', color: '#333' },
