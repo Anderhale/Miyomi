@@ -10,7 +10,7 @@
       "Anime"
     ],
     "description": "An app for manga and anime.",
-    "downloads": 6154022,
+    "downloads": 6157425,
     "platforms": [
       "Android"
     ],
@@ -50,7 +50,7 @@
   {
     "id": "mihon",
     "accentColor": "#66BB6A",
-    "downloads": 12421874,
+    "downloads": 12438755,
     "name": "Mihon",
     "status": "active",
     "contentTypes": [
@@ -89,7 +89,7 @@
   {
     "id": "kumo",
     "accentColor": "#9C27B0",
-    "downloads": 312,
+    "downloads": 315,
     "name": "Kumo",
     "status": "active",
     "contentTypes": [
@@ -121,7 +121,7 @@
   {
     "id": "taison",
     "accentColor": "#FF5722",
-    "downloads": 938,
+    "downloads": 989,
     "name": "Taison",
     "status": "active",
     "contentTypes": [
@@ -152,7 +152,7 @@
   {
     "id": "kahon",
     "accentColor": "#E91E63",
-    "downloads": 3793,
+    "downloads": 3832,
     "name": "Kahon",
     "status": "active",
     "contentTypes": [
@@ -182,7 +182,7 @@
   {
     "id": "dantotsu",
     "accentColor": "#F44336",
-    "downloads": 5241,
+    "downloads": 5312,
     "name": "Dantotsu",
     "status": "active",
     "contentTypes": [
@@ -208,7 +208,7 @@
   {
     "id": "dartotsu",
     "accentColor": "#2196F3",
-    "downloads": 11649,
+    "downloads": 11676,
     "name": "Dartotsu",
     "status": "active",
     "contentTypes": [
@@ -240,7 +240,7 @@
   {
     "id": "mangayomi",
     "accentColor": "#FFC107",
-    "downloads": 177507,
+    "downloads": 177780,
     "name": "Mangayomi",
     "status": "active",
     "contentTypes": [
@@ -296,7 +296,7 @@
   {
     "id": "Yumemi",
     "accentColor": "#673AB7",
-    "downloads": 3038,
+    "downloads": 3240,
     "name": "Yumemi",
     "status": "active",
     "contentTypes": [
@@ -346,7 +346,7 @@
   {
     "id": "cloudstream",
     "accentColor": "#9C27B0",
-    "downloads": 4906546,
+    "downloads": 4912300,
     "name": "Cloudstream",
     "status": "active",
     "contentTypes": [
@@ -369,7 +369,7 @@
   {
     "id": "migu",
     "accentColor": "#00BCD4",
-    "downloads": 499801,
+    "downloads": 500029,
     "name": "Migu",
     "status": "discontinued",
     "contentTypes": [
@@ -393,7 +393,7 @@
   {
     "id": "tachiyomi-sy",
     "accentColor": "#E91E63",
-    "downloads": 1331325,
+    "downloads": 1331801,
     "name": "TachiyomiSY",
     "status": "active",
     "contentTypes": [
@@ -421,7 +421,7 @@
   {
     "id": "tachiyomi-j2k",
     "accentColor": "#3F51B5",
-    "downloads": 4071219,
+    "downloads": 4071539,
     "name": "TachiyomiJ2K",
     "status": "abandoned",
     "contentTypes": [
@@ -447,7 +447,7 @@
   {
     "id": "yokai",
     "accentColor": "#FF9800",
-    "downloads": 401155,
+    "downloads": 401423,
     "name": "Yokai",
     "status": "active",
     "contentTypes": [
@@ -473,7 +473,7 @@
   {
     "id": "komikku",
     "accentColor": "#009688",
-    "downloads": 439866,
+    "downloads": 440895,
     "name": "Komikku",
     "status": "active",
     "contentTypes": [
@@ -497,7 +497,7 @@
   {
     "id": "neko",
     "accentColor": "#607D8B",
-    "downloads": 1648960,
+    "downloads": 1649753,
     "name": "Neko",
     "status": "active",
     "contentTypes": [
@@ -541,7 +541,7 @@
   {
     "id": "kuro-reader",
     "accentColor": "#424242",
-    "downloads": 14555,
+    "downloads": 14564,
     "name": "Kuro Reader +",
     "status": "active",
     "contentTypes": [
@@ -586,7 +586,7 @@
   {
     "id": "ln-reader",
     "accentColor": "#FBC02D",
-    "downloads": 734491,
+    "downloads": 735050,
     "name": "LN Reader",
     "status": "active",
     "contentTypes": [
@@ -610,7 +610,7 @@
   {
     "id": "quicknovel",
     "accentColor": "#8BC34A",
-    "downloads": 266437,
+    "downloads": 266682,
     "name": "QuickNovel",
     "status": "active",
     "contentTypes": [
@@ -680,7 +680,7 @@
   {
     "id": "nineanimator",
     "accentColor": "#9C27B0",
-    "downloads": 70026,
+    "downloads": 70038,
     "name": "NineAnimator",
     "status": "Discontinued",
     "contentTypes": [
@@ -702,7 +702,7 @@
   {
     "id": "paperback",
     "accentColor": "#FF5722",
-    "downloads": 140095,
+    "downloads": 140106,
     "name": "Paperback",
     "status": "active",
     "contentTypes": [
@@ -726,7 +726,7 @@
   {
     "id": "aidoku",
     "accentColor": "#FFC107",
-    "downloads": 150696,
+    "downloads": 150832,
     "name": "Aidoku",
     "status": "active",
     "contentTypes": [
@@ -845,7 +845,7 @@
   },
   {
     "id": "seanime",
-    "downloads": 1452948,
+    "downloads": 1458357,
     "name": "Seanime",
     "status": "active",
     "contentTypes": [
@@ -870,7 +870,7 @@
   },
   {
     "id": "toru",
-    "downloads": 2447,
+    "downloads": 2449,
     "name": "Toru",
     "status": "active",
     "contentTypes": [
@@ -893,7 +893,7 @@
   },
   {
     "id": "suwayomi",
-    "downloads": 448555,
+    "downloads": 448835,
     "name": "Suwayomi",
     "status": "active",
     "contentTypes": [
@@ -917,7 +917,7 @@
   },
   {
     "id": "yacreader",
-    "downloads": 1358310,
+    "downloads": 1358919,
     "name": "YACReader",
     "status": "active",
     "contentTypes": [
@@ -945,7 +945,7 @@
   },
   {
     "id": "koodo-reader",
-    "downloads": 1497655,
+    "downloads": 1498353,
     "name": "Koodo Reader",
     "contentTypes": [
       "Light Novel"
@@ -968,7 +968,7 @@
   },
   {
     "id": "thorium",
-    "downloads": 748255,
+    "downloads": 748808,
     "name": "Thorium Reader",
     "status": "active",
     "contentTypes": [
@@ -992,7 +992,7 @@
   },
   {
     "id": "anikku",
-    "downloads": 57187,
+    "downloads": 57363,
     "name": "Anikku",
     "status": "active",
     "contentTypes": [
@@ -1017,7 +1017,7 @@
   },
   {
     "id": "anymex",
-    "downloads": 110056,
+    "downloads": 110286,
     "name": "AnymeX",
     "status": "active",
     "contentTypes": [
@@ -1048,7 +1048,7 @@
   },
   {
     "id": "animiru",
-    "downloads": 184872,
+    "downloads": 184923,
     "name": "Animiru",
     "status": "active",
     "contentTypes": [
@@ -1074,7 +1074,7 @@
   },
   {
     "id": "comicrack-ce",
-    "downloads": 3509,
+    "downloads": 3583,
     "name": "ComicRack CE",
     "status": "active",
     "contentTypes": [
@@ -1126,7 +1126,7 @@
   },
   {
     "id": "koreader",
-    "downloads": 5615278,
+    "downloads": 5616145,
     "name": "KOReader",
     "status": "active",
     "contentTypes": [
@@ -1150,7 +1150,7 @@
   },
   {
     "id": "legado",
-    "downloads": 2284178,
+    "downloads": 2285827,
     "name": "Legado",
     "status": "active",
     "contentTypes": [
@@ -1174,7 +1174,7 @@
   },
   {
     "id": "opencomic",
-    "downloads": 165138,
+    "downloads": 165281,
     "name": "OpenComic",
     "status": "active",
     "contentTypes": [
@@ -1223,7 +1223,7 @@
   },
   {
     "id": "shiru",
-    "downloads": 681025,
+    "downloads": 684680,
     "name": "Shiru",
     "status": "active",
     "contentTypes": [
@@ -1249,7 +1249,7 @@
   },
   {
     "id": "yomikiru",
-    "downloads": 66107,
+    "downloads": 66182,
     "name": "Yomikiru",
     "status": "active",
     "contentTypes": [
@@ -1274,7 +1274,7 @@
   },
   {
     "id": "tachiyomi-az",
-    "downloads": 271563,
+    "downloads": 271580,
     "name": "Tachiyomi AZ",
     "status": "active",
     "contentTypes": [
@@ -1301,7 +1301,7 @@
   },
   {
     "id": "tachiyomi-at",
-    "downloads": 16469,
+    "downloads": 16496,
     "name": "Tachiyomi AT",
     "status": "active",
     "contentTypes": [
@@ -1327,7 +1327,7 @@
   },
   {
     "id": "animetail",
-    "downloads": 64220,
+    "downloads": 64349,
     "name": "Animetail",
     "status": "active",
     "contentTypes": [
@@ -1352,7 +1352,7 @@
   },
   {
     "id": "readest",
-    "downloads": 934594,
+    "downloads": 935250,
     "name": "Readest",
     "status": "active",
     "contentTypes": [
@@ -1384,7 +1384,7 @@
   },
   {
     "id": "sora",
-    "downloads": 8936,
+    "downloads": 8946,
     "name": "Sora",
     "status": "active",
     "contentTypes": [
@@ -1409,7 +1409,7 @@
   },
   {
     "id": "unyo",
-    "downloads": 21756,
+    "downloads": 21780,
     "name": "Unyo",
     "status": "active",
     "contentTypes": [
@@ -1434,7 +1434,7 @@
   },
   {
     "id": "totoro",
-    "downloads": 13376,
+    "downloads": 13379,
     "name": "Totoro",
     "status": "active",
     "contentTypes": [
@@ -1458,7 +1458,7 @@
   },
   {
     "id": "zenshin",
-    "downloads": 3532,
+    "downloads": 3535,
     "name": "Zenshin",
     "status": "active",
     "contentTypes": [
@@ -1485,7 +1485,7 @@
   },
   {
     "id": "houdoku",
-    "downloads": 727967,
+    "downloads": 728328,
     "name": "Houdoku",
     "status": "active",
     "contentTypes": [
@@ -1531,7 +1531,7 @@
   },
   {
     "id": "miru-app",
-    "downloads": 442482,
+    "downloads": 442615,
     "name": "Miru App",
     "status": "active",
     "contentTypes": [
@@ -1554,7 +1554,7 @@
   },
   {
     "id": "Shiru",
-    "downloads": 681025,
+    "downloads": 684680,
     "name": "Shiru ",
     "status": "active",
     "author": "RockinChaos",
@@ -1593,7 +1593,7 @@
   },
   {
     "id": "IReader",
-    "downloads": 35300,
+    "downloads": 35368,
     "name": "IReader",
     "status": "active",
     "author": "IReader",
@@ -1656,7 +1656,7 @@
   },
   {
     "id": "kotatsu-redo",
-    "downloads": 8811,
+    "downloads": 8947,
     "name": "Kotatsu Redo",
     "status": "active",
     "contentTypes": [
