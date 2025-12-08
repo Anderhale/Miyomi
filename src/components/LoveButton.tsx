@@ -19,7 +19,6 @@ interface LoveButtonProps {
 
 export function LoveButton({ itemId, initialCount = 0, className = '', preloadedState, allowFetch = true }: LoveButtonProps) {
     const userId = useAnonymousId();
-    // Use preloaded data if available, otherwise try cache, otherwise defaults
     const cached = preloadedState ? undefined : voteStorage.getItem(itemId);
 
     // if (!preloadedState && !cached) console.log('[LoveButton] Cache Miss for', itemId);
@@ -29,7 +28,6 @@ export function LoveButton({ itemId, initialCount = 0, className = '', preloaded
     const [loading, setLoading] = useState(false);
     const [hasFetched, setHasFetched] = useState(!!preloadedState || !!cached);
 
-    // Sync state if preloadedState changes (e.g. late load)
     useEffect(() => {
         if (preloadedState) {
             setCount(preloadedState.count);
@@ -38,7 +36,6 @@ export function LoveButton({ itemId, initialCount = 0, className = '', preloaded
         }
     }, [preloadedState]);
 
-    // Fetch real data on mount ONLY if no preloaded state AND fetch is allowed
     useEffect(() => {
         if (!userId || preloadedState || !allowFetch) return;
 
@@ -52,18 +49,16 @@ export function LoveButton({ itemId, initialCount = 0, className = '', preloaded
                 voteStorage.updateItem(itemId, { count: data.count, loved: data.loved });
             })
             .catch(console.error);
-    }, [itemId, userId, preloadedState, allowFetch]); // Add preloadedState and allowFetch to deps
+    }, [itemId, userId, preloadedState, allowFetch]);
 
     const handleToggle = async (e: React.MouseEvent) => {
-        e.stopPropagation(); // Prevent triggering parent card clicks
+        e.stopPropagation();
         if (!userId || loading) return;
 
-        // Optimistic Update (Update UI immediately)
         const newLovedState = !loved;
         setLoved(newLovedState);
         setCount(prev => newLovedState ? prev + 1 : prev - 1);
 
-        // Optimistic cache update
         voteStorage.updateItem(itemId, { count: count + (newLovedState ? 1 : -1), loved: newLovedState });
 
         setLoading(true);
@@ -73,12 +68,10 @@ export function LoveButton({ itemId, initialCount = 0, className = '', preloaded
             if (!res.ok) throw new Error('Failed to vote');
 
             const data = await res.json();
-            // Ensure server state matches our optimistic state
             if (data.loved !== newLovedState) {
                 setLoved(data.loved);
             }
         } catch (err) {
-            // Revert on error
             setLoved(!newLovedState);
             setCount(prev => !newLovedState ? prev + 1 : prev - 1);
             console.error(err);
@@ -108,7 +101,7 @@ export function LoveButton({ itemId, initialCount = 0, className = '', preloaded
                 </span>
             </button>
 
-            <TooltipProvider delayDuration={300}>
+            {/* <TooltipProvider delayDuration={300}>
                 <Tooltip>
                     <TooltipTrigger asChild>
                         <div className="cursor-help opacity-40 hover:opacity-100 transition-opacity">
@@ -121,7 +114,7 @@ export function LoveButton({ itemId, initialCount = 0, className = '', preloaded
                         </p>
                     </TooltipContent>
                 </Tooltip>
-            </TooltipProvider>
+            </TooltipProvider> */}
         </div>
     );
 }

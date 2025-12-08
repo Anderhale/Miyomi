@@ -133,7 +133,11 @@ export function AppGridCard({
           <div className="flex items-center gap-1.5 text-xs text-[var(--text-secondary)]" title="Estimated Downloads">
             <Download className="w-3.5 h-3.5" />
             <span className="font-medium font-sans">
-              {downloads >= 1000 ? `${(downloads / 1000).toFixed(1)}k` : downloads}
+              {downloads >= 1000000
+                ? `${(downloads / 1000000).toFixed(1)}M`
+                : downloads >= 1000
+                  ? `${(downloads / 1000).toFixed(1)}k`
+                  : downloads}
             </span>
           </div>
         )}
