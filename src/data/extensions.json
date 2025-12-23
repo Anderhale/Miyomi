@@ -4,52 +4,67 @@
     "logoUrl": "https://github.com/Kohi-den.png",
     "name": "Kohi-den",
     "types": [
-      "Anime",
-      "Manga"
+      "Anime"
     ],
     "region": "ALL",
-    "accentColor": "#FF6B9D",
+    "accentColor": "#00ACB4",
     "autoUrl": "aniyomi://add-repo?url=https://kohiden.xyz/Kohi-den/extensions/raw/branch/main/index.min.json",
     "manualUrl": "https://kohiden.xyz/Kohi-den/extensions/raw/branch/main/index.min.json",
     "github": "https://github.com/Kohi-den/extensions-source",
     "supportedApps": [
       "aniyomi",
-      "mangayomi",
       "dantotsu",
       "animiru",
       "anikku"
     ],
-    "info": "Community-maintained extension repository for anime and manga",
+    "info": "Community-maintained extension repository for Aniyomi and it's variants.",
     "keywords": [
-      "kohiden",
-      "aniyomi repo",
-      "mihon extensions"
+      "anime",
+      "repo"
     ],
     "lastUpdated": "2025-11-15"
   },
   {
-    "id": "Yuzono",
-    "name": "Yūzōnō",
+    "id": "Yuzono-anime",
+    "name": "Yūzōnō (Anime)",
     "logoUrl": "https://github.com/yuzono.png",
     "types": [
-      "Anime",
-      "Manga"
+      "Anime"
     ],
     "region": "ALL",
-    "accentColor": "#4A90E2",
+    "accentColor": "#D45D3F",
     "autoUrl": "aniyomi://add-repo?url=https://raw.githubusercontent.com/yuzono/anime-repo/repo/index.min.json",
     "manualUrl": "https://raw.githubusercontent.com/yuzono/anime-repo/repo/index.min.json",
     "website": "https://yuzono.github.io",
     "github": "https://github.com/yuzono/aniyomi-extensions",
     "supportedApps": [
-      "komikku",
-      "anikku"
+      "anikku", "aniyomi","animiru"
     ],
-    "info": "Repository curated by the Yūzōnō community for anime and manga",
+    "info": "Repository curated by the Yūzōnō community for Aniyomi variants.",
     "keywords": [
-      "yuzono",
-      "aniyomi anime",
-      "mihon repo"
+      "aniyomi"
+    ],
+    "lastUpdated": "2025-11-15"
+  },
+  {
+    "id": "Yuzono-manga",
+    "name": "Yūzōnō (Manga)",
+    "logoUrl": "https://github.com/yuzono.png",
+    "types": [
+      "Manga"
+    ],
+    "region": "ALL",
+    "accentColor": "#D45D3F",
+    "autoUrl": "aniyomi://add-repo?url=https://raw.githubusercontent.com/yuzono/manga-repo/repo/index.min.json",
+    "manualUrl": "https://raw.githubusercontent.com/yuzono/manga-repo/repo/index.min.json",
+    "website": "https://yuzono.github.io",
+    "github": "https://github.com/yuzono/tachiyomi-extensions",
+    "supportedApps": [
+      "komikku", "mihon"
+    ],
+    "info": "Repository curated by the Yūzōnō community for Mihon variants.",
+    "keywords": [
+      "manga","komikku"
     ],
     "lastUpdated": "2025-11-15"
   },
@@ -84,6 +99,7 @@
   {
     "id": "Swakshan",
     "name": "Swakshan",
+    "info": "This repository contains the available javascript extension catalogues for the Mangayomi app.",
     "logoUrl": "",
     "types": [
       "Anime",
@@ -98,12 +114,8 @@
     "supportedApps": [
       "mangayomi"
     ],
-    "info": "Extensions for Mangayomi",
     "keywords": [
-      "Mangayomi",
-      "manga",
-      "anime",
-      "light novel"
+      "Mangayomi"
     ],
     "lastUpdated": "2025-11-15"
   },
@@ -122,8 +134,7 @@
     "github": "https://codeberg.org/hollow/aniyomi-extensions-fr",
     "supportedApps": [
       "aniyomi",
-      "mihon",
-      "mangayomi"
+      "mihon"
     ],
     "info": "French extensions for anime and manga",
     "keywords": [
@@ -460,51 +471,22 @@
     "lastUpdated": "2025-07-22"
   },
   {
-    "id": "anymeX",
-    "name": "anymeX",
+    "id": "anymex-ext",
+    "name": "AnymeX Extensions",
     "types": [
-      "Anime"
+      "Anime", "Manga", "Novel"
     ],
     "region": "ALL",
     "accentColor": "#FF6B9D",
     "autoUrl": "anymex://add-repo?anime_url=https://anymex.vercel.app/repo/anime_index.json&manga_url=https://anymex.vercel.app/repo/index.json&novel_url=https://anymex.vercel.app/repo/novel_index.json",
     "manualUrl": "https://anymex.vercel.app/repo/anime_index.json",
-    "website": "",
+    "website": "https://anymex.vercel.app/docs/guides/getting-started#extensions",
     "github": "",
     "supportedApps": [
-      "mangayomi"
+      "anymex"
     ],
-    "info": "Anime source extensions for the Mangayomi app.",
-    "keywords": [
-      "Mangayomi",
-      "Anime"
-    ],
-    "lastUpdated": "2025-11-15"
-  },
-  {
-    "id": "Schnitzel5",
-    "name": "Schnitzel5",
-    "types": [
-      "Anime",
-      "Manga",
-      "light novel"
-    ],
-    "region": "ALL",
-    "accentColor": "#FF6B9D",
-    "autoUrl": "mangayomi://add-repo?repo_name=Mangayomi%20Swak%20Extensions&repo_url=https://github.com/Swakshan/mangayomi-swak-extensions&manga_url=https://raw.githubusercontent.com/Swakshan/mangayomi-swak-extensions/refs/heads/main/index.json&anime_url=https://raw.githubusercontent.com/Swakshan/mangayomi-swak-extensions/refs/heads/main/anime_index.json&novel_url=https://raw.githubusercontent.com/Swakshan/mangayomi-swak-extensions/refs/heads/main/novel_index.json",
-    "manualUrl": "",
-    "website": "https://github.com/...",
-    "github": "https://github.com/Schnitzel5/sugoi-modules",
-    "supportedApps": [
-      "mangayomi"
-    ],
-    "info": "Public source extensions for apps.",
-    "keywords": [
-      "manga",
-      "anime",
-      "mangayomi",
-      "light novel"
-    ],
+    "info": "Sources for the AnymeX.",
+    "keywords": [],
     "lastUpdated": "2025-11-15"
   },
   {
@@ -609,5 +591,29 @@
       "stremio"
     ],
     "info": "Community curated list of Stremio addons."
+  },
+  {
+    "id": "mangayomi-custom",
+    "info": "A collection of custom buttons for Mangayomi.",
+    "name": "Manyayomi Custom Buttons",
+    "github": "https://github.com/Schnitzel5/mangayomi-custom-buttons",
+    "types":[
+      "Anime"
+    ],
+    "supportedApps": [
+      "mangayomi"
+    ],
+    "accentColor": "#BE1622"
+  },
+  {
+    "id": "mangayomi-apkbridge",
+    "accentColor": "#BE1622",
+    "name": "Mangayomi ApkBridge",
+    "info": "Use your Mihon/Aniyomi extensions in Mangayomi!",
+    "github": "https://github.com/Schnitzel5/ApkBridge",
+    "types":[
+      "Manga"
+    ]
+
   }
 ]
