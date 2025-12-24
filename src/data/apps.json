@@ -1,7 +1,7 @@
 [
   {
     "id": "aniyomi",
-    "accentColor": "#3399FF",
+    "accentColor": "##3A84C2",
     "name": "Aniyomi",
     "status": "active",
     "author": "jmir1",
@@ -21,10 +21,10 @@
     ],
     "supportedExtensions": [
       "kohiden",
-      "yuzono",
-      "secozzi",
-      "claudemirovsky",
-      "hollow"
+      "keiyoushi",
+      "hollow",
+      "Yuzono-anime",
+      "secozzi"
     ],
     "lastUpdated": "2025-12-23",
     "githubUrl": "https://github.com/aniyomiorg/aniyomi",
@@ -33,12 +33,6 @@
     "forkOf": "Tachiyomi",
     "upstreamUrl": "https://github.com/tachiyomiorg/tachiyomi",
     "tutorials": [
-      {
-        "title": "Aniyomi Installation & Setup",
-        "type": "guide",
-        "url": "https://miyomi.pages.dev/guides#installation",
-        "description": "Step-by-step tutorials to help you use and understand various apps and extensions."
-      },
       {
         "title": "Getting started",
         "type": "guide",
@@ -66,11 +60,8 @@
       "mihonapp"
     ],
     "supportedExtensions": [
-      "kohiden",
-      "yuzono",
-      "secozzi",
-      "claudemirovsky",
-      "hollow"
+      "keiyoushi",
+      "Yuzono-manga"
     ],
     "lastUpdated": "2025-12-23",
     "githubUrl": "https://github.com/mihonapp/mihon",
@@ -141,7 +132,6 @@
       "kohiden",
       "yuzono",
       "secozzi",
-      "claudemirovsky",
       "hollow"
     ],
     "lastUpdated": "2025-12-23",
@@ -262,9 +252,10 @@
       "light novel"
     ],
     "supportedExtensions": [
-      "kohiden",
-      "yuzono",
-      "secozzi"
+      "kodjodevf",
+      "m2k3a-mangayomi-extensions",
+      "mangayomi-apkbridge",
+      "mangayomi-custom"
     ],
     "lastUpdated": "2025-12-23",
     "githubUrl": "https://github.com/kodjodevf/mangayomi",
@@ -1008,7 +999,7 @@
     ],
     "supportedExtensions": [
       "kohiden",
-      "yuzono"
+      "Yuzono-anime"
     ],
     "lastUpdated": "2025-12-23",
     "githubUrl": "https://github.com/komikku-app/anikku",
@@ -1060,12 +1051,12 @@
     ],
     "logoUrl": "https://aniyomi.org/forks/logo-animiru.webp",
     "keywords": [
-      "anime",
-      "android",
-      "extensions"
+      "anime"
     ],
     "supportedExtensions": [
-      "kohiden"
+      "kohiden",
+      "Yuzono-anime",
+      "secozzi"
     ],
     "lastUpdated": "2025-12-23",
     "githubUrl": "https://github.com/quickdesh/Animiru",
@@ -1511,6 +1502,7 @@
   },
   {
     "id": "anilab",
+    "accentColor": "#D9232E",
     "downloads": 15400,
     "name": "Anilab",
     "status": "active",
@@ -1696,27 +1688,7 @@
     "supportedExtensions": [],
     "lastUpdated": "2025-11-13",
     "githubUrl": "https://github.com/DokiTeam/build-apps",
-    "discordUrl": "https://discord.gg/PTd2bYgz9m",
-    "tutorials": [
-      {
-        "title": "How to download?",
-        "type": "guide",
-        "url": "https://discord.com/channels/1435615296202477581/1435648866535084152/1438108128016207954",
-        "description": "Join the discord and follow the instructions to download the app."
-      },
-      {
-        "title": "New to Github?",
-        "type": "guide",
-        "url": "https://discord.com/channels/1435615296202477581/1435668476659367956/1438214554013401149",
-        "description": "Check their FAQs fo more helpful info."
-      },
-      {
-        "title": "Steps too confusing? GET Doki PreBuild App",
-        "type": "guide",
-        "url": "https://github.com/miyomi-test/build-apps/releases",
-        "description": "If you're unable to build the app yourself, you can try downloading this prebuilt version. ⚠️ Only download from sources you trust. We do NOT guarantee safety and strongly recommend building the app from source, as advised by the official Doki team."
-      }
-    ]
+    "discordUrl": "https://discord.gg/PTd2bYgz9m"
   },
   {
     "id": "com.hamak.novelwebtoon",
