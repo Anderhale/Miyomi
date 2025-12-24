@@ -10,7 +10,7 @@
       "Anime"
     ],
     "description": "An app for manga and anime.",
-    "downloads": 6234555,
+    "downloads": 6234582,
     "platforms": [
       "Android"
     ],
@@ -44,7 +44,7 @@
   {
     "id": "mihon",
     "accentColor": "#66BB6A",
-    "downloads": 12824898,
+    "downloads": 12825077,
     "name": "Mihon",
     "status": "active",
     "contentTypes": [
@@ -78,6 +78,38 @@
     ]
   },
   {
+    "id": "kumo",
+    "accentColor": "#9C27B0",
+    "downloads": 682,
+    "name": "Kumo",
+    "status": "active",
+    "contentTypes": [
+      "Manga"
+    ],
+    "description": "A Mihon fork inspired by Kahon but with a different approach.",
+    "forkOf": "Mihon",
+    "upstreamUrl": "https://github.com/mihonapp/mihon",
+    "platforms": [
+      "Android"
+    ],
+    "logoUrl": "https://github.com/nubesurrealista/Kumo/raw/main/.github/assets/logo.png",
+    "keywords": [
+      "mihonapp",
+      "kahon"
+    ],
+    "supportedExtensions": [
+      "kohiden",
+      "yuzono",
+      "secozzi",
+      "claudemirovsky",
+      "hollow"
+    ],
+    "lastUpdated": "2025-12-23",
+    "githubUrl": "https://github.com/nubesurrealista/Kumo",
+    "officialSite": "",
+    "tutorials": []
+  },
+  {
     "id": "taison",
     "accentColor": "#FF5722",
     "downloads": 1318,
@@ -105,6 +137,36 @@
     "lastUpdated": "2025-12-23",
     "githubUrl": "https://github.com/Gent8/Taison",
     "officialSite": "https://f-droid.org/en/packages/com.gent8.taison/",
+    "tutorials": []
+  },
+  {
+    "id": "kahon",
+    "accentColor": "#E91E63",
+    "downloads": 4681,
+    "name": "Kahon",
+    "status": "active",
+    "contentTypes": [
+      "Manga"
+    ],
+    "description": "A fork of Mihon with some annoying restrictions removed.",
+    "platforms": [
+      "Android"
+    ],
+    "logoUrl": "https://f-droid.org/repo/com.amanoteam.kahon/en-US/icon_lqrMZAYVYFwzUtd4Scoauphks7rbdc5piSnyczrVXAs=.png",
+    "keywords": [
+      "mihonapp",
+      "kumo"
+    ],
+    "supportedExtensions": [
+      "kohiden",
+      "yuzono",
+      "secozzi",
+      "claudemirovsky",
+      "hollow"
+    ],
+    "lastUpdated": "2025-12-23",
+    "githubUrl": "https://github.com/AmanoTeam/Kahon",
+    "officialSite": "https://f-droid.org/en/packages/com.amanoteam.kahon/",
     "tutorials": []
   },
   {
@@ -167,7 +229,7 @@
   },
   {
     "id": "mangayomi",
-    "accentColor": "#BE1622",
+    "accentColor": "#FFC107",
     "downloads": 186048,
     "name": "Mangayomi",
     "status": "active",
@@ -225,7 +287,7 @@
   {
     "id": "Yumemi",
     "accentColor": "#673AB7",
-    "downloads": 7463,
+    "downloads": 7464,
     "name": "Yumemi",
     "status": "active",
     "contentTypes": [
@@ -275,7 +337,7 @@
   {
     "id": "cloudstream",
     "accentColor": "#9C27B0",
-    "downloads": 4967360,
+    "downloads": 4967430,
     "name": "Cloudstream",
     "status": "active",
     "contentTypes": [
@@ -298,7 +360,7 @@
   {
     "id": "migu",
     "accentColor": "#00BCD4",
-    "downloads": 506564,
+    "downloads": 506567,
     "name": "Migu",
     "status": "discontinued",
     "contentTypes": [
@@ -322,7 +384,7 @@
   {
     "id": "tachiyomi-sy",
     "accentColor": "#E91E63",
-    "downloads": 1343119,
+    "downloads": 1343121,
     "name": "TachiyomiSY",
     "status": "active",
     "contentTypes": [
@@ -350,7 +412,7 @@
   {
     "id": "tachiyomi-j2k",
     "accentColor": "#3F51B5",
-    "downloads": 4079547,
+    "downloads": 4079550,
     "name": "TachiyomiJ2K",
     "status": "abandoned",
     "contentTypes": [
@@ -376,7 +438,7 @@
   {
     "id": "yokai",
     "accentColor": "#FF9800",
-    "downloads": 407723,
+    "downloads": 407726,
     "name": "Yokai",
     "status": "active",
     "contentTypes": [
@@ -402,7 +464,7 @@
   {
     "id": "komikku",
     "accentColor": "#009688",
-    "downloads": 463803,
+    "downloads": 463813,
     "name": "Komikku",
     "status": "active",
     "contentTypes": [
@@ -426,7 +488,7 @@
   {
     "id": "neko",
     "accentColor": "#607D8B",
-    "downloads": 1982522,
+    "downloads": 1982549,
     "name": "Neko",
     "status": "active",
     "contentTypes": [
@@ -515,7 +577,7 @@
   {
     "id": "ln-reader",
     "accentColor": "#FBC02D",
-    "downloads": 744834,
+    "downloads": 744835,
     "name": "LN Reader",
     "status": "active",
     "contentTypes": [
@@ -654,7 +716,7 @@
   },
   {
     "id": "aidoku",
-    "accentColor": "#FF2F52",
+    "accentColor": "#FFC107",
     "downloads": 153520,
     "name": "Aidoku",
     "status": "active",
@@ -774,7 +836,7 @@
   },
   {
     "id": "seanime",
-    "downloads": 1586218,
+    "downloads": 1586283,
     "name": "Seanime",
     "status": "active",
     "contentTypes": [
@@ -822,7 +884,7 @@
   },
   {
     "id": "suwayomi",
-    "downloads": 454895,
+    "downloads": 454900,
     "name": "Suwayomi",
     "status": "active",
     "contentTypes": [
@@ -846,7 +908,7 @@
   },
   {
     "id": "yacreader",
-    "downloads": 1387497,
+    "downloads": 1387500,
     "name": "YACReader",
     "status": "active",
     "contentTypes": [
@@ -874,7 +936,7 @@
   },
   {
     "id": "koodo-reader",
-    "downloads": 1516290,
+    "downloads": 1516295,
     "name": "Koodo Reader",
     "contentTypes": [
       "Light Novel"
@@ -897,7 +959,7 @@
   },
   {
     "id": "thorium",
-    "downloads": 769141,
+    "downloads": 769149,
     "name": "Thorium Reader",
     "status": "active",
     "contentTypes": [
@@ -921,7 +983,7 @@
   },
   {
     "id": "anikku",
-    "downloads": 68415,
+    "downloads": 68418,
     "name": "Anikku",
     "status": "active",
     "contentTypes": [
@@ -947,7 +1009,6 @@
   {
     "id": "anymex",
     "downloads": 115702,
-    "accentColor": "#000000",
     "name": "AnymeX",
     "status": "active",
     "contentTypes": [
@@ -970,9 +1031,7 @@
       "manga",
       "novels"
     ],
-    "supportedExtensions": [
-      "anymex-ext"
-    ],
+    "supportedExtensions": [],
     "lastUpdated": "2025-12-23",
     "githubUrl": "https://github.com/RyanYuuki/AnymeX",
     "officialSite": "https://anymex.vercel.app/",
@@ -980,7 +1039,6 @@
   },
   {
     "id": "animiru",
-    "accentColor": "#EA44FA",
     "downloads": 186028,
     "name": "Animiru",
     "status": "active",
@@ -1007,7 +1065,7 @@
   },
   {
     "id": "comicrack-ce",
-    "downloads": 1803,
+    "downloads": 1808,
     "name": "ComicRack CE",
     "status": "active",
     "contentTypes": [
@@ -1059,7 +1117,7 @@
   },
   {
     "id": "koreader",
-    "downloads": 5638859,
+    "downloads": 5638868,
     "name": "KOReader",
     "status": "active",
     "contentTypes": [
@@ -1083,7 +1141,7 @@
   },
   {
     "id": "legado",
-    "downloads": 2488477,
+    "downloads": 2488486,
     "name": "Legado",
     "status": "active",
     "contentTypes": [
@@ -1156,7 +1214,7 @@
   },
   {
     "id": "shiru",
-    "downloads": 774932,
+    "downloads": 774987,
     "name": "Shiru",
     "status": "active",
     "contentTypes": [
@@ -1182,7 +1240,7 @@
   },
   {
     "id": "yomikiru",
-    "downloads": 67904,
+    "downloads": 67908,
     "name": "Yomikiru",
     "status": "active",
     "contentTypes": [
@@ -1260,7 +1318,6 @@
   },
   {
     "id": "animetail",
-    "accentColor": "#479A97",
     "downloads": 66882,
     "name": "Animetail",
     "status": "active",
@@ -1279,18 +1336,14 @@
       "manga",
       "android"
     ],
-    "supportedExtensions": [
-      "kohiden",
-      "Yuzono-anime",
-      "secozzi"
-    ],
+    "supportedExtensions": [],
     "lastUpdated": "2025-12-23",
     "githubUrl": "https://github.com/Animetailapp/Animetail",
     "discordUrl": "https://discord.gg/fvskrQZb9j"
   },
   {
     "id": "readest",
-    "downloads": 956391,
+    "downloads": 956393,
     "name": "Readest",
     "status": "active",
     "contentTypes": [
@@ -1423,7 +1476,7 @@
   },
   {
     "id": "houdoku",
-    "downloads": 736232,
+    "downloads": 736235,
     "name": "Houdoku",
     "status": "active",
     "contentTypes": [
@@ -1493,7 +1546,7 @@
   },
   {
     "id": "Shiru",
-    "downloads": 774932,
+    "downloads": 774987,
     "name": "Shiru ",
     "status": "active",
     "author": "RockinChaos",
@@ -1532,7 +1585,7 @@
   },
   {
     "id": "IReader",
-    "downloads": 37047,
+    "downloads": 37048,
     "name": "IReader",
     "status": "active",
     "author": "IReader",
@@ -1595,7 +1648,7 @@
   },
   {
     "id": "kotatsu-redo",
-    "downloads": 14460,
+    "downloads": 14461,
     "name": "Kotatsu Redo",
     "status": "active",
     "contentTypes": [
