@@ -24,10 +24,16 @@ export function useVoteRegistry() {
             try {
                 const res = await fetch(`/api/vote?userId=${userId}`);
                 if (res.ok) {
-                    const data = await res.json();
-                    // 2. Update State AND Cache
-                    setVotes(data);
-                    voteStorage.set(data);
+                    const contentType = res.headers.get('content-type');
+                    if (contentType && contentType.includes('application/json')) {
+                        const data = await res.json();
+                        // 2. Update State AND Cache
+                        setVotes(data);
+                        voteStorage.set(data);
+                    } else {
+                        const text = await res.text();
+                        console.error('Expected JSON but received:', text.substring(0, 100));
+                    }
                 }
             } catch (error) {
                 console.error('Failed to fetch vote registry', error);

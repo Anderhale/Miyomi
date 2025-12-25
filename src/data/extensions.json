@@ -38,7 +38,9 @@
     "website": "https://yuzono.github.io",
     "github": "https://github.com/yuzono/aniyomi-extensions",
     "supportedApps": [
-      "anikku", "aniyomi","animiru"
+      "anikku",
+      "aniyomi",
+      "animiru"
     ],
     "info": "Repository curated by the Yūzōnō community for Aniyomi variants.",
     "keywords": [
@@ -60,11 +62,13 @@
     "website": "https://yuzono.github.io",
     "github": "https://github.com/yuzono/tachiyomi-extensions",
     "supportedApps": [
-      "komikku", "mihon"
+      "komikku",
+      "mihon"
     ],
     "info": "Repository curated by the Yūzōnō community for Mihon variants.",
     "keywords": [
-      "manga","komikku"
+      "manga",
+      "komikku"
     ],
     "lastUpdated": "2025-11-15"
   },
@@ -474,7 +478,9 @@
     "id": "anymex-ext",
     "name": "AnymeX Extensions",
     "types": [
-      "Anime", "Manga", "Novel"
+      "Anime",
+      "Manga",
+      "Novel"
     ],
     "region": "ALL",
     "accentColor": "#FF6B9D",
@@ -597,7 +603,7 @@
     "info": "A collection of custom buttons for Mangayomi.",
     "name": "Manyayomi Custom Buttons",
     "github": "https://github.com/Schnitzel5/mangayomi-custom-buttons",
-    "types":[
+    "types": [
       "Anime"
     ],
     "supportedApps": [
@@ -610,10 +616,9 @@
     "accentColor": "#BE1622",
     "name": "Mangayomi ApkBridge",
     "info": "Use your Mihon/Aniyomi extensions in Mangayomi!",
-    "github": "https://github.com/Schnitzel5/ApkBridge",
-    "types":[
+    "supportedApps": [],
+    "types": [
       "Manga"
     ]
-
   }
 ]

@@ -160,7 +160,7 @@ export function getExtensionById(extensionId: string): ExtensionData | undefined
 }
 
 export function getAppExtensions(appId: string): ExtensionData[] {
-  return unifiedExtensions.filter(ext => ext.supportedApps.includes(appId));
+  return unifiedExtensions.filter(ext => ext.supportedApps?.includes(appId));
 }
 
 export function getExtensionApps(extensionId: string): AppData[] {
