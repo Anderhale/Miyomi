@@ -188,9 +188,7 @@
     "website": "https://kodjodevf.github.io/mangayomi-extensions/",
     "github": "https://github.com/kodjodevf/mangayomi-extensions",
     "supportedApps": [
-      "dantotsu",
-      "mangayomi",
-      "dartotsu"
+      "mangayomi"
     ],
     "info": "Public source extensions (Manga & novels only) for the Mangayomi app.",
     "keywords": [
