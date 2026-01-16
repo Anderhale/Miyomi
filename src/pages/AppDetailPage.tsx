@@ -308,7 +308,6 @@ export function AppDetailPage({ appId, onNavigate }: AppDetailPageProps) {
 
   const renderActionButtons = (layout: 'inline' | 'stack') => {
     const hasGithub = Boolean(app.githubUrl);
-    const hasGetApp = Boolean(app.getApp);
     const hasDiscord = Boolean(app.discordUrl);
     const hasOfficialSite = Boolean(app.officialSite);
 
