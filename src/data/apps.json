@@ -1741,5 +1741,33 @@
         "description": "راجع هذه المشكلة على GitHub للحصول على شرح.."
       }
     ]
+  },
+  {
+  "id": "kototoro",
+  "name": "Kototoro",
+  "status": "active",
+  "downloads": 3100,
+  "author": "skepsun",
+  "contentTypes": [
+    "Manga",
+    "Anime",
+    "Light Novel"
+  ],
+  "description": "Kototoro is an unofficial fork project based on Kotatsu, focused on providing a better manga, novel, and video reading/playing experience.",
+    "platforms": [
+      "Android"
+    ],
+  "iconColor": "#1185EF",
+  "logoUrl": "https://raw.githubusercontent.com/skepsun/Kototoro/refs/heads/devel/metadata/en-US/icon.png",
+  "keywords": [
+    "manga",
+    "light novel"
+  ],
+  "forkOf": "Kotatsu",
+  "upstreamUrl": "https://miyomi.pages.dev/software/kotatsu",
+  "lastUpdated": "2026-01-16",
+  "githubUrl": "https://github.com/skepsun/Kototoro",
+  "discordUrl": "https://discord.com/invite/PTd2bYgz9m"
+
   }
 ]
