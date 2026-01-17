@@ -1,7 +1,7 @@
 [
   {
     "id": "aniyomi",
-    "accentColor": "##3A84C2",
+    "accentColor": "#3A84C2",
     "name": "Aniyomi",
     "status": "active",
     "author": "jmir1",
@@ -43,7 +43,7 @@
   },
   {
     "id": "mihon",
-    "accentColor": "#66BB6A",
+    "accentColor": "#0058A0",
     "downloads": 13359221,
     "name": "Mihon",
     "status": "active",
@@ -111,7 +111,7 @@
   },
   {
     "id": "taison",
-    "accentColor": "#FF5722",
+    "accentColor": "#EAB316",
     "downloads": 1491,
     "name": "Taison",
     "status": "active",
@@ -122,7 +122,7 @@
     "platforms": [
       "Android"
     ],
-    "logoUrl": "https://github.com/nubesurrealista/Kumo/raw/main/.github/assets/logo.png",
+    "logoUrl": "https://raw.githubusercontent.com/Gent8/Taison/refs/heads/main/docs/images/iconCropped.png",
     "keywords": [
       "mihonapp",
       "kahon",
@@ -171,7 +171,7 @@
   },
   {
     "id": "dantotsu",
-    "accentColor": "#F44336",
+    "accentColor": "#D300E5",
     "downloads": 3575,
     "name": "Dantotsu",
     "status": "active",
@@ -198,7 +198,7 @@
   },
   {
     "id": "dartotsu",
-    "accentColor": "#2196F3",
+    "accentColor": "#23C6EE",
     "downloads": 13952,
     "name": "Dartotsu",
     "status": "active",
@@ -230,7 +230,7 @@
   },
   {
     "id": "mangayomi",
-    "accentColor": "#FFC107",
+    "accentColor": "#BE1622",
     "downloads": 202945,
     "name": "Mangayomi",
     "status": "active",
@@ -264,7 +264,7 @@
   },
   {
     "id": "tachiyomi",
-    "accentColor": "#455A64",
+    "accentColor": "#2E84BF",
     "downloads": 154000,
     "name": "Tachiyomi",
     "status": "dmca",
@@ -286,15 +286,15 @@
     "discordUrl": "https://discord.com/invite/tachiyomi"
   },
   {
-    "id": "Yumemi",
-    "accentColor": "#673AB7",
+    "id": "Yukimi",
+    "accentColor": "#1E1E2E",
     "downloads": 16886,
-    "name": "Yumemi",
+    "name": "Yukimi",
     "status": "active",
     "contentTypes": [
       "Manga"
     ],
-    "description": "Successor to Kotatsu, a manga reader app for Android.",
+    "description": "The successor to Kotatsu developed under YAKA’s Yumemi project.",
     "platforms": [
       "Android"
     ],
@@ -313,10 +313,10 @@
   },
   {
     "id": "kotatsu",
-    "accentColor": "#795548",
+    "accentColor": "#1976D2",
     "downloads": 45000,
     "name": "Kotatsu",
-    "status": "dmca",
+    "status": "discontinued",
     "contentTypes": [
       "Manga"
     ],
@@ -337,7 +337,7 @@
   },
   {
     "id": "cloudstream",
-    "accentColor": "#9C27B0",
+    "accentColor": "#234ADB",
     "downloads": 5040308,
     "name": "Cloudstream",
     "status": "active",
@@ -384,7 +384,7 @@
   },
   {
     "id": "tachiyomi-sy",
-    "accentColor": "#E91E63",
+    "accentColor": "#CE2828",
     "downloads": 1360169,
     "name": "TachiyomiSY",
     "status": "active",
@@ -412,7 +412,7 @@
   },
   {
     "id": "tachiyomi-j2k",
-    "accentColor": "#3F51B5",
+    "accentColor": "#04264C",
     "downloads": 4092657,
     "name": "TachiyomiJ2K",
     "status": "abandoned",
@@ -438,7 +438,7 @@
   },
   {
     "id": "yokai",
-    "accentColor": "#FF9800",
+    "accentColor": "#35BDF4",
     "downloads": 417095,
     "name": "Yokai",
     "status": "active",
@@ -464,7 +464,7 @@
   },
   {
     "id": "komikku",
-    "accentColor": "#009688",
+    "accentColor": "#FE5555",
     "downloads": 598300,
     "name": "Komikku",
     "status": "active",
@@ -488,7 +488,7 @@
   },
   {
     "id": "neko",
-    "accentColor": "#607D8B",
+    "accentColor": "#FF124A",
     "downloads": 2013800,
     "name": "Neko",
     "status": "active",
@@ -510,7 +510,7 @@
   },
   {
     "id": "perfect-viewer",
-    "accentColor": "#2196F3",
+    "accentColor": "#3948D2",
     "downloads": 54000,
     "name": "Perfect Viewer",
     "status": "active",
@@ -555,7 +555,7 @@
   },
   {
     "id": "cdisplayex",
-    "accentColor": "#F44336",
+    "accentColor": "#343A40",
     "downloads": 67000,
     "name": "CDisplayEx",
     "status": "active",
@@ -577,7 +577,7 @@
   },
   {
     "id": "ln-reader",
-    "accentColor": "#FBC02D",
+    "accentColor": "#126E82",
     "downloads": 760029,
     "name": "LN Reader",
     "status": "active",
@@ -601,7 +601,7 @@
   },
   {
     "id": "quicknovel",
-    "accentColor": "#8BC34A",
+    "accentColor": "#F8B500",
     "downloads": 277197,
     "name": "QuickNovel",
     "status": "active",
@@ -625,7 +625,7 @@
   },
   {
     "id": "shosetsu",
-    "accentColor": "#03A9F4",
+    "accentColor": "#A80000",
     "downloads": 2245,
     "name": "Shosetsu",
     "status": "active",
@@ -649,7 +649,7 @@
   },
   {
     "id": "moon-reader",
-    "accentColor": "#3F51B5",
+    "accentColor": "#5899FC",
     "downloads": 88000,
     "name": "Moon+ Reader",
     "status": "active",
@@ -671,7 +671,7 @@
   },
   {
     "id": "nineanimator",
-    "accentColor": "#9C27B0",
+    "accentColor": "#FFEB02",
     "downloads": 70631,
     "name": "NineAnimator",
     "status": "Discontinued",
@@ -693,7 +693,7 @@
   },
   {
     "id": "paperback",
-    "accentColor": "#FF5722",
+    "accentColor": "#E34C4C",
     "downloads": 140850,
     "name": "Paperback",
     "status": "active",
@@ -717,7 +717,7 @@
   },
   {
     "id": "aidoku",
-    "accentColor": "#FFC107",
+    "accentColor": "#FF2F52",
     "downloads": 158972,
     "name": "Aidoku",
     "status": "active",
@@ -741,7 +741,7 @@
   },
   {
     "id": "tachimanga",
-    "accentColor": "#4CAF50",
+    "accentColor": "#0A6EBD",
     "downloads": 15400,
     "name": "Tachimanga",
     "status": "active",
@@ -772,7 +772,7 @@
   },
   {
     "id": "suwatte",
-    "accentColor": "#E91E63",
+    "accentColor": "#6A5ACD",
     "downloads": 5600,
     "name": "Suwatte",
     "status": "active",
@@ -838,6 +838,7 @@
   {
     "id": "seanime",
     "downloads": 1834948,
+    "accentColor": "#1F1855",
     "name": "Seanime",
     "status": "active",
     "contentTypes": [
@@ -863,6 +864,7 @@
   {
     "id": "toru",
     "downloads": 2553,
+    "accentColor": "#C28A8E",
     "name": "Toru",
     "status": "active",
     "contentTypes": [
@@ -886,6 +888,7 @@
   {
     "id": "suwayomi",
     "downloads": 464203,
+    "accentColor": "#35D4D5",
     "name": "Suwayomi",
     "status": "active",
     "contentTypes": [
@@ -910,6 +913,7 @@
   {
     "id": "yacreader",
     "downloads": 1420034,
+    "accentColor": "#EAB403",
     "name": "YACReader",
     "status": "active",
     "contentTypes": [
@@ -938,6 +942,7 @@
   {
     "id": "koodo-reader",
     "downloads": 1544351,
+    "accentColor": "#2C2C2C",
     "name": "Koodo Reader",
     "contentTypes": [
       "Light Novel"
@@ -961,6 +966,7 @@
   {
     "id": "thorium",
     "downloads": 796967,
+    "accentColor": "#4788FD",
     "name": "Thorium Reader",
     "status": "active",
     "contentTypes": [
@@ -985,6 +991,7 @@
   {
     "id": "anikku",
     "downloads": 79910,
+    "accentColor": "#10858D",
     "name": "Anikku",
     "status": "active",
     "contentTypes": [
@@ -1010,6 +1017,7 @@
   {
     "id": "anymex",
     "downloads": 131153,
+    "accentColor": "#000000",
     "name": "AnymeX",
     "status": "active",
     "contentTypes": [
@@ -1041,6 +1049,7 @@
   {
     "id": "animiru",
     "downloads": 195339,
+    "accentColor": "#E748F8",
     "name": "Animiru",
     "status": "active",
     "contentTypes": [
@@ -1067,6 +1076,7 @@
   {
     "id": "comicrack-ce",
     "downloads": 4922,
+    "accentColor": "#C59190",
     "name": "ComicRack CE",
     "status": "active",
     "contentTypes": [
@@ -1091,6 +1101,7 @@
   {
     "id": "hayase",
     "downloads": 2100,
+    "accentColor": "#FFFFFF",
     "name": "Hayase",
     "status": "active",
     "contentTypes": [
@@ -1119,6 +1130,7 @@
   {
     "id": "koreader",
     "downloads": 5682768,
+    "accentColor": "#00A89C",
     "name": "KOReader",
     "status": "active",
     "contentTypes": [
@@ -1143,6 +1155,7 @@
   {
     "id": "legado",
     "downloads": 2519099,
+    "accentColor": "#4D4D4D",
     "name": "Legado",
     "status": "active",
     "contentTypes": [
@@ -1167,6 +1180,7 @@
   {
     "id": "opencomic",
     "downloads": 172182,
+    "accentColor": "#D14035",
     "name": "OpenComic",
     "status": "active",
     "contentTypes": [
@@ -1194,6 +1208,7 @@
   {
     "id": "panels",
     "downloads": 12400,
+    "accentColor": "#262626",
     "name": "Panels",
     "status": "active",
     "contentTypes": [
@@ -1216,6 +1231,7 @@
   {
     "id": "shiru",
     "downloads": 936699,
+    "accentColor": "#151420",
     "name": "Shiru",
     "status": "active",
     "contentTypes": [
@@ -1242,6 +1258,7 @@
   {
     "id": "yomikiru",
     "downloads": 70433,
+    "accentColor": "#9872A5",
     "name": "Yomikiru",
     "status": "active",
     "contentTypes": [
@@ -1267,6 +1284,7 @@
   {
     "id": "tachiyomi-az",
     "downloads": 272598,
+    "accentColor": "#F4900C",
     "name": "Tachiyomi AZ",
     "status": "active",
     "contentTypes": [
@@ -1294,6 +1312,7 @@
   {
     "id": "tachiyomi-at",
     "downloads": 17614,
+    "accentColor": "#FF4040",
     "name": "Tachiyomi AT",
     "status": "active",
     "contentTypes": [
@@ -1320,6 +1339,7 @@
   {
     "id": "animetail",
     "downloads": 71158,
+    "accentColor": "#56ABA8",
     "name": "Animetail",
     "status": "active",
     "contentTypes": [
@@ -1345,6 +1365,7 @@
   {
     "id": "readest",
     "downloads": 983976,
+    "accentColor": "#BA5E28",
     "name": "Readest",
     "status": "active",
     "contentTypes": [
@@ -1377,6 +1398,7 @@
   {
     "id": "sora",
     "downloads": 10051,
+    "accentColor": "#F6F05A",
     "name": "Sora",
     "status": "active",
     "contentTypes": [
@@ -1402,6 +1424,7 @@
   {
     "id": "unyo",
     "downloads": 23058,
+    "accentColor": "#A3A3CE",
     "name": "Unyo",
     "status": "active",
     "contentTypes": [
@@ -1427,6 +1450,7 @@
   {
     "id": "totoro",
     "downloads": 13524,
+    "accentColor": "#595959",
     "name": "Totoro",
     "status": "active",
     "contentTypes": [
@@ -1436,7 +1460,7 @@
     "platforms": [
       "Windows"
     ],
-    "logoUrl": "https://avatars.githubusercontent.com/insomniachi",
+    "logoUrl": "https://raw.githubusercontent.com/insomniachi/Totoro/refs/heads/main/Totoro.WinUI/Assets/Square44x44Logo.scale-400.png",
     "keywords": [
       "anime",
       "windows",
@@ -1451,6 +1475,7 @@
   {
     "id": "zenshin",
     "downloads": 4046,
+    "accentColor": "#611BAD",
     "name": "Zenshin",
     "status": "active",
     "contentTypes": [
@@ -1478,6 +1503,7 @@
   {
     "id": "houdoku",
     "downloads": 749072,
+    "accentColor": "#FFB7C5",
     "name": "Houdoku",
     "status": "active",
     "contentTypes": [
@@ -1525,6 +1551,7 @@
   {
     "id": "miru-app",
     "downloads": 449447,
+    "accentColor": "#FFCBC4",
     "name": "Miru App",
     "status": "active",
     "contentTypes": [
@@ -1546,48 +1573,10 @@
     "lastUpdated": "2026-01-16"
   },
   {
-    "id": "Shiru",
-    "downloads": 936699,
-    "name": "Shiru ",
-    "status": "active",
-    "author": "RockinChaos",
-    "contentTypes": [
-      "Anime"
-    ],
-    "description": "Manage your personal media library, organize your collection, and stream your content in real time, no waiting required",
-    "platforms": [
-      "Android",
-      "iOS",
-      "Windows",
-      "Mac",
-      "Linux"
-    ],
-    "logoUrl": "https://avatars.githubusercontent.com/username",
-    "keywords": [
-      "android",
-      "anime"
-    ],
-    "supportedExtensions": [
-      "extension-id-1",
-      "extension-id-2"
-    ],
-    "lastUpdated": "2026-01-16",
-    "githubUrl": "https://github.com/RockinChaos/Shiru",
-    "officialSite": "https://example.com",
-    "discordUrl": "https://discord.gg/invite",
-    "tutorials": [
-      {
-        "title": "Tutorial Title",
-        "type": "video",
-        "url": "https://youtube.com/...",
-        "description": "Tutorial description"
-      }
-    ]
-  },
-  {
     "id": "IReader",
     "downloads": 41133,
     "name": "IReader",
+    "accentColor": "#A68DB8",
     "status": "active",
     "author": "IReaderorg",
     "contentTypes": [
@@ -1622,26 +1611,33 @@
       {
         "title": "Getting Started",
         "type": "guide",
-        "url": "https://github.com/IReaderorg/IReader/blob/master/docs/wiki/Getting-Started.md",
+        "url": "https://github.com/IReaderorg/IReader/blob/master/docs/developer/wiki/Getting-Started.md",
         "description": "Essential guide to help you get set up with IReader"
       },
       {
-        "title": "Installing Extensions",
+        "title": "How To Add Extension Repository",
         "type": "guide",
-        "url": "https://github.com/IReaderorg/IReader/blob/master/docs/wiki/Installing-Extensions.md",
-        "description": "Learn how to install and manage extensions"
+        "url": "https://github.com/IReaderorg/IReader/blob/master/docs/guides/extension_repository_guide.md",
+        "description": "Learn how to add extension repositories to IReader"
       },
       {
         "title": "JavaScript Plugin System",
         "type": "guide",
-        "url": "https://github.com/IReaderorg/IReader/blob/master/docs/js-plugin-system.md",
+        "url": "https://github.com/IReaderorg/IReader/blob/master/docs/developer/js-plugin-system.md",
         "description": "Guide to using JavaScript plugins including LNReader sources"
+      },
+      {
+        "title": "A Detailed Video Guide",
+        "type": "video",
+        "url": "https://www.youtube.com/embed/8RnQJzfN9OY",
+        "description": "A comprehensive video tutorial covering installation, configuration, and usage of IReader."
       }
     ]
   },
   {
     "id": "قارئ مانجا عربي",
     "downloads": 3400,
+    "accentColor": "#2897EA",
     "name": "قارئ مانجا عربي",
     "status": "active",
     "author": "midou221",
@@ -1669,6 +1665,7 @@
   {
     "id": "kotatsu-redo",
     "downloads": 25264,
+    "accentColor": "#9F0081",
     "name": "Kotatsu Redo",
     "status": "active",
     "contentTypes": [
@@ -1678,7 +1675,7 @@
     "platforms": [
       "Android"
     ],
-    "logoUrl": "https://github.com/Kotatsu-Redo/Kotatsu-Redo/blob/devel/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp?raw=true",
+    "logoUrl": "https://raw.githubusercontent.com/Kotatsu-Redo/Kotatsu-Redo/refs/heads/devel/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp",
     "keywords": [
       "local library",
       "kotatsu"
@@ -1691,6 +1688,7 @@
   {
     "id": "doki",
     "downloads": 4500,
+    "accentColor": "#1976D2",
     "name": "Doki",
     "status": "discontinued",
     "contentTypes": [
@@ -1713,6 +1711,7 @@
   {
     "id": "com.hamak.novelwebtoon",
     "downloads": 1500,
+    "accentColor": "#FFEC00",
     "name": "شاي الروايات: للمانجا",
     "author": "Hmak.Inc",
     "contentTypes": [
