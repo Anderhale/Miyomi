@@ -10,7 +10,7 @@
       "Anime"
     ],
     "description": "An app for manga and anime.",
-    "downloads": 6368029,
+    "downloads": 6373629,
     "platforms": [
       "Android"
     ],
@@ -26,7 +26,7 @@
       "Yuzono-anime",
       "secozzi"
     ],
-    "lastUpdated": "2026-01-17",
+    "lastUpdated": "2026-01-18",
     "githubUrl": "https://github.com/aniyomiorg/aniyomi",
     "officialSite": "https://aniyomi.org",
     "discordUrl": "https://discord.gg/aniyomi",
@@ -44,7 +44,7 @@
   {
     "id": "mihon",
     "accentColor": "#0058A0",
-    "downloads": 13380791,
+    "downloads": 13402871,
     "name": "Mihon",
     "status": "active",
     "contentTypes": [
@@ -63,7 +63,7 @@
       "keiyoushi",
       "Yuzono-manga"
     ],
-    "lastUpdated": "2026-01-17",
+    "lastUpdated": "2026-01-18",
     "githubUrl": "https://github.com/mihonapp/mihon",
     "officialSite": "https://mihon.app",
     "forkOf": "Tachiyomi",
@@ -80,7 +80,7 @@
   {
     "id": "taison",
     "accentColor": "#EAB316",
-    "downloads": 1498,
+    "downloads": 1504,
     "name": "Taison",
     "status": "active",
     "contentTypes": [
@@ -102,7 +102,7 @@
     ],
     "forkOf": "Mihon",
     "upstreamUrl": "https://miyomi.pages.dev/software/mihon",
-    "lastUpdated": "2026-01-17",
+    "lastUpdated": "2026-01-18",
     "githubUrl": "https://github.com/Gent8/Taison",
     "officialSite": "https://f-droid.org/en/packages/com.gent8.taison/",
     "tutorials": []
@@ -137,7 +137,7 @@
   {
     "id": "dartotsu",
     "accentColor": "#23C6EE",
-    "downloads": 14008,
+    "downloads": 14071,
     "name": "Dartotsu",
     "status": "active",
     "contentTypes": [
@@ -161,7 +161,7 @@
     "supportedExtensions": [
       "kodjodevf"
     ],
-    "lastUpdated": "2026-01-17",
+    "lastUpdated": "2026-01-18",
     "githubUrl": "https://github.com/aayush2622/Dartotsu",
     "officialSite": "https://github.com/aayush2622/Dartotsu",
     "discordUrl": "https://discord.gg/eyQdCpdubF"
@@ -169,7 +169,7 @@
   {
     "id": "mangayomi",
     "accentColor": "#BE1622",
-    "downloads": 203949,
+    "downloads": 204648,
     "name": "Mangayomi",
     "status": "active",
     "contentTypes": [
@@ -196,7 +196,7 @@
       "mangayomi-apkbridge",
       "mangayomi-custom"
     ],
-    "lastUpdated": "2026-01-17",
+    "lastUpdated": "2026-01-18",
     "githubUrl": "https://github.com/kodjodevf/mangayomi",
     "discordUrl": "https://discord.com/invite/EjfBuYahsP"
   },
@@ -226,7 +226,7 @@
   {
     "id": "Yukimi",
     "accentColor": "#1E1E2E",
-    "downloads": 17096,
+    "downloads": 17260,
     "name": "Yukimi",
     "status": "active",
     "contentTypes": [
@@ -245,7 +245,7 @@
     ],
     "forkOf": "Kotatsu",
     "upstreamUrl": "https://miyomi.pages.dev/software/kotatsu",
-    "lastUpdated": "2026-01-17",
+    "lastUpdated": "2026-01-18",
     "githubUrl": "https://github.com/YakaTeam/artifacts",
     "officialSite": "https://kotatsu.app/",
     "discordUrl": "https://discord.com/invite/PTd2bYgz9m"
@@ -277,7 +277,7 @@
   {
     "id": "cloudstream",
     "accentColor": "#234ADB",
-    "downloads": 5043533,
+    "downloads": 5055920,
     "name": "Cloudstream",
     "status": "active",
     "contentTypes": [
@@ -293,14 +293,14 @@
       "plugins"
     ],
     "supportedExtensions": [],
-    "lastUpdated": "2026-01-17",
+    "lastUpdated": "2026-01-18",
     "githubUrl": "https://github.com/recloudstream/cloudstream",
     "discordUrl": "https://discord.gg/5Hus6fM"
   },
   {
     "id": "migu",
     "accentColor": "#00BCD4",
-    "downloads": 517447,
+    "downloads": 518041,
     "name": "Migu",
     "status": "discontinued",
     "contentTypes": [
@@ -317,14 +317,14 @@
       "anime"
     ],
     "supportedExtensions": [],
-    "lastUpdated": "2026-01-17",
+    "lastUpdated": "2026-01-18",
     "githubUrl": "https://github.com/NoCrypt/Migu",
     "officialSite": "https://miguapp.pages.dev/"
   },
   {
     "id": "tachiyomi-sy",
     "accentColor": "#CE2828",
-    "downloads": 1360884,
+    "downloads": 1361620,
     "name": "Tachiyomi SY",
     "status": "active",
     "contentTypes": [
@@ -346,7 +346,7 @@
     ],
     "forkOf": "Mihon",
     "upstreamUrl": "https://miyomi.pages.dev/software/mihon",
-    "lastUpdated": "2026-01-17",
+    "lastUpdated": "2026-01-18",
     "githubUrl": "https://github.com/jobobby04/TachiyomiSY",
     "officialSite": "https://mihon.app/forks/TachiyomiSY",
     "discordUrl": "https://discord.gg/mihon"
@@ -354,7 +354,7 @@
   {
     "id": "tachiyomi-j2k",
     "accentColor": "#04264C",
-    "downloads": 4093738,
+    "downloads": 4094306,
     "name": "Tachiyomi J2K",
     "status": "abandoned",
     "contentTypes": [
@@ -375,7 +375,7 @@
     ],
     "forkOf": "Mihon",
     "upstreamUrl": "https://miyomi.pages.dev/software/mihon",
-    "lastUpdated": "2026-01-17",
+    "lastUpdated": "2026-01-18",
     "githubUrl": "https://github.com/Jays2Kings/tachiyomiJ2K",
     "officialSite": "https://mihon.app/forks/TachiyomiJ2K",
     "discordUrl": "https://discord.gg/mihon"
@@ -383,7 +383,7 @@
   {
     "id": "yokai",
     "accentColor": "#35BDF4",
-    "downloads": 417702,
+    "downloads": 418106,
     "name": "Yokai",
     "status": "active",
     "contentTypes": [
@@ -403,7 +403,7 @@
     ],
     "forkOf": "Mihon",
     "upstreamUrl": "https://miyomi.pages.dev/software/mihon",
-    "lastUpdated": "2026-01-17",
+    "lastUpdated": "2026-01-18",
     "githubUrl": "https://github.com/null2264/yokai",
     "discordUrl": "https://discord.com/invite/mihon",
     "officialSite": "https://mihon.app/forks/Yokai"
@@ -411,7 +411,7 @@
   {
     "id": "komikku",
     "accentColor": "#FE5555",
-    "downloads": 602098,
+    "downloads": 605987,
     "name": "Komikku",
     "status": "active",
     "contentTypes": [
@@ -432,7 +432,7 @@
     ],
     "forkOf": "Mihon",
     "upstreamUrl": "https://miyomi.pages.dev/software/mihon",
-    "lastUpdated": "2026-01-17",
+    "lastUpdated": "2026-01-18",
     "githubUrl": "https://github.com/komikku-app/komikku",
     "discordUrl": "https://discord.gg/85jB7V5AJR",
     "officialSite": "https://mihon.app/forks/Komikku/"
@@ -440,7 +440,7 @@
   {
     "id": "neko",
     "accentColor": "#FF124A",
-    "downloads": 2014542,
+    "downloads": 2015296,
     "name": "Neko",
     "status": "active",
     "contentTypes": [
@@ -455,7 +455,7 @@
       "mangadex"
     ],
     "supportedExtensions": [],
-    "lastUpdated": "2026-01-17",
+    "lastUpdated": "2026-01-18",
     "githubUrl": "https://github.com/nekomangaorg/Neko",
     "discordUrl": "https://discord.gg/4vmK42QuKG"
   },
@@ -484,7 +484,7 @@
   {
     "id": "kuro-reader",
     "accentColor": "#424242",
-    "downloads": 15884,
+    "downloads": 15904,
     "name": "Kuro Reader +",
     "status": "active",
     "contentTypes": [
@@ -500,7 +500,7 @@
       "cloud sync"
     ],
     "supportedExtensions": [],
-    "lastUpdated": "2026-01-17",
+    "lastUpdated": "2026-01-18",
     "officialSite": "https://kurotoshiro.dev/",
     "githubUrl": "https://github.com/VandersonQk/KuroReaderReleases/"
   },
@@ -529,7 +529,7 @@
   {
     "id": "ln-reader",
     "accentColor": "#126E82",
-    "downloads": 760520,
+    "downloads": 761051,
     "name": "LN Reader",
     "status": "active",
     "contentTypes": [
@@ -545,7 +545,7 @@
       "extensions"
     ],
     "supportedExtensions": [],
-    "lastUpdated": "2026-01-17",
+    "lastUpdated": "2026-01-18",
     "githubUrl": "https://github.com/LNReader/lnreader",
     "officialSite": "https://www.lnreader.app/",
     "discordUrl": "https://discord.gg/QdcWN4MD63"
@@ -553,7 +553,7 @@
   {
     "id": "quicknovel",
     "accentColor": "#F8B500",
-    "downloads": 277401,
+    "downloads": 277713,
     "name": "QuickNovel",
     "status": "active",
     "contentTypes": [
@@ -570,7 +570,7 @@
       "downloader"
     ],
     "supportedExtensions": [],
-    "lastUpdated": "2026-01-17",
+    "lastUpdated": "2026-01-18",
     "discordUrl": "https://discord.gg/5Hus6fM",
     "githubUrl": "https://github.com/LagradOst/QuickNovel"
   },
@@ -623,7 +623,7 @@
   {
     "id": "nineanimator",
     "accentColor": "#FFEB02",
-    "downloads": 70652,
+    "downloads": 70670,
     "name": "NineAnimator",
     "status": "Discontinued",
     "contentTypes": [
@@ -639,13 +639,13 @@
       "streaming"
     ],
     "supportedExtensions": [],
-    "lastUpdated": "2026-01-17",
+    "lastUpdated": "2026-01-18",
     "githubUrl": "https://github.com/SuperMarcus/NineAnimator"
   },
   {
     "id": "paperback",
     "accentColor": "#E34C4C",
-    "downloads": 140862,
+    "downloads": 140882,
     "name": "Paperback",
     "status": "active",
     "contentTypes": [
@@ -661,7 +661,7 @@
       "extensions"
     ],
     "supportedExtensions": [],
-    "lastUpdated": "2026-01-17",
+    "lastUpdated": "2026-01-18",
     "officialSite": "https://paperback.moe/",
     "discordUrl": "https://discord.com/invite/jWCSt5zXFZ",
     "githubUrl": "https://github.com/Paperback-iOS/app"
@@ -669,7 +669,7 @@
   {
     "id": "aidoku",
     "accentColor": "#FF2F52",
-    "downloads": 159171,
+    "downloads": 159397,
     "name": "Aidoku",
     "status": "active",
     "contentTypes": [
@@ -685,7 +685,7 @@
       "sources"
     ],
     "supportedExtensions": [],
-    "lastUpdated": "2026-01-17",
+    "lastUpdated": "2026-01-18",
     "githubUrl": "https://github.com/Aidoku/Aidoku",
     "discordUrl": "https://discord.gg/kh2PYT8V8d",
     "officialSite": "https://aidoku.app/"
@@ -788,7 +788,7 @@
   },
   {
     "id": "seanime",
-    "downloads": 1846699,
+    "downloads": 1860738,
     "accentColor": "#1F1855",
     "name": "Seanime",
     "status": "active",
@@ -807,14 +807,14 @@
       "desktop"
     ],
     "supportedExtensions": [],
-    "lastUpdated": "2026-01-17",
+    "lastUpdated": "2026-01-18",
     "officialSite": "https://seanime.app/",
     "githubUrl": "https://github.com/5rahim/seanime",
     "discordUrl": "https://discord.gg/Sbr7Phzt6m"
   },
   {
     "id": "toru",
-    "downloads": 2555,
+    "downloads": 2557,
     "accentColor": "#C28A8E",
     "name": "Toru",
     "status": "active",
@@ -833,12 +833,12 @@
       "player"
     ],
     "supportedExtensions": [],
-    "lastUpdated": "2026-01-17",
+    "lastUpdated": "2026-01-18",
     "githubUrl": "https://github.com/sweetbbak/toru"
   },
   {
     "id": "suwayomi",
-    "downloads": 464545,
+    "downloads": 465002,
     "accentColor": "#35D4D5",
     "name": "Suwayomi",
     "status": "active",
@@ -857,13 +857,13 @@
       "tachidesk"
     ],
     "supportedExtensions": [],
-    "lastUpdated": "2026-01-17",
+    "lastUpdated": "2026-01-18",
     "githubUrl": "https://github.com/Suwayomi/Suwayomi-Server",
     "discordUrl": "https://discord.gg/DDZdqZWaHA"
   },
   {
     "id": "yacreader",
-    "downloads": 1420856,
+    "downloads": 1421799,
     "accentColor": "#EAB403",
     "name": "YACReader",
     "status": "active",
@@ -885,14 +885,14 @@
       "cbr"
     ],
     "supportedExtensions": [],
-    "lastUpdated": "2026-01-17",
+    "lastUpdated": "2026-01-18",
     "officialSite": "https://www.yacreader.com/",
     "githubUrl": "https://github.com/YACReader/yacreader",
     "discordUrl": "https://x.com/yacreader"
   },
   {
     "id": "koodo-reader",
-    "downloads": 1545403,
+    "downloads": 1546453,
     "accentColor": "#2C2C2C",
     "name": "Koodo Reader",
     "contentTypes": [
@@ -910,13 +910,13 @@
       "desktop"
     ],
     "supportedExtensions": [],
-    "lastUpdated": "2026-01-17",
+    "lastUpdated": "2026-01-18",
     "officialSite": "https://koodoreader.com",
     "githubUrl": "https://github.com/koodo-reader/koodo-reader"
   },
   {
     "id": "thorium",
-    "downloads": 798133,
+    "downloads": 799381,
     "accentColor": "#4788FD",
     "name": "Thorium Reader",
     "status": "active",
@@ -935,13 +935,13 @@
       "accessibility"
     ],
     "supportedExtensions": [],
-    "lastUpdated": "2026-01-17",
+    "lastUpdated": "2026-01-18",
     "officialSite": "https://www.edrlab.org/software/thorium-reader/",
     "githubUrl": "https://github.com/edrlab/thorium-reader"
   },
   {
     "id": "anikku",
-    "downloads": 80555,
+    "downloads": 81255,
     "accentColor": "#10858D",
     "name": "Anikku",
     "status": "active",
@@ -960,14 +960,14 @@
       "kohiden",
       "Yuzono-anime"
     ],
-    "lastUpdated": "2026-01-17",
+    "lastUpdated": "2026-01-18",
     "githubUrl": "https://github.com/komikku-app/anikku",
     "officialSite": "https://anikku-app.github.io/",
     "discordUrl": "https://discord.gg/85jB7V5AJR"
   },
   {
     "id": "anymex",
-    "downloads": 132104,
+    "downloads": 133313,
     "accentColor": "#000000",
     "name": "AnymeX",
     "status": "active",
@@ -992,14 +992,14 @@
       "novels"
     ],
     "supportedExtensions": [],
-    "lastUpdated": "2026-01-17",
+    "lastUpdated": "2026-01-18",
     "githubUrl": "https://github.com/RyanYuuki/AnymeX",
     "officialSite": "https://anymex.vercel.app/",
     "discordUrl": "https://discord.gg/5gAHhMvTcx"
   },
   {
     "id": "animiru",
-    "downloads": 196239,
+    "downloads": 196578,
     "accentColor": "#E748F8",
     "name": "Animiru",
     "status": "active",
@@ -1021,14 +1021,14 @@
     ],
     "forkOf": "Aniyomi",
     "upstreamUrl": "https://miyomi.pages.dev/software/aniyomi",
-    "lastUpdated": "2026-01-17",
+    "lastUpdated": "2026-01-18",
     "githubUrl": "https://github.com/quickdesh/Animiru",
     "officialSite": "https://aniyomi.org/forks/Animiru/",
     "discordUrl": "https://discord.gg/yDuHDMwxhv"
   },
   {
     "id": "comicrack-ce",
-    "downloads": 5025,
+    "downloads": 5152,
     "accentColor": "#C59190",
     "name": "ComicRack CE",
     "status": "active",
@@ -1047,7 +1047,7 @@
       "reader"
     ],
     "supportedExtensions": [],
-    "lastUpdated": "2026-01-17",
+    "lastUpdated": "2026-01-18",
     "githubUrl": "https://github.com/maforget/ComicRackCE",
     "discordUrl": "https://www.reddit.com/r/comicrackusers/comments/e0l28i/documents_and_scripts/"
   },
@@ -1082,7 +1082,7 @@
   },
   {
     "id": "koreader",
-    "downloads": 5684317,
+    "downloads": 5686029,
     "accentColor": "#00A89C",
     "name": "KOReader",
     "status": "active",
@@ -1101,13 +1101,13 @@
       "comics"
     ],
     "supportedExtensions": [],
-    "lastUpdated": "2026-01-17",
+    "lastUpdated": "2026-01-18",
     "githubUrl": "https://github.com/koreader/koreader",
     "officialSite": "https://koreader.rocks/"
   },
   {
     "id": "legado",
-    "downloads": 2521199,
+    "downloads": 2523433,
     "accentColor": "#4D4D4D",
     "name": "Legado",
     "status": "active",
@@ -1125,14 +1125,14 @@
       "extensions"
     ],
     "supportedExtensions": [],
-    "lastUpdated": "2026-01-17",
+    "lastUpdated": "2026-01-18",
     "githubUrl": "https://github.com/gedoor/legado",
     "officialSite": "https://gedoor.github.io/",
     "discordUrl": "https://discord.gg/VtUfRyzRXn"
   },
   {
     "id": "opencomic",
-    "downloads": 172319,
+    "downloads": 172454,
     "accentColor": "#D14035",
     "name": "OpenComic",
     "status": "active",
@@ -1153,7 +1153,7 @@
       "multi-platform"
     ],
     "supportedExtensions": [],
-    "lastUpdated": "2026-01-17",
+    "lastUpdated": "2026-01-18",
     "githubUrl": "https://github.com/ollm/OpenComic",
     "officialSite": "https://opencomic.app/",
     "discordUrl": ""
@@ -1183,7 +1183,7 @@
   },
   {
     "id": "shiru",
-    "downloads": 945024,
+    "downloads": 955045,
     "accentColor": "#151420",
     "name": "Shiru",
     "status": "active",
@@ -1205,12 +1205,12 @@
       "plugins"
     ],
     "supportedExtensions": [],
-    "lastUpdated": "2026-01-17",
+    "lastUpdated": "2026-01-18",
     "githubUrl": "https://github.com/RockinChaos/Shiru"
   },
   {
     "id": "yomikiru",
-    "downloads": 70515,
+    "downloads": 70626,
     "accentColor": "#9872A5",
     "name": "Yomikiru",
     "status": "active",
@@ -1231,12 +1231,12 @@
       "epub"
     ],
     "supportedExtensions": [],
-    "lastUpdated": "2026-01-17",
+    "lastUpdated": "2026-01-18",
     "githubUrl": "https://github.com/mienaiyami/yomikiru"
   },
   {
     "id": "tachiyomi-az",
-    "downloads": 272625,
+    "downloads": 272652,
     "accentColor": "#F4900C",
     "name": "Tachiyomi AZ",
     "status": "active",
@@ -1258,14 +1258,14 @@
     ],
     "forkOf": "Mihon",
     "upstreamUrl": "https://miyomi.pages.dev/software/mihon",
-    "lastUpdated": "2026-01-17",
+    "lastUpdated": "2026-01-18",
     "githubUrl": "https://github.com/az4521/TachiyomiAZ",
     "officialSite": "https://mihon.app/forks/TachiyomiAZ/",
     "discordUrl": "https://discord.gg/mihon"
   },
   {
     "id": "tachiyomi-at",
-    "downloads": 17645,
+    "downloads": 17669,
     "accentColor": "#FF4040",
     "name": "Tachiyomi AT",
     "status": "active",
@@ -1288,13 +1288,13 @@
     ],
     "forkOf": "Mihon",
     "upstreamUrl": "https://miyomi.pages.dev/software/mihon",
-    "lastUpdated": "2026-01-17",
+    "lastUpdated": "2026-01-18",
     "githubUrl": "https://github.com/mannu691/TachiyomiAT",
     "discordUrl": "https://discord.com/invite/rkvXfVPRdq"
   },
   {
     "id": "animetail",
-    "downloads": 71362,
+    "downloads": 71712,
     "accentColor": "#56ABA8",
     "name": "Animetail",
     "status": "active",
@@ -1319,13 +1319,13 @@
     ],
     "forkOf": "Aniyomi",
     "upstreamUrl": "https://miyomi.pages.dev/software/aniyomi",
-    "lastUpdated": "2026-01-17",
+    "lastUpdated": "2026-01-18",
     "githubUrl": "https://github.com/Animetailapp/Animetail",
     "discordUrl": "https://discord.gg/fvskrQZb9j"
   },
   {
     "id": "readest",
-    "downloads": 985501,
+    "downloads": 986637,
     "accentColor": "#BA5E28",
     "name": "Readest",
     "status": "active",
@@ -1351,14 +1351,14 @@
       "reader"
     ],
     "supportedExtensions": [],
-    "lastUpdated": "2026-01-17",
+    "lastUpdated": "2026-01-18",
     "githubUrl": "https://github.com/readest/readest",
     "officialSite": "https://readest.com",
     "discordUrl": "https://discord.gg/gntyVNk3BJ"
   },
   {
     "id": "sora",
-    "downloads": 10080,
+    "downloads": 10106,
     "accentColor": "#F6F05A",
     "name": "Sora",
     "status": "active",
@@ -1378,13 +1378,13 @@
       "player"
     ],
     "supportedExtensions": [],
-    "lastUpdated": "2026-01-17",
+    "lastUpdated": "2026-01-18",
     "githubUrl": "https://github.com/cranci1/Sora",
     "discordUrl": "https://discord.gg/XR3SrmUbpd"
   },
   {
     "id": "unyo",
-    "downloads": 23100,
+    "downloads": 23133,
     "accentColor": "#A3A3CE",
     "name": "Unyo",
     "status": "active",
@@ -1405,12 +1405,12 @@
       "desktop"
     ],
     "supportedExtensions": [],
-    "lastUpdated": "2026-01-17",
+    "lastUpdated": "2026-01-18",
     "githubUrl": "https://github.com/K3vinb5/Unyo"
   },
   {
     "id": "totoro",
-    "downloads": 13526,
+    "downloads": 13531,
     "accentColor": "#595959",
     "name": "Totoro",
     "status": "active",
@@ -1429,13 +1429,13 @@
       "streaming"
     ],
     "supportedExtensions": [],
-    "lastUpdated": "2026-01-17",
+    "lastUpdated": "2026-01-18",
     "githubUrl": "https://github.com/insomniachi/Totoro",
     "discordUrl": "https://discord.gg/KHxdxuCjhX"
   },
   {
     "id": "zenshin",
-    "downloads": 4048,
+    "downloads": 4052,
     "accentColor": "#611BAD",
     "name": "Zenshin",
     "status": "active",
@@ -1457,13 +1457,13 @@
       "streaming"
     ],
     "supportedExtensions": [],
-    "lastUpdated": "2026-01-17",
+    "lastUpdated": "2026-01-18",
     "githubUrl": "https://github.com/hitarth-gg/zenshin",
     "officialSite": "https://hitarth-gg.github.io/zenshin-website"
   },
   {
     "id": "houdoku",
-    "downloads": 749568,
+    "downloads": 750040,
     "accentColor": "#FFB7C5",
     "name": "Houdoku",
     "status": "active",
@@ -1484,7 +1484,7 @@
       "reader"
     ],
     "supportedExtensions": [],
-    "lastUpdated": "2026-01-17",
+    "lastUpdated": "2026-01-18",
     "githubUrl": "https://github.com/xgi/houdoku",
     "officialSite": "https://houdoku.org"
   },
@@ -1511,7 +1511,7 @@
   },
   {
     "id": "miru-app",
-    "downloads": 449654,
+    "downloads": 449853,
     "accentColor": "#FFCBC4",
     "name": "Miru App",
     "status": "active",
@@ -1531,11 +1531,11 @@
     ],
     "officialSite": "https://miru.js.org/en/",
     "githubUrl": "https://github.com/miru-project/miru-app",
-    "lastUpdated": "2026-01-17"
+    "lastUpdated": "2026-01-18"
   },
   {
     "id": "IReader",
-    "downloads": 41216,
+    "downloads": 41509,
     "name": "IReader",
     "accentColor": "#A68DB8",
     "status": "active",
@@ -1564,7 +1564,7 @@
       "ireader-extensions",
       "lnreader-plugins"
     ],
-    "lastUpdated": "2026-01-17",
+    "lastUpdated": "2026-01-18",
     "githubUrl": "https://github.com/IReaderorg/IReader",
     "officialSite": "https://ireaderorg.netlify.app/",
     "discordUrl": "https://discord.com/invite/HBU6zD8c5v",
@@ -1625,7 +1625,7 @@
   },
   {
     "id": "kotatsu-redo",
-    "downloads": 25634,
+    "downloads": 26208,
     "accentColor": "#9F0081",
     "name": "Kotatsu Redo",
     "status": "active",
@@ -1645,7 +1645,7 @@
     "upstreamUrl": "https://miyomi.pages.dev/software/kotatsu",
     "githubUrl": "https://github.com/Kotatsu-Redo/Kotatsu-Redo",
     "discordUrl": "https://discord.gg/77PJztUXc",
-    "lastUpdated": "2026-01-17"
+    "lastUpdated": "2026-01-18"
   },
   {
     "id": "doki",
@@ -1709,7 +1709,7 @@
     "id": "kototoro",
     "name": "Kototoro",
     "status": "active",
-    "downloads": 3054,
+    "downloads": 3241,
     "author": "skepsun",
     "contentTypes": [
       "Manga",
@@ -1728,7 +1728,7 @@
     ],
     "forkOf": "Kotatsu",
     "upstreamUrl": "https://miyomi.pages.dev/software/kotatsu",
-    "lastUpdated": "2026-01-17",
+    "lastUpdated": "2026-01-18",
     "githubUrl": "https://github.com/skepsun/Kototoro",
     "discordUrl": "https://discord.com/invite/PTd2bYgz9m"
   },
