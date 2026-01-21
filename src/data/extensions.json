@@ -13,11 +13,10 @@
     "github": "https://github.com/Kohi-den/extensions-source",
     "supportedApps": [
       "aniyomi",
-      "dantotsu",
       "animiru",
       "anikku"
     ],
-    "info": "Community-maintained extension repository for Aniyomi and it's variants.",
+    "info": "Extension repository for Aniyomi and it's variants.",
     "keywords": [
       "anime",
       "repo"
@@ -76,11 +75,10 @@
   },
   {
     "id": "secozzi",
-    "name": "Secozzi",
+    "name": "Secozzi's Repo",
     "logoUrl": "https://github.com/Secozzi.png",
     "types": [
-      "Anime",
-      "Manga"
+      "Anime"
     ],
     "region": "ALL",
     "accentColor": "#504150",
@@ -89,14 +87,14 @@
     "github": "https://github.com/Secozzi/aniyomi-extensions",
     "supportedApps": [
       "aniyomi",
-      "mihon",
+      "anikku",
+      "animiru",
       "mangayomi"
     ],
-    "info": "Multi-region extensions for anime and manga",
+    "info": "Repo for Aniyomi & it's varients for Jellyfin, Stremio and Torbox",
     "keywords": [
       "secozzi",
-      "aniyomi extensions",
-      "mihon extensions",
+      "Torbox",
       "Jellyfin",
       "Stremio"
     ],
@@ -127,11 +125,10 @@
   },
   {
     "id": "hollow",
-    "name": "hollow",
+    "name": "Hollow's Repo",
     "logoUrl": "https://codeberg.org/avatars/adda4bc8aeef752bb536aed03fa01f63?size=200",
     "types": [
-      "Anime",
-      "Manga"
+      "Anime"
     ],
     "region": "FR",
     "accentColor": "#990066",
@@ -140,11 +137,11 @@
     "github": "https://codeberg.org/hollow/aniyomi-extensions-fr",
     "supportedApps": [
       "aniyomi",
-      "mihon"
+      "animiru",
+      "anikku"
     ],
-    "info": "French extensions for anime and manga",
+    "info": "French extensions for Aniyomi and its variants.",
     "keywords": [
-      "hollow",
       "french"
     ],
     "lastUpdated": "2025-11-15"
@@ -200,25 +197,24 @@
     "lastUpdated": "2025-11-15"
   },
   {
-    "id": "kareadita-tach-extension",
-    "name": "Kavita Extension",
+    "id": "kavita",
+    "name": "Kavita",
     "logoUrl": "https://github.com/Kareadita.png",
     "types": [
-      "Manga"
+      "Kavita"
     ],
-    "region": "ALL",
     "accentColor": "#4AC694",
-    "autoUrl": "tachiyomi://add-repo?url=https://raw.githubusercontent.com/Kareadita/tach-extension/repo/index.min.json",
-    "manualUrl": "https://raw.githubusercontent.com/Kareadita/tach-extension/repo/index.min.json",
-    "github": "https://github.com/Kareadita/tach-extension",
+    "website": "https://wiki.kavitareader.com/guides/",
     "supportedApps": [
       "mihon",
-      "komikku"
+      "aidoku",
+      "paperback",
+      "koreader",
+      "panels"
     ],
-    "info": "Kavita Extension for Mihon",
+    "info": "Connect Kavita to Mihon, Aidoku, Paperback, and other supported readers. Setup details are in the respective 3rd Party Clients guide.",
     "keywords": [
-      "tachiyomi",
-      "mihon"
+      "self-hosted"
     ],
     "lastUpdated": "2025-07-30"
   },
@@ -229,20 +225,16 @@
     "types": [
       "Suwayomi"
     ],
-    "region": "ALL",
     "accentColor": "#3E3F44",
     "autoUrl": "tachiyomi://add-repo?url=https://raw.githubusercontent.com/Suwayomi/tachiyomi-extension/repo/index.min.json",
     "manualUrl": "https://raw.githubusercontent.com/Suwayomi/tachiyomi-extension/repo/index.min.json",
-    "website": "https://suwayomi.org/",
     "github": "https://github.com/Suwayomi/tachiyomi-extension",
     "supportedApps": [
-      "tachiyomi",
       "mihon"
     ],
-    "info": "Official Suwayomi extension repo for Tachiyomi and forks.",
+    "info": "Official Suwayomi extension repo for Tachiyomi and variants.",
     "keywords": [
-      "suwayomi",
-      "tachiyomi"
+      "self-hosted"
     ],
     "lastUpdated": "2025-08-15"
   },
@@ -608,7 +600,7 @@
     "name": "Manyayomi Custom Buttons",
     "github": "https://github.com/Schnitzel5/mangayomi-custom-buttons",
     "types": [
-      "Anime"
+      "Mangayomi"
     ],
     "supportedApps": [
       "mangayomi"
@@ -625,7 +617,7 @@
       "mangayomi"
     ],
     "types": [
-      "Manga"
+      "Mangayomi"
     ]
   },
   {

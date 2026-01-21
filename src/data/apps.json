@@ -61,7 +61,8 @@
     ],
     "supportedExtensions": [
       "keiyoushi",
-      "Yuzono-manga"
+      "Yuzono-manga",
+      "kavita"
     ],
     "lastUpdated": "2026-01-20",
     "githubUrl": "https://github.com/mihonapp/mihon",
@@ -92,9 +93,8 @@
     ],
     "logoUrl": "https://raw.githubusercontent.com/Gent8/Taison/refs/heads/main/docs/images/iconCropped.png",
     "keywords": [
-      "mihonapp",
-      "kahon",
-      "quality of life"
+      "Golden",
+      "fork"
     ],
     "supportedExtensions": [
       "keiyoushi",
@@ -203,7 +203,7 @@
   {
     "id": "tachiyomi",
     "accentColor": "#2E84BF",
-    "downloads": 154000,
+    "downloads": 1,
     "name": "Tachiyomi",
     "status": "discontinued",
     "contentTypes": [
@@ -856,7 +856,9 @@
       "server",
       "tachidesk"
     ],
-    "supportedExtensions": [],
+    "supportedExtensions": [
+      "keiyoushi"
+    ],
     "lastUpdated": "2026-01-20",
     "githubUrl": "https://github.com/Suwayomi/Suwayomi-Server",
     "discordUrl": "https://discord.gg/DDZdqZWaHA"
@@ -958,7 +960,8 @@
     ],
     "supportedExtensions": [
       "kohiden",
-      "Yuzono-anime"
+      "Yuzono-anime",
+      "secozzi"
     ],
     "lastUpdated": "2026-01-20",
     "githubUrl": "https://github.com/komikku-app/anikku",
@@ -1315,6 +1318,7 @@
     ],
     "supportedExtensions": [
       "kohiden",
+      "keiyoushi",
       "secozzi"
     ],
     "forkOf": "Aniyomi",
@@ -1652,7 +1656,7 @@
     "downloads": 4500,
     "accentColor": "#1976D2",
     "name": "Doki",
-    "status": "discontinued",
+    "status": "abandoned",
     "contentTypes": [
       "Manga"
     ],
