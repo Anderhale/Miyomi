@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowLeft, Download, Copy, Github, Globe, Calendar } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Download, Copy, Github, Globe, Calendar } from 'lucide-react';
 import { toast } from 'sonner';
 import { motion, AnimatePresence } from 'motion/react';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -30,6 +30,54 @@ export function ExtensionDetailPage({ extensionId, onNavigate }: ExtensionDetail
   const { isFeedbackOpen, handleToggle, handleClose } = useFeedbackState();
   const location = useLocation();
   const navigate = useNavigate();
+
+  // Scroll Container Logic
+  const scrollContainerRef = React.useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = React.useState(false);
+  const [canScrollRight, setCanScrollRight] = React.useState(true);
+
+  const checkScroll = () => {
+    const el = scrollContainerRef.current;
+    if (!el) return;
+    setCanScrollLeft(el.scrollLeft > 0);
+    // Allow a small buffer (1px) for floating point issues
+    setCanScrollRight(el.scrollLeft < el.scrollWidth - el.clientWidth - 1);
+  };
+
+  React.useEffect(() => {
+    const el = scrollContainerRef.current;
+    if (!el) return;
+
+    const onWheel = (e: WheelEvent) => {
+      if (e.deltaY !== 0) {
+        e.preventDefault();
+        el.scrollLeft += e.deltaY;
+      }
+    };
+
+    el.addEventListener('wheel', onWheel, { passive: false });
+    el.addEventListener('scroll', checkScroll);
+
+    // Initial check
+    checkScroll();
+    window.addEventListener('resize', checkScroll);
+
+    return () => {
+      el.removeEventListener('wheel', onWheel);
+      el.removeEventListener('scroll', checkScroll);
+      window.removeEventListener('resize', checkScroll);
+    };
+  }, [supportedApps]);
+
+  const scroll = (direction: 'left' | 'right') => {
+    const el = scrollContainerRef.current;
+    if (!el) return;
+    const scrollAmount = el.clientWidth * 0.8;
+    el.scrollBy({
+      left: direction === 'left' ? -scrollAmount : scrollAmount,
+      behavior: 'smooth'
+    });
+  };
 
   // Mobile detection for different animation approach
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
@@ -423,38 +471,87 @@ export function ExtensionDetailPage({ extensionId, onNavigate }: ExtensionDetail
           <p className="text-[var(--text-secondary)] font-['Inter',sans-serif] mb-4" style={{ fontSize: '15px' }}>
             This source is compatible with the following apps:
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-            {displayedApps.map((app) => (
-              <AppGridCard
-                key={app.id}
-                appId={app.id}
-                name={app.name}
-                description={app.description}
-                tags={app.contentTypes as any}
-                platforms={app.platforms as any}
-                iconColor={app.accentColor || app.iconColor}
-                logoUrl={app.logoUrl}
-                rating={app.rating}
-                downloads={app.downloads}
-                forkOf={app.forkOf}
-                upstreamUrl={app.upstreamUrl}
-                onClick={() => onNavigate?.(`/software/${app.id}`)}
-              />
-            ))}
-          </div>
-          <div className="flex justify-center mt-4">
+
+          <div className="relative">
+            <style dangerouslySetInnerHTML={{
+              __html: `
+              .no-scrollbar::-webkit-scrollbar { display: none; }
+              .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+            `}} />
+
+            {/* Left Gradient Fade */}
+            <div
+              className={`absolute left-0 top-0 bottom-6 w-56 z-40 pointer-events-none transition-opacity duration-500 ${canScrollLeft ? 'opacity-100' : 'opacity-0'}`}
+              style={{ background: 'linear-gradient(to right, #020617 0%, #020617 25%, rgba(2, 6, 23, 0) 100%)' }}
+            />
+
+            {/* Right Gradient Fade */}
+            <div
+              className={`absolute right-0 top-0 bottom-6 w-56 z-40 pointer-events-none transition-opacity duration-500 ${canScrollRight ? 'opacity-100' : 'opacity-0'}`}
+              style={{ background: 'linear-gradient(to left, #020617 0%, #020617 25%, rgba(2, 6, 23, 0) 100%)' }}
+            />
+
+            {/* Scroll Left Arrow */}
             <button
-              onClick={() =>
-                onNavigate?.(
-                  `/software?content=${encodeURIComponent(viewMoreContentType)}`
-                )
-              }
-              className="px-4 py-2 bg-[var(--chip-bg)] hover:bg-[var(--brand)] text-[var(--brand)] hover:text-white rounded-xl transition-all font-['Inter',sans-serif]"
-              style={{ fontWeight: 600 }}
+              onClick={() => scroll('left')}
+              className={`absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 z-50 w-12 h-12 flex items-center justify-center rounded-full bg-[var(--bg-elev-3)] text-[var(--text-primary)] shadow-[0_4px_20px_rgba(0,0,0,0.6)] border border-[var(--divider)] hover:scale-110 hover:bg-[var(--brand)] hover:text-white transition-all duration-200 pointer-events-auto hidden md:flex ${canScrollLeft ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
+              aria-label="Scroll left"
             >
-              {hasMoreApps ? 'See all supported apps' : 'Browse more apps'}
+              <ArrowLeft className="w-6 h-6" />
             </button>
+
+            {/* Scroll Right Arrow */}
+            <button
+              onClick={() => scroll('right')}
+              className={`absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-50 w-12 h-12 flex items-center justify-center rounded-full bg-[var(--bg-elev-3)] text-[var(--text-primary)] shadow-[0_4px_20px_rgba(0,0,0,0.6)] border border-[var(--divider)] hover:scale-110 hover:bg-[var(--brand)] hover:text-white transition-all duration-200 pointer-events-auto hidden md:flex ${canScrollRight ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
+              aria-label="Scroll right"
+            >
+              <ArrowRight className="w-6 h-6" />
+            </button>
+
+            <div
+              ref={scrollContainerRef}
+              className="
+                  flex
+                  overflow-x-auto
+                  gap-4
+                  pt-12
+                  pb-6
+                  no-scrollbar
+              "
+            >
+              {supportedApps.map((app) => (
+                <div
+                  key={app.id}
+                  className="
+                        flex-shrink-0
+                        w-[320px]
+                        min-w-[320px]
+                        max-w-[320px]
+                    "
+                >
+                  <AppGridCard
+                    appId={app.id}
+                    name={app.name}
+                    description={app.description}
+                    tags={app.contentTypes as any}
+                    platforms={app.platforms as any}
+                    iconColor={app.accentColor || app.iconColor}
+                    logoUrl={app.logoUrl}
+                    rating={app.rating}
+                    downloads={app.downloads}
+                    forkOf={app.forkOf}
+                    upstreamUrl={app.upstreamUrl}
+                    onClick={() => onNavigate?.(`/software/${app.id}`)}
+                  />
+                </div>
+              ))}
+              {/* Spacer to allow scrolling to the very end */}
+              <div className="w-1 flex-shrink-0" />
+            </div>
           </div>
+
+
         </div>
       )}
 

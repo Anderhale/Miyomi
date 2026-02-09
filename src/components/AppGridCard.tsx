@@ -53,11 +53,10 @@ export function AppGridCard({
     <motion.button
       layoutId={!isMobile ? `app-card-${appId}` : undefined}
       onClick={onClick}
-      whileHover={{ y: -4 }}
+      whileHover={{ y: -4, boxShadow: '0 12px 30px 0 rgba(0,0,0,0.25)', borderColor: 'var(--brand)' }}
       whileTap={{ scale: 0.98 }}
       transition={{ duration: 0.2 }}
-      className="p-3 sm:p-6 bg-[var(--bg-surface)] border border-[var(--divider)] rounded-2xl hover:shadow-lg hover:border-[var(--brand)] transition-all text-left w-full group flex flex-col"
-      style={{ boxShadow: '0 6px 20px 0 rgba(0,0,0,0.08)' }}
+      className="p-3 sm:p-6 bg-[var(--bg-surface)] border border-[var(--divider)] rounded-2xl transition-all text-left w-full group flex flex-col h-[200px]"
     >
       {/* App Icon and Title - Centered on mobile, left-aligned on desktop */}
       <div className="flex flex-col sm:flex-row items-center sm:items-start gap-2 sm:gap-4 mb-2 sm:mb-4">

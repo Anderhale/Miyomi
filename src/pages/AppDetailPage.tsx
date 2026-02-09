@@ -1,7 +1,7 @@
 import React from 'react';
-import { ArrowLeft, Download, Github, Globe, PlayCircle, BookOpen, GitFork } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Download, Github, Globe, PlayCircle, BookOpen, GitFork } from 'lucide-react';
 import { motion } from "framer-motion";
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { PlatformBadge } from '../components/PlatformBadge';
 import { TagBadge } from './../components/TagBadge';
 import { ParticleBackground } from '../components/ParticleBackground';
@@ -109,7 +109,8 @@ const ActiveHaloPulseDot: React.FC<Props> = ({
         {ariaLabel}
       </span>
 
-      <style jsx>{`
+      <style dangerouslySetInnerHTML={{
+        __html: `
         .halo {
           width: var(--core);
           height: var(--core);
@@ -139,7 +140,7 @@ const ActiveHaloPulseDot: React.FC<Props> = ({
         @media (prefers-reduced-motion: reduce) {
           .halo, .halo--stagger { animation: none; opacity: 0; }
         }
-      `}</style>
+      `}} />
     </span>
   );
 };
@@ -177,9 +178,24 @@ interface AppDetailPageProps {
   onNavigate?: (path: string) => void;
 }
 
-export function AppDetailPage({ appId, onNavigate }: AppDetailPageProps) {
+export function AppDetailPage() {
+  const { appId } = useParams<{ appId: string }>();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const onNavigate = (path: string) => navigate(path);
+
   const { apps } = useAppMeta();
-  const app = apps.find(a => a.id === appId);
+  const app = apps.find(a => a.id === appId || '');
+
+  // Mobile detection
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+
+  // Fetch GitHub release data
+  const { release, loading: releaseLoading } = useGitHubRelease(
+    app?.githubUrl,
+    app?.lastUpdated
+  );
+
   const accentColor = useAccentColor({
     logoUrl: app?.logoUrl,
     preferredColor: app?.accentColor || app?.iconColor,
@@ -189,20 +205,55 @@ export function AppDetailPage({ appId, onNavigate }: AppDetailPageProps) {
     .map((extensionId) => getExtensionById(extensionId))
     .filter((ext): ext is NonNullable<typeof ext> => Boolean(ext));
   const recommendedExtensions =
-    supportedExtensions.length > 0 ? supportedExtensions : getAppExtensions(appId);
-  const displayedExtensions = recommendedExtensions.slice(0, 3);
-  const hasMoreExtensions = recommendedExtensions.length > displayedExtensions.length;
-  const location = useLocation();
-  const navigate = useNavigate();
+    appId && supportedExtensions.length > 0 ? supportedExtensions : getAppExtensions(appId || '');
 
-  // Mobile detection for different animation approach
-  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
 
-  // Fetch GitHub release data
-  const { release, loading: releaseLoading } = useGitHubRelease(
-    app?.githubUrl,
-    app?.lastUpdated
-  );
+
+  // Scroll Container Logic
+  const scrollContainerRef = React.useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = React.useState(false);
+  const [canScrollRight, setCanScrollRight] = React.useState(true);
+
+  const checkScroll = () => {
+    const el = scrollContainerRef.current;
+    if (!el) return;
+    setCanScrollLeft(el.scrollLeft > 0);
+    // Allow a small buffer (1px) for floating point issues
+    setCanScrollRight(el.scrollLeft < el.scrollWidth - el.clientWidth - 1);
+  };
+
+  React.useEffect(() => {
+    const el = scrollContainerRef.current;
+    if (!el) return;
+
+    const onWheel = (e: WheelEvent) => {
+      // If hovering the container, and scrolling vertically
+      if (e.deltaY !== 0) {
+        e.preventDefault();
+        el.scrollLeft += e.deltaY;
+      }
+    };
+
+    el.addEventListener('wheel', onWheel, { passive: false });
+    el.addEventListener('scroll', checkScroll);
+
+    // Initial check
+    checkScroll();
+    window.addEventListener('resize', checkScroll);
+
+    return () => {
+      el.removeEventListener('wheel', onWheel);
+      el.removeEventListener('scroll', checkScroll);
+      window.removeEventListener('resize', checkScroll);
+    };
+  }, [recommendedExtensions]);
+
+  const scroll = (direction: 'left' | 'right') => {
+    const el = scrollContainerRef.current;
+    if (!el) return;
+    const amount = 320; // Scroll by one card width approx
+    el.scrollBy({ left: direction === 'right' ? amount : -amount, behavior: 'smooth' });
+  };
 
   const formatDate = (dateString?: string) => {
     if (!dateString) return 'Unknown';
@@ -246,7 +297,7 @@ export function AppDetailPage({ appId, onNavigate }: AppDetailPageProps) {
 
   const statusBadge = React.useMemo<React.ReactNode>(() => {
     const s = app?.status?.trim().toLowerCase();
-    if (!s || s === 'active') return null;
+    if (!app || !s || s === 'active') return null;
 
     const style = STATUS_STYLE_MAP[s] ?? DEFAULT_STATUS_STYLE;
     return (
@@ -260,7 +311,7 @@ export function AppDetailPage({ appId, onNavigate }: AppDetailPageProps) {
           borderColor: style.border,
         }}
       >
-        {getStatusLabel(app.status)}
+        {getStatusLabel(app.status || '')}
       </span>
     );
   }, [app?.status]);
@@ -496,9 +547,9 @@ export function AppDetailPage({ appId, onNavigate }: AppDetailPageProps) {
       {/* App Header */}
       <motion.div
         layoutId={!isMobile ? `app-card-${appId}` : undefined}
-        initial={isMobile ? { opacity: 0, x: 20 } : false}
-        animate={isMobile ? { opacity: 1, x: 0 } : false}
-        exit={isMobile ? { opacity: 0, x: -20 } : false}
+        initial={isMobile ? { opacity: 0, x: 20 } : undefined}
+        animate={isMobile ? { opacity: 1, x: 0 } : undefined}
+        exit={isMobile ? { opacity: 0, x: -20 } : undefined}
         transition={isMobile ? { duration: 0.2, ease: "easeOut" } : {
           type: "spring",
           stiffness: 260,
@@ -629,27 +680,76 @@ export function AppDetailPage({ appId, onNavigate }: AppDetailPageProps) {
           <p className="text-[var(--text-secondary)] font-['Inter',sans-serif] mb-4" style={{ fontSize: '15px' }}>
             Extension sources compatible with {app.name}:
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {displayedExtensions.map((ext) => (
-              <ExtensionGridCard
-                key={ext.id}
-                extension={ext}
-                onSelect={(extensionId) => onNavigate?.(`/extensions/${extensionId}`)}
-              />
-            ))}
-          </div>
-          <div className="flex justify-center mt-4">
+
+          <div className="relative">
+            <style dangerouslySetInnerHTML={{
+              __html: `
+              .no-scrollbar::-webkit-scrollbar { display: none; }
+              .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+            `}} />
+            {/* Left Gradient Fade */}
+            <div
+              className={`absolute left-0 top-0 bottom-6 w-56 z-40 pointer-events-none transition-opacity duration-500 ${canScrollLeft ? 'opacity-100' : 'opacity-0'}`}
+              style={{ background: 'linear-gradient(to right, #020617 0%, #020617 25%, rgba(2, 6, 23, 0) 100%)' }}
+            />
+
+            {/* Right Gradient Fade */}
+            <div
+              className={`absolute right-0 top-0 bottom-6 w-56 z-40 pointer-events-none transition-opacity duration-500 ${canScrollRight ? 'opacity-100' : 'opacity-0'}`}
+              style={{ background: 'linear-gradient(to left, #020617 0%, #020617 25%, rgba(2, 6, 23, 0) 100%)' }}
+            />
+
+            {/* Scroll Left Arrow */}
             <button
-              onClick={() => onNavigate?.(`/extensions?app=${encodeURIComponent(app.name)}`)}
-              className="px-4 py-2 bg-[var(--chip-bg)] hover:bg-[var(--brand)] text-[var(--brand)] hover:text-white rounded-xl transition-all font-['Inter',sans-serif]"
-              style={{ fontWeight: 600 }}
+              onClick={() => scroll('left')}
+              className={`absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 z-50 w-12 h-12 flex items-center justify-center rounded-full bg-[var(--bg-elev-3)] text-[var(--text-primary)] shadow-[0_4px_20px_rgba(0,0,0,0.6)] border border-[var(--divider)] hover:scale-110 hover:bg-[var(--brand)] hover:text-white transition-all duration-200 pointer-events-auto hidden md:flex ${canScrollLeft ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
+              aria-label="Scroll left"
             >
-              {hasMoreExtensions ? 'View all extensions' : 'Browse more extensions'}
+              <ArrowLeft className="w-6 h-6" />
             </button>
+
+            {/* Scroll Right Arrow */}
+            <button
+              onClick={() => scroll('right')}
+              className={`absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-50 w-12 h-12 flex items-center justify-center rounded-full bg-[var(--bg-elev-3)] text-[var(--text-primary)] shadow-[0_4px_20px_rgba(0,0,0,0.6)] border border-[var(--divider)] hover:scale-110 hover:bg-[var(--brand)] hover:text-white transition-all duration-200 pointer-events-auto hidden md:flex ${canScrollRight ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
+              aria-label="Scroll right"
+            >
+              <ArrowRight className="w-6 h-6" />
+            </button>
+
+            <div
+              ref={scrollContainerRef}
+              className="
+                  flex
+                  overflow-x-auto
+                  gap-4
+                  pt-12
+                  pb-6
+                  no-scrollbar
+              "
+            >
+              {recommendedExtensions.map((ext) => (
+                <div
+                  key={ext.id}
+                  className="
+                        flex-shrink-0
+                        w-[320px]
+                        min-w-[320px]
+                        max-w-[320px]
+                    "
+                >
+                  <ExtensionGridCard
+                    extension={ext}
+                    onSelect={(extensionId) => onNavigate?.(`/extensions/${extensionId}`)}
+                  />
+                </div>
+              ))}
+              {/* Spacer to allow scrolling to the very end */}
+              <div className="w-1 flex-shrink-0" />
+            </div>
           </div>
         </div>
       )}
-
 
       {hasTutorials && (
         <div className="mb-6 sm:mb-8">
