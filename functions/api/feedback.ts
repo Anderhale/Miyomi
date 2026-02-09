@@ -1,7 +1,8 @@
 interface FeedbackRequest {
   type: string;
   message: string;
-  page: string;
+  page?: string;
+  sourcePage?: string;
   timestamp: string;
 }
 
@@ -41,11 +42,14 @@ export async function onRequestPost(context: any) {
 
     const emoji = emojiMap[body.type] || '💬';
 
+    // Use sourcePage if available, otherwise page, otherwise 'Unknown'
+    const pageInfo = body.sourcePage || body.page || 'Anonymous';
+
     const telegramMessage = `
 ${emoji} <b>New Feedback - Miyomi</b>
 
 <b>Type:</b> ${body.type.charAt(0).toUpperCase() + body.type.slice(1)}
-<b>Page:</b> ${body.page}
+<b>Source:</b> ${pageInfo}
 <b>Time:</b> ${new Date(body.timestamp).toLocaleString()}
 
 <b>Message:</b>

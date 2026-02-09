@@ -3,9 +3,6 @@ import { BookOpen, Download, Settings, HelpCircle, ChevronDown, ArrowRight, Spar
 import { useLocation, useNavigationType } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { guideCategories } from '../data';
-import { FeedbackPanel } from '../components/FeedbackPanel';
-import { FeedbackTrigger } from '../components/FeedbackTrigger';
-import { useFeedbackState } from '../hooks/useFeedbackState';
 
 interface GuidesPageProps {
   onNavigate?: (path: string) => void;
@@ -17,15 +14,14 @@ export function GuidesPage({ onNavigate }: GuidesPageProps) {
   const location = useLocation();
   const navigationType = useNavigationType();
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const { isFeedbackOpen, handleToggle, handleClose } = useFeedbackState();
-  
+
   // Initialize state from localStorage or location state
   const [expandedCategories, setExpandedCategories] = useState<Set<string>>(() => {
     // If coming back from a guide detail page, restore state
     if (navigationType === 'POP' && location.state?.expandedCategories) {
       return new Set(location.state.expandedCategories);
     }
-    
+
     // Otherwise try localStorage
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
@@ -36,7 +32,7 @@ export function GuidesPage({ onNavigate }: GuidesPageProps) {
     } catch (e) {
       console.error('Failed to restore guides state:', e);
     }
-    
+
     // Default to first category expanded
     return new Set([guideCategories[0]?.id].filter(Boolean));
   });
@@ -122,7 +118,7 @@ export function GuidesPage({ onNavigate }: GuidesPageProps) {
       expandedCategories: Array.from(expandedCategories),
       scrollPosition: window.scrollY,
     };
-    
+
     // Navigate with state
     if (onNavigate) {
       onNavigate(`/guides/${slug}`);
@@ -140,16 +136,13 @@ export function GuidesPage({ onNavigate }: GuidesPageProps) {
       <div className="mb-8 relative">
         {/* Decorative background glow - positioned safely */}
         <div className="absolute -top-4 left-0 w-32 h-32 bg-gradient-to-br from-[#FFB3C1]/20 to-[#FF6B9D]/10 rounded-full blur-3xl opacity-60 pointer-events-none -z-10"></div>
-        
-        <div className="flex items-center gap-3 mb-4">
-          <h1
-            className="text-[var(--text-primary)] font-['Poppins',sans-serif]"
-            style={{ fontSize: 'clamp(32px, 5vw, 40px)', lineHeight: '1.2', fontWeight: 700 }}
-          >
-            Guides
-          </h1>
-          <FeedbackTrigger isOpen={isFeedbackOpen} onToggle={handleToggle} title="Guides" />
-        </div>
+
+        <h1
+          className="text-[var(--text-primary)] font-['Poppins',sans-serif]"
+          style={{ fontSize: 'clamp(32px, 5vw, 40px)', lineHeight: '1.2', fontWeight: 700 }}
+        >
+          Guides
+        </h1>
 
         <p className="text-[var(--text-secondary)] font-['Inter',sans-serif] mb-6" style={{ fontSize: '17px', lineHeight: '1.6' }}>
           Step-by-step tutorials to help you use and understand various apps and extensions.
@@ -203,21 +196,12 @@ export function GuidesPage({ onNavigate }: GuidesPageProps) {
         </div>
       </div>
 
-      {/* Inline Feedback Panel */}
-      <AnimatePresence>
-        {isFeedbackOpen && (
-          <div className="mb-8">
-            <FeedbackPanel page="guides" onClose={handleClose} />
-          </div>
-        )}
-      </AnimatePresence>
-
       {/* Guide Categories */}
       <div className="space-y-4 mb-12">
         {guideCategories.map((category, categoryIndex) => {
           const Icon = iconMap[category.icon];
           const isExpanded = expandedCategories.has(category.id);
-          
+
           return (
             <motion.div
               key={category.id}
@@ -287,7 +271,7 @@ export function GuidesPage({ onNavigate }: GuidesPageProps) {
                           >
                             {/* Hover glow effect */}
                             <div className="absolute inset-0 bg-gradient-to-r from-[var(--brand)]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                            
+
                             <div className="relative flex items-start gap-3">
                               {/* Number badge */}
                               <div className="flex-shrink-0 w-6 h-6 rounded-md bg-[var(--brand)]/10 flex items-center justify-center">
@@ -295,7 +279,7 @@ export function GuidesPage({ onNavigate }: GuidesPageProps) {
                                   {index + 1}
                                 </span>
                               </div>
-                              
+
                               {/* Guide title */}
                               <div className="flex-1 min-w-0">
                                 <span className="text-[var(--text-primary)] font-['Inter',sans-serif] group-hover:text-[var(--brand)] transition-colors line-clamp-2" style={{ fontSize: '14px', fontWeight: 500 }}>

@@ -14,7 +14,9 @@ import { AppDetailPage } from "./pages/AppDetailPage";
 import { ExtensionDetailPage } from "./pages/ExtensionDetailPage";
 import { NotFoundPage } from "./pages/NotFoundPage";
 import { SearchPage } from "./pages/SearchPage";
+import { FeedbackPage } from "./pages/FeedbackPage";
 import { ChristmasSnow } from './components/ChristmasSnow';
+import { FloatingFeedbackButton } from './components/FloatingFeedbackButton';
 import {
   BrowserRouter,
   Routes,
@@ -142,6 +144,7 @@ function AppContent() {
           />
           <Route path="/faq" element={<FAQPage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/feedback" element={<FeedbackPage />} />
           {/* Fallback for unknown routes */}
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
@@ -149,6 +152,9 @@ function AppContent() {
 
       {/* Footer */}
       <Footer />
+
+      {/* Floating Feedback Button */}
+      <FloatingFeedbackButton />
     </div>
   );
 }

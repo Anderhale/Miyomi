@@ -7,10 +7,6 @@ import { AppListCard } from '../components/AppListCard';
 import { ViewToggle } from '../components/ViewToggle';
 import type { AppData } from '../data';
 import { useAppMeta } from '../hooks/useAppMeta';
-import { FeedbackPanel } from '../components/FeedbackPanel';
-import { FeedbackTrigger } from '../components/FeedbackTrigger';
-import { useFeedbackState } from '../hooks/useFeedbackState';
-import { AnimatePresence } from 'motion/react';
 import { useVoteRegistry } from '../hooks/useVoteRegistry';
 
 interface SoftwarePageProps {
@@ -28,7 +24,6 @@ export function SoftwarePage({ onNavigate }: SoftwarePageProps) {
   const [view, setView] = useState<'grid' | 'list'>('grid');
   const [sortBy, setSortBy] = useState<SortOption>('name-asc');
   const [initialized, setInitialized] = useState(false);
-  const { isFeedbackOpen, handleToggle, handleClose } = useFeedbackState();
   const { votes: voteRegistry } = useVoteRegistry();
 
   // Restore scroll position when coming back from detail page
@@ -205,28 +200,18 @@ export function SoftwarePage({ onNavigate }: SoftwarePageProps) {
     <div className="max-w-7xl mx-auto">
       {/* Header */}
       <div className="mb-6 sm:mb-8">
-        <div className="flex items-center gap-3">
-          <h1
-            className="text-[var(--text-primary)] font-['Poppins',sans-serif]"
-            style={{ fontSize: 'clamp(28px, 5vw, 40px)', lineHeight: '1.2', fontWeight: 700 }}
-          >
-            Software
-          </h1>
-          <FeedbackTrigger isOpen={isFeedbackOpen} onToggle={handleToggle} title="Software" />
-        </div>
+        <h1
+          className="text-[var(--text-primary)] font-['Poppins',sans-serif]"
+          style={{ fontSize: 'clamp(28px, 5vw, 40px)', lineHeight: '1.2', fontWeight: 700 }}
+        >
+          Software
+        </h1>
         <p className="text-[var(--text-secondary)] font-['Inter',sans-serif]" style={{ fontSize: '16px' }}>
           Apps and software for reading manga, watching anime, and more across all platforms.
         </p>
       </div>
 
-      {/* Inline Feedback Panel */}
-      <AnimatePresence>
-        {isFeedbackOpen && (
-          <div className="mb-8">
-            <FeedbackPanel page="software" onClose={handleClose} />
-          </div>
-        )}
-      </AnimatePresence>
+
 
       {/* Filters and Search */}
       <div className="grid gap-2 grid-cols-1 md:grid-cols-2 mb-6 sm:mb-8 space-y-4">

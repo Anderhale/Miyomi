@@ -6,10 +6,6 @@ import { ViewToggle } from '../components/ViewToggle';
 import { unifiedExtensions, ExtensionData } from '../data';
 import { ExtensionGridCard } from '../components/ExtensionGridCard';
 import { ExtensionListCard } from '../components/ExtensionListCard';
-import { FeedbackPanel } from '../components/FeedbackPanel';
-import { FeedbackTrigger } from '../components/FeedbackTrigger';
-import { useFeedbackState } from '../hooks/useFeedbackState';
-import { AnimatePresence } from 'motion/react';
 import { useVoteRegistry } from '../hooks/useVoteRegistry';
 
 interface ExtensionsPageProps {
@@ -26,7 +22,6 @@ export function ExtensionsPage({ onNavigate }: ExtensionsPageProps) {
   const [view, setView] = useState<'grid' | 'list'>('grid');
   const [sortBy, setSortBy] = useState<SortOption>('name-asc');
   const [initialized, setInitialized] = useState(false);
-  const { isFeedbackOpen, handleToggle, handleClose } = useFeedbackState();
   const { votes: voteRegistry } = useVoteRegistry();
 
   // Restore scroll position when coming back from detail page
@@ -197,30 +192,17 @@ export function ExtensionsPage({ onNavigate }: ExtensionsPageProps) {
 
   return (
     <div className="max-w-7xl mx-auto">
-      {/* Header */}
       <div className="mb-6 sm:mb-8">
-        <div className="flex items-center gap-3">
-          <h1
-            className="text-[var(--text-primary)] font-['Poppins',sans-serif]"
-            style={{ fontSize: 'clamp(28px, 5vw, 40px)', lineHeight: '1.2', fontWeight: 700 }}
-          >
-            Extension Sources
-          </h1>
-          <FeedbackTrigger isOpen={isFeedbackOpen} onToggle={handleToggle} title="Extensions" />
-        </div>
+        <h1
+          className="text-[var(--text-primary)] font-['Poppins',sans-serif]"
+          style={{ fontSize: 'clamp(28px, 5vw, 40px)', lineHeight: '1.2', fontWeight: 700 }}
+        >
+          Extension Sources
+        </h1>
         <p className="text-[var(--text-secondary)] font-['Inter',sans-serif]" style={{ fontSize: '16px' }}>
           Extension repositories and sources for Mihon, Aniyomi, Dantotsu, and compatible apps.
         </p>
       </div>
-
-      {/* Inline Feedback Panel */}
-      <AnimatePresence>
-        {isFeedbackOpen && (
-          <div className="mb-8">
-            <FeedbackPanel page="extensions" onClose={handleClose} />
-          </div>
-        )}
-      </AnimatePresence>
 
       {/* Filters and Search */}
       <div className="grid gap-2 grid-cols-1 md:grid-cols-2 mb-6 sm:mb-8 space-y-4">
