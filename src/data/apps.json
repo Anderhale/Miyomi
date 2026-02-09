@@ -1846,5 +1846,29 @@
       "url": "https://www.youtube.com/embed/sntHFlZ63BI"
     }
   ]
+},
+{
+  "id": "tadami",
+  "name": "Tadami",
+  "downloads": 96,
+  "contentTypes": [
+    "Manga",
+    "Anime"
+  ],
+  "description": "Tadami is a mordern fork of Aniyomi featuring the Aurora theme for a cleaner, modern anime and manga experience.",
+  "platforms": ["Android"],
+  "iconColor": "#0088FA",
+  "logoUrl": "https://raw.githubusercontent.com/andreykolesnikov/Tadami-Aniyomi-fork/refs/heads/main/app/src/main/res/drawable-nodpi/ic_launcher_foreground.png",
+  "supportedExtensions": [
+      "kohiden",
+      "keiyoushi",
+      "hollow",
+      "Yuzono-anime",
+      "secozzi"
+    ],
+  "forkOf": "Aniyomi",
+  "upstreamUrl": "https://miyomi.pages.dev/software/aniyomi",
+  "lastUpdated": "2026-01-10",
+  "githubUrl": "https://github.com/andreykolesnikov/Tadami-Aniyomi-fork"
 }
 ]
