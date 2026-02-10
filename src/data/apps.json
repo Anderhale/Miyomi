@@ -1779,5 +1779,96 @@
     "lastUpdated": "2026-02-09",
     "githubUrl": "https://github.com/manga-you-know/desktop",
     "discordUrl": "https://discord.gg/bGrqtHsGgs"
-  }
+  },
+  {
+  "id": "yomihon",
+  "name": "Yomihon",
+  "downloads": 120,
+  "contentTypes": [
+    "Manga"
+   ],
+  "description": "Mihon but with OCR (text recognition).",
+  "platforms": [
+    "Android"
+  ],
+  "iconColor": "#6A3DE8",
+  "logoUrl": "https://raw.githubusercontent.com/yomihon/yomihon/main/.github/assets/logo.png",
+  "keywords": ["OCR", "Yomitan"],
+  "supportedExtensions": [
+    "keiyoushi",
+    "Yuzono-manga"
+  ],
+  "lastUpdated": "2026-02-08",
+  "githubUrl": "https://github.com/yomihon/yomihon",
+  "officialSite": "https://yomihon.github.io/",
+  "discordUrl": "https://discord.com/invite/TXvTZdBuQa"
+  },
+  {
+  "id": "skystream",
+  "name": "Skystream",
+  "downloads": 5000,
+  "contentTypes": [
+    "Anime"
+  ],
+  "description": "A cross‑platform media streaming client inspired by CloudStream, using a custom JavaScript runtime to scrape and stream content across Android, iOS, Windows, macOS, and Linux from a single codebase.",
+  "platforms": ["Android", "iOS", "Windows", "Mac", "Linux"],
+  "iconColor": "#FF6B9D",
+  "logoUrl": "https://raw.githubusercontent.com/akashdh11/skystream/refs/heads/main/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png",
+  "lastUpdated": "2025-01-15",
+  "githubUrl": "https://github.com/akashdh11/skystream",
+  "discordUrl": "https://discord.gg/73XGA8Mxn9",
+  "tutorials": [
+    {
+      "title": "Adding a Repo",
+      "type": "guide",
+      "description": "Go to Settings → Manage Extension → Add Repo. Type: universe"
+    }
+  ]
+},
+{
+  "id": "noveldokusha",
+  "name": "NovelDokusha",
+  "contentTypes": [
+    "Light Novel"
+  ],
+  "description": "A webnovel reader app for Android with translation and offline reading features",
+  "platforms": ["Android"],
+  "iconColor": "#DCD9CF",
+  "logoUrl": "https://raw.githubusercontent.com/Nabeelshar/WebnovelReader/refs/heads/master/app/src/main/ic_launcher-playstore.png",
+  "forkOf": "NovelDokusha",
+  "upstreamUrl": "https://github.com/nanihadesuka/NovelDokusha",
+  "lastUpdated": "2025-11-20",
+  "githubUrl": "https://github.com/Nabeelshar/WebnovelReader",
+  "tutorials": [
+    {
+      "title": "App Showcase",
+      "type": "video",
+      "url": "https://www.youtube.com/embed/sntHFlZ63BI"
+    }
+  ]
+},
+{
+  "id": "tadami",
+  "name": "Tadami",
+  "downloads": 96,
+  "contentTypes": [
+    "Manga",
+    "Anime"
+  ],
+  "description": "Tadami is a mordern fork of Aniyomi featuring the Aurora theme for a cleaner, modern anime and manga experience.",
+  "platforms": ["Android"],
+  "iconColor": "#0088FA",
+  "logoUrl": "https://raw.githubusercontent.com/andreykolesnikov/Tadami-Aniyomi-fork/refs/heads/main/app/src/main/res/drawable-nodpi/ic_launcher_foreground.png",
+  "supportedExtensions": [
+      "kohiden",
+      "keiyoushi",
+      "hollow",
+      "Yuzono-anime",
+      "secozzi"
+    ],
+  "forkOf": "Aniyomi",
+  "upstreamUrl": "https://miyomi.pages.dev/software/aniyomi",
+  "lastUpdated": "2026-01-10",
+  "githubUrl": "https://github.com/andreykolesnikov/Tadami-Aniyomi-fork"
+}
 ]
