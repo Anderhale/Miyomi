@@ -1,7 +1,8 @@
 import { Plus, Package, Star, Twitter, MessageSquare, Facebook } from 'lucide-react';
 import { Button } from '../components/Button';
 import React from 'react';
-import { unifiedApps, unifiedExtensions, guideCategories } from '../data';
+import { unifiedExtensions, guideCategories } from '../data';
+import { useAppMeta } from '../hooks/useAppMeta';
 import { useFeedbackState } from '../hooks/useFeedbackState';
 import { motion } from 'motion/react';
 import { useSeasonalAsset } from '../hooks/useSeasonalAsset';
@@ -11,6 +12,7 @@ interface HomePageProps {
 }
 
 export function HomePage({ onNavigate }: HomePageProps) {
+  const { apps: unifiedApps } = useAppMeta();
   const { isFeedbackOpen, handleToggle, handleClose } = useFeedbackState();
   const features = [
     {

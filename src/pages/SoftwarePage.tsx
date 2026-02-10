@@ -5,7 +5,8 @@ import { FilterDropdown } from '../components/FilterDropdown';
 import { AppGridCard } from '../components/AppGridCard';
 import { AppListCard } from '../components/AppListCard';
 import { ViewToggle } from '../components/ViewToggle';
-import { unifiedApps, AppData } from '../data';
+import type { AppData } from '../data';
+import { useAppMeta } from '../hooks/useAppMeta';
 import { FeedbackPanel } from '../components/FeedbackPanel';
 import { FeedbackTrigger } from '../components/FeedbackTrigger';
 import { useFeedbackState } from '../hooks/useFeedbackState';
@@ -19,6 +20,7 @@ interface SoftwarePageProps {
 type SortOption = 'name-asc' | 'name-desc' | 'updated-desc' | 'updated-asc' | 'rating' | 'downloads' | 'loved';
 
 export function SoftwarePage({ onNavigate }: SoftwarePageProps) {
+  const { apps: unifiedApps } = useAppMeta();
   const location = useLocation();
   const [selectedContentType, setSelectedContentType] = useState<string>('All');
   const [selectedPlatform, setSelectedPlatform] = useState<string>('All');

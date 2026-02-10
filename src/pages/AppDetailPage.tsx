@@ -6,7 +6,8 @@ import { PlatformBadge } from '../components/PlatformBadge';
 import { TagBadge } from './../components/TagBadge';
 import { ParticleBackground } from '../components/ParticleBackground';
 import { ExtensionGridCard } from '../components/ExtensionGridCard';
-import { getAppById, getAppExtensions, getExtensionById } from '../data';
+import { getAppExtensions, getExtensionById } from '../data';
+import { useAppMeta } from '../hooks/useAppMeta';
 import { useGitHubRelease } from '../hooks/useGitHubRelease';
 import { GitHubReleaseMeta } from '../components/GitHubReleaseMeta';
 import { useAccentColor } from '../hooks/useAccentColor';
@@ -177,7 +178,8 @@ interface AppDetailPageProps {
 }
 
 export function AppDetailPage({ appId, onNavigate }: AppDetailPageProps) {
-  const app = getAppById(appId);
+  const { apps } = useAppMeta();
+  const app = apps.find(a => a.id === appId);
   const accentColor = useAccentColor({
     logoUrl: app?.logoUrl,
     preferredColor: app?.accentColor || app?.iconColor,

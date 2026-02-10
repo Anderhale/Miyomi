@@ -39,7 +39,7 @@ Navigate to `src/data/apps.json` and add or update app entries:
   "supportedExtensions": ["extension-id-1", "extension-id-2"],
   "forkOf": "Parent App Name",
   "upstreamUrl": "https://github.com/parent/repository",
-  "lastUpdated": "2025-01-15",
+  "upstreamUrl": "https://github.com/parent/repository",
   "githubUrl": "https://github.com/owner/repository",
   "officialSite": "https://example.com",
   "discordUrl": "https://discord.gg/invite",
@@ -55,12 +55,12 @@ Navigate to `src/data/apps.json` and add or update app entries:
 ```
 
 **Important:**
-- `status`: Optional; accepted values like `"active", "discontinued"`, `"abandoned"`, `"suspended"`, `"dmca"`, `"dead"` render a badge beside the app name so users know its current lifecycle state. Use lowercase strings; custom labels will be title-cased automatically. Leave this field out for actively maintained apps.
+- `status`: Optional; accepted values like `"active", "discontinued"`, `"abandoned"`, `"suspended"`, `"dmca"`, `"dead"`.
 - `author`: Optional; shown in the UI. Falls back to the GitHub repo owner if omitted.
-- `forkOf`: Optional; name of the parent app this is forked from. Displays a "Fork of" indicator with the parent app name
-- `upstreamUrl`: Optional; URL to the parent app's repository or site. When provided with `forkOf`, the parent name becomes a clickable link
-- `githubUrl`: If provided, the app will fetch live release data from GitHub
-- `lastUpdated`: Acts as fallback when GitHub API is unavailable
+- `forkOf`: Optional; name of the parent app this is forked from.
+- `upstreamUrl`: Optional; URL to the parent app's repository or site.
+- `githubUrl`: **CRITICAL** — Provide this if available. The system automatically fetches `downloads` and `lastUpdated` from this URL every 24h.
+- **Do NOT manually add** `downloads` or `lastUpdated` — these are handled dynamically by our CI/CD pipeline and stored in a separate `app-meta.json` file on the `data-updates` branch.
 - `contentTypes`: Must be one of: "Manga", "Anime", "Light Novel"
 - `platforms`: Must be one of: "Android", "iOS", "Windows", "Mac", "Linux", "Web"
 
