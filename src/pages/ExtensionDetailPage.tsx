@@ -142,158 +142,161 @@ export function ExtensionDetailPage({ extensionId, onNavigate }: ExtensionDetail
   };
 
   const renderActionButtons = (layout: 'inline' | 'stack') => {
-    const hasValidAutoUrl = extension.autoUrl && extension.autoUrl.trim() !== '';
-    const hasValidManualUrl = extension.manualUrl && extension.manualUrl.trim() !== '';
+    const hasAutoUrl = Boolean(extension.autoUrl?.trim());
+    const hasManualUrl = Boolean(extension.manualUrl?.trim());
+    const hasGithub = Boolean(extension.github?.trim());
+    const hasWebsite = Boolean(extension.website?.trim());
 
-    if (!hasValidAutoUrl && !hasValidManualUrl) {
+    if (!hasAutoUrl && !hasManualUrl && !hasGithub && !hasWebsite) {
       return null;
     }
 
-    const baseButtonClass =
-      "flex items-center justify-center gap-2 px-6 py-3 rounded-xl transition-all font-['Inter',sans-serif]";
-    const buildButtonClass = (variant: 'primary' | 'secondary') => {
-      const palette =
-        variant === 'primary'
-          ? "bg-[var(--brand)] hover:bg-[var(--brand-strong)] text-white"
-          : "bg-[var(--bg-elev-1)] hover:bg-[var(--chip-bg)] text-[var(--text-primary)]";
-      return `${baseButtonClass} ${palette}`;
-    };
-
-    const installButton = (widthClass: string) => (
-      <button
-        onClick={() => window.open(extension.autoUrl, '_blank')}
-        className={`${widthClass} ${buildButtonClass('primary')}`}
-        style={{ fontWeight: 600 }}
-      >
-        <Download className="w-4 h-4" />
-        Auto Install
-      </button>
-    );
-
-    const copyButton = (widthClass: string) => (
-      <button
-        onClick={() => copyToClipboard(extension.manualUrl, 'Source URL copied to clipboard!')}
-        className={`${widthClass} ${buildButtonClass('secondary')}`}
-        style={{ fontWeight: 600 }}
-      >
-        <Copy className="w-4 h-4" />
-        Copy URL
-      </button>
-    );
-
     if (layout === 'inline') {
-      const hasOnlyOneButton = (hasValidAutoUrl && !hasValidManualUrl) || (!hasValidAutoUrl && hasValidManualUrl);
-      const buttonContainerClass = hasOnlyOneButton
-        ? 'flex gap-3 justify-center'
-        : 'flex gap-3';
-      const buttonWidthClass = hasOnlyOneButton
-        ? 'max-w-[280px] w-full'
-        : 'flex-1';
-
       return (
-        <div className="flex flex-col gap-3">
-          {(hasValidAutoUrl || hasValidManualUrl) && (
-            <div className={buttonContainerClass}>
-              {hasValidAutoUrl && installButton(buttonWidthClass)}
-              {hasValidManualUrl && copyButton(buttonWidthClass)}
+        <div className="flex flex-col gap-4">
+          {/* Main Actions Row */}
+          {(hasAutoUrl || hasManualUrl) && (
+            <div className="flex flex-wrap items-center justify-center gap-3 sm:justify-start">
+              {hasManualUrl && (
+                <button
+                  onClick={() => copyToClipboard(extension.manualUrl, 'Source URL copied to clipboard!')}
+                  className="flex items-center justify-center gap-2 px-3 py-3 bg-[var(--bg-elev-1)] border border-[var(--divider)] rounded-xl hover:bg-[var(--chip-bg)] hover:border-[var(--brand)] transition-all text-[var(--text-primary)] hover:text-[var(--brand)] font-['Inter',sans-serif]"
+                  style={{ fontWeight: 600, fontSize: '15px' }}
+                >
+                  <Copy className="w-4 h-4" />
+                  Copy URL
+                </button>
+              )}
+              {hasAutoUrl && (
+                <button
+                  onClick={() => window.open(extension.autoUrl, '_blank')}
+                  className="flex items-center justify-center gap-2 px-3 py-3 bg-[var(--brand)] hover:bg-[var(--brand-strong)] text-white rounded-xl transition-all font-['Inter',sans-serif]"
+                  style={{ fontWeight: 600, fontSize: '15x' }}
+                >
+                  <Download className="w-4 h-4" />
+                  Auto Install
+                </button>
+              )}
             </div>
           )}
 
-          <div className="flex items-center justify-center gap-3">
-            {extension.github && (
-              <a
-                href={extension.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 bg-[var(--bg-elev-1)] border border-[var(--divider)] rounded-xl hover:bg-[var(--chip-bg)] hover:border-[var(--brand)] transition-all text-[var(--text-secondary)] hover:text-[var(--brand)]"
-                title="GitHub"
-              >
-                <Github className="w-5 h-5" />
-              </a>
-            )}
-            {extension.website && (
-              <a
-                href={extension.website}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 bg-[var(--bg-elev-1)] border border-[var(--divider)] rounded-xl hover:bg-[var(--chip-bg)] hover:border-[var(--brand)] transition-all text-[var(--text-secondary)] hover:text-[var(--brand)]"
-                title="Website"
-              >
-                <Globe className="w-5 h-5" />
-              </a>
-            )}
-          </div>
+          {/* Social Icons Row */}
+          {(hasGithub || hasWebsite) && (
+            <div className="flex flex-wrap items-center justify-center gap-3 sm:justify-start">
+              {hasGithub && (
+                <a
+                  href={extension.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 bg-[var(--bg-elev-1)] border border-[var(--divider)] rounded-xl hover:bg-[var(--chip-bg)] hover:border-[var(--brand)] transition-all text-[var(--text-secondary)] hover:text-[var(--brand)]"
+                  title="GitHub"
+                >
+                  <Github className="w-5 h-5" />
+                </a>
+              )}
+              {hasWebsite && (
+                <a
+                  href={extension.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 bg-[var(--bg-elev-1)] border border-[var(--divider)] rounded-xl hover:bg-[var(--chip-bg)] hover:border-[var(--brand)] transition-all text-[var(--text-secondary)] hover:text-[var(--brand)]"
+                  title="Website"
+                >
+                  <Globe className="w-5 h-5" />
+                </a>
+              )}
+            </div>
+          )}
         </div>
       );
     }
 
-    // Stacked layout for desktop sidebar
     return (
-      <div className="flex w-full flex-col gap-3">
-        {hasValidAutoUrl && installButton('w-full')}
-        {hasValidManualUrl && copyButton('w-full')}
-      </div>
-    );
-  };
+      <div className="flex w-full flex-col gap-4">
+        {/* Top Buttons Stack */}
+        <div className="flex flex-col gap-3">
+          {hasAutoUrl && (
+            <button
+              onClick={() => window.open(extension.autoUrl, '_blank')}
+              className="flex items-center justify-center gap-2 rounded-xl bg-[var(--brand)] px-6 py-3 font-['Inter',sans-serif] text-white transition-all hover:bg-[var(--brand-strong)]"
+              style={{ fontWeight: 600 }}
+            >
+              <Download className="w-4 h-4" />
+              Auto Install
+            </button>
+          )}
+          {hasManualUrl && (
+            <button
+              onClick={() => copyToClipboard(extension.manualUrl, 'Source URL copied to clipboard!')}
+              className="flex items-center justify-center gap-2 rounded-xl border border-[var(--divider)] bg-[var(--bg-elev-1)] px-6 py-3 font-['Inter',sans-serif] text-[var(--text-primary)] transition-all hover:bg-[var(--chip-bg)] hover:border-[var(--brand)] hover:text-[var(--brand)]"
+              style={{ fontWeight: 600 }}
+            >
+              <Copy className="w-4 h-4" />
+              Copy URL
+            </button>
+          )}
+        </div>
 
-  const renderDesktopQuickLinks = () => {
-    const quickLinks = [
-      extension.github && {
-        href: extension.github,
-        label: 'GitHub',
-        description: 'Project repository',
-        Icon: Github,
-      },
-      extension.website && {
-        href: extension.website,
-        label: 'Website',
-        description: 'Official site',
-        Icon: Globe,
-      },
-    ].filter(Boolean) as {
-      href: string;
-      label: string;
-      description: string;
-      Icon: typeof Github;
-    }[];
-
-    if (quickLinks.length === 0) {
-      return null;
-    }
-
-    return (
-      <div className="flex flex-col gap-2">
-        {quickLinks.map(({ href, label, description, Icon }) => (
-          <a
-            key={label}
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-3 rounded-xl border border-[var(--divider)] bg-[var(--bg-elev-1)] px-4 py-3 text-left transition-all hover:border-[var(--brand)] hover:shadow-sm group"
-          >
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[var(--chip-bg)] text-[var(--brand)] flex-shrink-0">
-              <Icon className="h-5 w-5" />
-            </div>
-            <div className="flex-1">
-              <p
-                className="font-['Inter',sans-serif] text-[var(--text-primary)]"
-                style={{ fontWeight: 600, fontSize: '14px' }}
+        {/* Detailed Links List */}
+        {(hasGithub || hasWebsite) && (
+          <div className="flex flex-col gap-2">
+            {hasGithub && (
+              <a
+                href={extension.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 rounded-xl border border-[var(--divider)] bg-[var(--bg-surface)] px-4 py-3 text-left transition-all hover:border-[var(--brand)] hover:shadow-sm"
               >
-                {label}
-              </p>
-              <p className="font-['Inter',sans-serif] text-xs text-[var(--text-secondary)]">{description}</p>
-            </div>
-            <span className="text-lg text-[var(--divider)] group-hover:text-[var(--brand)] transition-colors">&rarr;</span>
-          </a>
-        ))}
+                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[var(--chip-bg)] text-[var(--brand)]">
+                  <Github className="w-5 h-5" />
+                </div>
+                <div className="flex-1">
+                  <p
+                    className="font-['Inter',sans-serif] text-[var(--text-primary)]"
+                    style={{ fontWeight: 600, fontSize: '14px' }}
+                  >
+                    GitHub
+                  </p>
+                  <p className="font-['Inter',sans-serif] text-xs text-[var(--text-secondary)]">
+                    Project repository
+                  </p>
+                </div>
+                <span className="text-lg text-[var(--divider)]">&rarr;</span>
+              </a>
+            )}
+            {hasWebsite && (
+              <a
+                href={extension.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 rounded-xl border border-[var(--divider)] bg-[var(--bg-surface)] px-4 py-3 text-left transition-all hover:border-[var(--brand)] hover:shadow-sm"
+              >
+                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[var(--chip-bg)] text-[var(--brand)]">
+                  <Globe className="w-5 h-5" />
+                </div>
+                <div className="flex-1">
+                  <p
+                    className="font-['Inter',sans-serif] text-[var(--text-primary)]"
+                    style={{ fontWeight: 600, fontSize: '14px' }}
+                  >
+                    Website
+                  </p>
+                  <p className="font-['Inter',sans-serif] text-xs text-[var(--text-secondary)]">
+                    Official site
+                  </p>
+                </div>
+                <span className="text-lg text-[var(--divider)]">&rarr;</span>
+              </a>
+            )}
+          </div>
+        )}
       </div>
     );
   };
 
   const inlineActions = renderActionButtons('inline');
   const stackedActions = renderActionButtons('stack');
-  const desktopQuickLinks = renderDesktopQuickLinks();
-  const showDesktopSidebar = Boolean(stackedActions) || Boolean(desktopQuickLinks);
+  const showDesktopSidebar = Boolean(stackedActions);
   const headerLayoutClasses = showDesktopSidebar
     ? 'lg:grid lg:grid-cols-[auto,minmax(0,1fr),280px]'
     : 'lg:grid lg:grid-cols-[auto,minmax(0,1fr)]';
@@ -412,31 +415,10 @@ export function ExtensionDetailPage({ extensionId, onNavigate }: ExtensionDetail
             <div className="lg:hidden">{inlineActions}</div>
           </div>
 
-          {/* Desktop Sidebar */}
+          {/* Desktop Sidebar Actions */}
           {showDesktopSidebar && (
-            <div className="hidden lg:flex lg:w-[280px] lg:flex-col lg:items-stretch lg:gap-3">
-              {stackedActions && (
-                <div className="rounded-2xl border border-[var(--divider)] bg-[var(--bg-surface)] p-4">
-                  <p
-                    className="mb-3 text-xs uppercase tracking-wide text-[var(--text-secondary)]"
-                    style={{ fontWeight: 600, letterSpacing: '0.12em' }}
-                  >
-                    Actions
-                  </p>
-                  {stackedActions}
-                </div>
-              )}
-              {desktopQuickLinks && (
-                <div className="rounded-2xl border border-[var(--divider)] bg-[var(--bg-surface)] p-4">
-                  <p
-                    className="mb-3 text-xs uppercase tracking-wide text-[var(--text-secondary)]"
-                    style={{ fontWeight: 600, letterSpacing: '0.12em' }}
-                  >
-                    Quick Links
-                  </p>
-                  {desktopQuickLinks}
-                </div>
-              )}
+            <div className="hidden lg:flex lg:w-full lg:flex-col lg:items-stretch lg:gap-4">
+              {stackedActions}
             </div>
           )}
         </div>
