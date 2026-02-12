@@ -74,7 +74,7 @@ export function ExtensionListCard({ extension, voteData, allowFetch = true, onSe
             </h3>
             <div className="flex items-center gap-2 text-xs text-[var(--text-secondary)]">
               <span
-                className="font-['Inter',sans-serif] tracking-wide text-[11px]"
+                className="font-['Inter',sans-serif] tracking-wide text-[13px]"
                 style={{ fontWeight: 600 }}
               >
                 {extension.types.join(' + ')}
@@ -105,18 +105,18 @@ export function ExtensionListCard({ extension, voteData, allowFetch = true, onSe
       </div>
 
       {/* Mobile layout */}
-      <div className="flex lg:hidden items-start gap-3">
-        <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 overflow-hidden bg-[var(--chip-bg)]">
+      <div className="flex lg:hidden items-center gap-3">
+        <div className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0 overflow-hidden bg-[var(--chip-bg)]">
           {renderLogo()}
         </div>
         <div className="flex-1 min-w-0">
           <h3
             className="font-['Inter',sans-serif] text-[var(--text-primary)] truncate mb-1"
-            style={{ fontWeight: 600, fontSize: '14px' }}
+            style={{ fontWeight: 600, fontSize: '16px' }}
           >
             {extension.name}
           </h3>
-          <div className="flex items-center gap-1.5 text-[11px] text-[var(--text-secondary)]">
+          <div className="flex items-center gap-1.5 text-[12px] text-[var(--text-secondary)]">
             <span>{extension.types.join(' + ')}</span>
           </div>
         </div>
