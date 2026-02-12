@@ -7,7 +7,6 @@ import { getExtensionById, getExtensionApps } from '../data';
 import { AppGridCard } from '../components/AppGridCard';
 import { ParticleBackground } from '../components/ParticleBackground';
 import { useFeedbackState } from '../hooks/useFeedbackState';
-import { FlagDisplay } from '../components/FlagDisplay';
 import { useAccentColor } from '../hooks/useAccentColor';
 import { LoveButton } from '../components/LoveButton';
 
@@ -372,11 +371,7 @@ export function ExtensionDetailPage({ extensionId, onNavigate }: ExtensionDetail
               >
                 {extension.name}
               </h1>
-              {extension.region && (
-                <span className="flex items-center">
-                  <FlagDisplay region={extension.region} size="medium" />
-                </span>
-              )}
+
               <div className="ml-1">
                 <LoveButton itemId={extension.id} />
               </div>

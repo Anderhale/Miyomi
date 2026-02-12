@@ -6,7 +6,6 @@
     "types": [
       "Anime"
     ],
-    "region": "ALL",
     "accentColor": "#00ADB5",
     "autoUrl": "aniyomi://add-repo?url=https://kohiden.xyz/Kohi-den/extensions/raw/branch/main/index.min.json",
     "manualUrl": "https://kohiden.xyz/Kohi-den/extensions/raw/branch/main/index.min.json",
@@ -30,7 +29,6 @@
     "types": [
       "Anime"
     ],
-    "region": "ALL",
     "accentColor": "#A9331A",
     "autoUrl": "aniyomi://add-repo?url=https://raw.githubusercontent.com/yuzono/anime-repo/repo/index.min.json",
     "manualUrl": "https://raw.githubusercontent.com/yuzono/anime-repo/repo/index.min.json",
@@ -55,7 +53,6 @@
     "types": [
       "Manga"
     ],
-    "region": "ALL",
     "accentColor": "#A9331A",
     "autoUrl": "aniyomi://add-repo?url=https://raw.githubusercontent.com/yuzono/manga-repo/repo/index.min.json",
     "manualUrl": "https://raw.githubusercontent.com/yuzono/manga-repo/repo/index.min.json",
@@ -80,7 +77,6 @@
     "types": [
       "Anime"
     ],
-    "region": "ALL",
     "accentColor": "#504150",
     "autoUrl": "aniyomi://add-repo?url=https://raw.githubusercontent.com/Secozzi/aniyomi-extensions/refs/heads/repo/index.min.json",
     "manualUrl": "https://raw.githubusercontent.com/Secozzi/aniyomi-extensions/refs/heads/repo/index.min.json",
@@ -108,9 +104,8 @@
     "types": [
       "Anime",
       "Manga",
-      "Novel"
+      "Light Novel"
     ],
-    "region": "ALL",
     "accentColor": "#D15EB8",
     "autoUrl": "https://intradeus.github.io/http-protocol-redirector/?r=mangayomi://add-repo?repo_name=Mangayomi%20Swak%20Extensions%26repo_url=https://github.com/Swakshan/mangayomi-swak-extensions%26manga_url=https://raw.githubusercontent.com/Swakshan/mangayomi-swak-extensions/refs/heads/main/index.json%26anime_url=https://raw.githubusercontent.com/Swakshan/mangayomi-swak-extensions/refs/heads/main/anime_index.json",
     "manualUrl": "",
@@ -130,7 +125,6 @@
     "types": [
       "Anime"
     ],
-    "region": "FR",
     "accentColor": "#990066",
     "autoUrl": "aniyomi://add-repo?url=https://codeberg.org/hollow/aniyomi-extensions-fr/media/branch/repo/index.min.json",
     "manualUrl": "https://codeberg.org/hollow/aniyomi-extensions-fr/media/branch/repo/index.min.json",
@@ -140,9 +134,9 @@
       "animiru",
       "anikku"
     ],
-    "info": "French extensions for Aniyomi and its variants.",
+    "info": "Extensions for Aniyomi and its variants.",
     "keywords": [
-      "french"
+      "repo"
     ],
     "lastUpdated": "2025-11-15"
   },
@@ -153,7 +147,6 @@
     "types": [
       "Manga"
     ],
-    "region": "ALL",
     "accentColor": "#BDCF47",
     "autoUrl": "tachiyomi://add-repo?url=https://raw.githubusercontent.com/keiyoushi/extensions/repo/index.min.json",
     "manualUrl": "https://raw.githubusercontent.com/keiyoushi/extensions/repo/index.min.json",
@@ -180,7 +173,6 @@
       "Light Novel",
       "Manga"
     ],
-    "region": "ALL",
     "accentColor": "#A4948F",
     "autoUrl": "mangayomi://add-repo?repo_name=mangayomi-extensions&repo_url=https://github.com/kodjodevf/mangayomi-extensions&manga_url=https://kodjodevf.github.io/mangayomi-extensions/index.json&novel_url=https://kodjodevf.github.io/mangayomi-extensions/novel_index.json",
     "manualUrl": "https://raw.githubusercontent.com/kodjodevf/mangayomi-extensions/refs/heads/main/index.json",
@@ -245,9 +237,8 @@
     "types": [
       "Manga",
       "Anime",
-      "Novel"
+      "Light Novel"
     ],
-    "region": "ALL",
     "accentColor": "#D16E74",
     "autoUrl": "mangayomi://add-repo?repo_name=mangayomi-extensions&repo_url=https://github.com/m2k3a/mangayomi-extensions&manga_url=https://m2k3a.github.io/mangayomi-extensions/index.json&anime_url=https://m2k3a.github.io/mangayomi-extensions/anime_index.json&novel_url=https://m2k3a.github.io/mangayomi-extensions/novel_index.json",
     "manualUrl": "https://m2k3a.github.io/mangayomi-extensions/index.json",
@@ -269,9 +260,8 @@
     "types": [
       "Manga",
       "Anime",
-      "Novel"
+      "Light Novel"
     ],
-    "region": "ALL",
     "accentColor": "#BFD36F",
     "autoUrl": "mangayomi://add-repo?repo_name=kegareta-sauces&repo_url=https://github.com/gato404/kegareta-sauces&manga_url=https://raw.githubusercontent.com/gato404/kegareta-sauces/refs/heads/main/index.json&anime_url=https://raw.githubusercontent.com/gato404/kegareta-sauces/refs/heads/main/anime_index.json",
     "manualUrl": "https://raw.githubusercontent.com/gato404/kegareta-sauces/main/index.json",
@@ -293,7 +283,6 @@
     "types": [
       "Manga"
     ],
-    "region": "ALL",
     "accentColor": "#FF2F52",
     "autoUrl": "https://aidoku.app/add-source-list/?url=https://raw.githubusercontent.com/Aidoku-Community/sources/gh-pages/",
     "manualUrl": "https://aidoku-community.github.io/sources/index.min.json",
@@ -316,7 +305,6 @@
     "types": [
       "Manga"
     ],
-    "region": "ALL",
     "accentColor": "#000000",
     "autoUrl": "paperback://addRepo?displayName=Netsky%27s%20Extensions%20(0.8)&url=https%3A%2F%2Fthenetsky.github.io%2Fnetskys-extensions%2F0.8",
     "manualUrl": "https://thenetsky.github.io/community-extensions/0.8",
@@ -338,9 +326,8 @@
     "logoUrl": "https://github.com/inkdex.png",
     "types": [
       "Manga",
-      "Novel"
+      "Light Novel"
     ],
-    "region": "ALL",
     "accentColor": "#2B3142",
     "autoUrl": "paperback://addRepo?displayName=Inkdex%20Extensions%20(0.9)&url=https%3A%2F%2Finkdex.github.io%2Fextensions%2F0.9%2Fstable",
     "manualUrl": "https://inkdex.github.io/extensions/0.9/stable",
@@ -363,7 +350,6 @@
     "types": [
       "Manga"
     ],
-    "region": "ALL",
     "accentColor": "#000000",
     "autoUrl": "paperback://addRepo?displayName=Netsky%27s%20Extensions%20(0.9)&url=https://thenetsky.github.io/netskys-extensions/0.9",
     "manualUrl": "https://thenetsky.github.io/netskys-extensions/0.9",
@@ -386,7 +372,6 @@
     "types": [
       "Manga"
     ],
-    "region": "GB",
     "accentColor": "#6A5ACD",
     "autoUrl": "suwatte://list?url=https://aegir.mantton.com",
     "website": "https://aegir.mantton.com/",
@@ -408,7 +393,6 @@
       "Anime",
       "Manga"
     ],
-    "region": "ALL",
     "accentColor": "#708492",
     "autoUrl": "cloudstreamrepo://raw.githubusercontent.com/self-similarity/MegaRepo/builds/repo.json",
     "manualUrl": "https://raw.githubusercontent.com/self-similarity/MegaRepo/builds/repo.json",
@@ -430,7 +414,6 @@
     "types": [
       "Anime"
     ],
-    "region": "ALL",
     "accentColor": "#633F40",
     "autoUrl": "cloudstreamrepo://raw.githubusercontent.com/CranberrySoup/AniyomiCompatExtension/master/repo.json",
     "manualUrl": "https://raw.githubusercontent.com/CranberrySoup/AniyomiCompatExtension/master/repo.json",
@@ -449,9 +432,8 @@
     "name": "Dantotsu Novel Extensions",
     "logoUrl": "https://github.com/dannovels.png",
     "types": [
-      "Novel"
+      "Light Novel"
     ],
-    "region": "ALL",
     "accentColor": "#DE94D1",
     "autoUrl": "novelyomi://add-repo?url=https://raw.githubusercontent.com/dannovels/novel-extensions/repo/index.min.json",
     "manualUrl": "https://raw.githubusercontent.com/dannovels/novel-extensions/repo/index.min.json",
@@ -473,9 +455,8 @@
     "types": [
       "Anime",
       "Manga",
-      "Novel"
+      "Light Novel"
     ],
-    "region": "ALL",
     "accentColor": "#0058A0",
     "autoUrl": "anymex://add-repo?anime_url=https://anymex.vercel.app/repo/anime_index.json&manga_url=https://anymex.vercel.app/repo/index.json&novel_url=https://anymex.vercel.app/repo/novel_index.json",
     "manualUrl": "https://anymex.vercel.app/repo/anime_index.json",
@@ -494,7 +475,6 @@
     "types": [
       "Manga"
     ],
-    "region": "SA",
     "accentColor": "#FF6B9D",
     "manualUrl": "https://raw.githubusercontent.com/midou221/mangareader_extension/refs/heads/main/index.min.json",
     "website": "https://github.com/midou221/mangareader_extension",
@@ -504,8 +484,7 @@
     ],
     "info": "مصادر خاص بالتطبيق",
     "keywords": [
-      "قارئ مانجا عربي",
-      "arabic"
+      "قارئ مانجا عربي"
     ],
     "lastUpdated": "2025-11-11"
   },
@@ -516,7 +495,6 @@
     "types": [
       "Manga"
     ],
-    "region": "ALL",
     "accentColor": "#000000",
     "autoUrl": "https://aidoku.app/add-source-list/?url=https://raw.githubusercontent.com/Skittyblock/aidoku-community-sources/gh-pages/",
     "manualUrl": "https://skittyblock.github.io/aidoku-community-sources/index.min.json",
@@ -539,7 +517,6 @@
     "types": [
       "Manga"
     ],
-    "region": "FR",
     "accentColor": "#77D2DA",
     "autoUrl": "paperback://addRepo?displayName=Moomooo95%27s%20Extensions&url=https%3A%2F%2Fmoomooo95.github.io%2Fmoomooo95-extensions%2Fmaster",
     "manualUrl": "https://moomooo95.github.io/moomooo95-extensions/master/",
@@ -550,7 +527,6 @@
     ],
     "info": "French sources for the Paperback application",
     "keywords": [
-      "French",
       "Paperback"
     ],
     "lastUpdated": "2025-11-15"
@@ -560,9 +536,8 @@
     "name": "LNReader Plugins",
     "logoUrl": "https://github.com/LNReader.png",
     "types": [
-      "Novel"
+      "Light Novel"
     ],
-    "region": "ALL",
     "accentColor": "#1C7487",
     "autoUrl": "lnreader://repo/add?url=https://raw.githubusercontent.com/LNReader/lnreader-plugins/plugins/v3.0.0/.dist/plugins.min.json",
     "manualUrl": "https://raw.githubusercontent.com/LNReader/lnreader-plugins/plugins/v3.0.0/.dist/plugins.min.json",
@@ -586,7 +561,6 @@
     "types": [
       "Anime"
     ],
-    "region": "ALL",
     "accentColor": "#5A59ED",
     "website": "https://stremio-addons.net/",
     "supportedApps": [
@@ -625,9 +599,8 @@
     "name": "IReader Extensions",
     "logoUrl": "https://raw.githubusercontent.com/IReaderorg/IReader-website/refs/heads/main/public/icon-512x512.png",
     "types": [
-      "Novel"
+      "Light Novel"
     ],
-    "region": "ALL",
     "accentColor": "#A68DB8",
     "github": "https://github.com/IReaderorg/IReader-extensions",
     "supportedApps": [
@@ -636,7 +609,6 @@
     "info": "Official extension repository for IReader novel reader.",
     "keywords": [
       "ireader",
-      "light novel",
       "extensions"
     ],
     "lastUpdated": "2025-12-31"

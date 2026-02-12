@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Download, Github, Globe, ExternalLink } from 'lucide-react';
 import { motion } from 'motion/react';
 import type { ExtensionData } from '../data';
-import { FlagDisplay } from './FlagDisplay';
 import { StarRating } from './StarRating';
 import { useAccentColor } from '../hooks/useAccentColor';
 import { LoveButton } from './LoveButton';
@@ -74,8 +73,6 @@ export function ExtensionListCard({ extension, voteData, allowFetch = true, onSe
               {extension.name}
             </h3>
             <div className="flex items-center gap-2 text-xs text-[var(--text-secondary)]">
-              <FlagDisplay region={extension.region} size="small" />
-              <span>|</span>
               <span
                 className="font-['Inter',sans-serif] tracking-wide text-[11px]"
                 style={{ fontWeight: 600 }}
@@ -120,8 +117,6 @@ export function ExtensionListCard({ extension, voteData, allowFetch = true, onSe
             {extension.name}
           </h3>
           <div className="flex items-center gap-1.5 text-[11px] text-[var(--text-secondary)]">
-            <FlagDisplay region={extension.region} size="small" />
-            <span>|</span>
             <span>{extension.types.join(' + ')}</span>
           </div>
         </div>

@@ -53,7 +53,6 @@ export interface ExtensionData {
   info?: string;
   logoUrl?: string;
   types: readonly ContentType[];
-  region: string;
   accentColor?: string;
   autoUrl: string;
   manualUrl: string;

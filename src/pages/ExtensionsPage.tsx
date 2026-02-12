@@ -149,7 +149,6 @@ export function ExtensionsPage({ onNavigate }: ExtensionsPageProps) {
         const searchableText = [
           ext.name,
           ...ext.types,
-          ext.region,
           ext.info,
           ...(ext.supportedApps || []),
           ...(ext.keywords || []),

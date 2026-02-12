@@ -1,7 +1,6 @@
 import { Download, Info, ExternalLink } from 'lucide-react';
 import { motion } from 'motion/react';
 import type { ExtensionData } from '../data';
-import { FlagDisplay } from './FlagDisplay';
 import { StarRating } from './StarRating';
 import { useAccentColor } from '../hooks/useAccentColor';
 import { useState } from 'react';
@@ -71,8 +70,6 @@ export function ExtensionGridCard({ extension, voteData, allowFetch = true, onSe
             {extension.name}
           </h3>
           <div className="text-xs text-[var(--text-secondary)] flex items-center gap-1.5">
-            <FlagDisplay region={extension.region} size="small" />
-            <span className="opacity-60">•</span>
             <span className="truncate">{extension.types.join(' + ')}</span>
           </div>
         </div>
