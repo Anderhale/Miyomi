@@ -104,15 +104,15 @@ export function ExtensionDetailPage({ extensionId, onNavigate }: ExtensionDetail
       >
         <div className="text-center py-16 sm:py-24">
           <div className="text-6xl sm:text-8xl mb-6 opacity-50">🔌</div>
-          <h3 className="text-[var(--text-primary)] font-['Poppins',sans-serif] mb-2" style={{ fontSize: '20px', fontWeight: 600 }}>
+          <h3 className="text-[var(--text-primary)] font-['Open Sans',sans-serif] mb-2" style={{ fontSize: '20px', fontWeight: 600 }}>
             Extension not found
           </h3>
-          <p className="text-[var(--text-secondary)] font-['Inter',sans-serif] mb-6">
+          <p className="text-[var(--text-secondary)] font-['Open Sans',sans-serif] mb-6">
             The extension you're looking for doesn't exist or has been removed.
           </p>
           <button
             onClick={handleBackClick}
-            className="px-6 py-3 bg-[var(--brand)] hover:bg-[var(--brand-strong)] text-white rounded-xl transition-all font-['Inter',sans-serif]"
+            className="px-6 py-3 bg-[var(--brand)] hover:bg-[var(--brand-strong)] text-white rounded-xl transition-all font-['Open Sans',sans-serif]"
             style={{ fontWeight: 600 }}
           >
             Back to Extensions
@@ -159,7 +159,7 @@ export function ExtensionDetailPage({ extensionId, onNavigate }: ExtensionDetail
               {hasManualUrl && (
                 <button
                   onClick={() => copyToClipboard(extension.manualUrl, 'Source URL copied to clipboard!')}
-                  className="flex items-center justify-center gap-2 px-3 py-3 bg-[var(--bg-elev-1)] border border-[var(--divider)] rounded-xl hover:bg-[var(--chip-bg)] hover:border-[var(--brand)] transition-all text-[var(--text-primary)] hover:text-[var(--brand)] font-['Inter',sans-serif]"
+                  className="flex items-center justify-center gap-2 px-3 py-3 bg-[var(--bg-elev-1)] border border-[var(--divider)] rounded-xl hover:bg-[var(--chip-bg)] hover:border-[var(--brand)] transition-all text-[var(--text-primary)] hover:text-[var(--brand)] font-['Open Sans',sans-serif]"
                   style={{ fontWeight: 600, fontSize: '15px' }}
                 >
                   <Copy className="w-4 h-4" />
@@ -169,7 +169,7 @@ export function ExtensionDetailPage({ extensionId, onNavigate }: ExtensionDetail
               {hasAutoUrl && (
                 <button
                   onClick={() => window.open(extension.autoUrl, '_blank')}
-                  className="flex items-center justify-center gap-2 px-3 py-3 bg-[var(--brand)] hover:bg-[var(--brand-strong)] text-white rounded-xl transition-all font-['Inter',sans-serif]"
+                  className="flex items-center justify-center gap-2 px-3 py-3 bg-[var(--brand)] hover:bg-[var(--brand-strong)] text-white rounded-xl transition-all font-['Open Sans',sans-serif]"
                   style={{ fontWeight: 600, fontSize: '15x' }}
                 >
                   <Download className="w-4 h-4" />
@@ -217,7 +217,7 @@ export function ExtensionDetailPage({ extensionId, onNavigate }: ExtensionDetail
           {hasAutoUrl && (
             <button
               onClick={() => window.open(extension.autoUrl, '_blank')}
-              className="flex items-center justify-center gap-2 rounded-xl bg-[var(--brand)] px-6 py-3 font-['Inter',sans-serif] text-white transition-all hover:bg-[var(--brand-strong)]"
+              className="flex items-center justify-center gap-2 rounded-xl bg-[var(--brand)] px-6 py-3 font-['Open Sans',sans-serif] text-white transition-all hover:bg-[var(--brand-strong)]"
               style={{ fontWeight: 600 }}
             >
               <Download className="w-4 h-4" />
@@ -227,7 +227,7 @@ export function ExtensionDetailPage({ extensionId, onNavigate }: ExtensionDetail
           {hasManualUrl && (
             <button
               onClick={() => copyToClipboard(extension.manualUrl, 'Source URL copied to clipboard!')}
-              className="flex items-center justify-center gap-2 rounded-xl border border-[var(--divider)] bg-[var(--bg-elev-1)] px-6 py-3 font-['Inter',sans-serif] text-[var(--text-primary)] transition-all hover:bg-[var(--chip-bg)] hover:border-[var(--brand)] hover:text-[var(--brand)]"
+              className="flex items-center justify-center gap-2 rounded-xl border border-[var(--divider)] bg-[var(--bg-elev-1)] px-6 py-3 font-['Open Sans',sans-serif] text-[var(--text-primary)] transition-all hover:bg-[var(--chip-bg)] hover:border-[var(--brand)] hover:text-[var(--brand)]"
               style={{ fontWeight: 600 }}
             >
               <Copy className="w-4 h-4" />
@@ -251,12 +251,12 @@ export function ExtensionDetailPage({ extensionId, onNavigate }: ExtensionDetail
                 </div>
                 <div className="flex-1">
                   <p
-                    className="font-['Inter',sans-serif] text-[var(--text-primary)]"
+                    className="font-['Open Sans',sans-serif] text-[var(--text-primary)]"
                     style={{ fontWeight: 600, fontSize: '14px' }}
                   >
                     GitHub
                   </p>
-                  <p className="font-['Inter',sans-serif] text-xs text-[var(--text-secondary)]">
+                  <p className="font-['Open Sans',sans-serif] text-xs text-[var(--text-secondary)]">
                     Project repository
                   </p>
                 </div>
@@ -275,12 +275,12 @@ export function ExtensionDetailPage({ extensionId, onNavigate }: ExtensionDetail
                 </div>
                 <div className="flex-1">
                   <p
-                    className="font-['Inter',sans-serif] text-[var(--text-primary)]"
+                    className="font-['Open Sans',sans-serif] text-[var(--text-primary)]"
                     style={{ fontWeight: 600, fontSize: '14px' }}
                   >
                     Website
                   </p>
-                  <p className="font-['Inter',sans-serif] text-xs text-[var(--text-secondary)]">
+                  <p className="font-['Open Sans',sans-serif] text-xs text-[var(--text-secondary)]">
                     Official site
                   </p>
                 </div>
@@ -313,7 +313,7 @@ export function ExtensionDetailPage({ extensionId, onNavigate }: ExtensionDetail
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.2 }}
         onClick={handleBackClick}
-        className="flex items-center gap-2 text-[var(--text-secondary)] hover:text-[var(--brand)] transition-colors mb-6 font-['Inter',sans-serif]"
+        className="flex items-center gap-2 text-[var(--text-secondary)] hover:text-[var(--brand)] transition-colors mb-6 font-['Open Sans',sans-serif]"
         style={{ fontWeight: 500 }}
       >
         <ArrowLeft className="w-4 h-4" />
@@ -366,7 +366,7 @@ export function ExtensionDetailPage({ extensionId, onNavigate }: ExtensionDetail
             {/* Extension Name with Flag */}
             <div className="flex flex-wrap items-center justify-center gap-2 sm:justify-start mb-2">
               <h1
-                className="text-[var(--text-primary)] font-['Poppins',sans-serif]"
+                className="text-[var(--text-primary)] font-['Open Sans',sans-serif]"
                 style={{ fontSize: 'clamp(24px, 5vw, 32px)', lineHeight: '1.2', fontWeight: 700 }}
               >
                 {extension.name}
@@ -379,14 +379,14 @@ export function ExtensionDetailPage({ extensionId, onNavigate }: ExtensionDetail
 
             {extension.types.length > 0 && (
               <div className="mb-4 flex flex-col items-center gap-2 sm:items-start">
-                <p className="text-[var(--text-secondary)] font-['Inter',sans-serif] mb-4" style={{ fontSize: '16px' }}>
+                <p className="text-[var(--text-secondary)] font-['Open Sans',sans-serif] mb-4" style={{ fontSize: '16px' }}>
                   {extension.info}
                 </p>
                 <div className="flex flex-wrap justify-center gap-2 sm:justify-start">
                   {extension.types.map((type, index) => (
                     <span
                       key={index}
-                      className="rounded-full bg-[var(--chip-bg)] px-3 py-1 font-['Inter',sans-serif] text-[var(--text-primary)]"
+                      className="rounded-full bg-[var(--chip-bg)] px-3 py-1 font-['Open Sans',sans-serif] text-[var(--text-primary)]"
                       style={{ fontWeight: 600, fontSize: '13px' }}
                     >
                       {type}
@@ -424,12 +424,12 @@ export function ExtensionDetailPage({ extensionId, onNavigate }: ExtensionDetail
         <div className="mb-6 sm:mb-8">
           <h2
             className="text-[var(--text-primary)] font-['Poppins',sans-serif] mb-4"
-            style={{ fontSize: '24px', fontWeight: 600 }}
+            style={{ fontSize: '24px', fontWeight: 700 }}
           >
             Overview
           </h2>
           <div className="bg-[var(--bg-surface)] border border-[var(--divider)] rounded-2xl p-6" style={{ boxShadow: '0 6px 20px 0 rgba(0,0,0,0.08)' }}>
-            <p className="text-[var(--text-secondary)] font-['Inter',sans-serif] leading-relaxed" style={{ fontSize: '15px' }}>
+            <p className="text-[var(--text-secondary)] font-['Open Sans',sans-serif] leading-relaxed" style={{ fontSize: '15px' }}>
               {extension.overview}
             </p>
           </div>
@@ -441,11 +441,11 @@ export function ExtensionDetailPage({ extensionId, onNavigate }: ExtensionDetail
         <div className="mb-6 sm:mb-8">
           <h2
             className="text-[var(--text-primary)] font-['Poppins',sans-serif] mb-4"
-            style={{ fontSize: '24px', fontWeight: 600 }}
+            style={{ fontSize: '24px', fontWeight: 700 }}
           >
             Compatible Apps
           </h2>
-          <p className="text-[var(--text-secondary)] font-['Inter',sans-serif] mb-4" style={{ fontSize: '15px' }}>
+          <p className="text-[var(--text-secondary)] font-['Open Sans',sans-serif] mb-4" style={{ fontSize: '15px' }}>
             This source is compatible with the following apps:
           </p>
 
@@ -536,7 +536,7 @@ export function ExtensionDetailPage({ extensionId, onNavigate }: ExtensionDetail
       {/* Support Information */}
       <div className="mb-6 sm:mb-8">
         <h2
-          className="text-[var(--text-primary)] font-['Poppins',sans-serif] mb-4"
+          className="text-[var(--text-primary)] font-['Open Sans',sans-serif] mb-4"
           style={{ fontSize: '24px', fontWeight: 600 }}
         >
           Support Information
@@ -544,7 +544,7 @@ export function ExtensionDetailPage({ extensionId, onNavigate }: ExtensionDetail
         <div className="bg-[var(--bg-surface)] border border-[var(--divider)] rounded-2xl p-6" style={{ boxShadow: '0 6px 20px 0 rgba(0,0,0,0.08)' }}>
           {extension.info && (
             <div className="mb-4 pb-4 border-b border-[var(--divider)]">
-              <p className="text-[var(--text-secondary)] font-['Inter',sans-serif]" style={{ fontSize: '15px' }}>
+              <p className="text-[var(--text-secondary)] font-['Open Sans',sans-serif]" style={{ fontSize: '15px' }}>
                 {extension.info}
               </p>
             </div>
@@ -555,10 +555,10 @@ export function ExtensionDetailPage({ extensionId, onNavigate }: ExtensionDetail
                 <span className="text-xs">📦</span>
               </div>
               <div>
-                <div className="text-[var(--text-primary)] font-['Inter',sans-serif] mb-1" style={{ fontWeight: 600, fontSize: '14px' }}>
+                <div className="text-[var(--text-primary)] font-['Open Sans',sans-serif] mb-1" style={{ fontWeight: 600, fontSize: '14px' }}>
                   Installation Method
                 </div>
-                <p className="text-[var(--text-secondary)] font-['Inter',sans-serif] text-sm">
+                <p className="text-[var(--text-secondary)] font-['Open Sans',sans-serif] text-sm">
                   Use the Auto Install button for automatic setup, or copy the manual URL for manual configuration in your app.
                 </p>
               </div>
@@ -568,10 +568,10 @@ export function ExtensionDetailPage({ extensionId, onNavigate }: ExtensionDetail
                 <span className="text-xs">🔄</span>
               </div>
               <div>
-                <div className="text-[var(--text-primary)] font-['Inter',sans-serif] mb-1" style={{ fontWeight: 600, fontSize: '14px' }}>
+                <div className="text-[var(--text-primary)] font-['Open Sans',sans-serif] mb-1" style={{ fontWeight: 600, fontSize: '14px' }}>
                   Updates
                 </div >
-                <p className="text-[var(--text-secondary)] font-['Inter',sans-serif] text-sm">
+                <p className="text-[var(--text-secondary)] font-['Open Sans',sans-serif] text-sm">
                   Extensions are automatically updated by your app when new versions are available from this source.
                 </p>
               </div>
@@ -582,23 +582,23 @@ export function ExtensionDetailPage({ extensionId, onNavigate }: ExtensionDetail
 
       {/* Community Links */}
       {/* <div className="bg-[var(--bg-elev-1)] rounded-2xl p-6 text-center">
-        <h3 className="text-[var(--text-primary)] font-['Poppins',sans-serif] mb-2" style={{ fontSize: '18px', fontWeight: 600 }}>
+        <h3 className="text-[var(--text-primary)] font-['Open Sans',sans-serif] mb-2" style={{ fontSize: '18px', fontWeight: 600 }}>
           Need Help?
         </h3>
-        <p className="text-[var(--text-secondary)] font-['Inter',sans-serif] text-sm mb-4">
+        <p className="text-[var(--text-secondary)] font-['Open Sans',sans-serif] text-sm mb-4">
           Visit our community for support, guides, and troubleshooting assistance.
         </p>
         <div className="flex flex-wrap justify-center gap-3">
           <button
             onClick={() => onNavigate?.('/guides')}
-            className="px-4 py-2 bg-[var(--bg-surface)] border border-[var(--divider)] hover:border-[var(--brand)] text-[var(--text-primary)] rounded-xl transition-all font-['Inter',sans-serif] text-sm"
+            className="px-4 py-2 bg-[var(--bg-surface)] border border-[var(--divider)] hover:border-[var(--brand)] text-[var(--text-primary)] rounded-xl transition-all font-['Open Sans',sans-serif] text-sm"
             style={{ fontWeight: 500 }}
           >
             View Guides
           </button>
           <button
             onClick={() => onNavigate?.('/faq')}
-            className="px-4 py-2 bg-[var(--bg-surface)] border border-[var(--divider)] hover:border-[var(--brand)] text-[var(--text-primary)] rounded-xl transition-all font-['Inter',sans-serif] text-sm"
+            className="px-4 py-2 bg-[var(--bg-surface)] border border-[var(--divider)] hover:border-[var(--brand)] text-[var(--text-primary)] rounded-xl transition-all font-['Open Sans',sans-serif] text-sm"
             style={{ fontWeight: 500 }}
           >
             FAQ

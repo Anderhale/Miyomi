@@ -63,7 +63,7 @@ export function FeedbackTrigger({ onToggle, isOpen, title }: FeedbackTriggerProp
       
       {/* Text that expands and collapses */}
       <span 
-        className={`text-xs sm:text-sm font-['Inter',sans-serif] whitespace-nowrap transition-all duration-500 overflow-hidden ${
+        className={`text-xs sm:text-sm font-['Open Sans',sans-serif] whitespace-nowrap transition-all duration-500 overflow-hidden ${
           showText ? 'max-w-[120px] opacity-100' : 'max-w-0 opacity-0'
         } ${
           isOpen ? 'text-white' : 'text-[var(--text-primary)]'

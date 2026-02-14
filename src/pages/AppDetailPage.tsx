@@ -338,15 +338,15 @@ export function AppDetailPage() {
       >
         <div className="text-center py-16 sm:py-24">
           <div className="text-6xl sm:text-8xl mb-6 opacity-50">📱</div>
-          <h3 className="text-[var(--text-primary)] font-['Poppins',sans-serif] mb-2" style={{ fontSize: '20px', fontWeight: 600 }}>
+          <h3 className="text-[var(--text-primary)] font-['Open Sans',sans-serif] mb-2" style={{ fontSize: '20px', fontWeight: 600 }}>
             App not found
           </h3>
-          <p className="text-[var(--text-secondary)] font-['Inter',sans-serif] mb-6">
+          <p className="text-[var(--text-secondary)] font-['Open Sans',sans-serif] mb-6">
             The app you're looking for doesn't exist or has been removed.
           </p>
           <button
             onClick={handleBackClick}
-            className="px-6 py-3 bg-[var(--brand)] hover:bg-[var(--brand-strong)] text-white rounded-xl transition-all font-['Inter',sans-serif]"
+            className="px-6 py-3 bg-[var(--brand)] hover:bg-[var(--brand-strong)] text-white rounded-xl transition-all font-['Open Sans',sans-serif]"
             style={{ fontWeight: 600 }}
           >
             Back to Software
@@ -414,7 +414,7 @@ export function AppDetailPage() {
               href={downloadUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-6 py-3 bg-[var(--brand)] hover:bg-[var(--brand-strong)] text-white rounded-xl transition-all font-['Inter',sans-serif]"
+              className="flex items-center gap-2 px-6 py-3 bg-[var(--brand)] hover:bg-[var(--brand-strong)] text-white rounded-xl transition-all font-['Open Sans',sans-serif]"
               style={{ fontWeight: 600 }}
             >
               <Download className="w-4 h-4" />
@@ -432,7 +432,7 @@ export function AppDetailPage() {
             href={downloadUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 rounded-xl bg-[var(--brand)] px-6 py-3 font-['Inter',sans-serif] text-white transition-all hover:bg-[var(--brand-strong)]"
+            className="flex items-center justify-center gap-2 rounded-xl bg-[var(--brand)] px-6 py-3 font-['Open Sans',sans-serif] text-white transition-all hover:bg-[var(--brand-strong)]"
             style={{ fontWeight: 600 }}
           >
             <Download className="w-4 h-4" />
@@ -452,12 +452,12 @@ export function AppDetailPage() {
               </div>
               <div className="flex-1">
                 <p
-                  className="font-['Inter',sans-serif] text-[var(--text-primary)]"
+                  className="font-['Open Sans',sans-serif] text-[var(--text-primary)]"
                   style={{ fontWeight: 600, fontSize: '14px' }}
                 >
                   GitHub
                 </p>
-                <p className="font-['Inter',sans-serif] text-xs text-[var(--text-secondary)]">
+                <p className="font-['Open Sans',sans-serif] text-xs text-[var(--text-secondary)]">
                   Project repository
                 </p>
               </div>
@@ -476,12 +476,12 @@ export function AppDetailPage() {
               </div>
               <div className="flex-1">
                 <p
-                  className="font-['Inter',sans-serif] text-[var(--text-primary)]"
+                  className="font-['Open Sans',sans-serif] text-[var(--text-primary)]"
                   style={{ fontWeight: 600, fontSize: '14px' }}
                 >
                   Discord
                 </p>
-                <p className="font-['Inter',sans-serif] text-xs text-[var(--text-secondary)]">
+                <p className="font-['Open Sans',sans-serif] text-xs text-[var(--text-secondary)]">
                   Join the community
                 </p>
               </div>
@@ -500,12 +500,12 @@ export function AppDetailPage() {
               </div>
               <div className="flex-1">
                 <p
-                  className="font-['Inter',sans-serif] text-[var(--text-primary)]"
+                  className="font-['Open Sans',sans-serif] text-[var(--text-primary)]"
                   style={{ fontWeight: 600, fontSize: '14px' }}
                 >
                   Website
                 </p>
-                <p className="font-['Inter',sans-serif] text-xs text-[var(--text-secondary)]">
+                <p className="font-['Open Sans',sans-serif] text-xs text-[var(--text-secondary)]">
                   Official site
                 </p>
               </div>
@@ -537,7 +537,7 @@ export function AppDetailPage() {
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.2 }}
         onClick={handleBackClick}
-        className="flex items-center gap-2 text-[var(--text-secondary)] hover:text-[var(--brand)] transition-colors mb-6 font-['Inter',sans-serif]"
+        className="flex items-center gap-2 text-[var(--text-secondary)] hover:text-[var(--brand)] transition-colors mb-6 font-['Open Sans',sans-serif]"
         style={{ fontWeight: 500 }}
       >
         <ArrowLeft className="w-4 h-4" />
@@ -581,7 +581,7 @@ export function AppDetailPage() {
           <div className="w-full min-w-0 flex-1 text-center sm:text-left lg:pr-8">
             <div className="mb-2 flex flex-wrap items-center justify-center gap-3 sm:justify-start">
               <h1
-                className="text-[var(--text-primary)] font-['Poppins',sans-serif]"
+                className="text-[var(--text-primary)] font-['Open Sans',sans-serif]"
                 style={{ fontSize: 'clamp(24px, 5vw, 32px)', lineHeight: '1.2', fontWeight: 700 }}
               >
                 {app.name}
@@ -593,7 +593,7 @@ export function AppDetailPage() {
             </div>
             {authorInfo && (
               <p
-                className="text-[var(--text-secondary)] font-['Inter',sans-serif] mb-1"
+                className="text-[var(--text-secondary)] font-['Open Sans',sans-serif] mb-1"
                 style={{ fontSize: '14px' }}
               >
                 by{' '}
@@ -631,7 +631,7 @@ export function AppDetailPage() {
                 )}
               </div>
             )}
-            <p className="text-[var(--text-secondary)] font-['Inter',sans-serif] mb-4" style={{ fontSize: '16px' }}>
+            <p className="text-[var(--text-secondary)] font-['Open Sans',sans-serif] mb-4" style={{ fontSize: '16px' }}>
               {app.description}
             </p>
 
@@ -673,11 +673,11 @@ export function AppDetailPage() {
         <div className="mb-6 sm:mb-8">
           <h2
             className="text-[var(--text-primary)] font-['Poppins',sans-serif] mb-4"
-            style={{ fontSize: '24px', fontWeight: 600 }}
+            style={{ fontSize: '24px', fontWeight: 700 }}
           >
             Recommended Extensions
           </h2>
-          <p className="text-[var(--text-secondary)] font-['Inter',sans-serif] mb-4" style={{ fontSize: '15px' }}>
+          <p className="text-[var(--text-secondary)] font-['Open Sans',sans-serif] mb-4" style={{ fontSize: '15px' }}>
             Extension sources compatible with {app.name}:
           </p>
 
@@ -755,11 +755,11 @@ export function AppDetailPage() {
         <div className="mb-6 sm:mb-8">
           <h2
             className="text-[var(--text-primary)] font-['Poppins',sans-serif] mb-4"
-            style={{ fontSize: '24px', fontWeight: 600 }}
+            style={{ fontSize: '24px', fontWeight: 700 }}
           >
             Tutorials & Guides
           </h2>
-          <p className="text-[var(--text-secondary)] font-['Inter',sans-serif] mb-4" style={{ fontSize: '15px' }}>
+          <p className="text-[var(--text-secondary)] font-['Open Sans',sans-serif] mb-4" style={{ fontSize: '15px' }}>
             Learn how to get the most out of {app.name} with curated walkthroughs and documentation.
           </p>
           <div className="grid gap-4 sm:grid-cols-2">
@@ -785,11 +785,11 @@ export function AppDetailPage() {
                         <PlayCircle className="w-5 h-5" />
                       </div>
                       <div className="min-w-0">
-                        <h3 className="text-[var(--text-primary)] font-['Inter',sans-serif]" style={{ fontWeight: 600, fontSize: '15px' }}>
+                        <h3 className="text-[var(--text-primary)] font-['Open Sans',sans-serif]" style={{ fontWeight: 600, fontSize: '15px' }}>
                           {tutorial.title}
                         </h3>
                         {tutorial.description && (
-                          <p className="text-[var(--text-secondary)] font-['Inter',sans-serif] text-sm mt-1">
+                          <p className="text-[var(--text-secondary)] font-['Open Sans',sans-serif] text-sm mt-1">
                             {tutorial.description}
                           </p>
                         )}
@@ -813,11 +813,11 @@ export function AppDetailPage() {
                       <BookOpen className="w-5 h-5" />
                     </div>
                     <div className="min-w-0">
-                      <h3 className="text-[var(--text-primary)] font-['Inter',sans-serif]" style={{ fontWeight: 600, fontSize: '15px' }}>
+                      <h3 className="text-[var(--text-primary)] font-['Open Sans',sans-serif]" style={{ fontWeight: 600, fontSize: '15px' }}>
                         {tutorial.title}
                       </h3>
                       {tutorial.description && (
-                        <p className="text-[var(--text-secondary)] font-['Inter',sans-serif] text-sm mt-1">
+                        <p className="text-[var(--text-secondary)] font-['Open Sans',sans-serif] text-sm mt-1">
                           {tutorial.description}
                         </p>
                       )}
@@ -835,10 +835,10 @@ export function AppDetailPage() {
       {/* Support Section */}
       {/*
       <div className="bg-[var(--bg-elev-1)] rounded-2xl p-6 text-center">
-        <h3 className="text-[var(--text-primary)] font-['Poppins',sans-serif] mb-2" style={{ fontSize: '18px', fontWeight: 600 }}>
+        <h3 className="text-[var(--text-primary)] font-['Open Sans',sans-serif] mb-2" style={{ fontSize: '18px', fontWeight: 600 }}>
           Need Help?
         </h3>
-        <p className="text-[var(--text-secondary)] font-['Inter',sans-serif] text-sm mb-4">
+        <p className="text-[var(--text-secondary)] font-['Open Sans',sans-serif] text-sm mb-4">
           Get support from our community or check our FAQ section.
         </p>
         <div className="flex flex-wrap justify-center gap-3">
@@ -847,7 +847,7 @@ export function AppDetailPage() {
               href={app.discordUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 bg-[var(--bg-surface)] border border-[var(--divider)] hover:border-[var(--brand)] text-[var(--text-primary)] rounded-xl transition-all font-['Inter',sans-serif] text-sm"
+              className="px-4 py-2 bg-[var(--bg-surface)] border border-[var(--divider)] hover:border-[var(--brand)] text-[var(--text-primary)] rounded-xl transition-all font-['Open Sans',sans-serif] text-sm"
               style={{ fontWeight: 500 }}
             >
               Join Discord
@@ -855,7 +855,7 @@ export function AppDetailPage() {
           )}
           <button
             onClick={() => onNavigate?.('/faq')}
-            className="px-4 py-2 bg-[var(--bg-surface)] border border-[var(--divider)] hover:border-[var(--brand)] text-[var(--text-primary)] rounded-xl transition-all font-['Inter',sans-serif] text-sm"
+            className="px-4 py-2 bg-[var(--bg-surface)] border border-[var(--divider)] hover:border-[var(--brand)] text-[var(--text-primary)] rounded-xl transition-all font-['Open Sans',sans-serif] text-sm"
             style={{ fontWeight: 500 }}
           >
             View FAQ

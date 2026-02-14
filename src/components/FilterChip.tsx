@@ -8,7 +8,7 @@ export function FilterChip({ label, selected = false, onClick }: FilterChipProps
   return (
     <button
       onClick={onClick}
-      className={`px-4 py-2 rounded-xl transition-all font-['Inter',sans-serif] ${
+      className={`px-4 py-2 rounded-xl transition-all font-['Open Sans',sans-serif] ${
         selected
           ? 'bg-[var(--brand)] text-white'
           : 'bg-[var(--chip-bg)] text-[var(--text-primary)] hover:bg-[var(--brand)] hover:text-white'

@@ -44,7 +44,7 @@ export function GitHubCommitSummary({
       style={{ boxShadow: '0 6px 20px 0 rgba(0,0,0,0.08)' }}
     >
       <div className="flex items-center justify-between gap-4 mb-4">
-        <div className="flex items-center gap-2 text-sm text-[var(--text-secondary)] font-['Inter',sans-serif]">
+        <div className="flex items-center gap-2 text-sm text-[var(--text-secondary)] font-['Open Sans',sans-serif]">
           <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[var(--chip-bg)] text-[var(--brand)]">
             <Github className="w-4 h-4" />
           </span>
@@ -55,7 +55,7 @@ export function GitHubCommitSummary({
             href={commit.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-[var(--brand)] hover:text-[var(--brand-strong)] transition-colors font-['Inter',sans-serif]"
+            className="text-sm text-[var(--brand)] hover:text-[var(--brand-strong)] transition-colors font-['Open Sans',sans-serif]"
             style={{ fontWeight: 500 }}
           >
             View all commit →
@@ -83,7 +83,7 @@ export function GitHubCommitSummary({
             >
               <div className="flex items-center justify-between gap-3">
                 <p
-                  className="text-[var(--text-primary)] font-['Inter',sans-serif]"
+                  className="text-[var(--text-primary)] font-['Open Sans',sans-serif]"
                   style={{ fontWeight: 600, fontSize: '15px' }}
                 >
                   {item.message}
@@ -99,7 +99,7 @@ export function GitHubCommitSummary({
                   </a>
                 )}
               </div>
-              <div className="mt-2 flex flex-wrap items-center gap-3 text-xs text-[var(--text-secondary)] font-['Inter',sans-serif]">
+              <div className="mt-2 flex flex-wrap items-center gap-3 text-xs text-[var(--text-secondary)] font-['Open Sans',sans-serif]">
                 <span>
                   <span className="opacity-70">Author:</span> {item.author}
                 </span>

@@ -71,7 +71,7 @@ export function AppGridCard({
           />
         </div>
         <div className="flex-1 min-w-0 text-center sm:text-left w-full">
-          <h3 className="font-['Inter',sans-serif] text-[var(--text-primary)] mb-1 sm:mb-1" style={{ fontWeight: 600, fontSize: '14px', lineHeight: '1.3' }}>
+          <h3 className="font-['Open Sans',sans-serif] text-[var(--text-primary)] mb-1 sm:mb-1" style={{ fontWeight: 600, fontSize: '14px', lineHeight: '1.3' }}>
             {name}
           </h3>
           <div className="flex items-center justify-center sm:justify-start gap-1.5 flex-wrap">
@@ -84,7 +84,7 @@ export function AppGridCard({
                 <PlatformBadge key={`${platform}-${index}`} platform={platform} small />
               ))}
               {extraPlatforms > 0 && (
-                <span className="text-[11px] text-[var(--text-secondary)] font-['Inter',sans-serif]" style={{ fontWeight: 500 }}>
+                <span className="text-[11px] text-[var(--text-secondary)] font-['Open Sans',sans-serif]" style={{ fontWeight: 500 }}>
                   +{extraPlatforms}
                 </span>
               )}
@@ -113,7 +113,7 @@ export function AppGridCard({
       </div>
 
       {/* Description */}
-      <p className="text-[var(--text-secondary)] font-['Inter',sans-serif] mb-2 sm:mb-4 line-clamp-2 text-center sm:text-left flex-grow" style={{ fontSize: '12px', lineHeight: '1.4' }}>
+      <p className="text-[var(--text-secondary)] font-['Open Sans',sans-serif] mb-2 sm:mb-4 line-clamp-2 text-center sm:text-left flex-grow" style={{ fontSize: '12px', lineHeight: '1.4' }}>
         {description}
       </p>
 

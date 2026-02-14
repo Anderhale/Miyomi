@@ -8,7 +8,7 @@ export function Footer() {
   return (
     <footer className="border-t border-[var(--divider)] mt-16 py-8 px-4 sm:px-8 lg:px-[120px]">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-[var(--text-secondary)] font-['Inter',sans-serif] text-sm">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-[var(--text-secondary)] font-['Open Sans',sans-serif] text-sm">
           {/* Left side - Team info */}
           <div className="flex items-center gap-2 flex-wrap">
             <span>The Miyomi Team</span>

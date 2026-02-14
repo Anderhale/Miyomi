@@ -28,17 +28,17 @@ export function ExtensionSource({ name, language, url, compatibility, iconColor 
 
       {/* Content */}
       <div className="flex-1 min-w-0">
-        <div className="font-['Inter',sans-serif] text-[var(--text-primary)] mb-0.5" style={{ fontWeight: 600, fontSize: '14px' }}>
+        <div className="font-['Open Sans',sans-serif] text-[var(--text-primary)] mb-0.5" style={{ fontWeight: 600, fontSize: '14px' }}>
           {name}
         </div>
-        <div className="text-[var(--text-secondary)] font-['Inter',sans-serif] mb-1.5" style={{ fontSize: '12px' }}>
+        <div className="text-[var(--text-secondary)] font-['Open Sans',sans-serif] mb-1.5" style={{ fontSize: '12px' }}>
           {language}
         </div>
         <div className="flex items-center gap-1.5 flex-wrap">
           {compatibility.map((app, index) => (
             <span
               key={index}
-              className="px-2 py-0.5 rounded-md text-[10px] bg-[var(--chip-bg)] text-[var(--text-secondary)] font-['Inter',sans-serif]"
+              className="px-2 py-0.5 rounded-md text-[10px] bg-[var(--chip-bg)] text-[var(--text-secondary)] font-['Open Sans',sans-serif]"
               style={{ fontWeight: 500 }}
             >
               {app}
@@ -54,7 +54,7 @@ export function ExtensionSource({ name, language, url, compatibility, iconColor 
         </Button>
         <button
           onClick={handleCopyUrl}
-          className="px-4 py-2 rounded-xl border border-[var(--divider)] bg-[var(--bg-surface)] text-[var(--text-primary)] hover:bg-[var(--bg-elev-1)] transition-all font-['Inter',sans-serif] flex items-center gap-2"
+          className="px-4 py-2 rounded-xl border border-[var(--divider)] bg-[var(--bg-surface)] text-[var(--text-primary)] hover:bg-[var(--bg-elev-1)] transition-all font-['Open Sans',sans-serif] flex items-center gap-2"
           style={{ fontWeight: 600 }}
         >
           <Copy className="w-4 h-4" />

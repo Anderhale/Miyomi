@@ -118,7 +118,7 @@ export function FeedbackPage() {
             {/* Back Button */}
             <button
                 onClick={() => navigate(-1)}
-                className="mb-6 flex items-center gap-2 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors font-['Inter',sans-serif] text-sm"
+                className="mb-6 flex items-center gap-2 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors font-['Open Sans',sans-serif] text-sm"
             >
                 <ArrowLeft className="h-4 w-4" />
                 Back
@@ -127,12 +127,12 @@ export function FeedbackPage() {
             {/* Header */}
             <div className="mb-8">
                 <h1
-                    className="text-[var(--text-primary)] font-['Poppins',sans-serif] mb-2"
+                    className="text-[var(--text-primary)] font-['Open Sans',sans-serif] mb-2"
                     style={{ fontSize: 'clamp(24px, 5vw, 32px)', lineHeight: '1.2', fontWeight: 700 }}
                 >
                     Send feedback anonymously
                 </h1>
-                <p className="text-[var(--text-secondary)] font-['Inter',sans-serif] text-sm">
+                <p className="text-[var(--text-secondary)] font-['Open Sans',sans-serif] text-sm">
                     Your feedback helps us improve. Choose a category and share your thoughts.
                 </p>
             </div>
@@ -148,7 +148,7 @@ export function FeedbackPage() {
                 {!selectedOption && (
                     <>
                         <h3
-                            className="font-['Poppins',sans-serif] text-[var(--text-primary)] mb-4"
+                            className="font-['Open Sans',sans-serif] text-[var(--text-primary)] mb-4"
                             style={{ fontSize: '18px', fontWeight: 600 }}
                         >
                             What do you want to share?
@@ -162,7 +162,7 @@ export function FeedbackPage() {
                                         onClick={() => handleSelect(option.id)}
                                         whileHover={{ scale: 1.03 }}
                                         whileTap={{ scale: 0.98 }}
-                                        className="flex items-center gap-2 rounded-full border border-[var(--divider)] bg-[var(--bg-elev-1)] px-3 py-1.5 font-['Inter',sans-serif] text-xs text-[var(--text-primary)] shadow-sm transition-colors hover:border-[var(--brand)] hover:text-[var(--text-primary-strong)] sm:text-sm"
+                                        className="flex items-center gap-2 rounded-full border border-[var(--divider)] bg-[var(--bg-elev-1)] px-3 py-1.5 font-['Open Sans',sans-serif] text-xs text-[var(--text-primary)] shadow-sm transition-colors hover:border-[var(--brand)] hover:text-[var(--text-primary-strong)] sm:text-sm"
                                         style={{
                                             letterSpacing: '0.01em',
                                             width: 'max-content',
@@ -195,7 +195,7 @@ export function FeedbackPage() {
                                     })()}
                                 </span>
                                 <h4
-                                    className="font-['Poppins',sans-serif] text-[var(--text-primary)]"
+                                    className="font-['Open Sans',sans-serif] text-[var(--text-primary)]"
                                     style={{ fontSize: '20px', fontWeight: 600, color: accentColor }}
                                 >
                                     {selectedOptionData.label}
@@ -203,7 +203,7 @@ export function FeedbackPage() {
                             </div>
                             <button
                                 onClick={handleReset}
-                                className="rounded-full border border-[var(--divider)] px-3 py-1.5 font-['Inter',sans-serif] text-xs text-[var(--text-secondary)] transition-colors hover:bg-[var(--chip-bg)] hover:text-[var(--text-primary)]"
+                                className="rounded-full border border-[var(--divider)] px-3 py-1.5 font-['Open Sans',sans-serif] text-xs text-[var(--text-secondary)] transition-colors hover:bg-[var(--chip-bg)] hover:text-[var(--text-primary)]"
                             >
                                 Change
                             </button>
@@ -214,12 +214,12 @@ export function FeedbackPage() {
                             value={message}
                             onChange={(event) => setMessage(event.target.value)}
                             placeholder={getPlaceholder(selectedOption)}
-                            className="w-full rounded-xl border border-[var(--divider)] bg-[var(--bg-elev-1)] p-4 font-['Inter',sans-serif] text-sm text-[var(--text-primary)] placeholder:text-[var(--text-secondary)] focus:border-[var(--brand)] focus:outline-none"
+                            className="w-full rounded-xl border border-[var(--divider)] bg-[var(--bg-elev-1)] p-4 font-['Open Sans',sans-serif] text-sm text-[var(--text-primary)] placeholder:text-[var(--text-secondary)] focus:border-[var(--brand)] focus:outline-none"
                             style={{ minHeight: '130px', resize: 'vertical' }}
                         />
 
                         {/* Footer Text */}
-                        <p className="font-['Inter',sans-serif] text-sm text-[var(--text-secondary)]">
+                        <p className="font-['Open Sans',sans-serif] text-sm text-[var(--text-secondary)]">
                             If you want a reply to your feedback, feel free to mention a contact in the message.
                         </p>
 
@@ -342,7 +342,7 @@ export function FeedbackPage() {
                         <div className="flex gap-3 pt-12">
                             <button
                                 onClick={handleReset}
-                                className="flex items-center justify-center rounded-xl border border-[var(--divider)] bg-[var(--bg-elev-1)] px-4 py-2.5 font-['Inter',sans-serif] text-sm font-semibold text-[var(--text-primary)] transition-colors hover:bg-[var(--chip-bg)]"
+                                className="flex items-center justify-center rounded-xl border border-[var(--divider)] bg-[var(--bg-elev-1)] px-4 py-2.5 font-['Open Sans',sans-serif] text-sm font-semibold text-[var(--text-primary)] transition-colors hover:bg-[var(--chip-bg)]"
                             >
                                 <ChevronLeft className="h-4 w-4 mr-1" />
                                 Back
@@ -350,7 +350,7 @@ export function FeedbackPage() {
                             <button
                                 onClick={handleSubmit}
                                 disabled={!canSubmit || isSubmitting}
-                                className="flex flex-1 items-center justify-center rounded-xl bg-[var(--brand)] px-5 py-2.5 font-['Inter',sans-serif] text-sm font-semibold text-white transition-colors hover:bg-[var(--brand-strong)] disabled:cursor-not-allowed disabled:opacity-50"
+                                className="flex flex-1 items-center justify-center rounded-xl bg-[var(--brand)] px-5 py-2.5 font-['Open Sans',sans-serif] text-sm font-semibold text-white transition-colors hover:bg-[var(--brand-strong)] disabled:cursor-not-allowed disabled:opacity-50"
                             >
                                 {isSubmitting ? 'Sending...' : 'Send Feedback'}
                                 <Send className="h-4 w-4 ml-2" />

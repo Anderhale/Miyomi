@@ -73,7 +73,7 @@ export function AppListCard({
 
       {/* Content */}
       <div className="flex-1 min-w-0">
-        <h3 className="font-['Inter',sans-serif] text-[var(--text-primary)] truncate mb-1" style={{ fontWeight: 600, fontSize: '15px' }}>
+        <h3 className="font-['Open Sans',sans-serif] text-[var(--text-primary)] truncate mb-1" style={{ fontWeight: 600, fontSize: '15px' }}>
           {name}
         </h3>
         <div className="flex flex-wrap items-center gap-1.5 mb-1">
@@ -87,7 +87,7 @@ export function AppListCard({
                 <PlatformBadge key={`${platform}-${index}`} platform={platform} small />
               ))}
               {extraPlatforms > 0 && (
-                <span className="text-[10px] text-[var(--text-secondary)] font-['Inter',sans-serif]" style={{ fontWeight: 500 }}>
+                <span className="text-[10px] text-[var(--text-secondary)] font-['Open Sans',sans-serif]" style={{ fontWeight: 500 }}>
                   +{extraPlatforms}
                 </span>
               )}
@@ -113,7 +113,7 @@ export function AppListCard({
             )}
           </div>
         )}
-        <p className="text-[var(--text-secondary)] font-['Inter',sans-serif] text-xs line-clamp-1">
+        <p className="text-[var(--text-secondary)] font-['Open Sans',sans-serif] text-xs line-clamp-1">
           {description}
         </p>
         {(rating || downloads) && (
@@ -135,7 +135,7 @@ export function AppListCard({
 
         <div className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 bg-[var(--chip-bg)] group-hover:bg-[var(--brand)] text-[var(--text-primary)] group-hover:text-white rounded-lg transition-all">
           <ExternalLink className="w-3.5 h-3.5" />
-          <span className="text-xs font-['Inter',sans-serif]" style={{ fontWeight: 600 }}>
+          <span className="text-xs font-['Open Sans',sans-serif]" style={{ fontWeight: 600 }}>
             View
           </span>
         </div>

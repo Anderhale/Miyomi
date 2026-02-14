@@ -67,21 +67,21 @@ export function ExtensionListCard({ extension, voteData, allowFetch = true, onSe
           </div>
           <div className="flex-1 min-w-0">
             <h3
-              className="font-['Inter',sans-serif] text-[var(--text-primary)] mb-2"
+              className="font-['Open Sans',sans-serif] text-[var(--text-primary)] mb-2"
               style={{ fontWeight: 600, fontSize: '16px' }}
             >
               {extension.name}
             </h3>
             <div className="flex items-center gap-2 text-xs text-[var(--text-secondary)]">
               <span
-                className="font-['Inter',sans-serif] tracking-wide text-[13px]"
+                className="font-['Open Sans',sans-serif] tracking-wide text-[13px]"
                 style={{ fontWeight: 600 }}
               >
                 {extension.types.join(' + ')}
               </span>
             </div>
             {extension.info && (
-              <p className="mt-3 text-sm text-[var(--text-secondary)] font-['Inter',sans-serif] line-clamp-2">
+              <p className="mt-3 text-sm text-[var(--text-secondary)] font-['Open Sans',sans-serif] line-clamp-2">
                 {extension.info}
               </p>
             )}
@@ -95,7 +95,7 @@ export function ExtensionListCard({ extension, voteData, allowFetch = true, onSe
               event.stopPropagation();
               handleSelect();
             }}
-            className="px-4 py-2 flex items-center justify-center gap-2 rounded-xl bg-[var(--chip-bg)] text-[var(--brand)] group-hover:bg-[var(--brand)] group-hover:text-white transition-all font-['Inter',sans-serif]"
+            className="px-4 py-2 flex items-center justify-center gap-2 rounded-xl bg-[var(--chip-bg)] text-[var(--brand)] group-hover:bg-[var(--brand)] group-hover:text-white transition-all font-['Open Sans',sans-serif]"
             style={{ fontWeight: 600, fontSize: '14px' }}
           >
             <Download className="w-4 h-4" />
@@ -111,7 +111,7 @@ export function ExtensionListCard({ extension, voteData, allowFetch = true, onSe
         </div>
         <div className="flex-1 min-w-0">
           <h3
-            className="font-['Inter',sans-serif] text-[var(--text-primary)] truncate mb-1"
+            className="font-['Open Sans',sans-serif] text-[var(--text-primary)] truncate mb-1"
             style={{ fontWeight: 600, fontSize: '16px' }}
           >
             {extension.name}

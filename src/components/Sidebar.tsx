@@ -11,7 +11,7 @@ export function Sidebar({ activeItem = 'Apps', onNavigate, items = ['Apps', 'Sup
         <button
           key={item}
           onClick={() => onNavigate?.(item)}
-          className={`px-4 py-2.5 rounded-xl transition-all font-['Inter',sans-serif] text-left ${
+          className={`px-4 py-2.5 rounded-xl transition-all font-['Open Sans',sans-serif] text-left ${
             item === activeItem
               ? 'bg-[var(--chip-bg)] text-[var(--brand)]'
               : 'text-[var(--text-primary)] hover:bg-[var(--bg-elev-1)]'

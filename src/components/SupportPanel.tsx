@@ -10,7 +10,7 @@ export function SupportPanel() {
       >
         <div className="flex items-center gap-2 mb-3">
           <HelpCircle className="w-5 h-5 text-[var(--brand)]" />
-          <h3 className="font-['Inter',sans-serif] text-[var(--text-primary)]" style={{ fontWeight: 600 }}>
+          <h3 className="font-['Open Sans',sans-serif] text-[var(--text-primary)]" style={{ fontWeight: 600 }}>
             FAQ
           </h3>
         </div>
@@ -19,7 +19,7 @@ export function SupportPanel() {
             <a
               key={index}
               href="#"
-              className="text-sm text-[var(--brand)] hover:text-[var(--brand-strong)] transition-colors font-['Inter',sans-serif]"
+              className="text-sm text-[var(--brand)] hover:text-[var(--brand-strong)] transition-colors font-['Open Sans',sans-serif]"
             >
               {item}
             </a>
@@ -34,7 +34,7 @@ export function SupportPanel() {
       >
         <div className="flex items-center gap-2 mb-3">
           <BookOpen className="w-5 h-5 text-[var(--brand)]" />
-          <h3 className="font-['Inter',sans-serif] text-[var(--text-primary)]" style={{ fontWeight: 600 }}>
+          <h3 className="font-['Open Sans',sans-serif] text-[var(--text-primary)]" style={{ fontWeight: 600 }}>
             Tutorials
           </h3>
         </div>
@@ -43,7 +43,7 @@ export function SupportPanel() {
             <a
               key={index}
               href="#"
-              className="text-sm text-[var(--brand)] hover:text-[var(--brand-strong)] transition-colors font-['Inter',sans-serif]"
+              className="text-sm text-[var(--brand)] hover:text-[var(--brand-strong)] transition-colors font-['Open Sans',sans-serif]"
             >
               {item}
             </a>
@@ -58,7 +58,7 @@ export function SupportPanel() {
       >
         <div className="flex items-center gap-2 mb-3">
           <MessageCircle className="w-5 h-5 text-[var(--brand)]" />
-          <h3 className="font-['Inter',sans-serif] text-[var(--text-primary)]" style={{ fontWeight: 600 }}>
+          <h3 className="font-['Open Sans',sans-serif] text-[var(--text-primary)]" style={{ fontWeight: 600 }}>
             Support
           </h3>
         </div>
@@ -67,7 +67,7 @@ export function SupportPanel() {
             <a
               key={index}
               href="#"
-              className="text-sm text-[var(--brand)] hover:text-[var(--brand-strong)] transition-colors font-['Inter',sans-serif]"
+              className="text-sm text-[var(--brand)] hover:text-[var(--brand-strong)] transition-colors font-['Open Sans',sans-serif]"
             >
               {item}
             </a>

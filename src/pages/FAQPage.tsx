@@ -8,12 +8,12 @@ export function FAQPage() {
   return (
     <div className="max-w-4xl mx-auto">
       <h1
-        className="text-[var(--text-primary)] font-['Poppins',sans-serif] mb-4"
-        style={{ fontSize: 'clamp(32px, 5vw, 40px)', lineHeight: '1.2', fontWeight: 600 }}
+        className="text-[var(--text-primary)] font-['Playfair Display',serif] mb-4"
+        style={{ fontSize: 'clamp(32px, 5vw, 40px)', lineHeight: '1.2', fontWeight: 700 }}
       >
         Frequently Asked Questions
       </h1>
-      <p className="text-[var(--text-secondary)] font-['Inter',sans-serif] mb-8" style={{ fontSize: '16px' }}>
+      <p className="text-[var(--text-secondary)] font-['Open Sans',sans-serif] mb-8" style={{ fontSize: '16px' }}>
         Find answers to common questions about apps and extensions.
       </p>
 
@@ -29,7 +29,7 @@ export function FAQPage() {
               className="w-full p-4 sm:p-6 flex items-center justify-between text-left hover:bg-[var(--bg-elev-1)] transition-colors"
             >
               <h3
-                className="font-['Inter',sans-serif] text-[var(--text-primary)] pr-4"
+                className="font-['Poppins',sans-serif] text-[var(--text-primary)] pr-4"
                 style={{ fontWeight: 600, fontSize: '16px' }}
               >
                 {faq.question}
@@ -41,7 +41,7 @@ export function FAQPage() {
             </button>
             {openIndex === index && (
               <div className="px-4 sm:px-6 pb-4 sm:pb-6">
-                <p className="text-[var(--text-secondary)] font-['Inter',sans-serif]" style={{ fontSize: '14px' }}>
+                <p className="text-[var(--text-secondary)] font-['Open Sans',sans-serif]" style={{ fontSize: '14px' }}>
                   {faq.answer}
                 </p>
               </div>

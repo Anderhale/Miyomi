@@ -193,12 +193,12 @@ export function ExtensionsPage({ onNavigate }: ExtensionsPageProps) {
     <div className="max-w-7xl mx-auto">
       <div className="mb-6 sm:mb-8">
         <h1
-          className="text-[var(--text-primary)] font-['Poppins',sans-serif]"
+          className="text-[var(--text-primary)] font-['Playfair Display',serif]"
           style={{ fontSize: 'clamp(28px, 5vw, 40px)', lineHeight: '1.2', fontWeight: 700 }}
         >
           Extension Sources
         </h1>
-        <p className="text-[var(--text-secondary)] font-['Inter',sans-serif]" style={{ fontSize: '16px' }}>
+        <p className="text-[var(--text-secondary)] font-['Open Sans',sans-serif]" style={{ fontSize: '16px' }}>
           Extension repositories and sources for Mihon, Aniyomi, Dantotsu, and compatible apps.
         </p>
       </div>
@@ -239,7 +239,7 @@ export function ExtensionsPage({ onNavigate }: ExtensionsPageProps) {
               placeholder="Search extensions by name, description, or keywords..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-8 pr-4 py-2 mt-1 bg-[var(--bg-surface)] border border-[var(--divider)] rounded-xl text-[var(--text-primary)] placeholder:text-[var(--text-secondary)] focus:outline-none focus:border-[var(--brand)] transition-colors font-['Inter',sans-serif] text-sm"
+              className="w-full pl-8 pr-4 py-2 mt-1 bg-[var(--bg-surface)] border border-[var(--divider)] rounded-xl text-[var(--text-primary)] placeholder:text-[var(--text-secondary)] focus:outline-none focus:border-[var(--brand)] transition-colors font-['Open Sans',sans-serif] text-sm"
             />
           </div>
           <ViewToggle view={view} onViewChange={setView} />
@@ -277,12 +277,12 @@ export function ExtensionsPage({ onNavigate }: ExtensionsPageProps) {
         <div className="text-center py-16 sm:py-24 mb-8">
           <div className="text-6xl sm:text-8xl mb-6 opacity-50">🔌</div>
           <h3
-            className="text-[var(--text-primary)] font-['Poppins',sans-serif] mb-2"
+            className="text-[var(--text-primary)] font-['Open Sans',sans-serif] mb-2"
             style={{ fontSize: '20px', fontWeight: 600 }}
           >
             No extension sources found
           </h3>
-          <p className="text-[var(--text-secondary)] font-['Inter',sans-serif]">
+          <p className="text-[var(--text-secondary)] font-['Open Sans',sans-serif]">
             Try adjusting your filters or search query
           </p>
         </div>
@@ -290,7 +290,7 @@ export function ExtensionsPage({ onNavigate }: ExtensionsPageProps) {
 
       {/* Results Count */}
       {filteredAndSortedExtensions.length > 0 && (
-        <div className="text-center text-[var(--text-secondary)] font-['Inter',sans-serif] text-sm mb-8">
+        <div className="text-center text-[var(--text-secondary)] font-['Open Sans',sans-serif] text-sm mb-8">
           Showing {filteredAndSortedExtensions.length} extension {filteredAndSortedExtensions.length === 1 ? 'source' : 'sources'}
         </div>
       )}

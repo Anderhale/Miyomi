@@ -163,15 +163,15 @@ export function GuideDetailPage({ slug, onNavigate }: GuideDetailPageProps) {
       <div className="max-w-4xl mx-auto">
         <div className="text-center py-16 sm:py-24">
           <div className="text-6xl sm:text-8xl mb-6 opacity-50">📖</div>
-          <h3 className="text-[var(--text-primary)] font-['Poppins',sans-serif] mb-2" style={{ fontSize: '20px', fontWeight: 600 }}>
+          <h3 className="text-[var(--text-primary)] font-['Open Sans',sans-serif] mb-2" style={{ fontSize: '20px', fontWeight: 600 }}>
             Guide not found
           </h3>
-          <p className="text-[var(--text-secondary)] font-['Inter',sans-serif] mb-6">
+          <p className="text-[var(--text-secondary)] font-['Open Sans',sans-serif] mb-6">
             This guide is coming soon or doesn't exist yet.
           </p>
           <button
             onClick={() => onNavigate?.('/guides')}
-            className="px-6 py-3 bg-[var(--brand)] hover:bg-[var(--brand-strong)] text-white rounded-xl transition-all font-['Inter',sans-serif]"
+            className="px-6 py-3 bg-[var(--brand)] hover:bg-[var(--brand-strong)] text-white rounded-xl transition-all font-['Open Sans',sans-serif]"
             style={{ fontWeight: 600 }}
           >
             Back to Guides
@@ -186,7 +186,7 @@ export function GuideDetailPage({ slug, onNavigate }: GuideDetailPageProps) {
       {/* Back Button */}
       <button
         onClick={() => onNavigate?.('/guides')}
-        className="flex items-center gap-2 text-[var(--text-secondary)] hover:text-[var(--brand)] transition-colors mb-6 font-['Inter',sans-serif]"
+        className="flex items-center gap-2 text-[var(--text-secondary)] hover:text-[var(--brand)] transition-colors mb-6 font-['Open Sans',sans-serif]"
         style={{ fontWeight: 500 }}
       >
         <ArrowLeft className="w-4 h-4" />
@@ -201,20 +201,20 @@ export function GuideDetailPage({ slug, onNavigate }: GuideDetailPageProps) {
       >
         <div className="mb-4 flex flex-wrap items-center gap-3">
           <span
-            className="inline-flex items-center gap-2 rounded-full px-3 py-1 font-['Inter',sans-serif] text-white"
+            className="inline-flex items-center gap-2 rounded-full px-3 py-1 font-['Open Sans',sans-serif] text-white"
             style={{ backgroundColor: guide.categoryColor, fontSize: '13px', fontWeight: 600 }}
           >
             <BookOpen className="h-4 w-4" />
             {guide.category}
           </span>
-          <span className="flex items-center gap-1.5 text-[var(--text-secondary)] font-['Inter',sans-serif]" style={{ fontSize: '14px' }}>
+          <span className="flex items-center gap-1.5 text-[var(--text-secondary)] font-['Open Sans',sans-serif]" style={{ fontSize: '14px' }}>
             <Clock className="h-4 w-4" />
             {guide.readTime}
           </span>
         </div>
 
         <h1
-          className="text-[var(--text-primary)] font-['Poppins',sans-serif] mb-4"
+          className="text-[var(--text-primary)] font-['Open Sans',sans-serif] mb-4"
           style={{ fontSize: 'clamp(28px, 5vw, 40px)', lineHeight: '1.2', fontWeight: 700 }}
         >
           {guide.title}
@@ -224,7 +224,7 @@ export function GuideDetailPage({ slug, onNavigate }: GuideDetailPageProps) {
           {guide.tags.map((tag) => (
             <span
               key={tag}
-              className="inline-flex items-center gap-1.5 rounded-lg bg-[var(--chip-bg)] px-2.5 py-1 font-['Inter',sans-serif] text-[var(--text-secondary)] px-2"
+              className="inline-flex items-center gap-1.5 rounded-lg bg-[var(--chip-bg)] px-2.5 py-1 font-['Open Sans',sans-serif] text-[var(--text-secondary)] px-2"
               style={{ fontSize: '12px' }}
             >
               <Tag className="h-3 w-3" />
@@ -245,7 +245,7 @@ export function GuideDetailPage({ slug, onNavigate }: GuideDetailPageProps) {
               return (
                 <h2
                   key={index}
-                  className="text-[var(--text-primary)] font-['Poppins',sans-serif] mt-8 first:mt-0 mb-3"
+                  className="text-[var(--text-primary)] font-['Open Sans',sans-serif] mt-8 first:mt-0 mb-3"
                   style={{ fontSize: '22px', fontWeight: 600 }}
                 >
                   {section.content as string}
@@ -257,7 +257,7 @@ export function GuideDetailPage({ slug, onNavigate }: GuideDetailPageProps) {
               return (
                 <p
                   key={index}
-                  className="text-[var(--text-secondary)] font-['Inter',sans-serif] mb-4"
+                  className="text-[var(--text-secondary)] font-['Open Sans',sans-serif] mb-4"
                   style={{ fontSize: '15px', lineHeight: '1.7' }}
                 >
                   {section.content as string}
@@ -271,7 +271,7 @@ export function GuideDetailPage({ slug, onNavigate }: GuideDetailPageProps) {
                   {(section.content as string[]).map((item, i) => (
                     <li
                       key={i}
-                      className="flex gap-3 text-[var(--text-secondary)] font-['Inter',sans-serif]"
+                      className="flex gap-3 text-[var(--text-secondary)] font-['Open Sans',sans-serif]"
                       style={{ fontSize: '15px', lineHeight: '1.7' }}
                     >
                       <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--brand)]"></span>
@@ -290,7 +290,7 @@ export function GuideDetailPage({ slug, onNavigate }: GuideDetailPageProps) {
                   style={{ borderColor: 'var(--brand)' }}
                 >
                   <p
-                    className="text-[var(--text-primary)] font-['Inter',sans-serif]"
+                    className="text-[var(--text-primary)] font-['Open Sans',sans-serif]"
                     style={{ fontSize: '14px', lineHeight: '1.6', fontStyle: 'italic' }}
                   >
                     {section.content as string}
@@ -307,18 +307,18 @@ export function GuideDetailPage({ slug, onNavigate }: GuideDetailPageProps) {
       {/* Related Guides */}
       <div className="mt-8 rounded-2xl bg-[var(--bg-elev-1)] p-6 text-center">
         <h3
-          className="text-[var(--text-primary)] font-['Poppins',sans-serif] mb-2"
+          className="text-[var(--text-primary)] font-['Open Sans',sans-serif] mb-2"
           style={{ fontSize: '18px', fontWeight: 600 }}
         >
           Need more help?
         </h3>
-        <p className="text-[var(--text-secondary)] font-['Inter',sans-serif] mb-4" style={{ fontSize: '14px' }}>
+        <p className="text-[var(--text-secondary)] font-['Open Sans',sans-serif] mb-4" style={{ fontSize: '14px' }}>
           Check out our FAQ or join the community for support.
         </p>
         <div className="flex flex-wrap justify-center gap-3">
           <button
             onClick={() => onNavigate?.('/faq')}
-            className="px-4 py-2 bg-[var(--bg-surface)] border border-[var(--divider)] hover:border-[var(--brand)] text-[var(--text-primary)] rounded-xl transition-all font-['Inter',sans-serif]"
+            className="px-4 py-2 bg-[var(--bg-surface)] border border-[var(--divider)] hover:border-[var(--brand)] text-[var(--text-primary)] rounded-xl transition-all font-['Open Sans',sans-serif]"
             style={{ fontWeight: 500, fontSize: '14px' }}
           >
             View FAQ

@@ -31,7 +31,7 @@ export function TagBadge({ tag, mobile = false }: TagBadgeProps) {
 
   return (
     <span
-      className="px-2 py-0.5 rounded-md text-xs font-['Inter',sans-serif]"
+      className="px-2 py-0.5 rounded-md text-xs font-['Open Sans',sans-serif]"
       style={{
         backgroundColor: colors.bg,
         color: colors.text,

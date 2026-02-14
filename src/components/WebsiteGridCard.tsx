@@ -25,17 +25,17 @@ export function WebsiteGridCard({ name, url, description, category, color }: Web
       </div>
       
       <div className="flex items-start justify-between gap-2 mb-2">
-        <h3 className="font-['Inter',sans-serif] text-[var(--text-primary)] flex-1" style={{ fontWeight: 600, fontSize: '16px' }}>
+        <h3 className="font-['Open Sans',sans-serif] text-[var(--text-primary)] flex-1" style={{ fontWeight: 600, fontSize: '16px' }}>
           {name}
         </h3>
         <ExternalLink className="w-4 h-4 text-[var(--brand)] opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
       </div>
       
-      <p className="text-[var(--text-secondary)] font-['Inter',sans-serif] mb-3 line-clamp-2" style={{ fontSize: '14px' }}>
+      <p className="text-[var(--text-secondary)] font-['Open Sans',sans-serif] mb-3 line-clamp-2" style={{ fontSize: '14px' }}>
         {description}
       </p>
       
-      <span className="inline-block px-2 py-0.5 rounded-md text-xs bg-[var(--chip-bg)] text-[var(--text-secondary)] font-['Inter',sans-serif]" style={{ fontWeight: 500 }}>
+      <span className="inline-block px-2 py-0.5 rounded-md text-xs bg-[var(--chip-bg)] text-[var(--text-secondary)] font-['Open Sans',sans-serif]" style={{ fontWeight: 500 }}>
         {category}
       </span>
     </a>

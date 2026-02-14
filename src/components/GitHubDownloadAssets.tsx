@@ -82,12 +82,12 @@ export function GitHubDownloadAssets({
           </div>
           <div className="flex-1 min-w-0">
             <p
-              className="text-[var(--text-primary)] font-['Inter',sans-serif]"
+              className="text-[var(--text-primary)] font-['Open Sans',sans-serif]"
               style={{ fontWeight: 600, fontSize: '14px' }}
             >
               View GitHub Release
             </p>
-            <p className="text-[11px] text-[var(--text-secondary)] font-['Inter',sans-serif] truncate">
+            <p className="text-[11px] text-[var(--text-secondary)] font-['Open Sans',sans-serif] truncate">
               Assets: {summaryText || 'Various files'}
             </p>
           </div>
@@ -96,7 +96,7 @@ export function GitHubDownloadAssets({
       ) : (
         <div className="flex items-center gap-3 rounded-xl border border-[var(--divider)] bg-[var(--chip-bg)] px-4 py-3">
           <Download className="w-4 h-4 text-[var(--brand)]" />
-          <p className="text-xs text-[var(--text-secondary)] font-['Inter',sans-serif]">
+          <p className="text-xs text-[var(--text-secondary)] font-['Open Sans',sans-serif]">
             Assets available: {summaryText || 'Various files'}
           </p>
         </div>

@@ -6,7 +6,7 @@ interface ButtonProps {
 }
 
 export function Button({ variant = 'primary', children, onClick, disabled = false }: ButtonProps) {
-  const baseStyles = 'px-3 sm:px-5 py-2 transition-all font-["Inter",sans-serif] text-sm';
+  const baseStyles = 'px-3 sm:px-5 py-2 transition-all font-["Roboto",sans-serif] text-sm';
   
   const variants = {
     primary: `${baseStyles} rounded-[20px] bg-[var(--brand)] text-white hover:bg-[var(--brand-strong)] active:bg-[var(--brand-strong)] disabled:opacity-50 disabled:cursor-not-allowed`,

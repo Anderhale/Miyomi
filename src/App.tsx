@@ -85,7 +85,7 @@ function AppContent() {
   };
 
   return (
-    <div className="min-h-screen bg-[var(--bg-page)] font-['Inter',sans-serif] flex flex-col">
+    <div className="min-h-screen bg-[var(--bg-page)] font-['Open Sans',sans-serif] flex flex-col">
       {/* <ChristmasSnow /> */}
       <Toaster position="top-center" />
 

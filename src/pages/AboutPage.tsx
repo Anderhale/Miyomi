@@ -72,7 +72,7 @@ const communityLinks: LinkItem[] = [
 
 function Chip({ children }: { children: ReactNode }) {
   return (
-    <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[var(--chip-bg)] text-[var(--text-secondary)] font-['Inter',sans-serif] text-xs uppercase tracking-wide">
+    <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[var(--chip-bg)] text-[var(--text-secondary)] font-['Open Sans',sans-serif] text-xs uppercase tracking-wide">
       <Sparkles className="w-4 h-4 text-[var(--brand)]" />
       {children}
     </span>
@@ -100,12 +100,12 @@ export function AboutPage() {
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
-          className="text-[var(--text-primary)] font-['Poppins',sans-serif] mt-3 md:mt-4 mb-2 md:mb-3"
+          className="text-[var(--text-primary)] font-['Open Sans',sans-serif] mt-3 md:mt-4 mb-2 md:mb-3"
           style={{ fontSize: 'clamp(32px, 5vw, 48px)', lineHeight: '1.1', fontWeight: 700 }}
         >
           Your simple hub for anime + manga tools
         </motion.h1>
-        <p className="text-[var(--text-secondary)] font-['Inter',sans-serif] max-w-3xl text-[15.5px] leading-7">
+        <p className="text-[var(--text-secondary)] font-['Open Sans',sans-serif] max-w-3xl text-[15.5px] leading-7">
           Miyomi is a clean, updated list of apps, extensions, and helpful links. No fluff. No dead ends. Just what works right now.
         </p>
       </section>
@@ -141,7 +141,7 @@ export function AboutPage() {
                   <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[var(--chip-bg)] text-[var(--brand)]">
                     {pillar.icon}
                   </div>
-                  <h3 className="font-['Poppins',sans-serif] text-[var(--text-primary)] leading-snug font-semibold">
+                  <h3 className="font-['Open Sans',sans-serif] text-[var(--text-primary)] leading-snug font-semibold">
                     {pillar.title}
                   </h3>
                 </div>
@@ -158,7 +158,7 @@ export function AboutPage() {
       <section className="mb-12">
         <div className="mb-4 flex items-center gap-2">
           <Heart className="w-5 h-5 text-[var(--brand)]" />
-          <h2 className="text-[var(--text-primary)] font-['Poppins',sans-serif] text-2xl font-semibold">
+          <h2 className="text-[var(--text-primary)] font-['Open Sans',sans-serif] text-2xl font-semibold">
             Powered by open-source makers
           </h2>
         </div>
@@ -172,7 +172,7 @@ export function AboutPage() {
                 {credit.icon}
               </div>
               <div>
-                <h3 className="font-['Poppins',sans-serif] text-[var(--text-primary)] text-lg font-semibold mb-1">
+                <h3 className="font-['Open Sans',sans-serif] text-[var(--text-primary)] text-lg font-semibold mb-1">
                   {credit.title}
                 </h3>
                 <p className="text-[var(--text-secondary)] text-sm leading-6">
@@ -193,7 +193,7 @@ export function AboutPage() {
       <section className="mb-12">
         <div className="mb-6 flex items-center gap-2">
           <Users className="w-5 h-5 text-[var(--brand)]" />
-          <h2 className="text-[var(--text-primary)] font-['Poppins',sans-serif] text-2xl font-semibold">
+          <h2 className="text-[var(--text-primary)] font-['Open Sans',sans-serif] text-2xl font-semibold">
             The tiny team
           </h2>
         </div>
@@ -206,7 +206,7 @@ export function AboutPage() {
                 className="w-20 h-20 rounded-2xl object-cover border border-[var(--divider)]"
               />
               <div className="text-center sm:text-left">
-                <h3 className="font-['Poppins',sans-serif] text-[var(--text-primary)] text-lg font-semibold">
+                <h3 className="font-['Open Sans',sans-serif] text-[var(--text-primary)] text-lg font-semibold">
                   {member.name}
                 </h3>
                 <p className="text-[var(--brand)] text-sm font-medium">{member.role}</p>
@@ -237,7 +237,7 @@ export function AboutPage() {
               <Users className="w-6 h-6" />
             </div>
             <div>
-              <h3 className="font-['Poppins',sans-serif] text-[var(--text-primary)] text-lg font-semibold">
+              <h3 className="font-['Open Sans',sans-serif] text-[var(--text-primary)] text-lg font-semibold">
                 Community contributors
               </h3>
               <p className="text-[var(--text-secondary)] text-sm leading-6">
@@ -264,7 +264,7 @@ export function AboutPage() {
               <Globe2 className="w-6 h-6 text-[var(--brand)]" />
             </div>
             <div>
-              <h3 className="font-['Poppins',sans-serif] text-[var(--text-primary)] font-semibold">
+              <h3 className="font-['Open Sans',sans-serif] text-[var(--text-primary)] font-semibold">
                 Big thanks to{' '}
                 <a
                   href="https://wotaku.wiki"
@@ -287,7 +287,7 @@ export function AboutPage() {
       <section className="mb-12">
         <div className="mb-4 flex items-center gap-2">
           <Globe2 className="w-5 h-5 text-[var(--brand)]" />
-          <h2 className="text-[var(--text-primary)] font-['Poppins',sans-serif] text-2xl font-semibold">
+          <h2 className="text-[var(--text-primary)] font-['Open Sans',sans-serif] text-2xl font-semibold">
             Find us
           </h2>
         </div>
@@ -305,7 +305,7 @@ export function AboutPage() {
               aria-label={link.label}
             >
               <div>
-                <h3 className="font-['Poppins',sans-serif] text-[var(--text-primary)] mb-1 font-semibold">
+                <h3 className="font-['Open Sans',sans-serif] text-[var(--text-primary)] mb-1 font-semibold">
                   {link.label}
                 </h3>
                 <p className="text-[var(--text-secondary)] text-xs">
@@ -322,7 +322,7 @@ export function AboutPage() {
       <section className="mb-12">
         <div className="mb-6 flex items-center gap-2">
           <Mail className="w-5 h-5 text-[var(--brand)]" />
-          <h2 className="text-[var(--text-primary)] font-['Poppins',sans-serif] text-2xl font-semibold">
+          <h2 className="text-[var(--text-primary)] font-['Open Sans',sans-serif] text-2xl font-semibold">
             Need help?
           </h2>
         </div>
@@ -374,7 +374,7 @@ export function AboutPage() {
       <section className="mb-14">
         <Card className="text-center">
           <Heart className="w-8 h-8 text-[var(--brand)] mx-auto mb-3" />
-          <h3 className="font-['Poppins',sans-serif] text-[var(--text-primary)] text-xl font-semibold mb-2">
+          <h3 className="font-['Open Sans',sans-serif] text-[var(--text-primary)] text-xl font-semibold mb-2">
             Built by fans, for fans
           </h3>
           <p className="text-[var(--text-secondary)] max-w-xl mx-auto">

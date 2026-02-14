@@ -201,12 +201,12 @@ export function SoftwarePage({ onNavigate }: SoftwarePageProps) {
       {/* Header */}
       <div className="mb-6 sm:mb-8">
         <h1
-          className="text-[var(--text-primary)] font-['Poppins',sans-serif]"
+          className="text-[var(--text-primary)] font-['Playfair Display',serif]"
           style={{ fontSize: 'clamp(28px, 5vw, 40px)', lineHeight: '1.2', fontWeight: 700 }}
         >
           Software
         </h1>
-        <p className="text-[var(--text-secondary)] font-['Inter',sans-serif]" style={{ fontSize: '16px' }}>
+        <p className="text-[var(--text-secondary)] font-['Open Sans',sans-serif]" style={{ fontSize: '16px' }}>
           Apps and software for reading manga, watching anime, and more across all platforms.
         </p>
       </div>
@@ -250,7 +250,7 @@ export function SoftwarePage({ onNavigate }: SoftwarePageProps) {
               placeholder="Search software by name, description, or keywords..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-8 pr-4 py-2 mt-1 bg-[var(--bg-surface)] border border-[var(--divider)] rounded-xl text-[var(--text-primary)] placeholder:text-[var(--text-secondary)] focus:outline-none focus:border-[var(--brand)] transition-colors font-['Inter',sans-serif] text-sm"
+              className="w-full pl-8 pr-4 py-2 mt-1 bg-[var(--bg-surface)] border border-[var(--divider)] rounded-xl text-[var(--text-primary)] placeholder:text-[var(--text-secondary)] focus:outline-none focus:border-[var(--brand)] transition-colors font-['Open Sans',sans-serif] text-sm"
             />
           </div>
           <ViewToggle view={view} onViewChange={setView} />
@@ -308,10 +308,10 @@ export function SoftwarePage({ onNavigate }: SoftwarePageProps) {
         ) : (
           <div className="text-center py-16 sm:py-24">
             <div className="text-6xl sm:text-8xl mb-6 opacity-50">🔍</div>
-            <h3 className="text-[var(--text-primary)] font-['Poppins',sans-serif] mb-2" style={{ fontSize: '20px', fontWeight: 600 }}>
+            <h3 className="text-[var(--text-primary)] font-['Open Sans',sans-serif] mb-2" style={{ fontSize: '20px', fontWeight: 600 }}>
               No software found
             </h3>
-            <p className="text-[var(--text-secondary)] font-['Inter',sans-serif]">
+            <p className="text-[var(--text-secondary)] font-['Open Sans',sans-serif]">
               Try adjusting your filters or search query
             </p>
           </div>
@@ -321,7 +321,7 @@ export function SoftwarePage({ onNavigate }: SoftwarePageProps) {
       {/* Results Count */}
       {
         filteredAndSortedApps.length > 0 && (
-          <div className="mt-8 text-center text-[var(--text-secondary)] font-['Inter',sans-serif] text-sm">
+          <div className="mt-8 text-center text-[var(--text-secondary)] font-['Open Sans',sans-serif] text-sm">
             Showing {filteredAndSortedApps.length} {filteredAndSortedApps.length === 1 ? 'app' : 'apps'}
           </div>
         )

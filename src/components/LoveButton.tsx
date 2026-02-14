@@ -95,7 +95,7 @@ export function LoveButton({ itemId, initialCount = 0, className = '', preloaded
                     className={`w-4 h-4 transition-transform ${loved ? 'fill-current scale-110' : 'group-hover:scale-110'
                         } ${loading ? 'opacity-70' : ''}`}
                 />
-                <span className={`text-xs font-['Inter',sans-serif] font-medium tabular-nums ${!hasFetched ? 'opacity-50' : ''
+                <span className={`text-xs font-['Open Sans',sans-serif] font-medium tabular-nums ${!hasFetched ? 'opacity-50' : ''
                     }`}>
                     {count}
                 </span>

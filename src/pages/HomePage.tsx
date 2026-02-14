@@ -136,7 +136,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
           {/* H1 Title */}
           <div className="flex items-center justify-center lg:justify-start gap-3 mb-4">
             <h1
-              className="text-[var(--brand)] font-['Poppins',sans-serif] relative inline-block"
+              className="text-[var(--brand)] font-['Playfair Display',serif] relative inline-block"
               style={{ fontSize: 'clamp(32px, 8vw, 56px)', lineHeight: '1.1', fontWeight: 800, letterSpacing: '-0.02em' }}
             >
               Miyomi
@@ -146,7 +146,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
           </div>
 
           <p
-            className="text-[var(--text-primary)] font-['Inter',sans-serif] mb-8 leading-relaxed"
+            className="text-[var(--text-primary)] font-['Open Sans',sans-serif] mb-8 leading-relaxed"
             style={{ fontSize: 'clamp(16px, 2vw, 18px)', lineHeight: '1.6' }}
           >
             Your one-stop hub for <span className="text-[var(--brand)]" style={{ fontWeight: 600 }}>links, apps, extension repos</span> and more!
@@ -234,7 +234,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               {/* Counter watermark in background */}
               <div className="absolute right-2 top-2 pointer-events-none">
                 <div
-                  className="font-['Poppins',sans-serif]"
+                  className="font-['Open Sans',sans-serif]"
                   style={{
                     fontSize: 'clamp(50px, 6vw, 66px)',
                     fontWeight: 900,
@@ -262,7 +262,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                   >
                     {feature.title}
                   </h3>
-                  <p className="text-[var(--text-secondary)] font-['Inter',sans-serif] text-xs sm:text-sm leading-snug line-clamp-2 sm:line-clamp-3">
+                  <p className="text-[var(--text-secondary)] font-['Open Sans',sans-serif] text-xs sm:text-sm leading-snug line-clamp-2 sm:line-clamp-3">
                     {feature.description}
                   </p>
                 </div>

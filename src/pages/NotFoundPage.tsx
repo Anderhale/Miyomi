@@ -21,12 +21,12 @@ export function NotFoundPage() {
         <div className="absolute inset-0 bg-gradient-to-br from-[#FFB3C1] via-[#B3D9FF] to-[#E8D4FF] rounded-full blur-2xl opacity-60 scale-110 animate-pulse delay-300"></div>
       </div>
       <h1
-        className="text-[var(--text-primary)] font-['Poppins',sans-serif] mb-4"
+        className="text-[var(--text-primary)] font-['Playfair Display',serif] mb-4"
         style={{ fontSize: 'clamp(32px, 5vw, 48px)', lineHeight: '1.2', fontWeight: 700 }}
       >
         404 - Page Not Found
       </h1>
-      <p className="text-[var(--text-secondary)] font-['Inter',sans-serif] mb-8 max-w-md" style={{ fontSize: '16px' }}>
+      <p className="text-[var(--text-secondary)] font-['Open Sans',sans-serif] mb-8 max-w-md" style={{ fontSize: '16px' }}>
         Oops! The page you're looking for doesn't exist or has been moved.
       </p>
       <Button variant="primary" onClick={handleGoHome}>

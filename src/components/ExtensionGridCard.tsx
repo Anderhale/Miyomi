@@ -48,7 +48,7 @@ export function ExtensionGridCard({ extension, voteData, allowFetch = true, onSe
         </div>
         <div className="flex-1 min-w-0 text-center sm:text-left w-full">
           <h3
-            className="font-['Inter',sans-serif] text-[var(--text-primary)] mb-1 sm:mb-1 line-clamp-1"
+            className="font-['Open Sans',sans-serif] text-[var(--text-primary)] mb-1 sm:mb-1 line-clamp-1"
             style={{ fontWeight: 600, fontSize: '14px', lineHeight: '1.3' }}
           >
             {extension.name}
@@ -63,7 +63,7 @@ export function ExtensionGridCard({ extension, voteData, allowFetch = true, onSe
 
       {extension.info && (
         <p
-          className="text-[var(--text-secondary)] font-['Inter',sans-serif] mb-2 sm:mb-4 line-clamp-2 text-center sm:text-left flex-grow"
+          className="text-[var(--text-secondary)] font-['Open Sans',sans-serif] mb-2 sm:mb-4 line-clamp-2 text-center sm:text-left flex-grow"
           style={{ fontSize: '12px', lineHeight: '1.4' }}
         >
           {extension.info}

@@ -164,7 +164,7 @@ export function Navbar({ onNavigate }: NavbarProps) {
               className="flex items-center gap-2 cursor-pointer group flex-shrink-0"
             >
               <img src={logoImage} alt="Miyomi" className="w-8 h-8 object-contain group-hover:scale-110 transition-transform" />
-              <span className="text-[var(--brand)] font-['Poppins',sans-serif] text-lg" style={{ fontWeight: 600 }}>
+              <span className="text-[var(--brand)] font-['Open Sans',sans-serif] text-lg" style={{ fontWeight: 600 }}>
                 Miyomi
               </span>
             </button>
@@ -179,7 +179,7 @@ export function Navbar({ onNavigate }: NavbarProps) {
                   onPointerDown={(event) => event.preventDefault()}
                   onMouseEnter={() => openDropdown('pages')}
                   onMouseLeave={() => scheduleDropdownClose('pages')}
-                  className="flex items-center gap-1 text-sm py-2 px-2 relative transition-colors text-[var(--text-primary)] hover:text-[var(--brand)] font-['Inter',sans-serif]"
+                  className="flex items-center gap-1 text-sm py-2 px-2 relative transition-colors text-[var(--text-primary)] hover:text-[var(--brand)] font-['Open Sans',sans-serif]"
                   style={{ fontWeight: 400 }}
                 >
                   Pages <ChevronDown className="w-4 h-4" />
@@ -306,7 +306,7 @@ export function Navbar({ onNavigate }: NavbarProps) {
           <div className="mb-3">
             <button
               onClick={() => toggleSection('pages')}
-              className="w-full flex items-center justify-between py-2.5 text-[var(--text-primary)] font-['Inter',sans-serif]"
+              className="w-full flex items-center justify-between py-2.5 text-[var(--text-primary)] font-['Open Sans',sans-serif]"
               style={{ fontWeight: 500 }}
             >
               <span>Pages</span>
@@ -377,7 +377,7 @@ export function Navbar({ onNavigate }: NavbarProps) {
           {/* Appearance Section */}
           <div className="mb-4">
             <div className="flex items-center justify-between py-2.5">
-              <span className="text-[var(--text-primary)] font-['Inter',sans-serif]" style={{ fontWeight: 500 }}>
+              <span className="text-[var(--text-primary)] font-['Open Sans',sans-serif]" style={{ fontWeight: 500 }}>
                 Appearance
               </span>
               <ThemeToggle />
