@@ -14,7 +14,10 @@
     "supportedApps": [
       "aniyomi",
       "animiru",
-      "anikku"
+      "anikku",
+      "animetail",
+      "anizen",
+      "tadami"
     ],
     "info": "Extension repository for Aniyomi and it's variants.",
     "keywords": [
@@ -37,9 +40,12 @@
     "website": "https://yuzono.github.io",
     "github": "https://github.com/yuzono/aniyomi-extensions",
     "supportedApps": [
-      "anikku",
       "aniyomi",
-      "animiru"
+      "animiru",
+      "anikku",
+      "animetail",
+      "anizen",
+      "tadami"
     ],
     "info": "Repository curated by the Yūzōnō community for Aniyomi variants.",
     "keywords": [
@@ -62,9 +68,18 @@
     "website": "https://yuzono.github.io",
     "github": "https://github.com/yuzono/tachiyomi-extensions",
     "supportedApps": [
-      "komikku",
       "mihon",
-      "Yuzono"
+      "aniyomi",
+      "tachimanga",
+      "tachiyomi-sy",
+      "yokai",
+      "komikku",
+      "yomihon",
+      "tachiyomi-az",
+      "tachiyomi-j2k",
+      "animetail",
+      "tachiyomi-at",
+      "tadami"
     ],
     "info": "Repository curated by the Yūzōnō community for Mihon variants.",
     "keywords": [
@@ -75,7 +90,7 @@
   },
   {
     "id": "secozzi",
-    "name": "Secozzi's Repo",
+    "name": "Secozzi",
     "logoUrl": "https://github.com/Secozzi.png",
     "types": [
       "Anime"
@@ -87,9 +102,11 @@
     "github": "https://github.com/Secozzi/aniyomi-extensions",
     "supportedApps": [
       "aniyomi",
-      "anikku",
       "animiru",
-      "mangayomi"
+      "anikku",
+      "animetail",
+      "anizen",
+      "tadami"
     ],
     "info": "Repo for Aniyomi & it's varients for Jellyfin, Stremio and Torbox",
     "keywords": [
@@ -125,7 +142,7 @@
   },
   {
     "id": "hollow",
-    "name": "Hollow's Repo",
+    "name": "Hollow",
     "logoUrl": "https://codeberg.org/avatars/adda4bc8aeef752bb536aed03fa01f63?size=200",
     "types": [
       "Anime"
@@ -138,7 +155,10 @@
     "supportedApps": [
       "aniyomi",
       "animiru",
-      "anikku"
+      "anikku",
+      "animetail",
+      "anizen",
+      "tadami"
     ],
     "info": "French extensions for Aniyomi and its variants.",
     "keywords": [
@@ -158,11 +178,20 @@
     "autoUrl": "tachiyomi://add-repo?url=https://raw.githubusercontent.com/keiyoushi/extensions/repo/index.min.json",
     "manualUrl": "https://raw.githubusercontent.com/keiyoushi/extensions/repo/index.min.json",
     "github": "https://github.com/keiyoushi/extensions",
+    "website": "https://keiyoushi.github.io/",
     "supportedApps": [
       "mihon",
+      "aniyomi",
+      "tachimanga",
       "tachiyomi-sy",
       "yokai",
-      "komikku"
+      "komikku",
+      "yomihon",
+      "tachiyomi-az",
+      "tachiyomi-j2k",
+      "animetail",
+      "tachiyomi-at",
+      "tadami"
     ],
     "info": "Extension repository for Mihon and its variants.",
     "keywords": [
@@ -640,5 +669,27 @@
       "extensions"
     ],
     "lastUpdated": "2025-12-31"
+  },
+  {
+    "id": "salmanbappi-repo",
+    "name": "SalmanBappi's Repo",
+    "types": [
+      "Anime"
+    ],
+    "region": "BD",
+    "accentColor": "#00ADB5",
+    "autoUrl": "aniyomi://add-repo?url=https://raw.githubusercontent.com/salmanbappi/extensions-repo/main/index.min.json",
+    "manualUrl": "https://raw.githubusercontent.com/salmanbappi/extensions-repo/main/index.min.json",
+    "github": "https://github.com/salmanbappi/extensions-repo",
+    "supportedApps": [
+      "aniyomi",
+      "animiru",
+      "anikku"
+    ],
+    "info": "A repository for Aniyomi/Anikku extensions, focusing on BDIX-based streaming services and local content providers.",
+    "keywords": [
+      "bangla"
+    ],
+    "lastUpdated": "2026-02-14"
   }
 ]

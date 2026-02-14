@@ -23,7 +23,8 @@
       "keiyoushi",
       "hollow",
       "Yuzono-anime",
-      "secozzi"
+      "secozzi",
+      "salmanbappi-repo"
     ],
     "githubUrl": "https://github.com/aniyomiorg/aniyomi",
     "officialSite": "https://aniyomi.org",
@@ -120,11 +121,18 @@
       "anilist"
     ],
     "supportedExtensions": [
-      "kohiden"
-    ],
+      "kohiden",
+      "dantotsu-novel-extensions",
+      "keiyoushi",
+      "secozzi",
+      "hollow",
+      "Yuzono-anime",
+      "Yuzono-manga"
+      ],
     "getApp": "https://github.com/itsmechinmoy/dantotsu-updater/releases",
     "githubUrl": "https://git.rebelonion.dev/rebelonion/Dantotsu",
-    "discordUrl": "https://discord.gg/4HPZ5nAWwM"
+    "discordUrl": "https://discord.gg/4HPZ5nAWwM",
+    "lastUpdated": "2025-10-16"
   },
   {
     "id": "dartotsu",
@@ -150,10 +158,10 @@
       "best app"
     ],
     "supportedExtensions": [
-      "kodjodevf"
+      "kodjodevf",
+      "m2k3a-mangayomi-extensions"
     ],
     "githubUrl": "https://github.com/aayush2622/Dartotsu",
-    "officialSite": "https://github.com/aayush2622/Dartotsu",
     "discordUrl": "https://discord.gg/eyQdCpdubF"
   },
   {
@@ -472,6 +480,7 @@
     "id": "cdisplayex",
     "accentColor": "#343A40",
     "name": "CDisplayEx",
+    "author": "Progdigy Software",
     "status": "active",
     "contentTypes": [
       "Manga"
@@ -486,7 +495,8 @@
     ],
     "supportedExtensions": [],
     "discordUrl": "https://discord.gg/GKbezMyGG2",
-    "officialSite": "https://www.cdisplayex.com/"
+    "officialSite": "https://www.cdisplayex.com/",
+    "lastUpdated": "2025-09-15"
   },
   {
     "id": "ln-reader",
@@ -556,8 +566,10 @@
   },
   {
     "id": "moon-reader",
+    "author": "Moon+",
     "accentColor": "#5899FC",
     "name": "Moon+ Reader",
+    "lastUpdated": "2025-12-18",
     "status": "active",
     "contentTypes": [
       "Light Novel"
@@ -633,7 +645,10 @@
       "ios",
       "sources"
     ],
-    "supportedExtensions": [],
+    "supportedExtensions": [
+      "aidoku-community-sources",
+      "kavita"
+    ],
     "githubUrl": "https://github.com/Aidoku/Aidoku",
     "discordUrl": "https://discord.gg/kh2PYT8V8d",
     "officialSite": "https://aidoku.app/"
@@ -654,7 +669,9 @@
     "keywords": [
       "ios"
     ],
-    "supportedExtensions": [],
+    "supportedExtensions": [
+      "keiyoushi"
+    ],
     "githubUrl": "https://github.com/tachimanga",
     "officialSite": "https://tachimanga.app/",
     "discordUrl": "https://discord.gg/8aMcdYdaBz",
@@ -687,7 +704,7 @@
     "supportedExtensions": [],
     "officialSite": "https://www.suwatte.app/",
     "discordUrl": "https://discord.gg/8wmkXsT6h5",
-    "githubUrl": "https://github.com/suwatte"
+    "githubUrl": "https://github.com/suwatte/Suwatte"
   },
   {
     "id": "stremio",
@@ -713,6 +730,7 @@
       "stremio-addon"
     ],
     "officialSite": "https://www.stremio.com/",
+    "githubUrl": "https://github.com/Stremio",
     "discordUrl": "https://blog.stremio.com/",
     "tutorials": [
       {
@@ -891,7 +909,9 @@
     "supportedExtensions": [
       "kohiden",
       "Yuzono-anime",
-      "secozzi"
+      "secozzi",
+      "hollow",
+      "salmanbappi-repo"
     ],
     "githubUrl": "https://github.com/komikku-app/anikku",
     "officialSite": "https://anikku-app.github.io/",
@@ -946,7 +966,9 @@
     "supportedExtensions": [
       "kohiden",
       "Yuzono-anime",
-      "secozzi"
+      "secozzi",
+      "hollow",
+      "salmanbappi-repo"
     ],
     "forkOf": "Aniyomi",
     "upstreamUrl": "https://miyomi.pages.dev/software/aniyomi",
@@ -985,7 +1007,7 @@
     "contentTypes": [
       "Anime"
     ],
-    "description": "Android and Android TV streaming app with addon-driven architecture.",
+    "description": "Hayase is a P2P anime streaming app that lets you start watching while the torrent is still downloading.",
     "platforms": [
       "Android",
       "iOS",
@@ -1002,7 +1024,16 @@
     "supportedExtensions": [],
     "githubUrl": "https://github.com/hayase-app",
     "officialSite": "https://hayase.watch/",
-    "discordUrl": ""
+    "discordUrl": "https://discord.gg/TRQEr9evRA",
+    "getApp": "https://hayase.watch/download/",
+    "tutorials": [
+      {
+        "title": "Getting Started with Hayase",
+        "type": "guide",
+        "url": "https://wiki.hayase.watch/getting-started/first-time-setup",
+        "description": "Guide to help you set up and start using Hayase."
+      }
+    ]
   },
   {
     "id": "koreader",
@@ -1223,7 +1254,9 @@
     "supportedExtensions": [
       "kohiden",
       "keiyoushi",
-      "secozzi"
+      "secozzi",
+      "hollow",
+      "salmanbappi-repo"
     ],
     "forkOf": "Aniyomi",
     "upstreamUrl": "https://miyomi.pages.dev/software/aniyomi",
@@ -1381,7 +1414,16 @@
     ],
     "supportedExtensions": [],
     "githubUrl": "https://github.com/xgi/houdoku",
-    "officialSite": "https://houdoku.org"
+    "officialSite": "https://houdoku.org",
+    "getApp": "https://houdoku.org/download.html",
+    "tutorials": [
+      {
+        "title": "Getting Started with Houdoku",
+        "type": "guide",
+        "url": "https://houdoku.org/guides/getting-started.html",
+        "description": "Official guide to help you get started with Houdoku."
+      }
+    ]
   },
   {
     "id": "anilab",
@@ -1610,7 +1652,15 @@
     "forkOf": "Kotatsu",
     "upstreamUrl": "https://miyomi.pages.dev/software/kotatsu",
     "githubUrl": "https://github.com/skepsun/Kototoro",
-    "discordUrl": "https://discord.com/invite/PTd2bYgz9m"
+    "discordUrl": "https://discord.com/invite/PTd2bYgz9m",
+    "tutorials": [
+      {
+        "title": "How to use Mihon and Aniyomi extensions on Kototoro",
+        "type": "guide",
+        "url": "https://github.com/skepsun/Kototoro/blob/devel/README_en.md#-mihon--aniyomi-extensions-guide",
+        "description": "Kototoro supports both Mihon and Aniyomi extension systems."
+      }
+    ]
   },
   {
     "id": "futon",
@@ -1748,5 +1798,44 @@
     "forkOf": "Aniyomi",
     "upstreamUrl": "https://miyomi.pages.dev/software/aniyomi",
     "githubUrl": "https://github.com/andreykolesnikov/Tadami-Aniyomi-fork"
-  }
+  },
+  {
+  "id": "redantotsu",
+  "name": "ReDantotsu",
+  "contentTypes": [
+    "Manga",
+    "Anime"
+   ],
+  "description": "A remake of the Dantotsu, featuring Liquid Glass visual overhaul that brings an iOS 26-inspired design language to Android.",
+  "platforms": [
+    "Android"
+  ],
+  "iconColor": "#81D834",
+  "logoUrl": "https://raw.githubusercontent.com/AsrOfficialDev/ReDantotsu/refs/heads/main/app/src/main/res/mipmap-hdpi/ic_launcher.jpg",
+  "githubUrl": "https://github.com/AsrOfficialDev/ReDantotsu",
+  "officialSite": "https://asrofficialdev.github.io/ReDantotsu/",
+  "discordUrl": "https://discord.gg/fYEJmDsDz9"
+ },
+ {
+  "id": "anizen",
+  "name": "AniZen",
+  "contentTypes": [
+    "Anime"
+  ],
+  "description": "AniZen is a high-performance, ultra-refined modification of Anikku",
+  "platforms": [
+    "Android"
+  ],
+  "iconColor": "#568284",
+  "logoUrl": "https://raw.githubusercontent.com/salmanbappi/AniZen/refs/heads/master/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png",
+  "supportedExtensions": [
+      "kohiden",
+      "Yuzono-anime",
+      "secozzi",
+      "hollow",
+      "salmanbappi-repo"
+  ],
+  "githubUrl": "https://github.com/salmanbappi/AniZen",
+  "lastUpdated": "2026-02-14"
+ }
 ]
